@@ -1,0 +1,3585 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESICO | miskuentas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Ícono para "Añadir a pantalla de inicio" en iPhone/iPad -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Nombre que aparece bajo el ícono en la pantalla de inicio -->
+    <meta name="apple-mobile-web-app-title" content="miskuentas" />
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-container">
+        <div style="display: flex">
+          <img
+            class="logo"
+            alt="RESICO miskuentas logo"
+            src="RESICOmiskuentas.png"
+          />
+        </div>
+        <div style="display: flex">
+          <div class="sidebar-user">
+            <div class="sidebar-user-info">
+              <button class="sidebar-avatar" onclick="navigate('datos')">
+                OH
+              </button>
+              <span class="sidebar-user-name"> Omar Hernández Laurel </span>
+            </div>
+          </div>
+          <div class="sidebar-icons">
+            <button class="btn-salir" title="Cerrar sesión">
+              <svg
+                class="ico-sm"
+                viewBox="0 0 14 14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              >
+                <path d="M5 2H2v10h3M9 10l3-3-3-3M12 7H5" />
+              </svg>
+              Salir
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <!-- Inicio -->
+          <div class="nav-section">
+            <button
+              class="nav-module-btn"
+              onclick="navigate('perfil', 'Perfil')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="ico nav-ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+
+              <span class="label">Inicio</span>
+            </button>
+          </div>
+
+          <!-- Facturación -->
+          <div class="nav-section">
+            <button
+              class="nav-module-btn"
+              data-module="facturacion"
+              onclick="toggleModule(this)"
+            >
+              <div style="display: flex; flex-direction: row">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="ico nav-ico"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                  />
+                </svg>
+                <svg
+                  class="chevron"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </div>
+              <span class="label">Facturación</span>
+            </button>
+            <div class="nav-sub">
+              <a
+                onclick="
+                  navigate(
+                    'facturacion-emitir',
+                    'Facturación',
+                    'Emitir Factura',
+                  )
+                "
+                >Crear Factura</a
+              >
+              <a
+                onclick="
+                  navigate(
+                    'facturacion-bandeja',
+                    'Facturación',
+                    'Bandeja de salida',
+                  )
+                "
+                >Bandeja de salida</a
+              >
+              <a
+                onclick="
+                  navigate(
+                    'facturacion-config',
+                    'Facturación',
+                    'Configurar Factura',
+                  )
+                "
+                >Configurar Factura</a
+              >
+              <a
+                onclick="
+                  navigate(
+                    'facturacion-clientes-prod',
+                    'Facturación',
+                    'Clientes y productos',
+                  )
+                "
+                >Clientes y productos</a
+              >
+            </div>
+          </div>
+
+          <!-- Ingresos y gastos -->
+          <div class="nav-section">
+            <button
+              class="nav-module-btn"
+              data-module="gastos"
+              onclick="toggleModule(this)"
+            >
+              <div style="display: flex; flex-direction: row">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="ico nav-ico"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+                <svg
+                  class="chevron"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </div>
+              <span class="label">Movimientos</span>
+            </button>
+
+            <div class="nav-sub">
+              <a onclick="navigate('ingresos', 'Gastos e Ingresos', 'Ingresos')"
+                >Ingresos</a
+              >
+              <a onclick="navigate('gastos', 'Gastos e Ingresos', 'Gastos')"
+                >Gastos</a
+              >
+              <a onclick="navigate('reportes', 'Gastos e Ingresos', 'Reportes')"
+                >Reportes</a
+              >
+            </div>
+          </div>
+
+          <!-- Declaraciones -->
+          <div class="nav-section">
+            <button
+              class="nav-module-btn"
+              data-module="declaraciones"
+              onclick="toggleModule(this)"
+            >
+              <div style="display: flex; flex-direction: row">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="ico nav-ico"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
+                  />
+                </svg>
+                <svg
+                  class="chevron"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </div>
+              <span class="label">Impuestos</span>
+            </button>
+            <div class="nav-sub">
+              <a
+                onclick="
+                  navigate(
+                    'declaraciones-calcular',
+                    'Declaraciones',
+                    'Calcular',
+                  )
+                "
+                >Calcular</a
+              >
+              <a
+                onclick="
+                  navigate(
+                    'declaraciones-presentar',
+                    'Declaraciones',
+                    'Presentar',
+                  )
+                "
+                >Presentar</a
+              >
+            </div>
+          </div>
+
+          <!-- Buzón tributario -->
+          <div class="nav-section">
+            <button
+              class="nav-module-btn"
+              onclick="navigate('buzon', 'Buzón tributario')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="ico nav-ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
+              <span class="label">Buzón SAT</span>
+            </button>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main">
+        <!-- ══ VIEW: REPORTES (default) ══ -->
+        <div class="view active" id="view-reportes">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="2,12 5,7 8,9 11,4 14,6" />
+                <line x1="2" y1="14" x2="14" y2="14" />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Módulo de Reportes</strong>
+              Selecciona el tipo de reporte y el rango de fechas para generar tu
+              consulta.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Generar Reporte</div>
+            <div class="report-row">
+              <span class="report-label">Reporte:</span>
+              <select class="report-select" id="tipo-reporte">
+                <option value="">— Selecciona —</option>
+                <option>Ingresos por periodo</option>
+                <option>Egresos por periodo</option>
+              </select>
+              <span class="report-label">Año:</span>
+              <div class="date-group">
+                <select class="report-select" id="anio-reporte">
+                  <option value="">— Selecciona —</option>
+                  <option>2024</option>
+                  <option selected>2025</option>
+                  <option>2026</option>
+                </select>
+                <span class="report-label">Mes:</span>
+                <select class="report-select" id="mes-reporte">
+                  <option value="">— Todos —</option>
+                  <option>Enero</option>
+                  <option>Febrero</option>
+                  <option>Marzo</option>
+                  <option>Abril</option>
+                  <option>Mayo</option>
+                  <option>Junio</option>
+                  <option>Julio</option>
+                  <option>Agosto</option>
+                  <option>Septiembre</option>
+                  <option>Octubre</option>
+                  <option>Noviembre</option>
+                  <option>Diciembre</option>
+                </select>
+              </div>
+              <button class="btn-primary" onclick="generarReporte()">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                >
+                  <polyline points="2,12 5,7 8,9 11,4 14,6" />
+                </svg>
+                Generar
+              </button>
+            </div>
+          </div>
+
+          <div id="reporte-resultado" style="display: none">
+            <div class="stats-grid" id="reporte-stats"></div>
+            <div class="card">
+              <div class="card-title" id="reporte-tabla-titulo">Detalle</div>
+              <div style="overflow-x: auto">
+                <table class="data-table" id="reporte-tabla"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: PERFIL ══ -->
+        <div class="view" id="view-perfil">
+          <div>
+            <div>
+              <div class="welcome-strip" style="background: #9d6cab">
+                <div class="welcome-strip-text" style="width: 100%">
+                  <strong>¡Hola, Omar!</strong>
+                  Aquí podrás ver un resumen del periodo en curso.
+                </div>
+              </div>
+              <div>
+                <div class="stats-grid">
+                  <div class="stat-card">
+                    <div class="stat-label">Ingresos del mes</div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 5px;
+                      "
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        width="100%"
+                        height="100%"
+                        class="icon-up"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
+                        />
+                      </svg>
+                      <div class="stat-value positive" id="inicio-ingresos">
+                        $ 0
+                      </div>
+                    </div>
+                    <div class="stat-sub">4 operaciones</div>
+                    <div class="stat-sub">Mayo 2026</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Egresos del mes</div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 5px;
+                      "
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        width="100%"
+                        height="100%"
+                        class="icon-down"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 6.43l.776 2.898m0 0 3.182-5.511m-3.182 5.51-5.511-3.181"
+                        />
+                      </svg>
+                      <div class="stat-value negative" id="inicio-egresos">
+                        $ 0
+                      </div>
+                    </div>
+
+                    <div class="stat-sub">34 operaciones</div>
+                    <div class="stat-sub">Mayo 2026</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+
+            <!-- Estado: Pendiente -->
+            <div id="tax-state-pending">
+              <div class="tax-status-container">
+                <div style="display:flex;flex-direction:row;align-items:center;gap:10px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="tax-status-icon tax-warn-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/>
+                  </svg>
+                  <div>
+                    <div class="tax-status-tag tax-warn-tag">Declaración pendiente</div>
+                    <div class="tax-status-desc">No se ha presentado la declaración de este mes</div>
+                    <div class="tax-status-desc tax-warn-sub" id="tax-pending-meses">Se detectó 1 mes pendiente por presentar</div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:center;margin-top:18px;">
+                <button class="btn-primary" style="font-size:13px;padding:7px 20px;"
+                  onclick="navigate('declaraciones-calcular','Declaraciones','Calcular')">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="2" stroke="currentColor" width="15" height="15">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z"/>
+                  </svg>
+                  Ir a presentar
+                </button>
+              </div>
+            </div>
+
+            <!-- Estado: Al día (oculto por defecto) -->
+            <div id="tax-state-ok" style="display:none;">
+              <div class="tax-status-container">
+                <div style="display:flex;flex-direction:row;align-items:center;gap:10px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="tax-status-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  <div>
+                    <div class="tax-status-tag">Tus impuestos están al día</div>
+                    <div class="tax-status-desc">Impuestos Mayo 2026 declarados</div>
+                    <div class="tax-status-desc">con éxito</div>
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-top:20px;">
+                <div class="tax-status-desc">Próxima presentación:</div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke-width="1.5" stroke="currentColor" class="ico">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/>
+                </svg>
+                <div class="tax-status-desc">05 julio 2026</div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card" style="margin-bottom: 25px">
+            <div class="inv-cont">
+              <div class="inv-status-container">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    width="100%"
+                    height="100%"
+                    class="cloud-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+                    />
+                  </svg>
+                  <div class="inv-status-tag">Actualizar facturas</div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    justify-content: center;
+                    margin-top: 0px;
+                  "
+                >
+                  <div class="tax-status-desc">Última sincronización:</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    width="100%"
+                    height="100%"
+                    class="ico"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <div class="tax-status-desc">Hace un momento</div>
+                </div>
+              </div>
+              <div style="text-align: center">
+                <button
+                  class="btn-secondary"
+                  style="font-size: 12px; padding: 6px 14px; margin-top: 10px"
+                  onclick="abrirModalFacturas()"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                    />
+                  </svg>
+                  Actualizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ VIEW: CONSTANCIAS ══ -->
+
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Constancias / Opiniones</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Documentos disponibles</div>
+            <div class="doc-grid">
+              <!-- Constancia de situación fiscal -->
+              <div class="doc-card">
+                <div class="doc-card-icon">
+                  <!-- Ícono: documento con sello/verificación -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z"
+                    />
+                  </svg>
+                </div>
+                <div class="doc-card-title">Constancia de situación fiscal</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-05-01</span>
+                  <span class="badge badge-green">Vigente</span>
+                </div>
+                <div class="doc-card-actions">
+                  <button
+                    class="btn-secondary"
+                    style="font-size: 12px; padding: 6px 14px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      width="14"
+                      height="14"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                      />
+                    </svg>
+                    Descargar
+                  </button>
+                  <button
+                    class="btn-secondary"
+                    style="font-size: 12px; padding: 6px 14px; background: pink"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      width="14"
+                      height="14"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
+                      />
+                    </svg>
+                    Compartir
+                  </button>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 222px;
+                  "
+                >
+                  Actualizar
+                </button>
+              </div>
+
+              <!-- Opinión de cumplimiento -->
+              <div class="doc-card">
+                <div
+                  class="doc-card-icon"
+                  style="
+                    background: color-mix(in srgb, var(--secondary) 12%, white);
+                    color: var(--secondary);
+                  "
+                >
+                  <!-- Ícono: escala/balance de justicia -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+                    />
+                  </svg>
+                </div>
+                <div class="doc-card-title">Opinión de cumplimiento</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-04-15</span>
+                  <span class="badge badge-green">Positiva</span>
+                </div>
+                <div class="doc-card-actions">
+                  <button
+                    class="btn-secondary"
+                    style="font-size: 12px; padding: 6px 14px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      width="14"
+                      height="14"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                      />
+                    </svg>
+                    Descargar
+                  </button>
+                  <button
+                    class="btn-secondary"
+                    style="font-size: 12px; padding: 6px 14px; background: pink"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      width="14"
+                      height="14"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z"
+                      />
+                    </svg>
+                    Compartir
+                  </button>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 220px;
+                  "
+                >
+                  Actualizar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══ VIEW: ALERTAS ══ -->
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Alertas / Avisos</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Alertas activas</div>
+            <div class="alert-item">
+              <div class="alert-dot-wrap">
+                <div class="alert-dot yellow"></div>
+              </div>
+              <div>
+                <div class="alert-title">Factura sin cancelar con error</div>
+                <div class="alert-desc">
+                  El folio A-0040 fue emitido con un régimen incorrecto.
+                  Solicita cancelación antes del 30 de mayo.
+                </div>
+                <div class="alert-date">2025-05-12</div>
+              </div>
+              <button
+                class="btn-primary"
+                style="
+                  padding: 3px 5px;
+                  font-size: 11px;
+                  margin-left: auto;
+                  margin-right: 30px;
+                  height: 30%;
+                "
+              >
+                Enviar a proveedor
+              </button>
+            </div>
+            <div class="alert-item">
+              <div class="alert-dot-wrap">
+                <div class="alert-dot yellow"></div>
+              </div>
+              <div>
+                <div class="alert-title">Constancia próxima a vencer</div>
+                <div class="alert-desc">
+                  La opinión de cumplimiento vence el 15 de junio. Renuévala con
+                  anticipación.
+                </div>
+                <div class="alert-date">2025-05-10</div>
+              </div>
+              <button
+                class="btn-primary"
+                style="
+                  padding: 3px 5px;
+                  font-size: 11px;
+                  margin-left: auto;
+                  margin-right: 30px;
+                  height: 30%;
+                "
+              >
+                Actualizar ahora
+              </button>
+            </div>
+            <div class="alert-item">
+              <div class="alert-dot-wrap">
+                <div class="alert-dot green"></div>
+              </div>
+              <div>
+                <div class="alert-title">Gasto PPD sin complemento pago</div>
+                <div class="alert-desc">
+                  El folio GASC-4678 no cuenta con complemento pago. Solicitalo
+                  antes de la próxima presentación.
+                </div>
+                <div class="alert-date">2025-05-08</div>
+              </div>
+              <button
+                class="btn-primary"
+                style="
+                  padding: 3px 5px;
+                  font-size: 11px;
+                  margin-left: auto;
+                  margin-right: 30px;
+                  height: 30%;
+                "
+              >
+                Ir a facturación
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: EMITIR CFDI ══ -->
+        <div class="view" id="view-facturacion-emitir">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Emitir factura</strong>
+              Genera un nuevo Comprobante Fiscal Digital por Internet.
+            </div>
+          </div>
+          <div class="card">
+            <div class="cfdi-card-inner" style="flex-direction: column">
+              <div
+                class="cfdi-tipos"
+                style="display: flex; flex-direction: column; width: 100%"
+              >
+                <div class="card-title">Tipo de factura</div>
+                <div
+                  class="form-actions cfdi-tipos-btns"
+                  style="flex-direction: row; gap: 1.5rem"
+                >
+                  <button
+                    class="btn-primary active-tipo"
+                    id="tipo-btn-factura"
+                    onclick="switchTipoFactura('factura')"
+                  >
+                    Factura
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-pago"
+                    onclick="switchTipoFactura('pago')"
+                  >
+                    Documento pago
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-credito"
+                    onclick="switchTipoFactura('credito')"
+                  >
+                    Nota de crédito
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-global"
+                    onclick="switchTipoFactura('global')"
+                  >
+                    Factura global
+                  </button>
+                </div>
+              </div>
+              <!-- ── PANEL: Factura (default) ── -->
+              <div
+                id="panel-factura"
+                class="cfdi-panel cfdi-form"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">RFC Receptor</label>
+                      <input class="form-input" placeholder="XAXX010101000" />
+                    </div>
+
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Razón Social Receptor</label>
+                      <input
+                        class="form-input"
+                        placeholder="Nombre o empresa"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label"
+                      >Uso (¿Para qué usará esta factura tu cliente?)</label
+                    >
+                    <select class="form-input report-select">
+                      <option>G03 - Gastos en general</option>
+                      <option>P01 - Por definir</option>
+                      <option>D01 - Honorarios médicos</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Documentos a Relacionar</label>
+                    <input class="form-input" placeholder="No aplica" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Exportación</label>
+                    <input class="form-input" placeholder="No aplica" />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Serie</label>
+                      <input class="form-input" placeholder="GASC" />
+                    </div>
+
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Folio</label>
+                      <input class="form-input" placeholder="101" />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
+                      <select class="form-input report-select">
+                        <option>PUE</option>
+                        <option>PPD</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Forma de pago</label>
+                      <input
+                        class="form-input"
+                        placeholder="Transferencia electrónica"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Moneda</label>
+                      <input class="form-input" placeholder="Peso mexicano" />
+                    </div>
+
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Tipo de cambio</label>
+                      <input class="form-input" placeholder="1.00" />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Expedido en:</label>
+                      <input class="form-input" placeholder="54260" />
+                    </div>
+
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Fecha emisión</label>
+                      <input
+                        class="form-input"
+                        placeholder="18/05/2026 12:10 pm"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-factura -->
+
+              <!-- ── PANEL: Documento de pago ── -->
+              <div
+                id="panel-pago"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">RFC Receptor</label>
+                      <input class="form-input" placeholder="XAXX010101000" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Razón Social Receptor</label>
+                      <input
+                        class="form-input"
+                        placeholder="Nombre o empresa"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+                </div>
+                <div class="card-title" style="margin-top: 1rem">
+                  Datos del Complemento de Pago
+                </div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label"
+                      >UUID factura relacionada (PPD)</label
+                    >
+                    <input
+                      class="form-input mono"
+                      placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Fecha de pago</label>
+                      <input class="form-input" placeholder="18/05/2026" />
+                    </div>
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Monto pagado</label>
+                      <input class="form-input mono" placeholder="$ 0.00" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Forma de pago</label>
+                    <input
+                      class="form-input"
+                      placeholder="Transferencia electrónica"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Moneda</label>
+                    <input class="form-input" placeholder="Peso mexicano" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Número de operación</label>
+                    <input
+                      class="form-input mono"
+                      placeholder="Referencia bancaria"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-pago -->
+
+              <!-- ── PANEL: Nota de crédito ── -->
+              <div
+                id="panel-credito"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">RFC Receptor</label>
+                      <input class="form-input" placeholder="XAXX010101000" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Razón Social Receptor</label>
+                      <input
+                        class="form-input"
+                        placeholder="Nombre o empresa"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Uso CFDI</label>
+                    <select class="form-input report-select">
+                      <option>G03 - Gastos en general</option>
+                      <option>P01 - Por definir</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+                </div>
+                <div class="card-title" style="margin-top: 1rem">
+                  Factura que se corrige
+                </div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label">UUID factura original</label>
+                    <input
+                      class="form-input mono"
+                      placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tipo de relación</label>
+                    <select class="form-input report-select">
+                      <option>
+                        01 – Nota de crédito de los documentos relacionados
+                      </option>
+                      <option>
+                        02 – Nota de débito de los documentos relacionados
+                      </option>
+                      <option>04 – Sustitución de CFDI previos</option>
+                    </select>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
+                      <select class="form-input report-select">
+                        <option>PUE</option>
+                        <option>PPD</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Forma de pago</label>
+                      <input
+                        class="form-input"
+                        placeholder="Transferencia electrónica"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Serie</label>
+                      <input class="form-input" placeholder="NC" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Folio</label>
+                      <input class="form-input" placeholder="1" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-credito -->
+
+              <!-- ── PANEL: Factura global ── -->
+              <div
+                id="panel-global"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Período de la factura global</div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label">Periodicidad</label>
+                    <select class="form-input report-select">
+                      <option>01 – Diario</option>
+                      <option>02 – Semanal</option>
+                      <option selected>03 – Mensual</option>
+                      <option>04 – Bimestral</option>
+                    </select>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Mes</label>
+                      <select class="form-input report-select">
+                        <option>01 – Enero</option>
+                        <option>02 – Febrero</option>
+                        <option>03 – Marzo</option>
+                        <option>04 – Abril</option>
+                        <option selected>05 – Mayo</option>
+                        <option>06 – Junio</option>
+                        <option>07 – Julio</option>
+                        <option>08 – Agosto</option>
+                        <option>09 – Septiembre</option>
+                        <option>10 – Octubre</option>
+                        <option>11 – Noviembre</option>
+                        <option>12 – Diciembre</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Año</label>
+                      <select class="form-input report-select">
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option selected>2026</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">RFC Receptor</label>
+                    <input
+                      class="form-input mono"
+                      value="XAXX010101000"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Razón Social Receptor</label>
+                    <input
+                      class="form-input"
+                      value="PÚBLICO EN GENERAL"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Uso CFDI</label>
+                    <input
+                      class="form-input"
+                      value="S01 – Sin efectos fiscales"
+                      readonly
+                    />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
+                      <select class="form-input report-select">
+                        <option>PUE</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Forma de pago</label>
+                      <select class="form-input report-select">
+                        <option>17 – Efectivo</option>
+                        <option>01 – Transferencia electrónica</option>
+                        <option>99 – Por definir</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Expedido en:</label>
+                      <input class="form-input" placeholder="54260" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Fecha emisión</label>
+                      <input
+                        class="form-input"
+                        placeholder="18/05/2026 12:10 pm"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-global -->
+            </div>
+            <!-- cfdi-card-inner -->
+          </div>
+          <!-- card cfdi -->
+          <div class="card">
+            <div class="card-title">Conceptos</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No. Ident</th>
+                    <th>Descripción</th>
+                    <th>Clave producto</th>
+                    <th>Clave unidad</th>
+                    <th>Unidad</th>
+                    <th>Cantidad</th>
+                    <th>P. Unitario</th>
+                    <th>IVA</th>
+                    <th>Retenciones</th>
+                    <th>Importe</th>
+                    <th>Objeto de impuesto</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="0000"
+                        style="width: 100%; min-width: 60px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="Servicio profesional"
+                        style="width: 100%; min-width: 160px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input mono"
+                        value="1"
+                        style="width: 60px; text-align: right"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input mono"
+                        value="$ 5,000.00"
+                        style="width: 110px; text-align: right"
+                      />
+                    </td>
+
+                    <td>
+                      <select
+                        class="form-input report-select"
+                        style="min-width: 70px"
+                      >
+                        <option>16%</option>
+                        <option>8%</option>
+                        <option>0%</option>
+                        <option>Exento</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select
+                        class="form-input report-select"
+                        style="min-width: 70px"
+                      >
+                        <option>N/A</option>
+                        <option>ISR</option>
+                        <option>IVA</option>
+                        <option>ISR e IVA</option>
+                      </select>
+                    </td>
+                    <td class="mono" style="font-weight: 600">$ 5,800.00</td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="Sí objeto"
+                        style="width: 100%; min-width: 60px"
+                      />
+                    </td>
+                    <td>
+                      <button class="btn-secondary" style="padding: 4px 8px">
+                        ✕
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- overflow-x:auto -->
+            <div style="margin-top: 12px">
+              <button
+                class="btn-secondary"
+                onclick="
+                  this.closest('.card')
+                    .querySelector('tbody')
+                    .insertAdjacentHTML('beforeend', conceptoRow())
+                "
+              >
+                + Agregar concepto
+              </button>
+            </div>
+            <div
+              style="margin-top: 18px; display: flex; justify-content: flex-end"
+            >
+              <div style="min-width: 220px">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 6px 0;
+                    font-size: 13px;
+                    border-bottom: 1px solid var(--border);
+                  "
+                >
+                  <span style="color: var(--text-light)">Subtotal</span
+                  ><span class="mono">$ 5,000.00</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 6px 0;
+                    font-size: 13px;
+                    border-bottom: 1px solid var(--border);
+                  "
+                >
+                  <span style="color: var(--text-light)">IVA 16%</span
+                  ><span class="mono">$ 800.00</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px 0;
+                    font-size: 15px;
+                    font-weight: 600;
+                  "
+                >
+                  <span>Total</span
+                  ><span class="mono" style="color: var(--pink)"
+                    >$ 5,800.00</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-secondary" style="margin-left: auto">
+              Guardar borrador
+            </button>
+            <button class="btn-secondary">Vista previa PDF</button>
+            <button class="btn-primary">Timbrar CFDI</button>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: BANDEJA DE SALIDA ══ -->
+        <div class="view" id="view-facturacion-bandeja">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H6.911a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Bandeja de salida</strong>
+              CFDIs emitidos en el periodo seleccionado.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">CFDIs Emitidos</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Folio</th>
+                    <th>Receptor</th>
+                    <th>Fecha</th>
+                    <th>Importe</th>
+                    <th>Estado</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">A-0042</td>
+                    <td>Empresa Comercial SA</td>
+                    <td class="mono">2025-05-12</td>
+                    <td class="mono">$ 11,600.00</td>
+                    <td><span class="badge badge-green">Enviado</span></td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">A-0041</td>
+                    <td>Distribuidora del Norte</td>
+                    <td class="mono">2025-05-08</td>
+                    <td class="mono">$ 5,800.00</td>
+                    <td><span class="badge badge-green">Enviado</span></td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">A-0040</td>
+                    <td>Servicios Integrales MX</td>
+                    <td class="mono">2025-05-03</td>
+                    <td class="mono">$ 8,700.00</td>
+                    <td>
+                      <span class="badge badge-red">Sin enviar</span>
+                    </td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">A-0039</td>
+                    <td>Grupo Industrial SA</td>
+                    <td class="mono">2025-04-28</td>
+                    <td class="mono">$ 22,100.00</td>
+                    <td><span class="badge badge-green">Enviado</span></td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: INGRESOS ══ -->
+        <div class="view" id="view-ingresos">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Ingresos facturados</strong>
+            </div>
+          </div>
+          <div class="card">
+            <div class="report-row">
+              <span class="report-label">Año:</span>
+              <div class="date-group">
+                <select class="report-select" id="anio-reporte">
+                  <option value="">— Selecciona —</option>
+                  <option>2024</option>
+                  <option selected>2025</option>
+                  <option>2026</option>
+                </select>
+                <span class="report-label">Mes:</span>
+                <select class="report-select" id="mes-reporte">
+                  <option value="">— Todos —</option>
+                  <option>Enero</option>
+                  <option>Febrero</option>
+                  <option>Marzo</option>
+                  <option>Abril</option>
+                  <option>Mayo</option>
+                  <option>Junio</option>
+                  <option>Julio</option>
+                  <option>Agosto</option>
+                  <option>Septiembre</option>
+                  <option>Octubre</option>
+                  <option>Noviembre</option>
+                  <option>Diciembre</option>
+                </select>
+              </div>
+              <button class="btn-primary" onclick="generarReporte()">
+                Mostrar
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Ingresos Mayo 2025</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Estatus</th>
+                    <th>Método</th>
+                    <th>Cliente</th>
+                    <th>Concepto</th>
+                    <th>Fecha</th>
+                    <th>Importe</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-purple">PPD</span></td>
+                    <td>NUEVA WAL MART DE MEXICO</td>
+                    <td>Papa blanca</td>
+                    <td class="mono">2025-05-01</td>
+                    <td class="mono">$ 1,200.00</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-purple">PPD</span></td>
+                    <td>NUEVA WAL MART DE MEXICO</td>
+                    <td>Papa blanca</td>
+                    <td class="mono">2025-05-05</td>
+                    <td class="mono">$ 890.00</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>NUEVA WAL MART DE MEXICO</td>
+                    <td>Papa blanca</td>
+                    <td class="mono">2025-05-10</td>
+                    <td class="mono">$ 3,450.00</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>NUEVA WAL MART DE MEXICO</td>
+                    <td>Bistec de res</td>
+                    <td class="mono">2025-05-14</td>
+                    <td class="mono">$ 2,100.00</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-red">Cancelado</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>NUEVA WAL MART DE MEXICO</td>
+                    <td>Bistec de res</td>
+                    <td class="mono">2025-05-18</td>
+                    <td class="mono">$ 780.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: GASTOS ══ -->
+        <div class="view" id="view-gastos">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 6 9 12.75l4.286-4.286a11.948 11.948 0 0 1 4.306 6.43l.776 2.898m0 0 3.182-5.511m-3.182 5.51-5.511-3.181"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Gastos facturados</strong>
+            </div>
+          </div>
+          <div class="card">
+            <div class="report-row">
+              <span class="report-label">Año:</span>
+              <div class="date-group">
+                <select class="report-select" id="anio-reporte">
+                  <option value="">— Selecciona —</option>
+                  <option>2024</option>
+                  <option selected>2025</option>
+                  <option>2026</option>
+                </select>
+                <span class="report-label">Mes:</span>
+                <select class="report-select" id="mes-reporte">
+                  <option value="">— Todos —</option>
+                  <option>Enero</option>
+                  <option>Febrero</option>
+                  <option>Marzo</option>
+                  <option>Abril</option>
+                  <option>Mayo</option>
+                  <option>Junio</option>
+                  <option>Julio</option>
+                  <option>Agosto</option>
+                  <option>Septiembre</option>
+                  <option>Octubre</option>
+                  <option>Noviembre</option>
+                  <option>Diciembre</option>
+                </select>
+              </div>
+              <button class="btn-primary" onclick="generarReporte()">
+                Mostrar
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Gastos Mayo 2025</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Estatus</th>
+                    <th>Método</th>
+                    <th>Proveedor</th>
+                    <th>Concepto</th>
+                    <th>Fecha</th>
+                    <th>Importe</th>
+                    <th>Deducible</th>
+                    <th>Porcentaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-purple">PPD</span></td>
+                    <td>Telmex SA</td>
+                    <td>Servicio de internet</td>
+                    <td class="mono">2025-05-01</td>
+                    <td class="mono">$ 1,200.00</td>
+                    <td><span class="badge badge-green">Sí</span></td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>100%</option>
+                        <option>8.5%</option>
+                        <option>0%</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-purple">PPD</span></td>
+                    <td>CFE</td>
+                    <td>Energía eléctrica</td>
+                    <td class="mono">2025-05-05</td>
+                    <td class="mono">$ 890.00</td>
+                    <td><span class="badge badge-green">Sí</span></td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>100%</option>
+                        <option>8.5%</option>
+                        <option>0%</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>Papelería El Rey</td>
+                    <td>Materiales de oficina</td>
+                    <td class="mono">2025-05-10</td>
+                    <td class="mono">$ 3,450.00</td>
+                    <td><span class="badge badge-green">Sí</span></td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>100%</option>
+                        <option>8.5%</option>
+                        <option>0%</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-green">Vigente</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>Gasolinera Pemex</td>
+                    <td>Combustible</td>
+                    <td class="mono">2025-05-14</td>
+                    <td class="mono">$ 2,100.00</td>
+                    <td><span class="badge badge-yellow">Parcial</span></td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>100%</option>
+                        <option>8.5%</option>
+                        <option>0%</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-red">Cancelado</span></td>
+                    <td><span class="btn-tertiary-pink">PUE</span></td>
+                    <td>Restaurante Central</td>
+                    <td>Alimentos (reunión)</td>
+                    <td class="mono">2025-05-18</td>
+                    <td class="mono">$ 780.00</td>
+                    <td><span class="badge badge-red">No</span></td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>100%</option>
+                        <option>8.5%</option>
+                        <option>0%</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: DECLARACIONES (Calcular) ══ -->
+        <div class="view" id="view-declaraciones-calcular">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.626 4.5 4.737V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.737c0-1.111-.806-2.038-1.907-2.165A48.507 48.507 0 0 0 12 2.25Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Calcular Declaración</strong>Calcula el ISR e IVA a pagar
+              en el periodo seleccionado.
+            </div>
+          </div>
+          <div class="card">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Año</label>
+                <select class="form-input report-select">
+                  <option>2025</option>
+                  <option>2024</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mes</label>
+                <select class="form-input report-select">
+                  <option>Mayo</option>
+                  <option>Abril</option>
+                  <option>Marzo</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary" onclick="calcularDeclaracion()">
+                Calcular
+              </button>
+            </div>
+          </div>
+          <div class="card" id="calculo-resultado" style="display: none">
+            <div class="card-title">Resultado del Cálculo — Mayo 2025</div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-label">Ingresos del mes</div>
+                <div class="stat-value positive">$ 48,200</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Gastos deducibles</div>
+                <div class="stat-value negative">$ 8,440</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">ISR a pagar</div>
+                <div class="stat-value">$ 4,820</div>
+                <div class="stat-sub">Tasa efectiva 10%</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">IVA a cargo</div>
+                <div class="stat-value">$ 4,760</div>
+                <div class="stat-sub">IVA cobrado – acreditable</div>
+              </div>
+            </div>
+            <div class="form-actions" style="margin-top: 0">
+              <button
+                class="btn-primary"
+                onclick="
+                  navigate(
+                    'declaraciones-presentar',
+                    'Declaraciones',
+                    'Presentar',
+                  )
+                "
+              >
+                Ir a presentar declaración →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: DECLARACIONES (Presentar) ══ -->
+        <div class="view" id="view-declaraciones-presentar">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Presentar Declaración</strong>Envía tu declaración mensual
+              al SAT.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Historial de Declaraciones</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Periodo</th>
+                    <th>ISR</th>
+                    <th>IVA</th>
+                    <th>Total</th>
+                    <th>Fecha pago</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Abril 2025</td>
+                    <td class="mono">$ 6,150</td>
+                    <td class="mono">$ 5,310</td>
+                    <td class="mono" style="font-weight: 600">$ 11,460</td>
+                    <td class="mono">2025-04-17</td>
+                    <td><span class="badge badge-green">Presentada</span></td>
+                  </tr>
+                  <tr>
+                    <td>Marzo 2025</td>
+                    <td class="mono">$ 5,520</td>
+                    <td class="mono">$ 4,920</td>
+                    <td class="mono" style="font-weight: 600">$ 10,440</td>
+                    <td class="mono">2025-03-17</td>
+                    <td><span class="badge badge-green">Presentada</span></td>
+                  </tr>
+                  <tr>
+                    <td>Febrero 2025</td>
+                    <td class="mono">$ 3,850</td>
+                    <td class="mono">$ 3,620</td>
+                    <td class="mono" style="font-weight: 600">$ 7,470</td>
+                    <td class="mono">2025-02-17</td>
+                    <td><span class="badge badge-green">Presentada</span></td>
+                  </tr>
+                  <tr>
+                    <td>Mayo 2025</td>
+                    <td class="mono">$ 4,820</td>
+                    <td class="mono">$ 4,760</td>
+                    <td class="mono" style="font-weight: 600">$ 9,580</td>
+                    <td class="mono">—</td>
+                    <td><span class="badge badge-yellow">Pendiente</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="form-actions" style="margin-top: 16px">
+              <button class="btn-primary">Presentar Mayo 2025</button
+              ><button class="btn-secondary">Descargar acuse</button>
+            </div>
+          </div>
+        </div>
+
+        <!--VIEW: Datos básicos-->
+        <div class="view" id="view-datos">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Datos básicos y certificados</strong>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Mis datos</div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">RFC</label
+                ><input
+                  class="form-input mono"
+                  value="HEOL800101AB2"
+                  readonly
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Razón Social</label
+                ><input class="form-input" value="Omar Hernández Laurel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Régimen Fiscal</label
+                ><select class="form-input report-select">
+                  <option selected>
+                    625 – Régimen Simplificado de Confianza
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Código Postal</label
+                ><input class="form-input mono" value="44100" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary">Guardar cambios</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Firma electrónica</div>
+            <div class="doc-grid">
+              <div class="doc-card">
+                <div class="doc-card-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  ></svg>
+                </div>
+                <div class="doc-card-title">Archivo .cer</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-05-01</span>
+                  <span class="badge badge-green">Vigente</span>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 222px;
+                  "
+                >
+                  Actualizar .cer
+                </button>
+              </div>
+
+              <div class="doc-card">
+                <div
+                  class="doc-card-icon"
+                  style="
+                    background: color-mix(in srgb, var(--secondary) 12%, white);
+                    color: var(--secondary);
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  ></svg>
+                </div>
+                <div class="doc-card-title">Archivo .key</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-05-01</span>
+                  <span class="badge badge-green">Vigente</span>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 220px;
+                  "
+                >
+                  Actualizar .key
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contraseña</label
+                ><input class="form-input mono" value="**********" />
+              </div>
+              <div class="form-actions">
+                <button
+                  class="btn-primary"
+                  style="height: 70%; margin-top: auto"
+                >
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Sellos digitales</div>
+            <div class="doc-grid">
+              <div class="doc-card">
+                <div class="doc-card-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  ></svg>
+                </div>
+                <div class="doc-card-title">Archivo .cer</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-05-01</span>
+                  <span class="badge badge-green">Vigente</span>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 222px;
+                  "
+                >
+                  Actualizar .cer
+                </button>
+              </div>
+
+              <div class="doc-card">
+                <div
+                  class="doc-card-icon"
+                  style="
+                    background: color-mix(in srgb, var(--secondary) 12%, white);
+                    color: var(--secondary);
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  ></svg>
+                </div>
+                <div class="doc-card-title">Archivo .key</div>
+                <div class="doc-card-meta">
+                  <span class="doc-card-date">Actualizada: 2025-05-01</span>
+                  <span class="badge badge-green">Vigente</span>
+                </div>
+                <button
+                  class="btn-primary"
+                  style="
+                    font-size: 12px;
+                    padding: 6px 14px;
+                    margin-top: 4px;
+                    max-width: 220px;
+                  "
+                >
+                  Actualizar .key
+                </button>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contraseña</label
+                ><input class="form-input mono" value="**********" />
+              </div>
+              <div class="form-actions">
+                <button
+                  class="btn-primary"
+                  style="height: 70%; margin-top: auto"
+                >
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: BUZÓN SAT y cancelaciones ══ -->
+        <div class="view" id="view-buzon">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Buzón SAT</strong>Mensajes y notificaciones del SAT.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Mensajes SAT</div>
+            <div class="tabs">
+              <button
+                class="tab-btn active"
+                onclick="switchTab(this, 'tab-no-leidos')"
+              >
+                No leídos
+                <span class="badge badge-red" style="margin-left: 6px">2</span>
+              </button>
+              <button class="tab-btn" onclick="switchTab(this, 'tab-leidos')">
+                Leídos
+              </button>
+            </div>
+            <div class="tab-panel active" id="tab-no-leidos">
+              <div class="alert-item">
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot yellow"></div>
+                </div>
+                <div>
+                  <div class="alert-title">Aviso de actualización de datos</div>
+                  <div class="alert-desc">
+                    Se requiere actualizar la información de domicilio fiscal.
+                  </div>
+                  <div class="alert-date">2025-05-10</div>
+                </div>
+              </div>
+              <div class="alert-item">
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot yellow"></div>
+                </div>
+                <div>
+                  <div class="alert-title">Recordatorio de declaración</div>
+                  <div class="alert-desc">
+                    La fecha límite para presentar la declaración de Mayo 2025
+                    es el 17 de junio.
+                  </div>
+                  <div class="alert-date">2025-05-08</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-leidos"></div>
+          </div>
+          <div class="form-actions">
+            <button
+              class="btn-primary"
+              style="margin-left: auto; margin-bottom: 10px"
+            >
+              Actualizar buzón
+            </button>
+          </div>
+
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Cancelaciones SAT</strong>Solicita y da seguimiento a
+              cancelaciones de facturas ante el SAT.
+            </div>
+          </div>
+          <div class="card">
+            <div
+              class="cfdi-tipos"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 2rem;
+              "
+            >
+              <div class="card-title">Estado de la factura</div>
+              <div
+                class="form-actions cfdi-tipos-btns"
+                style="flex-direction: row; gap: 1.5rem"
+              >
+                <button
+                  class="btn-secondary active-estado"
+                  id="estado-btn-espera"
+                  onclick="switchEstado('espera')"
+                >
+                  En espera
+                </button>
+                <button
+                  class="btn-secondary"
+                  id="estado-btn-autorizar"
+                  onclick="switchEstado('autorizar')"
+                >
+                  Por autorizar
+                </button>
+                <button
+                  class="btn-secondary"
+                  id="estado-btn-vigente"
+                  onclick="switchEstado('vigente')"
+                >
+                  Vigente
+                </button>
+                <button
+                  class="btn-secondary"
+                  id="estado-btn-noenc"
+                  onclick="switchEstado('noenc')"
+                >
+                  No encontrado
+                </button>
+              </div>
+            </div>
+            <!-- ── PANEL: En espera (default) ── -->
+            <div id="panel-estado-espera" class="cancel-panel">
+              <div
+                class="alert-item"
+                style="
+                  background: #fffbea;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot yellow"></div>
+                </div>
+                <div>
+                  <div class="alert-title">Factura en espera de respuesta</div>
+                  <div class="alert-desc">
+                    El receptor aún no ha aceptado ni rechazado la solicitud de
+                    cancelación. Puedes reenviar la solicitud o esperar el plazo
+                    de 3 días hábiles para cancelación automática.
+                  </div>
+                </div>
+              </div>
+              <div class="card-title">Solicitar Cancelación</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">UUID de la factura</label>
+                  <input
+                    class="form-input mono"
+                    placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Motivo</label>
+                  <select class="form-input report-select">
+                    <option>
+                      01 – Comprobante emitido con errores con relación
+                    </option>
+                    <option>
+                      02 – Comprobante emitido con errores sin relación
+                    </option>
+                    <option>03 – No se llevó a cabo la operación</option>
+                    <option>
+                      04 – Operación nominativa relacionada en factura global
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn-secondary">Reenviar solicitud</button>
+                <button class="btn-primary">
+                  Confirmar cancelación automática
+                </button>
+              </div>
+            </div>
+            <!-- /panel-estado-espera -->
+
+            <!-- ── PANEL: Por autorizar ── -->
+            <div id="panel-estado-autorizar" class="cancel-panel hidden">
+              <div
+                class="alert-item"
+                style="
+                  background: #eaf4ff;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot" style="background: #3498db"></div>
+                </div>
+                <div>
+                  <div class="alert-title">
+                    Cancelación pendiente de autorización del receptor
+                  </div>
+                  <div class="alert-desc">
+                    El receptor debe aprobar esta cancelación desde su propio
+                    sistema o portal del SAT. Una vez aceptada, el CFDI quedará
+                    cancelado oficialmente.
+                  </div>
+                </div>
+              </div>
+              <div class="card-title">Detalle de la solicitud</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">UUID de la factura</label>
+                  <input
+                    class="form-input mono"
+                    placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Motivo de cancelación</label>
+                  <select class="form-input report-select">
+                    <option>
+                      01 – Comprobante emitido con errores con relación
+                    </option>
+                    <option>
+                      02 – Comprobante emitido con errores sin relación
+                    </option>
+                    <option>03 – No se llevó a cabo la operación</option>
+                    <option>
+                      04 – Operación nominativa relacionada en factura global
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Fecha de solicitud</label>
+                  <input class="form-input" placeholder="18/05/2026" />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn-secondary">Cancelar solicitud</button>
+                <button class="btn-primary">Verificar estado ante SAT</button>
+              </div>
+            </div>
+            <!-- /panel-estado-autorizar -->
+
+            <!-- ── PANEL: Vigente ── -->
+            <div id="panel-estado-vigente" class="cancel-panel hidden">
+              <div
+                class="alert-item"
+                style="
+                  background: #eafaf1;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot green"></div>
+                </div>
+                <div>
+                  <div class="alert-title">
+                    Factura vigente — puedes solicitar su cancelación
+                  </div>
+                  <div class="alert-desc">
+                    Este CFDI está timbrado y vigente ante el SAT. Completa el
+                    formulario para iniciar el proceso de cancelación. El
+                    receptor recibirá una notificación.
+                  </div>
+                </div>
+              </div>
+              <div class="card-title">Solicitar Cancelación</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">UUID de la factura</label>
+                  <input
+                    class="form-input mono"
+                    placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Motivo</label>
+                  <select class="form-input report-select">
+                    <option>
+                      01 – Comprobante emitido con errores con relación
+                    </option>
+                    <option>
+                      02 – Comprobante emitido con errores sin relación
+                    </option>
+                    <option>03 – No se llevó a cabo la operación</option>
+                    <option>
+                      04 – Operación nominativa relacionada en factura global
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">UUID sustituto (si aplica)</label>
+                  <input
+                    class="form-input mono"
+                    placeholder="Solo para motivo 01"
+                  />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn-primary">
+                  Enviar solicitud de cancelación
+                </button>
+              </div>
+            </div>
+            <!-- /panel-estado-vigente -->
+
+            <!-- ── PANEL: No encontrado ── -->
+            <div id="panel-estado-noenc" class="cancel-panel hidden">
+              <div
+                class="alert-item"
+                style="
+                  background: #fdf0f0;
+                  border-radius: 8px;
+                  padding: 12px 16px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <div class="alert-dot-wrap">
+                  <div class="alert-dot" style="background: #c0392b"></div>
+                </div>
+                <div>
+                  <div class="alert-title">UUID no encontrado en el SAT</div>
+                  <div class="alert-desc">
+                    El comprobante no fue localizado en los registros del SAT.
+                    Verifica que el UUID sea correcto o que el CFDI haya sido
+                    timbrado correctamente por el PAC.
+                  </div>
+                </div>
+              </div>
+              <div class="card-title">Verificar UUID</div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">UUID a verificar</label>
+                  <input
+                    class="form-input mono"
+                    placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">RFC Emisor</label>
+                  <input class="form-input mono" placeholder="HEOL800101AB2" />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn-secondary">
+                  Consultar en bandeja de salida
+                </button>
+                <button class="btn-primary">Reverificar ante SAT</button>
+              </div>
+            </div>
+            <!-- /panel-estado-noenc -->
+          </div>
+          <!-- /card cancelaciones -->
+          <div class="card">
+            <div class="card-title">Solicitudes Recientes</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>UUID</th>
+                    <th>Motivo</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
+                    <td>02 – Errores sin relación</td>
+                    <td class="mono">2025-05-10</td>
+                    <td><span class="badge badge-green">Cancelado</span></td>
+                  </tr>
+                  <tr>
+                    <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
+                    <td>03 – No se llevó a cabo</td>
+                    <td class="mono">2025-05-02</td>
+                    <td><span class="badge badge-yellow">En proceso</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: CONFIG CFDI ══ -->
+        <div class="view" id="view-facturacion-config">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Configuración de Factura</strong>Administra series, folios
+              y datos del emisor.
+            </div>
+          </div>
+
+          <div class="two-col-cards">
+            <div class="card" style="width: 100%">
+              <div class="card-title">Logo para el pdf</div>
+              <div>
+                <span class="welcome-strip-text">
+                  200px x 200px. Imagen 1:1. Tamaño máximo de archivo 2MB.
+                </span>
+              </div>
+              <div class="form-actions" style="margin-top: auto">
+                <div class="form-actions">
+                  <button class="btn-secondary">+ Agregar png</button>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-primary">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 100%">
+              <div class="card-title">Datos adicionales para el pdf</div>
+              <input class="form-input" value="" />
+              <div class="form-actions" style="margin-top: auto">
+                <div class="form-actions"></div>
+                <div class="form-actions">
+                  <button class="btn-primary">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ VIEW: CLIENTES Y PRODUCTOS ══ -->
+        <div class="view" id="view-facturacion-clientes-prod">
+          <div class="welcome-strip">
+            <div class="welcome-strip-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                width="100%"
+                height="100%"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                />
+              </svg>
+            </div>
+            <div class="welcome-strip-text">
+              <strong>Clientes y productos</strong>Administra la información de
+              tus clientes y agrega productos y servicios para agilizar tu
+              facturación.
+            </div>
+          </div>
+          <div class="two-col-cards">
+            <div class="card" style="width: 100%">
+              <div class="card-title">Clientes</div>
+              <div style="overflow-x: auto">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>RFC</th>
+                      <th>Razón social</th>
+                      <th>Régimen</th>
+                      <th>C.P.</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="mono">NWM9709244W4</td>
+                      <td class="mono">NUEVA WAL MART DE MEXICO</td>
+                      <td>626</td>
+                      <td>02770</td>
+                      <td>
+                        <button
+                          class="btn-secondary"
+                          style="padding: 3px 10px; font-size: 11px"
+                        >
+                          Editar
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mono">BBA830831LJ2</td>
+                      <td class="mono">GRUPO FINANCIERO BBVA MEXICO</td>
+                      <td>626</td>
+                      <td>06600</td>
+                      <td>
+                        <button
+                          class="btn-secondary"
+                          style="padding: 3px 10px; font-size: 11px"
+                        >
+                          Editar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="form-actions" style="margin-top: auto">
+                <div class="form-actions">
+                  <button class="btn-secondary">+ Agregar cliente</button>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-primary">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 100%">
+              <div class="card-title">Productos y servicios</div>
+              <div style="overflow-x: auto">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>No. Ident</th>
+                      <th>Clave</th>
+                      <th>Unidad</th>
+                      <th>Descripción</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="mono">0001</td>
+                      <td class="mono">194387629</td>
+                      <td>
+                        <select class="form-input report-select">
+                          <option>Kg</option>
+                          <option>N/A</option>
+                          <option>Lt</option>
+                        </select>
+                      </td>
+
+                      <td>Papa blanca</td>
+                      <td>
+                        <button
+                          class="btn-secondary"
+                          style="padding: 3px 10px; font-size: 11px"
+                        >
+                          Editar
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="mono">0002</td>
+                      <td class="mono">59731684</td>
+                      <td>
+                        <select class="form-input report-select">
+                          <option>Kg</option>
+                          <option>N/A</option>
+                          <option>Lt</option>
+                        </select>
+                      </td>
+                      <td>Bistec de res</td>
+                      <td>
+                        <button
+                          class="btn-secondary"
+                          style="padding: 3px 10px; font-size: 11px"
+                        >
+                          Editar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="form-actions" style="margin-top: auto">
+                <div class="form-actions">
+                  <button class="btn-secondary">+ Agregar producto</button>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-primary">Guardar cambios</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="chatbot">
+      <button class="chatbot-btn" onclick="navigate('first-msg')">
+        <img class="chatbot-img" alt="chatbot-img" src="chatbot.png" />
+      </button>
+    </div>
+
+    <div class="view" id="view-first-msg">
+      <div class="black-bg" id="onboarding-bg">
+        <!-- ── PASO 1: Subir e.firma ── -->
+        <div class="first-msg-card onboarding-step" id="ob-step-1">
+          <!-- Botón cerrar -->
+          <button
+            class="ob-close-btn"
+            onclick="cerrarOnboarding()"
+            title="Cerrar"
+          >
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M1 1l12 12M13 1L1 13" />
+            </svg>
+          </button>
+
+          <!-- Header -->
+          <div class="icon-n-welcome">
+            <img
+              class="chatbot-img"
+              alt="chatbot-img"
+              src="chatbot.png"
+              style="height: 50px; width: 50px"
+            />
+            <span class="ob-final-titulo">¡Hola, Omar!</span>
+          </div>
+
+          <div>
+            Para poder ayudarte, necesito conectar tu información del SAT con tu
+            sistema RESICO usando tu e.firma.
+          </div>
+          <div>Con tu e.firma, podré:</div>
+
+          <div class="subcont-first-msg">
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Detectar tus facturas automáticamente.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Consultar tu opinión de cumplimiento.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Identificar presentaciones de impuestos pendientes.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Declarar automáticamente tus impuestos.</span>
+            </div>
+          </div>
+
+          <!-- Botón principal para desplegar el uploader -->
+          <button
+            class="btn-upload-files check-n-desc"
+            id="btn-upload-files"
+            onclick="mostrarUploader()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              class="ico"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+              />
+            </svg>
+            <span>Subir e.firma</span>
+          </button>
+
+          <!-- Subsección uploader (oculta por defecto) -->
+          <div class="ob-uploader ob-hidden" id="ob-uploader">
+            <!-- Archivo .cer -->
+            <div class="ob-file-row">
+              <button class="ob-file-btn" id="btn-cer">
+                <span id="lbl-cer">Seleccionar archivo .cer</span>
+              </button>
+            </div>
+            <!-- Archivo .key -->
+            <div class="ob-file-row">
+              <button class="ob-file-btn" id="btn-key">
+                <span id="lbl-key">Seleccionar archivo .key</span>
+              </button>
+            </div>
+            <!-- Contraseña -->
+            <div class="ob-pass-row">
+              <label class="ob-pass-label">Contraseña de e.firma</label>
+              <input
+                type="password"
+                class="form-input ob-pass-input"
+                id="ob-password"
+                placeholder="******"
+                autocomplete="off"
+              />
+            </div>
+            <!-- Botón validar -->
+            <button
+              class="btn-primary ob-validar-btn"
+              id="ob-validar-btn"
+              onclick="validarEfirma()"
+            >
+              Validar y continuar
+            </button>
+            <!-- Barra de progreso -->
+            <div class="ob-progress-wrap ob-hidden" id="ob-progress-wrap">
+              <div class="ob-progress-bar" id="ob-progress-bar"></div>
+            </div>
+            <!-- Resultado validación -->
+            <div class="ob-validacion-ok ob-hidden" id="ob-validacion-ok">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+                style="width: 20px; height: 20px; flex-shrink: 0"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span style="color: #666666">Validación exitosa</span>
+              <button class="btn-primary ob-continuar-btn" onclick="irAPaso(2)">
+                Continuar
+              </button>
+            </div>
+          </div>
+
+          <div class="data-protected">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="#54C64D"
+              class="ico"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+              />
+            </svg>
+            <span>Tus datos están protegidos</span>
+          </div>
+        </div>
+
+        <!-- ── PASO 2: Meses pendientes ── -->
+        <div class="first-msg-card onboarding-step ob-hidden" id="ob-step-2">
+          <button
+            class="ob-close-btn"
+            onclick="cerrarOnboarding()"
+            title="Cerrar"
+          >
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M1 1l12 12M13 1L1 13" />
+            </svg>
+          </button>
+
+          <div class="icon-n-welcome">
+            <img
+              class="chatbot-img"
+              alt="chatbot-img"
+              src="chatbot.png"
+              style="height: 50px; width: 50px"
+            />
+            <span>Meses pendientes</span>
+          </div>
+
+          <div style="font-size: 14px; line-height: 1.5">
+            Encontré algunos meses pendientes por presentar.
+          </div>
+          <div
+            style="font-size: 13px; color: var(--text-light); line-height: 1.5"
+          >
+            ¿Desde qué periodo deseas comenzar?
+          </div>
+
+          <div class="ob-meses-lista" id="ob-meses-lista">
+            <button class="ob-mes-item" onclick="seleccionarMes(this)">
+              <span>Enero 2025</span>
+              <svg
+                class="ob-mes-check"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </button>
+            <button class="ob-mes-item" onclick="seleccionarMes(this)">
+              <span>Febrero 2025</span>
+              <svg
+                class="ob-mes-check"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </button>
+            <button class="ob-mes-item" onclick="seleccionarMes(this)">
+              <span>Marzo 2025</span>
+              <svg
+                class="ob-mes-check"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </button>
+            <button class="ob-mes-item" onclick="seleccionarMes(this)">
+              <span>Abril 2025</span>
+              <svg
+                class="ob-mes-check"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <button
+            class="btn-primary ob-continuar-btn"
+            id="ob-paso2-continuar"
+            onclick="irAPaso('pago')"
+            disabled
+          >
+            Continuar
+          </button>
+        </div>
+
+        <!-- ── PASO 2.5: Confirmación de pago ── -->
+        <div class="first-msg-card onboarding-step ob-hidden" id="ob-step-pago">
+          <button
+            class="ob-close-btn"
+            onclick="cerrarOnboarding()"
+            title="Cerrar"
+          >
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M1 1l12 12M13 1L1 13" />
+            </svg>
+          </button>
+
+          <div class="icon-n-welcome">
+            <span>Resumen</span>
+          </div>
+
+          <div class="ob-pago-resumen">
+            <div class="ob-pago-row">
+              <span class="ob-pago-label">Meses seleccionados</span>
+              <span class="ob-pago-valor" id="ob-pago-cantidad">—</span>
+            </div>
+            <div class="ob-pago-divider"></div>
+            <div id="ob-pago-lista-meses" class="ob-pago-lista"></div>
+            <div class="ob-pago-divider"></div>
+            <div class="ob-pago-row ob-pago-total">
+              <span class="ob-pago-label">Total a pagar</span>
+              <span class="ob-pago-valor" id="ob-pago-total">—</span>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-top: 4px;
+            "
+          >
+            <div style="margin-left: auto">
+              <button
+                class="btn-secondary ob-continuar-btn"
+                onclick="irAPaso(2)"
+                style="justify-content: center"
+              >
+                Regresar
+              </button>
+              <button
+                class="btn-primary ob-continuar-btn"
+                onclick="irAPaso('proc')"
+              >
+                Continuar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PASO 2.8: Procesamiento de facturas ── -->
+        <div class="first-msg-card onboarding-step ob-hidden" id="ob-step-proc">
+          <div class="icon-n-welcome">
+            <img
+              class="chatbot-img"
+              alt="chatbot-img"
+              src="chatbot.png"
+              style="height: 44px; width: 44px"
+            />
+            <span>Actualizando información</span>
+          </div>
+
+          <!-- Contador de progreso -->
+          <div class="ob-proc-counter" id="ob-proc-counter">Preparando…</div>
+
+          <!-- Barra de progreso global reutilizada -->
+          <div class="ob-progress-wrap">
+            <div
+              class="ob-progress-bar"
+              id="ob-proc-bar"
+              style="transition: width 0.6s ease"
+            ></div>
+          </div>
+
+          <!-- Mes actual -->
+          <div class="ob-proc-mes-wrap">
+            <div class="fct-spinner"></div>
+            <div class="ob-proc-mes" id="ob-proc-mes">—</div>
+          </div>
+
+          <!-- Mensaje dinámico -->
+          <div class="ob-proc-msg" id="ob-proc-msg">Iniciando…</div>
+
+          <!-- Lista de meses: pendientes / completados -->
+          <div class="ob-proc-lista" id="ob-proc-lista"></div>
+        </div>
+
+        <!-- ── PASO 3: Todo listo ── -->
+        <div
+          class="first-msg-card onboarding-step ob-hidden ob-step3"
+          id="ob-step-3"
+        >
+          <button
+            class="ob-close-btn"
+            onclick="cerrarOnboarding()"
+            title="Cerrar"
+          >
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M1 1l12 12M13 1L1 13" />
+            </svg>
+          </button>
+
+          <div class="ob-final-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </div>
+
+          <div class="ob-final-titulo">¡Todo listo!</div>
+          <div class="ob-final-sub">
+            Bienvenido a tu sistema
+            <strong>RESICO | Miskuentas</strong>.<br />Tu sistema ya está
+            conectado y listo para trabajar.
+          </div>
+
+          <button
+            class="btn-primary ob-continuar-btn"
+            onclick="cerrarOnboarding(true)"
+          >
+            Ir al sistema
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ══ MODAL: Actualizar Facturas ══ -->
+    <div
+      class="black-bg fct-overlay ob-hidden"
+      id="fct-overlay"
+      onclick="cerrarModalFacturas()"
+    ></div>
+    <div
+      class="first-msg-card fct-modal ob-hidden"
+      id="fct-modal"
+      style="max-width: 560px; min-width: 320px"
+    >
+      <button
+        class="ob-close-btn"
+        onclick="cerrarModalFacturas()"
+        title="Cerrar"
+      >
+        <svg
+          viewBox="0 0 14 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M1 1l12 12M13 1L1 13" />
+        </svg>
+      </button>
+
+      <div class="icon-n-welcome">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1"
+          stroke="currentColor"
+          style="
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            color: var(--primary);
+          "
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9.75v6.75m0 0-3-3m3 3 3-3m-8.25 6a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z"
+          />
+        </svg>
+        <span style="font-size: 18px">Actualizar Facturas</span>
+      </div>
+
+      <div style="font-size: 13px; color: var(--text-light); line-height: 1.5">
+        Selecciona los meses que deseas sincronizar. Puedes elegir varios meses
+        de uno o más años.
+      </div>
+
+      <!-- Rejilla años × meses -->
+      <div class="fct-grid-wrap">
+        <table class="fct-grid">
+          <thead>
+            <tr>
+              <th class="fct-year-col"></th>
+              <th>Ene</th>
+              <th>Feb</th>
+              <th>Mar</th>
+              <th>Abr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Ago</th>
+              <th>Sep</th>
+              <th>Oct</th>
+              <th>Nov</th>
+              <th>Dic</th>
+            </tr>
+          </thead>
+          <tbody id="fct-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Estado de carga -->
+      <div class="fct-loading ob-hidden" id="fct-loading">
+        <div class="fct-spinner"></div>
+        <span id="fct-loading-txt">Sincronizando facturas…</span>
+      </div>
+
+      <button
+        class="btn-primary"
+        id="fct-actualizar-btn"
+        onclick="actualizarFacturas()"
+        style="margin-top: 4px"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          width="16"
+          height="16"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+          />
+        </svg>
+        Actualizar ahora
+      </button>
+    </div>
+    <!-- /modal facturas -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
