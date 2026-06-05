@@ -19,6 +19,69 @@
     <meta name="apple-mobile-web-app-title" content="miskuentas" />
   </head>
   <body>
+    <!-- ══ LOGIN OVERLAY ══ -->
+    <div class="login-overlay" id="loginOverlay">
+      <div class="login-card" id="loginCard">
+        <!-- Logo -->
+        <div class="login-logo-wrap">
+          <img
+            class="login-logo-img"
+            src="RESICOmiskuentas.png"
+            alt="RESICO miskuentas"
+          />
+        </div>
+
+        <p class="login-subtitle">
+          Bienvenido. Ingresa tus credenciales para continuar.
+        </p>
+
+        <!-- Campo usuario -->
+        <div class="login-field">
+          <label class="login-label" for="loginUser">Usuario</label>
+          <div class="login-input-wrap">
+            <svg class="login-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-5.33 0-8 2.67-8 4v1h16v-1c0-1.33-2.67-4-8-4z"
+              />
+            </svg>
+            <input
+              class="login-input"
+              type="text"
+              id="loginUser"
+              placeholder="tucorreo@ejemplo.com"
+              autocomplete="username"
+            />
+          </div>
+        </div>
+
+        <!-- Campo contraseña -->
+        <div class="login-field">
+          <label class="login-label" for="loginPass">Contraseña</label>
+          <div class="login-input-wrap">
+            <svg class="login-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18 8h-1V6A5 5 0 0 0 7 6v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3.1-9H8.9V6a3.1 3.1 0 0 1 6.2 0v2z"
+              />
+            </svg>
+            <input
+              class="login-input"
+              type="password"
+              id="loginPass"
+              placeholder="••••••••"
+              autocomplete="current-password"
+            />
+          </div>
+        </div>
+
+        <!-- Botón -->
+        <button class="login-btn" id="loginBtn" onclick="doLogin()">
+          <span class="login-btn-text">Continuar</span>
+          <span class="login-btn-spinner"></span>
+        </button>
+      </div>
+    </div>
+    <!-- /LOGIN OVERLAY -->
+
     <!-- TOP BAR -->
     <header class="topbar">
       <div class="topbar-container">
