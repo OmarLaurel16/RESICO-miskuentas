@@ -1328,7 +1328,7 @@ body {
 
 .two-col-cards {
   display: flex;
-  gap: 0rem;
+  gap: 1rem;
 }
 
 /* Emitir CFDI: layout interno de la tarjeta */
