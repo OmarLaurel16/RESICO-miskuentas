@@ -1017,7 +1017,7 @@ body {
 @media (max-width: 1160px) {
   .two-col-cards {
     flex-direction: column;
-    gap: 0rem;
+    gap: 0rem !important;
   }
 }
 
