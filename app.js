@@ -1,3 +1,29 @@
+// ── LOGIN OVERLAY ──
+function doLogin() {
+  const btn = document.getElementById("loginBtn");
+  btn.classList.add("loading");
+
+  setTimeout(() => {
+    const overlay = document.getElementById("loginOverlay");
+    overlay.classList.add("hide");
+
+    // Eliminar del DOM después de la animación para que no bloquee nada
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 450);
+  }, 900);
+}
+
+// Permitir Enter para hacer login
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("keydown", (e) => {
+    const overlay = document.getElementById("loginOverlay");
+    if (e.key === "Enter" && overlay && !overlay.classList.contains("hide")) {
+      doLogin();
+    }
+  });
+});
+
 // ── ESTADO DE CANCELACIÓN ──
 function switchEstado(estado) {
   document.querySelectorAll(".cancel-panel").forEach(function (p) {
