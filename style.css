@@ -2135,7 +2135,7 @@ body {
   transform: translateY(0);
 }
 
-/* Spinner dentro del botón */
+/* Spiner dentro del botón */
 .login-btn-spinner {
   display: none;
   width: 18px;
