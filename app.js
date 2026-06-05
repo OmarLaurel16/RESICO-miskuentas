@@ -416,7 +416,7 @@ function cerrarOnboarding(completado) {
 // ══════════════════════════════════════════════
 
 const _FCT = {
-  ANOS: [2024, 2025, 2026],
+  ANOS: [2026],
   MESES: [
     "Ene",
     "Feb",
