@@ -2000,7 +2000,7 @@ body {
 .login-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   background: linear-gradient(135deg, #eef3f8 0%, #f0eaf8 100%);
   display: flex;
   align-items: center;
