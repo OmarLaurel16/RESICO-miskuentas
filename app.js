@@ -719,14 +719,15 @@ function _obIniciarProc() {
 // ══════════════════════════════════════════════
 function taxSetEstado(estado, mesesPendientes) {
   var elPending = document.getElementById("tax-state-pending");
-  var elOk      = document.getElementById("tax-state-ok");
+  var elOk = document.getElementById("tax-state-ok");
   if (!elPending || !elOk) return;
 
   if (estado === "pendiente") {
     var n = mesesPendientes || 1;
-    var txt = n === 1
-      ? "Se detectó 1 mes pendiente por presentar"
-      : "Se detectaron " + n + " meses pendientes por presentar";
+    var txt =
+      n === 1
+        ? "Se detectó 1 mes pendiente por presentar"
+        : "Se detectaron " + n + " meses pendientes por presentar";
     var sub = document.getElementById("tax-pending-meses");
     if (sub) sub.textContent = txt;
     elPending.style.display = "";
