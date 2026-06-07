@@ -339,6 +339,7 @@ body {
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   z-index: 1;
 }
@@ -2168,5 +2169,150 @@ body {
 @keyframes loginSpin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   SIDEBAR LATERAL — viewport >= 1160px
+   Solo sobreescribe lo necesario para convertir
+   el bottom nav en un sidebar lateral izquierdo
+══════════════════════════════════════════════ */
+@media (min-width: 1160px) {
+  /* ── Layout raíz: fila en lugar de columna ── */
+  .layout {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 60px; /* misma altura del topbar */
+  }
+
+  /* ── Sidebar: lateral izquierdo fijo ── */
+  .sidebar {
+    flex-direction: column;
+    position: fixed;
+    top: 60px; /* debajo del topbar */
+    left: 0;
+    bottom: 0;
+    right: auto;
+    width: 200px;
+    height: auto; /* ocupa toda la altura restante */
+    overflow-y: auto;
+    overflow-x: visible;
+    justify-content: flex-start;
+    z-index: 999;
+    background: var(--sidebar-bg);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.07);
+  }
+
+  /* ── Nav interno: columna, sin borde inferior flotante ── */
+  .sidebar-nav {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 8px 0;
+    background: var(--sidebar-bg);
+  }
+
+  /* ── Sección de nav: ancho completo, sin centrado ── */
+  .nav-section {
+    width: 100%;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-section:last-child {
+    border-bottom: none;
+  }
+
+  /* ── Botón de módulo: fila horizontal, ancho completo ── */
+  .nav-module-btn {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 11px 16px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  /* Indicador activo: borde izquierdo en lugar de borde superior */
+  .nav-module-btn.active {
+    border-top: none;
+    border-left: 3px solid var(--primary);
+    padding-left: 13px; /* compensa el borde para no desplazar el texto */
+  }
+
+  .nav-module-btn.open {
+    border-top: none;
+    border-left: 3px solid var(--primary);
+    padding-left: 13px;
+  }
+
+  /* ── Label siempre visible en desktop ── */
+  .nav-module-btn .label {
+    display: block;
+  }
+
+  /* ── Chevron: apunta a la derecha por defecto, abajo al abrir ── */
+  .nav-module-btn .chevron {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .nav-module-btn.open .chevron {
+    transform: rotate(0deg); /* resetea la rotación del bottom-nav */
+  }
+  /* En sidebar lateral el chevron abierto apunta abajo */
+  .nav-module-btn.open .chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ── Submenú: desplegable hacia abajo (no dropup) ── */
+  .nav-sub {
+    position: static; /* sale del flujo absoluto */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: color-mix(in srgb, var(--primary) 5%, white);
+    min-width: 0;
+    width: 100%;
+  }
+
+  .nav-sub.open {
+    animation: slideDownSidebar 0.16s ease;
+  }
+
+  @keyframes slideDownSidebar {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-sub a {
+    padding: 8px 16px 8px 42px; /* indent para alinear con el label */
+    font-size: 12.5px;
+  }
+
+  /* ── Main: desplazado a la derecha del sidebar ── */
+  .main {
+    margin-left: 200px;
+    margin-bottom: 0;
+    width: calc(100vw - 200px);
+    min-height: calc(100vh - 60px);
+    padding: 28px 32px;
+  }
+
+  /* ── Topbar: el logo ya existe, el contenedor se ajusta ── */
+  .topbar-container {
+    min-width: unset;
+    width: 100%;
+    padding: 0 24px;
   }
 }
