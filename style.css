@@ -136,7 +136,7 @@ body {
   flex: 1;
 }
 
-/* SUB-BAR (Acciones fijas)*/
+/* SUB-BAR*/
 .sub-bar {
   position: fixed;
   padding: 2px 24px;
