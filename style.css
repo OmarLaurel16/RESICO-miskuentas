@@ -45,14 +45,7 @@ body {
   flex-shrink: 0;
   display: block;
 }
-.icon-up {
-  width: 30px;
-  color: var(--green);
-}
-.icon-down {
-  width: 30px;
-  color: red;
-}
+
 .tax-status-container {
   display: flex;
   flex-direction: column;
@@ -70,7 +63,7 @@ body {
 }
 
 .tax-status-icon {
-  width: 90px;
+  width: 60px;
   color: var(--green);
 }
 .tax-status-tag {
@@ -88,8 +81,7 @@ body {
 
 /*SAT invoices stats*/
 .cloud-icon {
-  width: 90px;
-  height: 90px;
+  width: 60px;
   color: var(--primary);
 }
 .inv-cont {
@@ -142,6 +134,20 @@ body {
 }
 .topbar-spacer {
   flex: 1;
+}
+
+/* SUB-BAR (Acciones fijas)*/
+.sub-bar {
+  position: fixed;
+  padding: 2px 24px;
+  top: 60px;
+  right: 32px;
+  left: 32px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  z-index: 998;
 }
 
 /* ── LAYOUT ── */
@@ -835,8 +841,8 @@ body {
   text-transform: uppercase;
 }
 .badge-green {
-  background: var(--green);
-  color: var(--text-white);
+  border: 2px solid var(--green);
+  color: var(--green);
 }
 .badge-red {
   background: #fde8e8;
@@ -1227,7 +1233,7 @@ body {
 
   /* --- Tax status container --- */
   .tax-status-icon {
-    width: 3.5rem;
+    width: 2.5rem;
   }
   .tax-status-tag {
     font-size: 0.875rem;
@@ -1239,8 +1245,7 @@ body {
   /* --- Invoice status container --- */
 
   .cloud-icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.5rem;
   }
   .inv-status-tag {
     font-size: 0.875rem;
@@ -1986,11 +1991,6 @@ body {
 }
 .tax-warn-tag {
   color: color-mix(in srgb, red 60%, white 40%) !important;
-}
-.tax-warn-sub {
-  margin-top: 4px;
-  color: var(--text-light) !important;
-  font-style: italic;
 }
 
 /* ══════════════════════════════════════
