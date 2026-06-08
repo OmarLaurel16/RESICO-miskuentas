@@ -1115,8 +1115,8 @@ body {
     z-index: 9999;
   }
   .nav-sub a {
-    font-size: 0.75rem;
-    padding: 0.6rem 0.75rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
     white-space: nowrap;
   }
 
