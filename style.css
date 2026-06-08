@@ -412,8 +412,8 @@ body {
   flex: 1;
 }
 .nav-module-btn .chevron {
-  width: 10px;
-  height: 11px;
+  width: 0px;
+  height: 0px;
   flex-shrink: 0;
   color: var(--text-main);
   transition: transform var(--transition);
@@ -2266,6 +2266,8 @@ body {
 
   /* ── Chevron: apunta a la derecha por defecto, abajo al abrir ── */
   .nav-module-btn .chevron {
+    width: 10px;
+    height: 11px;
     margin-left: auto;
     flex-shrink: 0;
   }
