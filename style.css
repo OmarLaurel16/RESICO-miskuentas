@@ -1299,6 +1299,9 @@ body {
   .alert-item {
     flex-direction: column;
   }
+  .main {
+    padding: 1.2rem 1rem;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
@@ -1322,9 +1325,7 @@ body {
   .nav-module-btn:hover .nav-ico {
     color: var(--primary);
   }
-  .main {
-    padding: 1.2rem 1rem;
-  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
