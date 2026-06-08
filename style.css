@@ -1042,15 +1042,15 @@ body {
 /* --- Topbar --- */
 @media (max-width: 768px) {
   .topbar {
-    height: 3.5rem;
+    height: 5.6rem;
   }
   .topbar-container {
     min-width: 0;
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 1.6rem;
   }
   .logo {
-    height: 2rem;
+    height: 3.2rem;
   }
   .sidebar-user-name {
     display: none; /* Ocultamos nombre largo en topbar */
