@@ -1024,13 +1024,6 @@ body {
   transition: width 0.4s ease;
 }
 
-@media (max-width: 1160px) {
-  .two-col-cards {
-    flex-direction: column;
-    gap: 0rem !important;
-  }
-}
-
 @media (max-width: 950px) {
   .form-grid {
     display: grid;
@@ -1146,6 +1139,10 @@ body {
   .card {
     padding: 1.6rem 1.4rem;
     margin-bottom: 1.4rem;
+  }
+  .two-col-cards {
+    flex-direction: column;
+    gap: 0rem !important;
   }
 
   /* --- Stats grid: 2 columnas en móvil (ya estaba, conservamos) --- */
