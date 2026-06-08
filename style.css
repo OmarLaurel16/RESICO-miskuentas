@@ -1033,6 +1033,11 @@ body {
     position: fixed;
     z-index: 1000;
   }
+
+  .nav-module-btn .chevron {
+    width: 10px;
+    height: 11px;
+  }
 }
 
 @media (max-width: 950px) {
@@ -2266,8 +2271,6 @@ body {
 
   /* ── Chevron: apunta a la derecha por defecto, abajo al abrir ── */
   .nav-module-btn .chevron {
-    width: 10px;
-    height: 11px;
     margin-left: auto;
     flex-shrink: 0;
   }
