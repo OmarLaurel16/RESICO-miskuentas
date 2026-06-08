@@ -183,6 +183,9 @@ body {
 .chatbot-img {
   width: 100%;
 }
+.chatbot-inst {
+  font-size: 1.4rem;
+}
 
 /* FIRST MESSAGE */
 .black-bg {
