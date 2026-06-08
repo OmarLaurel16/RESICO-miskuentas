@@ -2224,7 +2224,7 @@ body {
     height: 100%;
     border-radius: 0;
     box-shadow: none;
-    padding: 8px 0;
+    padding: 0;
     background: var(--sidebar-bg);
   }
 
