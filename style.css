@@ -1067,6 +1067,7 @@ body {
 
   /* --- Main content --- */
   .main {
+    margin-top: 5.6rem;
     min-width: 0;
     width: 100%;
     padding: 1.6rem 1.4rem;
