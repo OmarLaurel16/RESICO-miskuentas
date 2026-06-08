@@ -117,7 +117,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 6rem;
   background: var(--sidebar-bg);
   box-shadow: 0 6px 6px rgba(238, 153, 212, 0.25);
   justify-content: center;
@@ -2203,7 +2203,7 @@ body {
   .sidebar {
     flex-direction: column;
     position: fixed;
-    top: 5.2rem; /* debajo del topbar */
+    top: 6rem; /* debajo del topbar */
     left: 0;
     bottom: 0;
     right: auto;
