@@ -1069,8 +1069,7 @@ body {
   .main {
     min-width: 0;
     width: 100%;
-    padding: 1.6rem 1.4rem;
-    margin-bottom: 6rem; /* Espacio para la nav bar inferior */
+    margin-bottom: 6rem;
   }
 
   /* --- Sidebar / barra de navegación inferior --- */
