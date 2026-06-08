@@ -417,7 +417,6 @@ body {
   flex-shrink: 0;
   color: var(--text-main);
   transition: transform var(--transition);
-  display: none;
 }
 .nav-module-btn.open .chevron {
   transform: rotate(180deg);
@@ -2267,7 +2266,6 @@ body {
 
   /* ── Chevron: apunta a la derecha por defecto, abajo al abrir ── */
   .nav-module-btn .chevron {
-    display: inline-block;
     margin-left: auto;
     flex-shrink: 0;
   }
