@@ -408,6 +408,7 @@ body {
   flex: 1;
 }
 .nav-module-btn .chevron {
+  visibility: hidden;
   width: 10px;
   height: 11px;
   flex-shrink: 0;
