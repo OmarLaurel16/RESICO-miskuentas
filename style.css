@@ -1128,12 +1128,12 @@ body {
     flex-wrap: wrap;
   }
   .welcome-strip-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
   .welcome-strip-text {
     width: 80%;
-    font-size: 0.8rem;
+    font-size: 1.3rem;
   }
   .welcome-strip-text strong {
     font-size: 0.875rem;
