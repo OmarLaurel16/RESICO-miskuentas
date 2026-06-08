@@ -1153,17 +1153,17 @@ body {
   }
   .stat-card {
     height: auto;
-    min-height: 5.5rem;
-    padding: 0.875rem 0.625rem;
+    min-height: 8.8rem;
+    padding: 1.4rem 1rem;
   }
   .stat-value {
-    font-size: 1.125rem;
+    font-size: 1.8rem;
   }
   .stat-label {
-    font-size: 0.5625rem;
+    font-size: 0.9rem;
   }
   .stat-sub {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   /* --- Form grid: 1 columna en móvil --- */
@@ -1324,7 +1324,7 @@ body {
     color: var(--primary);
   }
   .main {
-    padding: 0.75rem 0.625rem;
+    padding: 1.2rem 0.625rem;
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
