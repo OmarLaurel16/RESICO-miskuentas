@@ -29,19 +29,20 @@ html,
 body {
   height: 100%;
   font-family: "Rubik", sans-serif;
+  font-size: 62.5%;
   background: var(--bg);
   color: var(--text-main);
 }
 
 .ico {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
   display: block;
 }
 .ico-sm {
-  width: 13px;
-  height: 13px;
+  width: 1.3rem;
+  height: 1.3rem;
   flex-shrink: 0;
   display: block;
 }
