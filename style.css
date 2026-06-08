@@ -1136,13 +1136,13 @@ body {
     font-size: 1.3rem;
   }
   .welcome-strip-text strong {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
   }
 
   /* --- Cards --- */
   .card {
-    padding: 1rem 0.875rem;
-    margin-bottom: 0.875rem;
+    padding: 1.6rem 1.4rem;
+    margin-bottom: 1.4rem;
   }
 
   /* --- Stats grid: 2 columnas en móvil (ya estaba, conservamos) --- */
