@@ -1024,6 +1024,12 @@ body {
   transition: width 0.4s ease;
 }
 
+@media (max-width: 1160px) {
+  .sidebar-nav {
+    height: 7.5rem;
+  }
+}
+
 @media (max-width: 950px) {
   .form-grid {
     display: grid;
