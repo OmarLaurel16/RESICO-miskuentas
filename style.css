@@ -2267,7 +2267,7 @@ body {
 
   /* ── Chevron: apunta a la derecha por defecto, abajo al abrir ── */
   .nav-module-btn .chevron {
-    display: inline;
+    display: inline-block;
     margin-left: auto;
     flex-shrink: 0;
   }
