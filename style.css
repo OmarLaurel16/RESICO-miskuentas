@@ -692,7 +692,7 @@ body {
 }
 
 .btn-tertiary-purple {
-  background: var(--purple);
+  background: var(--secondary);
   color: var(--text-white);
   border: none;
   border-radius: 5px;
