@@ -1025,8 +1025,13 @@ body {
 }
 
 @media (max-width: 1160px) {
-  .sidebar-nav {
-    height: 8rem;
+  .sidebar {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 7.2rem;
+    position: fixed;
+    z-index: 1000;
   }
 }
 
@@ -1076,14 +1081,7 @@ body {
   }
 
   /* --- Sidebar / barra de navegación inferior --- */
-  .sidebar {
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    height: 7.2rem;
-    position: fixed;
-    z-index: 1000;
-  }
+
   .sidebar-nav {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
