@@ -68,7 +68,7 @@ body {
   color: var(--green);
 }
 .tax-status-tag {
-  font-size: 18px;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--green);
   font-family: "Rubik", sans-serif;
