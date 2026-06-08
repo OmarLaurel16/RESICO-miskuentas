@@ -1097,9 +1097,10 @@ body {
     height: 100%;
   }
   .nav-module-btn {
-    width: 100%;
+    width: 9rem;
+    height: 8rem;
     min-width: 0;
-    height: 100%;
+
     font-size: 1.1rem;
     padding: 1rem 1rem;
     gap: 0.25rem;
