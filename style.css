@@ -1237,19 +1237,19 @@ body {
 
   /* --- Tax status container --- */
   .tax-status-icon {
-    width: 2.5rem;
+    width: 3rem;
   }
   .tax-status-tag {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
   }
   .tax-status-desc {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
 
   /* --- Invoice status container --- */
 
   .cloud-icon {
-    width: 2.5rem;
+    width: 3rem;
   }
   .inv-status-tag {
     font-size: 1.4rem;
