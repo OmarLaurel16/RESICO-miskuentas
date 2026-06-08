@@ -2098,7 +2098,7 @@ body {
   border-radius: 10px;
   padding: 1.2rem 1.6rem 1.2rem 4.1rem;
   font-family: "Rubik", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: var(--text-main);
   background: var(--input-bg, #fff);
   outline: none;
@@ -2118,8 +2118,8 @@ body {
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
   color: #ccc;
   pointer-events: none;
   transition: color 0.2s;
