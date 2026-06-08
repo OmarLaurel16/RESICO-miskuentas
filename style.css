@@ -2203,7 +2203,7 @@ body {
   .sidebar {
     flex-direction: column;
     position: fixed;
-    top: 60px; /* debajo del topbar */
+    top: 5.2rem; /* debajo del topbar */
     left: 0;
     bottom: 0;
     right: auto;
