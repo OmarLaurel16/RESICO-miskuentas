@@ -417,7 +417,7 @@ body {
   flex-shrink: 0;
   color: var(--text-main);
   transition: transform var(--transition);
-  display: hidden;
+  display: none;
 }
 .nav-module-btn.open .chevron {
   transform: rotate(180deg);
