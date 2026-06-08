@@ -2118,8 +2118,8 @@ body {
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 1.6rem;
+  height: 1.6rem;
   color: #ccc;
   pointer-events: none;
   transition: color 0.2s;
@@ -2132,13 +2132,13 @@ body {
 .login-btn {
   width: 100%;
   margin-top: 0.6rem;
-  padding: 0.82rem;
+  padding: 1.3rem;
   border: none;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
   font-family: "Rubik", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.02em;
