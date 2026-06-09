@@ -1403,6 +1403,9 @@ body {
   gap: 12px;
   background: var(--card-bg);
   box-shadow: var(--shadow);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .doc-card-icon {
   width: 52px;
