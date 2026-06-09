@@ -1337,10 +1337,9 @@ body {
     right: 1.5rem;
     left: 1.5rem;
   }
-  .logo {
+  .logo-container {
     overflow: hidden;
-    height: 100%;
-    width: 120px;
+    width: 110px;
   }
 }
 
