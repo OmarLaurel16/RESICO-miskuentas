@@ -1032,7 +1032,7 @@
         </div>
 
         <!-- ══ VIEW: EMITIR CFDI ══ -->
-        <div id="view-facturacion-emitir">
+        <div class="view" id="view-facturacion-emitir">
           <div class="sub-bar">
             <div class="form-actions" style="margin-top: 0">
               <button
@@ -1049,718 +1049,660 @@
               </button>
             </div>
           </div>
-          <div class="view">
-            <div class="card" style="margin-top: 46px">
-              <div class="cfdi-card-inner" style="flex-direction: column">
+          <div class="card" style="margin-top: 46px">
+            <div class="cfdi-card-inner" style="flex-direction: column">
+              <div
+                class="cfdi-tipos"
+                style="display: flex; flex-direction: column; width: 100%"
+              >
+                <div class="card-title">Tipo de factura</div>
                 <div
-                  class="cfdi-tipos"
-                  style="display: flex; flex-direction: column; width: 100%"
+                  class="form-actions cfdi-tipos-btns"
+                  style="flex-direction: row; gap: 1.5rem"
                 >
-                  <div class="card-title">Tipo de factura</div>
-                  <div
-                    class="form-actions cfdi-tipos-btns"
-                    style="flex-direction: row; gap: 1.5rem"
+                  <button
+                    class="btn-primary active-tipo"
+                    id="tipo-btn-factura"
+                    onclick="switchTipoFactura('factura')"
                   >
-                    <button
-                      class="btn-primary active-tipo"
-                      id="tipo-btn-factura"
-                      onclick="switchTipoFactura('factura')"
-                    >
-                      Factura
-                    </button>
-                    <button
-                      class="btn-primary"
-                      id="tipo-btn-pago"
-                      onclick="switchTipoFactura('pago')"
-                    >
-                      Documento pago
-                    </button>
-                    <button
-                      class="btn-primary"
-                      id="tipo-btn-credito"
-                      onclick="switchTipoFactura('credito')"
-                    >
-                      Nota de crédito
-                    </button>
-                    <button
-                      class="btn-primary"
-                      id="tipo-btn-global"
-                      onclick="switchTipoFactura('global')"
-                    >
-                      Factura global
-                    </button>
-                  </div>
+                    Factura
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-pago"
+                    onclick="switchTipoFactura('pago')"
+                  >
+                    Documento pago
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-credito"
+                    onclick="switchTipoFactura('credito')"
+                  >
+                    Nota de crédito
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="tipo-btn-global"
+                    onclick="switchTipoFactura('global')"
+                  >
+                    Factura global
+                  </button>
                 </div>
-                <!-- ── PANEL: Factura (default) ── -->
-                <div
-                  id="panel-factura"
-                  class="cfdi-panel cfdi-form"
-                  style="display: flex; flex-direction: column"
-                >
-                  <div class="card-title">Datos del Receptor</div>
-                  <div class="form-grid" style="width: 100%">
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">RFC Receptor</label>
-                        <input class="form-input" placeholder="XAXX010101000" />
-                      </div>
-
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Razón Social Receptor</label>
-                        <input
-                          class="form-input"
-                          placeholder="Nombre o empresa"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Régimen Fiscal Receptor</label>
-                      <select class="form-input report-select">
-                        <option>616 - Sin obligaciones fiscales</option>
-                        <option>612 - Personas físicas con act. emp.</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label"
-                        >Uso (¿Para qué usará esta factura tu cliente?)</label
-                      >
-                      <select class="form-input report-select">
-                        <option>G03 - Gastos en general</option>
-                        <option>P01 - Por definir</option>
-                        <option>D01 - Honorarios médicos</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Código Postal Receptor</label>
-                      <input class="form-input" placeholder="01010" />
+              </div>
+              <!-- ── PANEL: Factura (default) ── -->
+              <div
+                id="panel-factura"
+                class="cfdi-panel cfdi-form"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">RFC Receptor</label>
+                      <input class="form-input" placeholder="XAXX010101000" />
                     </div>
 
-                    <div class="form-group">
-                      <label class="form-label">Documentos a Relacionar</label>
-                      <input class="form-input" placeholder="No aplica" />
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Exportación</label>
-                      <input class="form-input" placeholder="No aplica" />
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Serie</label>
-                        <input class="form-input" placeholder="GASC" />
-                      </div>
-
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Folio</label>
-                        <input class="form-input" placeholder="101" />
-                      </div>
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 75%">
-                        <label class="form-label">Método de pago</label>
-                        <select class="form-input report-select">
-                          <option>PUE</option>
-                          <option>PPD</option>
-                        </select>
-                      </div>
-
-                      <div class="form-group" style="width: 125%">
-                        <label class="form-label">Forma de pago</label>
-                        <input
-                          class="form-input"
-                          placeholder="Transferencia electrónica"
-                        />
-                      </div>
-                    </div>
-
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 125%">
-                        <label class="form-label">Moneda</label>
-                        <input class="form-input" placeholder="Peso mexicano" />
-                      </div>
-
-                      <div class="form-group" style="width: 75%">
-                        <label class="form-label">Tipo de cambio</label>
-                        <input class="form-input" placeholder="1.00" />
-                      </div>
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">Expedido en:</label>
-                        <input class="form-input" placeholder="54260" />
-                      </div>
-
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Fecha emisión</label>
-                        <input
-                          class="form-input"
-                          placeholder="18/05/2026 12:10 pm"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Enviar al correo:</label>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Razón Social Receptor</label>
                       <input
                         class="form-input"
-                        placeholder="factura@miskuentas.com"
+                        placeholder="Nombre o empresa"
                       />
                     </div>
                   </div>
-                </div>
-                <!-- /panel-factura -->
-
-                <!-- ── PANEL: Documento de pago ── -->
-                <div
-                  id="panel-pago"
-                  class="cfdi-panel cfdi-form hidden"
-                  style="display: flex; flex-direction: column"
-                >
-                  <div class="card-title">Datos del Receptor</div>
-                  <div class="form-grid" style="width: 100%">
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label"
+                      >Uso (¿Para qué usará esta factura tu cliente?)</label
                     >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">RFC Receptor</label>
-                        <input class="form-input" placeholder="XAXX010101000" />
-                      </div>
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Razón Social Receptor</label>
-                        <input
-                          class="form-input"
-                          placeholder="Nombre o empresa"
-                        />
-                      </div>
+                    <select class="form-input report-select">
+                      <option>G03 - Gastos en general</option>
+                      <option>P01 - Por definir</option>
+                      <option>D01 - Honorarios médicos</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Documentos a Relacionar</label>
+                    <input class="form-input" placeholder="No aplica" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Exportación</label>
+                    <input class="form-input" placeholder="No aplica" />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Serie</label>
+                      <input class="form-input" placeholder="GASC" />
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Régimen Fiscal Receptor</label>
+
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Folio</label>
+                      <input class="form-input" placeholder="101" />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
                       <select class="form-input report-select">
-                        <option>616 - Sin obligaciones fiscales</option>
-                        <option>612 - Personas físicas con act. emp.</option>
+                        <option>PUE</option>
+                        <option>PPD</option>
                       </select>
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Código Postal Receptor</label>
-                      <input class="form-input" placeholder="01010" />
-                    </div>
-                  </div>
-                  <div class="card-title" style="margin-top: 1rem">
-                    Datos del Complemento de Pago
-                  </div>
-                  <div class="form-grid" style="width: 100%">
-                    <div class="form-group">
-                      <label class="form-label"
-                        >UUID factura relacionada (PPD)</label
-                      >
-                      <input
-                        class="form-input mono"
-                        placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-                      />
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Fecha de pago</label>
-                        <input class="form-input" placeholder="18/05/2026" />
-                      </div>
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Monto pagado</label>
-                        <input class="form-input mono" placeholder="$ 0.00" />
-                      </div>
-                    </div>
-                    <div class="form-group">
+
+                    <div class="form-group" style="width: 125%">
                       <label class="form-label">Forma de pago</label>
                       <input
                         class="form-input"
                         placeholder="Transferencia electrónica"
                       />
                     </div>
-                    <div class="form-group">
+                  </div>
+
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 125%">
                       <label class="form-label">Moneda</label>
                       <input class="form-input" placeholder="Peso mexicano" />
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Número de operación</label>
-                      <input
-                        class="form-input mono"
-                        placeholder="Referencia bancaria"
-                      />
+
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Tipo de cambio</label>
+                      <input class="form-input" placeholder="1.00" />
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Enviar al correo:</label>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Expedido en:</label>
+                      <input class="form-input" placeholder="54260" />
+                    </div>
+
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Fecha emisión</label>
                       <input
                         class="form-input"
-                        placeholder="factura@miskuentas.com"
+                        placeholder="18/05/2026 12:10 pm"
                       />
                     </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
                   </div>
                 </div>
-                <!-- /panel-pago -->
+              </div>
+              <!-- /panel-factura -->
 
-                <!-- ── PANEL: Nota de crédito ── -->
-                <div
-                  id="panel-credito"
-                  class="cfdi-panel cfdi-form hidden"
-                  style="display: flex; flex-direction: column"
-                >
-                  <div class="card-title">Datos del Receptor</div>
-                  <div class="form-grid" style="width: 100%">
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">RFC Receptor</label>
-                        <input class="form-input" placeholder="XAXX010101000" />
-                      </div>
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Razón Social Receptor</label>
-                        <input
-                          class="form-input"
-                          placeholder="Nombre o empresa"
-                        />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Régimen Fiscal Receptor</label>
-                      <select class="form-input report-select">
-                        <option>616 - Sin obligaciones fiscales</option>
-                        <option>612 - Personas físicas con act. emp.</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Uso CFDI</label>
-                      <select class="form-input report-select">
-                        <option>G03 - Gastos en general</option>
-                        <option>P01 - Por definir</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Código Postal Receptor</label>
-                      <input class="form-input" placeholder="01010" />
-                    </div>
-                  </div>
-                  <div class="card-title" style="margin-top: 1rem">
-                    Factura que se corrige
-                  </div>
-                  <div class="form-grid" style="width: 100%">
-                    <div class="form-group">
-                      <label class="form-label">UUID factura original</label>
-                      <input
-                        class="form-input mono"
-                        placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Tipo de relación</label>
-                      <select class="form-input report-select">
-                        <option>
-                          01 – Nota de crédito de los documentos relacionados
-                        </option>
-                        <option>
-                          02 – Nota de débito de los documentos relacionados
-                        </option>
-                        <option>04 – Sustitución de CFDI previos</option>
-                      </select>
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 75%">
-                        <label class="form-label">Método de pago</label>
-                        <select class="form-input report-select">
-                          <option>PUE</option>
-                          <option>PPD</option>
-                        </select>
-                      </div>
-                      <div class="form-group" style="width: 125%">
-                        <label class="form-label">Forma de pago</label>
-                        <input
-                          class="form-input"
-                          placeholder="Transferencia electrónica"
-                        />
-                      </div>
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">Serie</label>
-                        <input class="form-input" placeholder="NC" />
-                      </div>
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Folio</label>
-                        <input class="form-input" placeholder="1" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Enviar al correo:</label>
-                      <input
-                        class="form-input"
-                        placeholder="factura@miskuentas.com"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- /panel-credito -->
-
-                <!-- ── PANEL: Factura global ── -->
-                <div
-                  id="panel-global"
-                  class="cfdi-panel cfdi-form hidden"
-                  style="display: flex; flex-direction: column"
-                >
-                  <div class="card-title">Período de la factura global</div>
-                  <div class="form-grid" style="width: 100%">
-                    <div class="form-group">
-                      <label class="form-label">Periodicidad</label>
-                      <select class="form-input report-select">
-                        <option>01 – Diario</option>
-                        <option>02 – Semanal</option>
-                        <option selected>03 – Mensual</option>
-                        <option>04 – Bimestral</option>
-                      </select>
-                    </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Mes</label>
-                        <select class="form-input report-select">
-                          <option>01 – Enero</option>
-                          <option>02 – Febrero</option>
-                          <option>03 – Marzo</option>
-                          <option>04 – Abril</option>
-                          <option selected>05 – Mayo</option>
-                          <option>06 – Junio</option>
-                          <option>07 – Julio</option>
-                          <option>08 – Agosto</option>
-                          <option>09 – Septiembre</option>
-                          <option>10 – Octubre</option>
-                          <option>11 – Noviembre</option>
-                          <option>12 – Diciembre</option>
-                        </select>
-                      </div>
-                      <div class="form-group" style="width: 100%">
-                        <label class="form-label">Año</label>
-                        <select class="form-input report-select">
-                          <option>2024</option>
-                          <option>2025</option>
-                          <option selected>2026</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group">
+              <!-- ── PANEL: Documento de pago ── -->
+              <div
+                id="panel-pago"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
                       <label class="form-label">RFC Receptor</label>
-                      <input
-                        class="form-input mono"
-                        value="XAXX010101000"
-                        readonly
-                      />
+                      <input class="form-input" placeholder="XAXX010101000" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="width: 170%">
                       <label class="form-label">Razón Social Receptor</label>
                       <input
                         class="form-input"
-                        value="PÚBLICO EN GENERAL"
-                        readonly
+                        placeholder="Nombre o empresa"
                       />
                     </div>
-                    <div class="form-group">
-                      <label class="form-label">Uso CFDI</label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+                </div>
+                <div class="card-title" style="margin-top: 1rem">
+                  Datos del Complemento de Pago
+                </div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label"
+                      >UUID factura relacionada (PPD)</label
+                    >
+                    <input
+                      class="form-input mono"
+                      placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Fecha de pago</label>
+                      <input class="form-input" placeholder="18/05/2026" />
+                    </div>
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Monto pagado</label>
+                      <input class="form-input mono" placeholder="$ 0.00" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Forma de pago</label>
+                    <input
+                      class="form-input"
+                      placeholder="Transferencia electrónica"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Moneda</label>
+                    <input class="form-input" placeholder="Peso mexicano" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Número de operación</label>
+                    <input
+                      class="form-input mono"
+                      placeholder="Referencia bancaria"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-pago -->
+
+              <!-- ── PANEL: Nota de crédito ── -->
+              <div
+                id="panel-credito"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Datos del Receptor</div>
+                <div class="form-grid" style="width: 100%">
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">RFC Receptor</label>
+                      <input class="form-input" placeholder="XAXX010101000" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Razón Social Receptor</label>
                       <input
                         class="form-input"
-                        value="S01 – Sin efectos fiscales"
-                        readonly
+                        placeholder="Nombre o empresa"
                       />
                     </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 75%">
-                        <label class="form-label">Método de pago</label>
-                        <select class="form-input report-select">
-                          <option>PUE</option>
-                        </select>
-                      </div>
-                      <div class="form-group" style="width: 125%">
-                        <label class="form-label">Forma de pago</label>
-                        <select class="form-input report-select">
-                          <option>17 – Efectivo</option>
-                          <option>01 – Transferencia electrónica</option>
-                          <option>99 – Por definir</option>
-                        </select>
-                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Régimen Fiscal Receptor</label>
+                    <select class="form-input report-select">
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>612 - Personas físicas con act. emp.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Uso CFDI</label>
+                    <select class="form-input report-select">
+                      <option>G03 - Gastos en general</option>
+                      <option>P01 - Por definir</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Código Postal Receptor</label>
+                    <input class="form-input" placeholder="01010" />
+                  </div>
+                </div>
+                <div class="card-title" style="margin-top: 1rem">
+                  Factura que se corrige
+                </div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label">UUID factura original</label>
+                    <input
+                      class="form-input mono"
+                      placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Tipo de relación</label>
+                    <select class="form-input report-select">
+                      <option>
+                        01 – Nota de crédito de los documentos relacionados
+                      </option>
+                      <option>
+                        02 – Nota de débito de los documentos relacionados
+                      </option>
+                      <option>04 – Sustitución de CFDI previos</option>
+                    </select>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
+                      <select class="form-input report-select">
+                        <option>PUE</option>
+                        <option>PPD</option>
+                      </select>
                     </div>
-                    <div
-                      class="form-group"
-                      style="
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 12px;
-                      "
-                    >
-                      <div class="form-group" style="width: 30%">
-                        <label class="form-label">Expedido en:</label>
-                        <input class="form-input" placeholder="54260" />
-                      </div>
-                      <div class="form-group" style="width: 170%">
-                        <label class="form-label">Fecha emisión</label>
-                        <input
-                          class="form-input"
-                          placeholder="18/05/2026 12:10 pm"
-                        />
-                      </div>
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Forma de pago</label>
+                      <input
+                        class="form-input"
+                        placeholder="Transferencia electrónica"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Serie</label>
+                      <input class="form-input" placeholder="NC" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Folio</label>
+                      <input class="form-input" placeholder="1" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Enviar al correo:</label>
+                    <input
+                      class="form-input"
+                      placeholder="factura@miskuentas.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- /panel-credito -->
+
+              <!-- ── PANEL: Factura global ── -->
+              <div
+                id="panel-global"
+                class="cfdi-panel cfdi-form hidden"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="card-title">Período de la factura global</div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <label class="form-label">Periodicidad</label>
+                    <select class="form-input report-select">
+                      <option>01 – Diario</option>
+                      <option>02 – Semanal</option>
+                      <option selected>03 – Mensual</option>
+                      <option>04 – Bimestral</option>
+                    </select>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Mes</label>
+                      <select class="form-input report-select">
+                        <option>01 – Enero</option>
+                        <option>02 – Febrero</option>
+                        <option>03 – Marzo</option>
+                        <option>04 – Abril</option>
+                        <option selected>05 – Mayo</option>
+                        <option>06 – Junio</option>
+                        <option>07 – Julio</option>
+                        <option>08 – Agosto</option>
+                        <option>09 – Septiembre</option>
+                        <option>10 – Octubre</option>
+                        <option>11 – Noviembre</option>
+                        <option>12 – Diciembre</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="width: 100%">
+                      <label class="form-label">Año</label>
+                      <select class="form-input report-select">
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option selected>2026</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">RFC Receptor</label>
+                    <input
+                      class="form-input mono"
+                      value="XAXX010101000"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Razón Social Receptor</label>
+                    <input
+                      class="form-input"
+                      value="PÚBLICO EN GENERAL"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Uso CFDI</label>
+                    <input
+                      class="form-input"
+                      value="S01 – Sin efectos fiscales"
+                      readonly
+                    />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 75%">
+                      <label class="form-label">Método de pago</label>
+                      <select class="form-input report-select">
+                        <option>PUE</option>
+                      </select>
+                    </div>
+                    <div class="form-group" style="width: 125%">
+                      <label class="form-label">Forma de pago</label>
+                      <select class="form-input report-select">
+                        <option>17 – Efectivo</option>
+                        <option>01 – Transferencia electrónica</option>
+                        <option>99 – Por definir</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group" style="width: 30%">
+                      <label class="form-label">Expedido en:</label>
+                      <input class="form-input" placeholder="54260" />
+                    </div>
+                    <div class="form-group" style="width: 170%">
+                      <label class="form-label">Fecha emisión</label>
+                      <input
+                        class="form-input"
+                        placeholder="18/05/2026 12:10 pm"
+                      />
                     </div>
                   </div>
                 </div>
-                <div style="margin-left: auto">
-                  <button class="btn-secondary">
-                    <span>Validar información</span>
-                  </button>
-                </div>
               </div>
-            </div>
-            <!-- card cfdi -->
-            <div class="card">
-              <div class="card-title">Conceptos</div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>No. Ident</th>
-                      <th>Descripción</th>
-                      <th>Clave producto</th>
-                      <th>Clave unidad</th>
-                      <th>Unidad</th>
-                      <th>Cantidad</th>
-                      <th>P. Unitario</th>
-                      <th>IVA</th>
-                      <th>Retenciones</th>
-                      <th>Importe</th>
-                      <th>Objeto de impuesto</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="0000"
-                          style="width: 100%; min-width: 60px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="Servicio profesional"
-                          style="width: 100%; min-width: 160px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="-"
-                          style="width: 100%; min-width: 10px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="-"
-                          style="width: 100%; min-width: 10px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="-"
-                          style="width: 100%; min-width: 10px"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input mono"
-                          value="1"
-                          style="width: 60px; text-align: right"
-                        />
-                      </td>
-                      <td>
-                        <input
-                          class="form-input mono"
-                          value="$ 5,000.00"
-                          style="width: 110px; text-align: right"
-                        />
-                      </td>
-
-                      <td>
-                        <select
-                          class="form-input report-select"
-                          style="min-width: 70px"
-                        >
-                          <option>16%</option>
-                          <option>8%</option>
-                          <option>0%</option>
-                          <option>Exento</option>
-                        </select>
-                      </td>
-                      <td>
-                        <select
-                          class="form-input report-select"
-                          style="min-width: 70px"
-                        >
-                          <option>N/A</option>
-                          <option>ISR</option>
-                          <option>IVA</option>
-                          <option>ISR e IVA</option>
-                        </select>
-                      </td>
-                      <td class="mono" style="font-weight: 600">$ 5,800.00</td>
-                      <td>
-                        <input
-                          class="form-input"
-                          value="Sí objeto"
-                          style="width: 100%; min-width: 60px"
-                        />
-                      </td>
-                      <td>
-                        <button class="btn-secondary" style="padding: 4px 8px">
-                          ✕
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- overflow-x:auto -->
-              <div style="margin-top: 12px">
-                <button
-                  class="btn-secondary"
-                  onclick="
-                    this.closest('.card')
-                      .querySelector('tbody')
-                      .insertAdjacentHTML('beforeend', conceptoRow())
-                  "
-                >
-                  + Agregar concepto
+              <div style="margin-left: auto">
+                <button class="btn-secondary">
+                  <span>Validar información</span>
                 </button>
               </div>
-              <div
-                style="
-                  margin-top: 18px;
-                  display: flex;
-                  justify-content: flex-end;
+            </div>
+          </div>
+          <!-- card cfdi -->
+          <div class="card">
+            <div class="card-title">Conceptos</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No. Ident</th>
+                    <th>Descripción</th>
+                    <th>Clave producto</th>
+                    <th>Clave unidad</th>
+                    <th>Unidad</th>
+                    <th>Cantidad</th>
+                    <th>P. Unitario</th>
+                    <th>IVA</th>
+                    <th>Retenciones</th>
+                    <th>Importe</th>
+                    <th>Objeto de impuesto</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="0000"
+                        style="width: 100%; min-width: 60px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="Servicio profesional"
+                        style="width: 100%; min-width: 160px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="-"
+                        style="width: 100%; min-width: 10px"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input mono"
+                        value="1"
+                        style="width: 60px; text-align: right"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        class="form-input mono"
+                        value="$ 5,000.00"
+                        style="width: 110px; text-align: right"
+                      />
+                    </td>
+
+                    <td>
+                      <select
+                        class="form-input report-select"
+                        style="min-width: 70px"
+                      >
+                        <option>16%</option>
+                        <option>8%</option>
+                        <option>0%</option>
+                        <option>Exento</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select
+                        class="form-input report-select"
+                        style="min-width: 70px"
+                      >
+                        <option>N/A</option>
+                        <option>ISR</option>
+                        <option>IVA</option>
+                        <option>ISR e IVA</option>
+                      </select>
+                    </td>
+                    <td class="mono" style="font-weight: 600">$ 5,800.00</td>
+                    <td>
+                      <input
+                        class="form-input"
+                        value="Sí objeto"
+                        style="width: 100%; min-width: 60px"
+                      />
+                    </td>
+                    <td>
+                      <button class="btn-secondary" style="padding: 4px 8px">
+                        ✕
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- overflow-x:auto -->
+            <div style="margin-top: 12px">
+              <button
+                class="btn-secondary"
+                onclick="
+                  this.closest('.card')
+                    .querySelector('tbody')
+                    .insertAdjacentHTML('beforeend', conceptoRow())
                 "
               >
-                <div style="min-width: 220px">
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      padding: 6px 0;
-                      font-size: 13px;
-                      border-bottom: 1px solid var(--border);
-                    "
+                + Agregar concepto
+              </button>
+            </div>
+            <div
+              style="margin-top: 18px; display: flex; justify-content: flex-end"
+            >
+              <div style="min-width: 220px">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 6px 0;
+                    font-size: 13px;
+                    border-bottom: 1px solid var(--border);
+                  "
+                >
+                  <span style="color: var(--text-light)">Subtotal</span
+                  ><span class="mono">$ 5,000.00</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 6px 0;
+                    font-size: 13px;
+                    border-bottom: 1px solid var(--border);
+                  "
+                >
+                  <span style="color: var(--text-light)">IVA 16%</span
+                  ><span class="mono">$ 800.00</span>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px 0;
+                    font-size: 15px;
+                    font-weight: 600;
+                  "
+                >
+                  <span>Total</span
+                  ><span class="mono" style="color: var(--pink)"
+                    >$ 5,800.00</span
                   >
-                    <span style="color: var(--text-light)">Subtotal</span
-                    ><span class="mono">$ 5,000.00</span>
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      padding: 6px 0;
-                      font-size: 13px;
-                      border-bottom: 1px solid var(--border);
-                    "
-                  >
-                    <span style="color: var(--text-light)">IVA 16%</span
-                    ><span class="mono">$ 800.00</span>
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      padding: 8px 0;
-                      font-size: 15px;
-                      font-weight: 600;
-                    "
-                  >
-                    <span>Total</span
-                    ><span class="mono" style="color: var(--pink)"
-                      >$ 5,800.00</span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
