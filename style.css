@@ -1433,6 +1433,7 @@ body {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .doc-card-date {
   font-size: 11px;
@@ -1444,6 +1445,7 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: auto;
+  justify-content: center;
 }
 
 /* ══════════════════════════════════════════════
