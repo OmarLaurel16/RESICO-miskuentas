@@ -2221,6 +2221,9 @@ body {
     align-items: flex-start;
     padding-top: 60px;
   }
+  .sidebar-user {
+    margin-right: 1rem;
+  }
 
   .sub-bar {
     position: fixed;
