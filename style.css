@@ -154,9 +154,6 @@ body {
   border-radius: 8px;
 }
   */
-.sub-bar {
-  background: var(--primary);
-}
 
 /* ── LAYOUT ── */
 .layout {
@@ -1327,10 +1324,6 @@ body {
   .main {
     padding: 2.4rem 1.5rem;
   }
-  .sub-bar {
-    right: 1.5rem;
-    left: 1.5rem;
-  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
@@ -2235,6 +2228,7 @@ body {
     display: flex;
     align-items: center;
     background: var(--primary);
+    justify-content: right;
   }
 
   /* ── Sidebar: lateral izquierdo fijo ── */
