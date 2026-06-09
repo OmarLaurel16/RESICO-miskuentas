@@ -151,6 +151,7 @@ body {
   z-index: 998;
   background: var(--primary);
   border-radius: 8px;
+  margin-top: 10px;
 }
 
 /* ── LAYOUT ── */
