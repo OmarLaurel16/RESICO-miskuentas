@@ -1337,6 +1337,10 @@ body {
     right: 1.5rem;
     left: 1.5rem;
   }
+  .logo {
+    overflow: hidden;
+    width: 120px;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
