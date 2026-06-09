@@ -2215,17 +2215,11 @@ body {
 
   .sub-bar {
     position: fixed;
-    /*padding: 2px 24px;*/
     top: 6rem;
     right: 0px;
     left: 200px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    z-index: 998;
-    background: var(--primary);
-    border-radius: 8px;
+    height: 5rem;
+    margin: 0 32px;
   }
 
   /* ── Sidebar: lateral izquierdo fijo ── */
