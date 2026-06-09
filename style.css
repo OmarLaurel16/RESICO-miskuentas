@@ -137,7 +137,7 @@ body {
   flex: 1;
 }
 
-/* SUB-BAR
+/* SUB-BAR */
 .sub-bar {
   position: fixed;
   top: 60px;
@@ -153,7 +153,6 @@ body {
   background: var(--primary);
   border-radius: 8px;
 }
-  */
 
 /* ── LAYOUT ── */
 .layout {
@@ -1323,6 +1322,10 @@ body {
   }
   .main {
     padding: 2.4rem 1.5rem;
+  }
+  .sub-bar {
+    right: 1.5rem;
+    left: 1.5rem;
   }
 }
 
