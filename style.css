@@ -1325,9 +1325,7 @@ body {
 /* Pantallas muy pequeñas (≤ 360px) */
 @media (max-width: 360px) {
   .nav-module-btn {
-    width: 3.75rem;
-    height: 4.25rem;
-    font-size: 0.575rem;
+    font-size: 0.9rem;
   }
 
   .nav-section:hover {
