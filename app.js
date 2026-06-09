@@ -359,18 +359,6 @@ function irAPaso(paso) {
 
 /** Selección de mes en paso 2: selecciona el mes tocado y todos los posteriores */
 function seleccionarMes(btn) {
-  /*const todos = Array.from(document.querySelectorAll(".ob-mes-item"));
-  const idx = todos.indexOf(btn);
-
-
-  todos.forEach(function (el, i) {
-    if (i >= idx) {
-      el.classList.add("ob-mes-selected");
-    } else {
-      el.classList.remove("ob-mes-selected");
-    }
-  });*/
-
   btn.classList.toggle("ob-mes-selected");
 
   const haySeleccionados =
