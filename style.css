@@ -2204,17 +2204,11 @@ body {
   }
 }
 
-/* ══════════════════════════════════════════════
-   SIDEBAR LATERAL — viewport >= 1160px
-   Solo sobreescribe lo necesario para convertir
-   el bottom nav en un sidebar lateral izquierdo
-══════════════════════════════════════════════ */
 @media (min-width: 1160px) {
-  /* ── Layout raíz: fila en lugar de columna ── */
   .layout {
     flex-direction: row;
     align-items: flex-start;
-    padding-top: 60px; /* misma altura del topbar */
+    padding-top: 60px;
   }
 
   .sub-bar {
