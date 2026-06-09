@@ -1296,11 +1296,20 @@ body {
   .form-group[style*="flex-direction: row"] > .form-group {
     width: 100% !important;
   }
+  .sidebar {
+    height: 8rem;
+  }
   .sidebar-nav {
     border-radius: 0px;
     height: 8rem;
     padding: 0 0;
     width: 100%;
+  }
+  .nav-module-btn {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 1.2rem;
   }
   .doc-grid {
     grid-template-columns: 1fr;
