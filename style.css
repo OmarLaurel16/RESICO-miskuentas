@@ -1055,13 +1055,6 @@ body {
   }
 }
 
-@media (max-width: 950px) {
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ══════════════════════════════════════════════
    RESPONSIVE — Pantallas pequeñas (≤ 880px)
    ══════════════════════════════════════════════ */
