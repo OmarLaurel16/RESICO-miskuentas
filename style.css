@@ -550,8 +550,8 @@ body {
   gap: 8px;
 }
 .welcome-strip-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.14);
   display: flex;
