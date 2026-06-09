@@ -2369,4 +2369,9 @@ body {
     width: 100%;
     padding: 0 24px;
   }
+
+  .chatbot {
+    bottom: 20px;
+    left: 20px;
+  }
 }
