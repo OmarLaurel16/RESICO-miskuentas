@@ -270,6 +270,16 @@ body {
   gap: 9px;
   min-width: 0;
 }
+.sidebar-user button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
 
 .sidebar-avatar {
   width: 32px;
@@ -284,7 +294,6 @@ body {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  cursor: pointer;
 }
 .sidebar-user-name {
   background-color: none;
