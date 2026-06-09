@@ -1043,7 +1043,11 @@ body {
     align-items: center;
     justify-content: right;
     z-index: 998;
-    background: var(--primary);
+    background: linear-gradient(
+      135deg,
+      var(--primary),
+      color-mix(in srgb, var(--primary) 65%, white)
+    );
     border-radius: 8px;
   }
   .chatbot {
