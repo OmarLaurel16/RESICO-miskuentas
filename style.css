@@ -1185,6 +1185,11 @@ body {
 
   /* --- Form grid: 1 columna en móvil --- */
 
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .form-grid.cols-3 {
     grid-template-columns: 1fr !important;
   }
