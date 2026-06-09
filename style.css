@@ -519,6 +519,7 @@ body {
 /* Page view transitions */
 .view {
   display: none;
+  animation: fadeIn 0.28s ease;
 }
 .view.active {
   display: block;
