@@ -2229,6 +2229,12 @@ body {
     left: 200px;
     height: 5rem;
     margin: 10px 32px;
+    border-radius: 8px;
+    z-index: 998;
+    padding: 2px 24px;
+    display: flex;
+    align-items: center;
+    background: var(--primary);
   }
 
   /* ── Sidebar: lateral izquierdo fijo ── */
