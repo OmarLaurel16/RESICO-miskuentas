@@ -1321,7 +1321,11 @@ body {
     flex-direction: column;
   }
   .main {
-    padding: 1.2rem 1rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .sub-bar {
+    right: 1.5rem;
+    left: 1.5rem;
   }
 }
 
