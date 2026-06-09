@@ -150,7 +150,7 @@ body {
 .chatbot {
   background: var(--card-bg);
   position: fixed;
-  z-index: 9999;
+  z-index: 9997;
   width: 65px;
   height: 65px;
   border-radius: 50%;
