@@ -148,7 +148,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: right;
-  text-align: center;
   z-index: 998;
   background: var(--sidebar-bg);
   border-radius: 8px;
