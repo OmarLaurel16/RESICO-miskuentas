@@ -140,18 +140,18 @@ body {
 /* SUB-BAR*/
 .sub-bar {
   position: fixed;
-  padding: 2px 24px;
   top: 60px;
   right: 32px;
   left: 32px;
   height: 50px;
+  padding: 2px 24px;
   display: flex;
   align-items: center;
   justify-content: right;
   z-index: 998;
   background: var(--primary);
   border-radius: 8px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 /* ── LAYOUT ── */
