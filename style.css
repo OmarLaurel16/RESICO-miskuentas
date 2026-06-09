@@ -160,6 +160,7 @@ body {
   align-content: center;
   justify-content: center;
   overflow: hidden;
+  cursor: pointer;
 }
 .chatbot-btn {
   border: none;
