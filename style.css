@@ -64,7 +64,7 @@ body {
 }
 
 .tax-status-icon {
-  width: 60px;
+  width: 6rem;
   color: var(--green);
 }
 .tax-status-tag {
@@ -82,7 +82,7 @@ body {
 
 /*SAT invoices stats*/
 .cloud-icon {
-  width: 60px;
+  width: 6rem;
   color: var(--primary);
 }
 .inv-cont {
@@ -1262,7 +1262,7 @@ body {
 
   /* --- Tax status container --- */
   .tax-status-icon {
-    width: 3rem;
+    width: 4rem;
   }
   .tax-status-tag {
     font-size: 1.4rem;
@@ -1274,7 +1274,7 @@ body {
   /* --- Invoice status container --- */
 
   .cloud-icon {
-    width: 3rem;
+    width: 4rem;
   }
   .inv-status-tag {
     font-size: 1.4rem;
