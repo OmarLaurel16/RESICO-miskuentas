@@ -616,7 +616,6 @@ body {
   color: var(--text-light);
 }
 .report-select {
-  appearance: none;
   border: 1px solid var(--border);
   border-radius: 5px;
   padding: 8px 32px 8px 11px;
