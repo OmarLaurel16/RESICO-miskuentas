@@ -362,16 +362,19 @@ function seleccionarMes(btn) {
   const todos = Array.from(document.querySelectorAll(".ob-mes-item"));
   const idx = todos.indexOf(btn);
 
-  todos.forEach(function (el, i) {
+  /*todos.forEach(function (el, i) {
     if (i >= idx) {
       el.classList.add("ob-mes-selected");
     } else {
       el.classList.remove("ob-mes-selected");
     }
-  });
+  });*/
+
+  const haySeleccionados =
+    document.querySelectorAll(".ob-mes-item.ob-mes-selected").length > 0;
 
   const continuar = document.getElementById("ob-paso2-continuar");
-  if (continuar) continuar.disabled = false;
+  if (continuar) continuar.disabled = !haySeleccionados;
 }
 
 /** Cierra el panel y resetea el flujo para la próxima apertura */
