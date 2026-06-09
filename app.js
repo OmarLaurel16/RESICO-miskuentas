@@ -357,7 +357,7 @@ function irAPaso(paso) {
   }
 }
 
-/** Selección de mes en paso 2: selecciona el mes tocado y todos los posteriores */
+/** Selección de mes en paso 2: selecciona uno o más meses */
 function seleccionarMes(btn) {
   btn.classList.toggle("ob-mes-selected");
 
