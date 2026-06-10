@@ -1319,6 +1319,13 @@ body {
   .cfdi-form > .form-grid {
     width: 100% !important;
   }
+  .status-factura-label {
+    display: none;
+  }
+  .status-factura-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
