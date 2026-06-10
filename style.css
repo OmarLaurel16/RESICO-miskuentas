@@ -2372,7 +2372,6 @@ body {
 
   /* ── Topbar: el logo ya existe, el contenedor se ajusta ── */
   .topbar-container {
-    min-width: unset;
     width: 100%;
     padding: 0 24px;
   }
