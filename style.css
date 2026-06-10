@@ -120,21 +120,14 @@ body {
   height: 6rem;
   background: var(--sidebar-bg);
   justify-content: center;
-  /*
   box-shadow: 0 6px 6px rgba(238, 153, 212, 0.25);
-  
-  */
 }
 .topbar-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /*
   z-index: 100;
-  
-  
-  */
 }
 .logo {
   height: 40px;
