@@ -1423,6 +1423,12 @@ body {
 .cfdi-tipos-btns .btn-primary.active-tipo {
   background: color-mix(in srgb, var(--green) 75%, black);
 }
+.cfdi-panel {
+  padding: 18px;
+  background: color-mix(in srgb, var(--green) 75%, black);
+  margin-bottom: 18px;
+  border-radius: 0 8px 8px 8px;
+}
 
 /* ── ESTADO CANCELACIÓN: botón activo ── */
 #view-buzon .cfdi-tipos-btns .btn-secondary.active-estado {
