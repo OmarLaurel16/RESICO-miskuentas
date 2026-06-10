@@ -1417,7 +1417,7 @@ body {
 .hidden {
   display: none !important;
 }
-.cfdi-tipos-btns {
+.cfdi-tipos-btns .btn-primary {
   border-radius: 6px 6px 0 0;
 }
 .cfdi-tipos-btns .btn-primary.active-tipo {
