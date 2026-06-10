@@ -1421,8 +1421,7 @@ body {
   border-radius: 6px 6px 0 0;
 }
 .cfdi-tipos-btns .btn-primary.active-tipo {
-  background: color-mix(in srgb, var(--primary) 25%, white);
-  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 25%, white) !important;
 }
 .cfdi-panel {
   padding: 28px 18px;
