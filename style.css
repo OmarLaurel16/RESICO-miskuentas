@@ -1012,6 +1012,17 @@ body {
 }
 
 @media (max-width: 1160px) {
+  .topbar {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background: var(--sidebar-bg);
+    justify-content: center;
+    box-shadow: 0 6px 6px rgba(238, 153, 212, 0.25);
+  }
   .topbar-container {
     display: flex;
     flex-direction: row;
