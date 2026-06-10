@@ -1033,6 +1033,7 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 100;
+    padding: 0 2.4rem;
   }
   .sidebar {
     left: 0px;
@@ -2396,7 +2397,7 @@ body {
   .topbar-container {
     min-width: 0;
     width: 100%;
-    padding: 0 24px;
+    padding: 0 2.5rem;
     justify-content: space-between;
   }
 
