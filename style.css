@@ -839,7 +839,7 @@ body {
   color: var(--green);
 }
 .badge-red {
-  background: #fde8e8;
+  border: 2px solid red;
   color: #c0392b;
 }
 .badge-yellow {
