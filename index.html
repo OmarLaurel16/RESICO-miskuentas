@@ -1094,9 +1094,14 @@
                   <div class="form-group">
                     <input class="form-input" placeholder="RFC Receptor" />
                   </div>
-
+                  <div class="form-group">
+                    <input class="form-input" placeholder="Serie" />
+                  </div>
                   <div class="form-group">
                     <input class="form-input" placeholder="Nombre o empresa" />
+                  </div>
+                  <div class="form-group">
+                    <input class="form-input" placeholder="Folio" />
                   </div>
                   <div class="form-group">
                     <select class="form-input report-select">
@@ -1147,6 +1152,11 @@
                       </option>
                       <option>626 - Régimen simplificado de confianza</option>
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <span class="form-input" style="border: none"
+                      >Exportación: No aplica</span
+                    >
                   </div>
                   <div class="form-group">
                     <select class="form-input report-select">
@@ -1201,43 +1211,17 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <input
-                      class="form-input"
-                      placeholder="Código Postal Receptor"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <select class="form-input report-select">
-                      <option value="" disabled selected>
-                        Documentos a Relacionar: No aplican
-                      </option>
-                      <option>Por aplicación de anticipos</option>
-                      <option>Sustitución de los CFDI previos</option>
-                      <option>
-                        Factura generada por los traslados previos
-                      </option>
-                      <option>
-                        Nota de débito de los documentos anteriores
-                      </option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <span class="form-input" style="border: none"
-                      >Exportación: No aplica</span
-                    >
-                  </div>
-                  <div class="form-group">
-                    <input class="form-input" placeholder="Serie" />
-                  </div>
-                  <div class="form-group">
-                    <input class="form-input" placeholder="Folio" />
-                  </div>
-                  <div class="form-group">
                     <select class="form-input report-select">
                       <option value="" disabled selected>Método de pago</option>
                       <option>PUE</option>
                       <option>PPD</option>
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      class="form-input"
+                      placeholder="Código Postal Receptor"
+                    />
                   </div>
                   <div class="form-group">
                     <select class="form-input report-select">
@@ -1267,21 +1251,29 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <select class="form-input report-select">
-                      <option value="" disabled selected>Moneda</option>
-                      <option>Peso (M.N.)</option>
-                      <option>Dólar</option>
-                      <option>Euro</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-input" placeholder="Tipo de cambio" />
+                    <input class="form-input" placeholder="Enviar al correo:" />
                   </div>
                   <div class="form-group">
                     <input
                       class="form-input"
                       placeholder="C.P. de expedición"
                     />
+                  </div>
+
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>
+                        Documentos a Relacionar: No aplican
+                      </option>
+                      <option>Por aplicación de anticipos</option>
+                      <option>Sustitución de los CFDI previos</option>
+                      <option>
+                        Factura generada por los traslados previos
+                      </option>
+                      <option>
+                        Nota de débito de los documentos anteriores
+                      </option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label class="form-label">Fecha de emisión</label>
@@ -1291,8 +1283,17 @@
                       id="fechaFactura"
                     />
                   </div>
+
                   <div class="form-group">
-                    <input class="form-input" placeholder="Enviar al correo:" />
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>Moneda</option>
+                      <option>Peso (M.N.)</option>
+                      <option>Dólar</option>
+                      <option>Euro</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-input" placeholder="Tipo de cambio" />
                   </div>
                 </div>
               </div>
