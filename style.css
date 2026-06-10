@@ -1326,9 +1326,9 @@ body {
     width: 1.2rem;
     height: 1.2rem;
   }
-  .badge {
+  .circle-status {
     border-radius: 50%;
-    padding: 0;
+    padding: 0.3rem;
   }
 }
 
