@@ -123,7 +123,6 @@ body {
   justify-content: center;
 }
 .topbar-container {
-  min-width: 78vw;
   justify-content: space-between;
   z-index: 100;
   display: flex;
