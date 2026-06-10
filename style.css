@@ -1326,6 +1326,10 @@ body {
     width: 1.2rem;
     height: 1.2rem;
   }
+  .badge.status-factura-icon {
+    border-radius: 50% !important;
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
