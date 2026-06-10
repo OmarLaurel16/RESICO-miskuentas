@@ -132,9 +132,6 @@ body {
 .logo {
   height: 40px;
 }
-.topbar-spacer {
-  flex: 1;
-}
 
 /* ── LAYOUT ── */
 .layout {
