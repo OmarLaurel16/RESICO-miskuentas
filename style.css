@@ -1419,6 +1419,7 @@ body {
 }
 .cfdi-tipos-btns .btn-primary.active-tipo {
   background: color-mix(in srgb, var(--green) 75%, black);
+  border-radius: 5px 5px 0 0;
 }
 
 /* ── ESTADO CANCELACIÓN: botón activo ── */
