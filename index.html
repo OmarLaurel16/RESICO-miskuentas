@@ -1416,7 +1416,224 @@
                 style="display: flex; flex-direction: column"
               >
                 <div class="card-title">Datos del Receptor</div>
-                <div class="form-grid" style="width: 100%"></div>
+                <div class="form-grid" style="width: 100%">
+                  <div class="form-group">
+                    <input class="form-input" placeholder="RFC Receptor" />
+                  </div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group">
+                      <input class="form-input" placeholder="Serie" />
+                    </div>
+                    <div class="form-group">
+                      <input class="form-input" placeholder="Folio" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-input" placeholder="Nombre o empresa" />
+                  </div>
+                  <div class="form-group">
+                    <span class="form-input" style="border: none"
+                      >Exportación: No aplica</span
+                    >
+                  </div>
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>
+                        Régimen fiscal del receptor
+                      </option>
+                      <option>601 - General de Ley Personas Morales</option>
+                      <option>
+                        603 - Personas Morales con Fines no Lucrativos
+                      </option>
+                      <option>
+                        605 - Sueldos y Salarios e Ingresos Asimilados a
+                        Salarios
+                      </option>
+                      <option>606 - Arrendamiento</option>
+                      <option>607 - Régimen de adquisición de bienes</option>
+                      <option>608 - Demás ingresos</option>
+                      <option>609 - Consolidación</option>
+                      <option>
+                        610 - Residentes en el extranjero sin establecimiento
+                        permanente en México
+                      </option>
+                      <option>
+                        611 - Ingresos por dividendos (Socios y accionistas)
+                      </option>
+                      <option>
+                        612 - Personas físicas con actividades empresariales
+                      </option>
+                      <option>614 - Ingresos por intereses</option>
+                      <option>
+                        615 - Régimen de los ingresos por obtención de premios
+                      </option>
+                      <option>616 - Sin obligaciones fiscales</option>
+                      <option>
+                        620 - Sociedades cooperativas de producción de optan por
+                        diferir sus ingresos
+                      </option>
+                      <option>621 - Incorporación fiscal</option>
+                      <option>
+                        622 - Actividades agrícolas, ganaderas, forestales y
+                        pesqueras
+                      </option>
+                      <option>623 - Opcional para grupos de sociedades</option>
+                      <option>624 - Coordinados</option>
+                      <option>
+                        625 - Régimen de las actividades empresariales con
+                        ingresos a través de plataformas digitales
+                      </option>
+                      <option>626 - Régimen simplificado de confianza</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>
+                        Uso que le dará tu cliente
+                      </option>
+                      <option>(G01) Adquisición de mercancías.</option>
+                      <option>(D06) Aportaciones voluntarias al SAR.</option>
+                      <option>(I07) Comunicaciones satelitales.</option>
+                      <option>(I06) Comunicaciones telefónicas.</option>
+                      <option>(I01) Construcciones.</option>
+                      <option>
+                        (I05) Dados, troqueles, moldes, matrices y herramental.
+                      </option>
+                      <option>
+                        (D09) Depósitos en cuentas para el ahorro, primas que
+                        tengan como base planes de pensiones.
+                      </option>
+                      <option>
+                        (G02) Devoluciones, descuentos o bonificaciones.
+                      </option>
+                      <option>(D04) Donativos.</option>
+                      <option>(I04) Equipo de cómputo y accesorios.</option>
+                      <option>(I03) Equipo de transporte.</option>
+                      <option>
+                        (D08) Gastos de transportación escolar obligatoria.
+                      </option>
+                      <option>(G03) Gastos en general.</option>
+                      <option>(D03) Gastos funerales.</option>
+                      <option>
+                        (D02) Gastos médicos por incapacidad o discapacidad.
+                      </option>
+                      <option>
+                        (D01) Honorarios médicos, dentales y gastos
+                        hospitalarios.
+                      </option>
+                      <option>
+                        (D05) Intereses reales efectivamente pagados por
+                        créditos hipotecarios (casa habitación).
+                      </option>
+                      <option>
+                        (I02) Mobiliario y equipo de oficina por inversiones.
+                      </option>
+                      <option>(I08) Otra maquinaria y equipo.</option>
+                      <option>
+                        (D10) Pagos por servicios educativos (colegiaturas).
+                      </option>
+                      <option>
+                        (D07) Primas por seguros de gastos médicos.
+                      </option>
+                      <option>(S01) Sin efectos fiscales.</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>Método de pago</option>
+                      <option>PUE</option>
+                      <option>PPD</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      class="form-input"
+                      placeholder="Código Postal Receptor"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>Forma de pago</option>
+                      <option>(01) Efectivo</option>
+                      <option>(02) Cheque nominativo</option>
+                      <option>(03) Transferencia electrónica de fondos</option>
+                      <option>(04) Tarjeta de crédito</option>
+                      <option>(05) Monedero electrónico</option>
+                      <option>(06) Dinero electrónico</option>
+                      <option>(08) Vales de despensa</option>
+                      <option>(12) Dación en pago</option>
+                      <option>(13) Pago por subrogación</option>
+                      <option>(14) Pago por consignación</option>
+                      <option>(15) Condonación</option>
+                      <option>(17) Compensación</option>
+                      <option>(23) Novación</option>
+                      <option>(24) Confusión</option>
+                      <option>(25) Remisión de deuda</option>
+                      <option>(26) Prescripción o caducidad</option>
+                      <option>(27) A satisfacción del acreedor</option>
+                      <option>(28) Tarjeta de débito</option>
+                      <option>(29) Tarjeta de servicios</option>
+                      <option>(30) Aplicación de anticipos</option>
+                      <option>(31) Intermediario pagos</option>
+                      <option>(99) Por definir</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-input" placeholder="Enviar al correo:" />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      class="form-input"
+                      placeholder="C.P. de expedición"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <select class="form-input report-select">
+                      <option value="" disabled selected>
+                        Documentos a Relacionar: No aplican
+                      </option>
+                      <option>Por aplicación de anticipos</option>
+                      <option>Sustitución de los CFDI previos</option>
+                      <option>
+                        Factura generada por los traslados previos
+                      </option>
+                      <option>
+                        Nota de débito de los documentos anteriores
+                      </option>
+                    </select>
+                  </div>
+                  <div></div>
+                  <div class="form-group" style="width: 100%">
+                    <label class="form-label">Fecha de emisión</label>
+                    <input
+                      class="form-input"
+                      type="datetime-local"
+                      id="fechaFactura"
+                    />
+                  </div>
+                  <div></div>
+                  <div
+                    class="form-group"
+                    style="flex-direction: row; align-items: center; gap: 12px"
+                  >
+                    <div class="form-group">
+                      <select class="form-input report-select">
+                        <option value="" disabled selected>Moneda</option>
+                        <option>Peso (M.N.)</option>
+                        <option>Dólar</option>
+                        <option>Euro</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-input" placeholder="Tipo de cambio" />
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- /panel-credito -->
 
