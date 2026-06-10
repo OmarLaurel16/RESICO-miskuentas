@@ -110,28 +110,6 @@ body {
   font-family: "Rubik", sans-serif;
   margin-bottom: 8px;
 }
-/* ── TOP BAR ── */
-.topbar {
-  position: fixed;
-  display: flex;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6rem;
-  background: var(--sidebar-bg);
-  box-shadow: 0 6px 6px rgba(238, 153, 212, 0.25);
-  justify-content: center;
-}
-.topbar-container {
-  justify-content: space-between;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.logo {
-  height: 40px;
-}
 
 /* ── LAYOUT ── */
 .layout {
