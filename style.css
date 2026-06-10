@@ -816,6 +816,7 @@ body {
   border-bottom: none;
 }
 .data-table tr:hover td {
+  cursor: pointer;
   background: color-mix(in srgb, var(--green) 15%, white);
 }
 .data-table .mono {
