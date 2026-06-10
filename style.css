@@ -1305,7 +1305,7 @@ body {
 
   .cfdi-card-inner {
     flex-direction: column;
-    gap: 0;
+    gap: 0px;
   }
   .cfdi-tipos {
     width: 100%;
