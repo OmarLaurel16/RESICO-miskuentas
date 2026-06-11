@@ -432,7 +432,7 @@ function cerrarOnboarding(completado) {
 }
 
 // ══════════════════════════════════════════════
-//  MODAL ACTUALIZAR FACTURAS
+//  MODAL DESCARGA MASIVA DE FACTURAS
 // ══════════════════════════════════════════════
 
 const _FCT = {
@@ -451,44 +451,65 @@ const _FCT = {
     "Nov",
     "Dic",
   ],
-  // valores originales que se restauran al terminar
+  MESES_COMPLETO: [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ],
   INGRESOS_ORIG: "$ 285,400",
   EGRESOS_ORIG: "$ 248,200",
+  // Set de claves "anio-mes" ya descargados. Persiste en memoria durante la sesión.
+  descargados: new Set(),
+  // Celda actualmente seleccionada
+  celdaActual: null,
+  // Indica si hay un proceso activo (bloquea cierre por overlay)
+  procesando: false,
 };
 
-/** Construye la rejilla la primera vez */
+/** Devuelve la clave única para una celda: "2026-4" */
+function _fctKey(anio, mes) {
+  return anio + "-" + mes;
+}
+
+/** Construye la rejilla la primera vez (idempotente) */
 function _fctBuildGrid() {
-  const tbody = document.getElementById("fct-tbody");
+  var tbody = document.getElementById("fct-tbody");
   if (!tbody || tbody.dataset.built) return;
   tbody.dataset.built = "1";
 
-  const ahora = new Date();
-  const anioActual = ahora.getFullYear();
-  const mesActual = ahora.getMonth(); // 0-based
+  var ahora = new Date();
+  var anioActual = ahora.getFullYear();
+  var mesActual = ahora.getMonth(); // 0-based
 
   _FCT.ANOS.forEach(function (anio) {
-    const tr = document.createElement("tr");
+    var tr = document.createElement("tr");
 
-    // Columna de año
-    const tdAnio = document.createElement("td");
+    var tdAnio = document.createElement("td");
     tdAnio.textContent = anio;
     tr.appendChild(tdAnio);
 
-    // Columnas de meses
     _FCT.MESES.forEach(function (mes, idx) {
-      const td = document.createElement("td");
-      const btn = document.createElement("button");
+      var td = document.createElement("td");
+      var btn = document.createElement("button");
       btn.className = "fct-mes-cell";
       btn.textContent = mes;
       btn.dataset.anio = anio;
       btn.dataset.mes = idx;
 
-      // Deshabilitar meses futuros
       if (anio > anioActual || (anio === anioActual && idx > mesActual)) {
         btn.disabled = true;
       } else {
         btn.addEventListener("click", function () {
-          btn.classList.toggle("fct-selected");
+          _fctSeleccionarCelda(btn);
         });
       }
       td.appendChild(btn);
@@ -499,42 +520,117 @@ function _fctBuildGrid() {
   });
 }
 
-/** Abre el modal */
-function abrirModalFacturas() {
-  _fctBuildGrid();
-  document.getElementById("fct-overlay").classList.remove("ob-hidden");
-  document.getElementById("fct-modal").classList.remove("ob-hidden");
-  // Asegurar que la carga esté oculta y botón habilitado
-  document.getElementById("fct-loading").classList.add("ob-hidden");
-  var btn = document.getElementById("fct-actualizar-btn");
-  btn.disabled = false;
-  btn.style.display = "";
+/**
+ * Gestiona la selección única de una celda.
+ * - Deselecciona la celda previa.
+ * - Marca la nueva como seleccionada.
+ * - Detecta si el mes ya fue descargado y activa el flujo correspondiente.
+ */
+function _fctSeleccionarCelda(btn) {
+  // Deseleccionar la celda anterior
+  if (_FCT.celdaActual && _FCT.celdaActual !== btn) {
+    _FCT.celdaActual.classList.remove("fct-selected");
+  }
+
+  // Toggle: si clic en la misma celda ya seleccionada, deseleccionar
+  if (_FCT.celdaActual === btn && btn.classList.contains("fct-selected")) {
+    btn.classList.remove("fct-selected");
+    _FCT.celdaActual = null;
+    _fctOcultarAcciones();
+    return;
+  }
+
+  btn.classList.add("fct-selected");
+  _FCT.celdaActual = btn;
+
+  var anio = parseInt(btn.dataset.anio);
+  var mes = parseInt(btn.dataset.mes);
+  var mesNombre = _FCT.MESES_COMPLETO[mes] + " " + anio;
+
+  // Actualizar etiqueta dinámica
+  document.getElementById("fct-seleccion-texto").textContent = mesNombre;
+  document.getElementById("fct-seleccion-label").classList.remove("ob-hidden");
+
+  // Ocultar éxito previo si estaba visible
+  document.getElementById("fct-exito").classList.add("ob-hidden");
+
+  var key = _fctKey(anio, mes);
+  if (_FCT.descargados.has(key)) {
+    // Mes ya descargado → mostrar alerta de verificación
+    document
+      .getElementById("fct-alerta-verificar")
+      .classList.remove("ob-hidden");
+    document.getElementById("fct-actualizar-btn").classList.add("ob-hidden");
+  } else {
+    // Mes nuevo → mostrar botón de descarga masiva
+    document.getElementById("fct-alerta-verificar").classList.add("ob-hidden");
+    document.getElementById("fct-actualizar-btn").classList.remove("ob-hidden");
+  }
 }
 
-/** Cierra el modal (solo si no está procesando) */
+/** Oculta todos los controles de acción (sin celda seleccionada) */
+function _fctOcultarAcciones() {
+  document.getElementById("fct-seleccion-label").classList.add("ob-hidden");
+  document.getElementById("fct-actualizar-btn").classList.add("ob-hidden");
+  document.getElementById("fct-alerta-verificar").classList.add("ob-hidden");
+  document.getElementById("fct-exito").classList.add("ob-hidden");
+}
+
+/** Abre el modal y resetea la UI a estado inicial */
+function abrirModalFacturas() {
+  _fctBuildGrid();
+
+  // Refrescar clases "descargado" en la rejilla según el Set en memoria
+  document.querySelectorAll(".fct-mes-cell").forEach(function (btn) {
+    var key = _fctKey(parseInt(btn.dataset.anio), parseInt(btn.dataset.mes));
+    btn.classList.toggle("fct-mes-descargado", _FCT.descargados.has(key));
+  });
+
+  // Restaurar estado visual
+  if (_FCT.celdaActual) {
+    _FCT.celdaActual.classList.remove("fct-selected");
+    _FCT.celdaActual = null;
+  }
+  _fctOcultarAcciones();
+  document.getElementById("fct-loading").classList.add("ob-hidden");
+
+  document.getElementById("fct-overlay").classList.remove("ob-hidden");
+  document.getElementById("fct-modal").classList.remove("ob-hidden");
+}
+
+/**
+ * Cierra el modal.
+ * Bloqueado mientras haya un proceso activo (_FCT.procesando === true).
+ */
 function cerrarModalFacturas() {
-  var btn = document.getElementById("fct-actualizar-btn");
-  if (btn && btn.disabled) return; // bloquear cierre mientras procesa
+  if (_FCT.procesando) return;
   document.getElementById("fct-overlay").classList.add("ob-hidden");
   document.getElementById("fct-modal").classList.add("ob-hidden");
 }
 
-/** Simula la actualización de facturas */
+/** Simula la descarga masiva de un mes */
 function actualizarFacturas() {
+  if (!_FCT.celdaActual) return;
+
+  var anio = parseInt(_FCT.celdaActual.dataset.anio);
+  var mes = parseInt(_FCT.celdaActual.dataset.mes);
+  var mesNombre = _FCT.MESES_COMPLETO[mes] + " " + anio;
+
   var btn = document.getElementById("fct-actualizar-btn");
   var loading = document.getElementById("fct-loading");
-  var loadingTxt = document.getElementById("fct-loading-txt");
+  var loadTxt = document.getElementById("fct-loading-txt");
+  var exito = document.getElementById("fct-exito");
+  var exitoTxt = document.getElementById("fct-exito-txt");
 
-  // Iniciar estado de carga
-  btn.disabled = true;
-  btn.style.display = "none";
+  _FCT.procesando = true;
+  btn.classList.add("ob-hidden");
+  document.getElementById("fct-alerta-verificar").classList.add("ob-hidden");
   loading.classList.remove("ob-hidden");
-  loadingTxt.textContent = "Sincronizando facturas…";
+  loadTxt.textContent = "Conectando con el SAT…";
 
-  // Mensajes de progreso simulados
   var mensajes = [
     "Conectando con el SAT…",
-    "Descargando CFDIs…",
+    "Descargando CFDIs de " + mesNombre + "…",
     "Procesando ingresos…",
     "Procesando egresos…",
     "Calculando totales…",
@@ -543,38 +639,81 @@ function actualizarFacturas() {
   var idx = 0;
   var intervalo = setInterval(function () {
     idx++;
-    if (idx < mensajes.length) {
-      loadingTxt.textContent = mensajes[idx];
-    }
-  }, 1000);
+    if (idx < mensajes.length) loadTxt.textContent = mensajes[idx];
+  }, 900);
 
-  // Al terminar los 6 segundos
   setTimeout(function () {
     clearInterval(intervalo);
+    loading.classList.add("ob-hidden");
+    _FCT.procesando = false;
 
-    // Restaurar valores en Inicio
+    // Marcar mes como descargado
+    var key = _fctKey(anio, mes);
+    _FCT.descargados.add(key);
+    if (_FCT.celdaActual) {
+      _FCT.celdaActual.classList.add("fct-mes-descargado");
+    }
+
+    // Restaurar valores del dashboard
     var elIngr = document.getElementById("inicio-ingresos");
     var elEgr = document.getElementById("inicio-egresos");
     if (elIngr) elIngr.textContent = _FCT.INGRESOS_ORIG;
     if (elEgr) elEgr.textContent = _FCT.EGRESOS_ORIG;
 
-    // Cerrar modal
-    document.getElementById("fct-overlay").classList.add("ob-hidden");
-    document.getElementById("fct-modal").classList.add("ob-hidden");
+    // Mostrar mensaje de éxito — el modal permanece abierto
+    exitoTxt.textContent =
+      "¡Descarga de " +
+      mesNombre +
+      " completada con éxito! Ya puedes cerrar esta ventana o continuar revisando la app.";
+    exito.classList.remove("ob-hidden");
+  }, 5400);
+}
+
+/** Inicia el proceso de verificación de facturas de un mes ya descargado */
+function fctIniciarVerificacion() {
+  if (!_FCT.celdaActual) return;
+
+  var anio = parseInt(_FCT.celdaActual.dataset.anio);
+  var mes = parseInt(_FCT.celdaActual.dataset.mes);
+  var mesNombre = _FCT.MESES_COMPLETO[mes] + " " + anio;
+
+  var loading = document.getElementById("fct-loading");
+  var loadTxt = document.getElementById("fct-loading-txt");
+  var exito = document.getElementById("fct-exito");
+  var exitoTxt = document.getElementById("fct-exito-txt");
+
+  _FCT.procesando = true;
+  document.getElementById("fct-alerta-verificar").classList.add("ob-hidden");
+  document.getElementById("fct-actualizar-btn").classList.add("ob-hidden");
+  loading.classList.remove("ob-hidden");
+  loadTxt.textContent = "Iniciando verificación…";
+
+  var mensajes = [
+    "Iniciando verificación…",
+    "Consultando folios en el SAT…",
+    "Comparando CFDIs locales…",
+    "Validando timbres fiscales…",
+    "Detectando cancelaciones…",
+    "Generando reporte…",
+  ];
+  var idx = 0;
+  var intervalo = setInterval(function () {
+    idx++;
+    if (idx < mensajes.length) loadTxt.textContent = mensajes[idx];
+  }, 900);
+
+  setTimeout(function () {
+    clearInterval(intervalo);
     loading.classList.add("ob-hidden");
-    btn.disabled = false;
-    btn.style.display = "";
+    _FCT.procesando = false;
 
-    // Deseleccionar celdas para la próxima vez
-    document
-      .querySelectorAll(".fct-mes-cell.fct-selected")
-      .forEach(function (c) {
-        c.classList.remove("fct-selected");
-      });
-
-    // Mensaje de éxito reutilizando el estilo ob-validacion-ok como toast
-    _fctToast("Facturas actualizadas correctamente");
-  }, 6000);
+    // Mostrar resultado de verificación — el modal permanece abierto
+    exitoTxt.textContent =
+      "Verificación de " +
+      mesNombre +
+      " completada. Todos los CFDIs están sincronizados correctamente.";
+    exito.classList.remove("ob-hidden");
+  }, 5400);
 }
 
 /** Muestra un toast de éxito temporal */
