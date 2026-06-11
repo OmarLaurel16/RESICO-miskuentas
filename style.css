@@ -2679,3 +2679,17 @@ body {
     margin: 0 18px;
   }
 }
+
+/* ── Variantes de color para egresos ── */
+.factura-logo-egreso {
+  background: var(--secondary);
+}
+.factura-total-egreso {
+  color: var(--secondary);
+}
+.egreso-row {
+  cursor: pointer;
+}
+.egreso-row:hover td {
+  background: color-mix(in srgb, var(--secondary) 8%, white);
+}

@@ -859,3 +859,111 @@ function regresarAIngresos() {
   document.getElementById("ingresos-detalle").classList.add("ob-hidden");
   document.getElementById("ingresos-tabla").classList.remove("ob-hidden");
 }
+
+// ── DETALLE DE EGRESO ───────────────────────────────────────────────────────
+
+/**
+ * Muestra el detalle de un CFDI de egreso al hacer clic en una fila.
+ * Para conectar datos reales, enriquecer los data-* del <tr> o hacer
+ * un fetch usando `row.dataset.folio` como llave.
+ *
+ * @param {HTMLTableRowElement} row - La fila <tr> clicada
+ */
+function verDetalleEgreso(row) {
+  var d = row.dataset;
+
+  var folio = d.folio || "—";
+  var status = d.status || "Vigente";
+  var metodo = d.metodo || "—";
+  var emisor = d.emisor || "—";
+  var totalRaw = d.total || "0.00";
+  var deducible = d.deducible || "—";
+
+  // Folio
+  document.getElementById("det-eg-folio").textContent = folio;
+
+  // Estado badge
+  var badge = document.getElementById("det-eg-estado-badge");
+  document.getElementById("det-eg-estado-texto").textContent = status;
+  badge.classList.toggle("cancelado", status === "Cancelado");
+
+  // Emisor (logo inicial + nombre + RFC simulado)
+  var inicial = emisor.trim().charAt(0).toUpperCase();
+  document.getElementById("det-eg-emisor-inicial").textContent = inicial;
+  document.getElementById("det-eg-emisor-nombre").textContent =
+    emisor.toUpperCase();
+  document.getElementById("det-eg-emisor-rfc").textContent =
+    "RFC: " + inicial + "XX010101000";
+
+  // Método de pago
+  document.getElementById("det-eg-metodo").textContent = metodo;
+  document.getElementById("det-eg-metodo-desc").textContent =
+    metodo === "PPD"
+      ? "Pago en Parcialidades o Diferido"
+      : metodo === "PUE"
+        ? "Pago en Una Sola Exhibición"
+        : "—";
+
+  // Deducible
+  var deducibleEl = document.getElementById("det-eg-deducible");
+  deducibleEl.textContent = deducible;
+  deducibleEl.style.color =
+    deducible === "Sí"
+      ? "var(--green)"
+      : deducible === "Parcial"
+        ? "#b7770d"
+        : deducible === "No"
+          ? "#c0392b"
+          : "inherit";
+
+  // UUID simulado
+  document.getElementById("det-eg-uuid").textContent =
+    "a3f9c" +
+    folio.replace("GSCE-", "") +
+    "-8d1b-4e7a-" +
+    folio.replace("GSCE-", "") +
+    "b2-0011ddaa" +
+    folio.replace("GSCE-", "");
+
+  // Conceptos + totales
+  var totalNum = parseFloat(totalRaw.replace(/,/g, ""));
+  var iva = +((totalNum / 1.16) * 0.16).toFixed(2);
+  var subtotal = +(totalNum - iva).toFixed(2);
+
+  document.getElementById("det-eg-conceptos-tbody").innerHTML =
+    "<tr>" +
+    "<td>Producto / servicio — " +
+    folio +
+    "</td>" +
+    '<td style="text-align:right">1</td>' +
+    '<td style="text-align:right">$ ' +
+    subtotal.toLocaleString("es-MX", { minimumFractionDigits: 2 }) +
+    "</td>" +
+    '<td style="text-align:right">$ ' +
+    subtotal.toLocaleString("es-MX", { minimumFractionDigits: 2 }) +
+    "</td>" +
+    "</tr>";
+
+  document.getElementById("det-eg-subtotal").textContent =
+    "$ " + subtotal.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+  document.getElementById("det-eg-iva").textContent =
+    "$ " + iva.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+  document.getElementById("det-eg-total").textContent =
+    "$ " + totalNum.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+
+  // Alternar paneles
+  document.getElementById("gastos-tabla").classList.add("ob-hidden");
+  document.getElementById("gastos-detalle").classList.remove("ob-hidden");
+
+  var main =
+    document.querySelector("main") || document.querySelector(".main-content");
+  if (main) main.scrollTop = 0;
+}
+
+/**
+ * Regresa a la tabla de gastos desde el panel de detalle.
+ */
+function regresarAGastos() {
+  document.getElementById("gastos-detalle").classList.add("ob-hidden");
+  document.getElementById("gastos-tabla").classList.remove("ob-hidden");
+}
