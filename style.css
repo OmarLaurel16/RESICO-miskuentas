@@ -617,8 +617,6 @@ body {
   padding: 8px 32px 8px 11px;
   font-size: 13px;
   font-family: inherit;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237A8872'/%3E%3C/svg%3E")
-    no-repeat right 9px center var(--input-bg);
   cursor: pointer;
   color: var(--input);
   min-width: 100px;
