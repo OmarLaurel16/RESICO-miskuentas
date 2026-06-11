@@ -757,3 +757,105 @@ function taxSetEstado(estado, mesesPendientes) {
     elPending.style.display = "none";
   }
 }
+
+// ── DETALLE DE INGRESO ──────────────────────────────────────────────────────
+
+/**
+ * Muestra el detalle de una factura al hacer clic en una fila de la tabla de
+ * ingresos. Extrae los data-* de la fila clicada y los mapea al panel de
+ * detalle. Para conectar datos reales en el futuro, sólo hay que enriquecer
+ * los data-* del <tr> o llamar a una API usando `row.dataset.folio`.
+ *
+ * @param {HTMLTableRowElement} row - La fila <tr> clicada
+ */
+function verDetalleIngreso(row) {
+  var d = row.dataset;
+
+  // ── Folio y estado ──
+  var folio = d.folio || "—";
+  var status = d.status || "Vigente";
+  var metodo = d.metodo || "—";
+  var receptor = d.receptor || "—";
+  var fecha = d.fecha || "—";
+  var totalRaw = d.total || "0.00";
+
+  // Folio
+  document.getElementById("det-folio").textContent = folio;
+
+  // Estado badge
+  var badge = document.getElementById("det-estado-badge");
+  var badgeTexto = document.getElementById("det-estado-texto");
+  badgeTexto.textContent = status;
+  badge.classList.toggle("cancelado", status === "Cancelado");
+
+  // Receptor
+  document.getElementById("det-receptor").textContent = receptor;
+
+  // Método de pago
+  document.getElementById("det-metodo").textContent = metodo;
+  document.getElementById("det-metodo-desc").textContent =
+    metodo === "PPD"
+      ? "Pago en Parcialidades o Diferido"
+      : metodo === "PUE"
+        ? "Pago en Una Sola Exhibición"
+        : "—";
+
+  // Fecha
+  document.getElementById("det-fecha").textContent = fecha;
+
+  // UUID (simulado — reemplazar con dato real cuando esté disponible)
+  document.getElementById("det-uuid").textContent =
+    "d5b6e" +
+    folio.replace("GASC-", "") +
+    "-3f2a-4c8b-" +
+    folio.replace("GASC-", "") +
+    "1a-0000ffcc" +
+    folio.replace("GASC-", "");
+
+  // ── Conceptos (datos de ejemplo; mapear a datos reales en el futuro) ──
+  var totalNum = parseFloat(totalRaw.replace(/,/g, ""));
+  var iva = +((totalNum / 1.16) * 0.16).toFixed(2);
+  var subtotal = +(totalNum - iva).toFixed(2);
+  var precioUnit = +subtotal.toFixed(2);
+
+  var tbody = document.getElementById("det-conceptos-tbody");
+  tbody.innerHTML =
+    "<tr>" +
+    "<td>Servicio profesional — " +
+    folio +
+    "</td>" +
+    '<td style="text-align:right">1</td>' +
+    '<td style="text-align:right mono">$ ' +
+    precioUnit.toLocaleString("es-MX", { minimumFractionDigits: 2 }) +
+    "</td>" +
+    '<td style="text-align:right mono">$ ' +
+    precioUnit.toLocaleString("es-MX", { minimumFractionDigits: 2 }) +
+    "</td>" +
+    "</tr>";
+
+  // Totales
+  document.getElementById("det-subtotal").textContent =
+    "$ " + subtotal.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+  document.getElementById("det-iva").textContent =
+    "$ " + iva.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+  document.getElementById("det-total").textContent =
+    "$ " + totalNum.toLocaleString("es-MX", { minimumFractionDigits: 2 });
+
+  // ── Alternar paneles ──
+  document.getElementById("ingresos-tabla").classList.add("ob-hidden");
+  document.getElementById("ingresos-detalle").classList.remove("ob-hidden");
+
+  // Scroll al inicio del main
+  var main =
+    document.querySelector("main") || document.querySelector(".main-content");
+  if (main) main.scrollTop = 0;
+}
+
+/**
+ * Regresa a la tabla de ingresos desde el panel de detalle.
+ * No recarga ni pierde el estado de la vista (filtros, scroll, etc.).
+ */
+function regresarAIngresos() {
+  document.getElementById("ingresos-detalle").classList.add("ob-hidden");
+  document.getElementById("ingresos-tabla").classList.remove("ob-hidden");
+}
