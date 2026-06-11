@@ -1265,7 +1265,6 @@ body {
   .date-group {
     display: flex;
     gap: 0.5rem;
-    width: 100%;
     flex-wrap: wrap;
   }
   .date-group .report-label {
