@@ -617,6 +617,7 @@ body {
   padding: 8px 32px 8px 11px;
   font-size: 13px;
   font-family: inherit;
+  background: var(--input-bg);
   cursor: pointer;
   color: var(--input);
   min-width: 100px;
