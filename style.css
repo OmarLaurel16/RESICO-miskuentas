@@ -1373,6 +1373,12 @@ body {
     overflow: hidden;
     width: 110px;
   }
+  .clipped-cell {
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
