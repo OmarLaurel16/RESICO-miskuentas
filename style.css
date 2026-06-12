@@ -762,6 +762,10 @@ body {
   transform: translate(0, -50%);
   cursor: pointer;
   color: var(--secondary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .carousel-chevron-left-btn {
   left: 2.2rem;
