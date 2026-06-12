@@ -3011,7 +3011,7 @@ body {
   gap: 8px;
   margin-top: 14px;
   padding-top: 12px;
-  border-top: 1px dashed var(--border);
+  border-top: 1px solid var(--border);
 }
 .st-sim-label {
   font-size: 10px;
