@@ -718,11 +718,8 @@ function fctIniciarVerificacion() {
 
   var mensajes = [
     "Iniciando verificación…",
-    "Consultando folios en el SAT…",
-    "Comparando CFDIs locales…",
-    "Validando timbres fiscales…",
+    "Consultando SAT…",
     "Detectando cancelaciones…",
-    "Generando reporte…",
   ];
   var idx = 0;
   var intervalo = setInterval(function () {
