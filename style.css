@@ -759,6 +759,14 @@ body {
   left: 0.8rem;
   cursor: pointer;
 }
+.carousel.chevron-right-btn {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  cursor: pointer;
+}
 /* Stats grid */
 .stats-grid {
   display: grid;
