@@ -368,6 +368,9 @@ body {
   background: var(--item-hover);
   color: var(--primary);
 }
+.nav-module-btn.active.icon-outline {
+  display: none;
+}
 
 .nav-module-btn:hover .nav-ico,
 .nav-module-btn:hover .chevron,
