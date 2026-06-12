@@ -692,7 +692,7 @@ function actualizarFacturas() {
     exitoTxt.textContent =
       "¡Descarga de " +
       mesNombre +
-      " completada con éxito! Ya puedes cerrar esta ventana.";
+      " completada con éxito! Puedes cerrar esta ventana, continuar con la sincronización de facturas de otro mes o realizar una verificación de la vigencia de tus facturas.";
     exito.classList.remove("ob-hidden");
   }, 5400);
 }
