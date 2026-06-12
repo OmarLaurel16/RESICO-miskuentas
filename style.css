@@ -752,17 +752,19 @@ body {
   align-items: center;
 }
 .carousel-chevron-btn {
-  border: none;
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
   background: none;
   position: absolute;
   top: 50%;
   cursor: pointer;
+  color: var(--secondary);
 }
 .carousel-chevron-left-btn {
-  left: 0.8rem;
+  left: 2.2rem;
 }
 .carousel-chevron-right-btn {
-  right: 0.8rem;
+  right: 2.2rem;
 }
 .carousel-dots {
   display: flex;
