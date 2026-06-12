@@ -345,6 +345,7 @@ body {
   z-index: 3;
   background: none;
   border: none;
+  border-top: 3px solid var(--card-bg);
   color: var(--text-main);
   display: flex;
   flex-direction: column;
@@ -380,6 +381,7 @@ body {
 .nav-module-btn:hover {
   background: var(--item-hover);
   color: var(--primary);
+  border-top: 3px solid var(--primary);
 }
 
 .nav-module-btn.active {
@@ -2472,7 +2474,6 @@ body {
     padding: 11px 16px;
     gap: 10px;
     font-size: 13px;
-    border-left: 3px;
   }
 
   /* Indicador activo: borde izquierdo en lugar de borde superior */
