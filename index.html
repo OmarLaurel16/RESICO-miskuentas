@@ -8671,11 +8671,8 @@
               src="chatbot.png"
               style="height: 44px; width: 44px"
             />
-            <span>Actualizando información</span>
+            <span>Validando el pago</span>
           </div>
-
-          <!-- Contador de progreso -->
-          <div class="ob-proc-counter" id="ob-proc-counter">Preparando…</div>
 
           <!-- Barra de progreso global reutilizada -->
           <div class="ob-progress-wrap">
@@ -8685,18 +8682,30 @@
               style="transition: width 0.6s ease"
             ></div>
           </div>
-
-          <!-- Mes actual -->
-          <div class="ob-proc-mes-wrap">
-            <div class="fct-spinner"></div>
-            <div class="ob-proc-mes" id="ob-proc-mes">—</div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              margin-top: 4px;
+            "
+          >
+            <div style="margin-left: auto">
+              <button
+                class="btn-secondary ob-continuar-btn"
+                onclick="irAPaso(2)"
+                style="justify-content: center"
+              >
+                Regresar
+              </button>
+              <button
+                class="btn-primary ob-continuar-btn"
+                onclick="irAPaso('valid')"
+              >
+                Ir al pago
+              </button>
+            </div>
           </div>
-
-          <!-- Mensaje dinámico -->
-          <div class="ob-proc-msg" id="ob-proc-msg">Iniciando…</div>
-
-          <!-- Lista de meses: pendientes / completados -->
-          <div class="ob-proc-lista" id="ob-proc-lista"></div>
         </div>
 
         <!-- ── PASO 2.8: Procesamiento de facturas ── -->
