@@ -764,6 +764,18 @@ body {
 .carousel-chevron-right-btn {
   right: 0.8rem;
 }
+.carousel-dots {
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.carousel-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  cursor: pointer;
+}
 
 /* Stats grid */
 .stats-grid {
