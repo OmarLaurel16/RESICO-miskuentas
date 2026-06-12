@@ -1144,8 +1144,8 @@ var ST_ESCENARIOS = {
     puntaje: 950,
     items: [
       { ok: true, texto: "Declaraciones al corriente" },
-      { ok: true, texto: "Sin facturas con errores" },
-      { ok: true, texto: "Descargas SAT recientes" },
+      { ok: true, texto: "No hay facturas con errores" },
+      { ok: true, texto: "Facturas al día" },
       { ok: true, texto: "Información fiscal completa" },
       { ok: false, texto: "1 notificación pendiente de leer", nivel: "warn" },
     ],
@@ -1155,7 +1155,11 @@ var ST_ESCENARIOS = {
     items: [
       { ok: true, texto: "Declaraciones al corriente" },
       { ok: false, texto: "3 facturas con posibles errores", nivel: "warn" },
-      { ok: false, texto: "Descarga SAT desactualizada", nivel: "warn" },
+      {
+        ok: false,
+        texto: "Sincronización de facturas desactualizada",
+        nivel: "warn",
+      },
       { ok: true, texto: "Sin facturas canceladas pendientes" },
       { ok: false, texto: "5 notificaciones sin leer", nivel: "warn" },
     ],
