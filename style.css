@@ -752,6 +752,8 @@ body {
   align-items: center;
 }
 .carousel-chevron-btn {
+  width: 22px;
+  height: 22px;
   border: 2px solid var(--secondary);
   border-radius: 50%;
   background: none;
