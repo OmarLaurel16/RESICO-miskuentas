@@ -1168,7 +1168,7 @@ var ST_ESCENARIOS = {
     puntaje: 340,
     items: [
       { ok: false, texto: "2 meses de declaraciones pendientes", nivel: "mal" },
-      { ok: false, texto: "8 facturas con RFC incorrecto", nivel: "mal" },
+      { ok: false, texto: "8 facturas con errores", nivel: "mal" },
       { ok: false, texto: "Sin descargas SAT en 60 días", nivel: "mal" },
       { ok: false, texto: "Información fiscal incompleta", nivel: "warn" },
       { ok: false, texto: "12 notificaciones sin leer", nivel: "warn" },
