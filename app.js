@@ -221,6 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   navigate("perfil", "Perfil");
   navigate("first-msg");
   taxSetEstado("pendiente", 1);
+  stActualizar();
 
   // cerrar submenu al hacer click fuera del sidebar
   document.addEventListener("click", (e) => {
@@ -915,9 +916,11 @@ function taxSetEstado(estado, mesesPendientes) {
     if (sub) sub.textContent = txt;
     elPending.style.display = "";
     elOk.style.display = "none";
+    stSetFactor("declaraciones", true);
   } else {
     elOk.style.display = "";
     elPending.style.display = "none";
+    stSetFactor("declaraciones", false);
   }
 }
 
@@ -1129,4 +1132,150 @@ function verDetalleEgreso(row) {
 function regresarAGastos() {
   document.getElementById("gastos-detalle").classList.add("ob-hidden");
   document.getElementById("gastos-tabla").classList.remove("ob-hidden");
+}
+
+// ══════════════════════════════════════════════
+//  SITUACIÓN TRIBUTARIA
+// ══════════════════════════════════════════════
+
+/**
+ * Factores que componen la puntuación.
+ * Cada factor descuenta `penalizacion` puntos si `activo` es true.
+ * Para conectar datos reales, actualiza el campo `activo` desde
+ * la fuente correspondiente antes de llamar a stActualizar().
+ *
+ * @type {Array<{id: string, label: string, penalizacion: number, activo: boolean}>}
+ */
+var ST_FACTORES = [
+  {
+    id: "notificaciones",
+    label: "Sin notificaciones pendientes",
+    penalizacion: 80,
+    activo: false, // true = hay notificaciones sin leer
+  },
+  {
+    id: "declaraciones",
+    label: "Declaraciones al corriente",
+    penalizacion: 200,
+    activo: true, // conectado a taxSetEstado: pendiente = true
+  },
+  {
+    id: "descargasSat",
+    label: "Descargas SAT recientes",
+    penalizacion: 100,
+    activo: false,
+  },
+  {
+    id: "facturasError",
+    label: "Sin facturas con errores",
+    penalizacion: 120,
+    activo: false,
+  },
+  {
+    id: "rfcIncorrecto",
+    label: "Sin facturas con RFC incorrecto",
+    penalizacion: 100,
+    activo: false,
+  },
+  {
+    id: "canceladas",
+    label: "Facturas canceladas revisadas",
+    penalizacion: 80,
+    activo: false,
+  },
+  {
+    id: "infoFiscal",
+    label: "Información fiscal completa",
+    penalizacion: 60,
+    activo: false,
+  },
+];
+
+/** Longitud total del arco semicircular del gauge (perímetro del path) */
+var ST_ARC_LEN = 157;
+
+/**
+ * Calcula el puntaje actual, actualiza el gauge y el checklist.
+ * Puede llamarse en cualquier momento para refrescar el componente.
+ */
+function stActualizar() {
+  // 1. Calcular puntaje
+  var penTotal = ST_FACTORES.reduce(function (acc, f) {
+    return acc + (f.activo ? f.penalizacion : 0);
+  }, 0);
+  var puntaje = Math.max(0, 1000 - penTotal);
+
+  // 2. Determinar clase y etiqueta de estado
+  var clase, etiqueta;
+  if (puntaje >= 900) {
+    clase = "st-excelente";
+    etiqueta = "Excelente";
+  } else if (puntaje >= 800) {
+    clase = "st-muybien";
+    etiqueta = "Muy bien";
+  } else if (puntaje >= 650) {
+    clase = "st-bien";
+    etiqueta = "Bien";
+  } else if (puntaje >= 500) {
+    clase = "st-atencion";
+    etiqueta = "Atención";
+  } else {
+    clase = "st-riesgo";
+    etiqueta = "Riesgo";
+  }
+
+  // 3. Actualizar gauge SVG
+  var arc = document.getElementById("st-arc");
+  if (arc) {
+    var fill = (puntaje / 1000) * ST_ARC_LEN;
+    arc.setAttribute("stroke-dasharray", fill + " " + ST_ARC_LEN);
+  }
+
+  // 4. Actualizar texto del puntaje y etiqueta
+  var elPuntaje = document.getElementById("st-puntaje");
+  var elLabel = document.getElementById("st-estado-label");
+  if (elPuntaje) elPuntaje.textContent = puntaje;
+  if (elLabel) elLabel.textContent = etiqueta;
+
+  // 5. Aplicar clase de color al cuerpo del componente
+  var cuerpo = document.querySelector(".st-cuerpo");
+  if (cuerpo) {
+    cuerpo.className = "st-cuerpo " + clase;
+  }
+
+  // 6. Renderizar checklist
+  var lista = document.getElementById("st-checklist");
+  if (!lista) return;
+  lista.innerHTML = ST_FACTORES.map(function (f) {
+    var ok = !f.activo;
+    return (
+      '<li class="' +
+      (ok ? "st-ok" : "st-warn") +
+      '">' +
+      '<span class="st-ico">' +
+      (ok ? "✓" : "!") +
+      "</span>" +
+      "<span>" +
+      f.label +
+      "</span>" +
+      "</li>"
+    );
+  }).join("");
+}
+
+/**
+ * Marca un factor como activo (problema presente) o inactivo (resuelto).
+ * Llama a stActualizar() automáticamente.
+ *
+ * @param {string}  id     - id del factor en ST_FACTORES
+ * @param {boolean} activo - true = problema presente, false = resuelto
+ */
+function stSetFactor(id, activo) {
+  var factor = ST_FACTORES.find(function (f) {
+    return f.id === id;
+  });
+  if (factor) {
+    factor.activo = activo;
+    stActualizar();
+  }
 }

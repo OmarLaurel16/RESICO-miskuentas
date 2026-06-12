@@ -652,7 +652,52 @@
                   </div>
                 </div>
                 <div class="card" style="width: 100%">
-                  <div class="metrics"></div>
+                  <div class="metrics">
+                    <!-- ══ SITUACIÓN TRIBUTARIA ══ -->
+                    <div class="st-titulo card-title">Situación tributaria</div>
+                    <div class="st-cuerpo">
+                      <!-- Lado izquierdo: gauge -->
+                      <div class="st-gauge-wrap">
+                        <svg
+                          class="st-gauge-svg"
+                          viewBox="0 0 120 72"
+                          fill="none"
+                        >
+                          <!-- Arco de fondo -->
+                          <path
+                            class="st-arc-bg"
+                            d="M10 66 A50 50 0 0 1 110 66"
+                            stroke-width="10"
+                            stroke-linecap="round"
+                          />
+                          <!-- Arco de valor (longitud controlada por JS via stroke-dasharray) -->
+                          <path
+                            class="st-arc-val"
+                            id="st-arc"
+                            d="M10 66 A50 50 0 0 1 110 66"
+                            stroke-width="10"
+                            stroke-linecap="round"
+                            stroke-dasharray="0 157"
+                          />
+                        </svg>
+                        <div class="st-puntaje-wrap">
+                          <span class="st-puntaje" id="st-puntaje">—</span>
+                          <span class="st-de-mil">/ 1000</span>
+                          <span class="st-estado-label" id="st-estado-label"
+                            >—</span
+                          >
+                        </div>
+                      </div>
+
+                      <!-- Lado derecho: checklist -->
+                      <div class="st-checklist-wrap">
+                        <p class="st-checklist-titulo">
+                          ¿Cómo mejorar tu situación?
+                        </p>
+                        <ul class="st-checklist" id="st-checklist"></ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- Finishes tip section -->

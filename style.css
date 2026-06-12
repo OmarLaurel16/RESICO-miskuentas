@@ -2838,3 +2838,182 @@ body {
 .egreso-row:hover td {
   background: color-mix(in srgb, var(--secondary) 8%, white);
 }
+
+/* ══════════════════════════════════════════════
+   SITUACIÓN TRIBUTARIA (.metrics)
+   ══════════════════════════════════════════════ */
+
+/* Contenedor interno */
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Título reutiliza .card-title pero con clase propia por si se necesita ajustar */
+.st-titulo {
+  margin-bottom: 8px;
+}
+
+/* Layout de dos columnas */
+.st-cuerpo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Gauge ── */
+.st-gauge-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.st-gauge-svg {
+  width: 130px;
+  height: auto;
+  overflow: visible;
+}
+.st-arc-bg {
+  stroke: var(--border);
+}
+.st-arc-val {
+  stroke: var(--primary);
+  transition:
+    stroke-dasharray 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.5s ease;
+}
+
+/* Puntaje encima del gauge */
+.st-puntaje-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -6px;
+  line-height: 1.2;
+}
+.st-puntaje {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Rubik", sans-serif;
+  transition: color 0.5s ease;
+}
+.st-de-mil {
+  font-size: 10px;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.st-estado-label {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  transition: color 0.5s ease;
+  text-align: center;
+}
+
+/* Colores por estado */
+.st-excelente .st-arc-val {
+  stroke: var(--green);
+}
+.st-excelente .st-puntaje,
+.st-excelente .st-estado-label {
+  color: var(--green);
+}
+
+.st-muybien .st-arc-val {
+  stroke: #3583a6;
+}
+.st-muybien .st-puntaje,
+.st-muybien .st-estado-label {
+  color: #3583a6;
+}
+
+.st-bien .st-arc-val {
+  stroke: #6baacc;
+}
+.st-bien .st-puntaje,
+.st-bien .st-estado-label {
+  color: #6baacc;
+}
+
+.st-atencion .st-arc-val {
+  stroke: #e0993a;
+}
+.st-atencion .st-puntaje,
+.st-atencion .st-estado-label {
+  color: #e0993a;
+}
+
+.st-riesgo .st-arc-val {
+  stroke: #c94d3f;
+}
+.st-riesgo .st-puntaje,
+.st-riesgo .st-estado-label {
+  color: #c94d3f;
+}
+
+/* ── Checklist ── */
+.st-checklist-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.st-checklist-titulo {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+.st-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.st-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+.st-checklist li .st-ico {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.st-checklist li.st-ok .st-ico {
+  background: color-mix(in srgb, var(--green) 18%, white);
+  color: var(--green);
+}
+.st-checklist li.st-warn .st-ico {
+  background: color-mix(in srgb, #e0993a 18%, white);
+  color: #e0993a;
+}
+
+/* ── Responsive: móvil apila verticalmente ── */
+@media (max-width: 520px) {
+  .st-cuerpo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .st-gauge-wrap {
+    align-self: center;
+  }
+}
