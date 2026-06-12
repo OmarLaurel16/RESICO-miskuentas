@@ -776,6 +776,9 @@ body {
   border: 2px solid var(--secondary);
   cursor: pointer;
 }
+.icon-tips {
+  height: 5rem !important;
+}
 
 /* Stats grid */
 .stats-grid {
