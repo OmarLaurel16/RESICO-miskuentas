@@ -381,7 +381,6 @@ body {
 .nav-module-btn:hover {
   background: var(--item-hover);
   color: var(--primary);
-  border-top: 3px solid var(--primary);
 }
 
 .nav-module-btn.active {
