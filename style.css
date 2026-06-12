@@ -399,13 +399,11 @@ body {
 
 .nav-module-btn.active {
   color: var(--primary);
-  border-top: 3px solid var(--primary);
   background: color-mix(in srgb, var(--primary) 15%, white);
   font-weight: 600;
 }
 .nav-module-btn.open {
   color: var(--primary);
-  border-top: 3px solid var(--primary);
   background: color-mix(in srgb, var(--primary) 15%, white);
   font-weight: 600;
 }
