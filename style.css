@@ -775,8 +775,8 @@ body {
   gap: 1rem;
 }
 .carousel-dot {
-  width: 1rem;
-  height: 1rem;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 50%;
   border: 2px solid var(--secondary);
   cursor: pointer;
