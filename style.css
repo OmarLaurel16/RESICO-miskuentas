@@ -743,6 +743,14 @@ body {
   color: var(--primary);
 }
 
+/* Carousel */
+.carousel {
+  display: flex;
+  margin: 0 auto;
+  gap: 1.5rem;
+  padding: 2.8rem 1.5rem;
+  align-items: center;
+}
 /* Stats grid */
 .stats-grid {
   display: grid;
