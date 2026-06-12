@@ -777,7 +777,8 @@ body {
   cursor: pointer;
 }
 .icon-tips {
-  height: 5rem !important;
+  height: 5rem;
+  stroke: var(--primary);
 }
 
 /* Stats grid */
