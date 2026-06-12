@@ -296,6 +296,34 @@ function validarEfirma() {
   }, 1500);
 }
 
+function validarPago() {
+  const btn = document.getElementById("ob-validarpago-btn");
+  const progressWrap = document.getElementById("ob-progress-wrap");
+  const progressBar = document.getElementById("ob-progress-bar");
+  const validacionOk = document.getElementById("ob-validacion-ok");
+  if (!btn) return;
+
+  // Bloquear botón y mostrar barra de progreso
+  btn.disabled = true;
+  btn.classList.add("ob-validando");
+  btn.textContent = "Validando…";
+  progressWrap.classList.remove("ob-hidden");
+
+  // Animar barra a 100%
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      progressBar.style.width = "100%";
+    });
+  });
+
+  // Tras 1.5s: ocultar barra, mostrar éxito
+  setTimeout(() => {
+    progressWrap.classList.add("ob-hidden");
+    btn.classList.add("ob-hidden");
+    validacionOk.classList.remove("ob-hidden");
+  }, 1500);
+}
+
 /** Avanza al paso indicado (2, 'pago' o 3) */
 function irAPaso(paso) {
   document.querySelectorAll(".onboarding-step").forEach(function (el) {
