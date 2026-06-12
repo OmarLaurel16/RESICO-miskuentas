@@ -368,7 +368,19 @@ body {
   background: var(--item-hover);
   color: var(--primary);
 }
-.nav-module-btn.active.icon-outline {
+/* Iconos nav: outline visible por defecto, solid oculto */
+.nav-module-btn .icon-solid {
+  display: none;
+}
+.nav-module-btn .icon-outline {
+  display: block;
+}
+
+/* Al activarse: ocultar outline, mostrar solid */
+.nav-module-btn.active .icon-solid {
+  display: block;
+}
+.nav-module-btn.active .icon-outline {
   display: none;
 }
 
