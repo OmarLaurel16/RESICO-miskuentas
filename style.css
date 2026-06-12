@@ -362,6 +362,10 @@ body {
     transform var(--transition);
 }
 
+.icon-solid {
+  display: none;
+}
+
 .nav-module-btn:hover,
 .nav-module-btn.open,
 .nav-module-btn.active {
