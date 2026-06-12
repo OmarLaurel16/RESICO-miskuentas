@@ -792,7 +792,6 @@ function _obIniciarProc() {
     "Validando vigencia de CFDI…",
     "Identificando ingresos y gastos…",
     "Determinando impuestos…",
-    "Generando resumen fiscal…",
   ];
   var MS_POR_MES = 3000;
   var MS_POR_MSG = MS_POR_MES / MSGS.length;
