@@ -751,7 +751,7 @@ body {
   padding: 2.8rem 1.5rem;
   align-items: center;
 }
-.carousel-chvron-btn {
+.carousel-chevron-btn {
   border: none;
   background: none;
   position: absolute;
@@ -761,7 +761,7 @@ body {
 .carousel-chevron-left-btn {
   left: 0.8rem;
 }
-.carousel.chevron-right-btn {
+.carousel-chevron-right-btn {
   right: 0.8rem;
 }
 
