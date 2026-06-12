@@ -8674,13 +8674,38 @@
             <span>Validando el pago</span>
           </div>
 
-          <!-- Barra de progreso global reutilizada -->
-          <div class="ob-progress-wrap">
-            <div
-              class="ob-progress-bar"
-              id="ob-proc-bar"
-              style="transition: width 0.6s ease"
-            ></div>
+          <!-- Botón validar -->
+          <button
+            class="btn-primary ob-validar-btn"
+            id="ob-validar-btn"
+            onclick="validarEfirma()"
+          >
+            Validar y continuar
+          </button>
+          <!-- Barra de progreso -->
+          <div class="ob-progress-wrap ob-hidden" id="ob-progress-wrap">
+            <div class="ob-progress-bar" id="ob-progress-bar"></div>
+          </div>
+          <!-- Resultado validación -->
+          <div class="ob-validacion-ok ob-hidden" id="ob-validacion-ok">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              style="width: 20px; height: 20px; flex-shrink: 0"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <span style="color: #666666">Validación exitosa</span>
+            <button class="btn-primary ob-continuar-btn" onclick="irAPaso(2)">
+              Continuar
+            </button>
           </div>
           <div
             style="
