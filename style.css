@@ -781,6 +781,7 @@ body {
   cursor: pointer;
 }
 .carousel-icon {
+  height: 5rem;
   stroke: var(--secondary);
 }
 
