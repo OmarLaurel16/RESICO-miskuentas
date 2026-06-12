@@ -2472,6 +2472,7 @@ body {
     padding: 11px 16px;
     gap: 10px;
     font-size: 13px;
+    border-left: 3px solid var(--primary);
   }
 
   /* Indicador activo: borde izquierdo en lugar de borde superior */
