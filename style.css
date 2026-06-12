@@ -782,8 +782,18 @@ body {
   cursor: pointer;
 }
 .carousel-icon {
-  height: 5rem;
+  height: 3rem;
   stroke: var(--secondary);
+}
+.carousel-icon-background {
+  height: 5rem;
+  width: 5rem;
+  background: var(--item-hover);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Stats grid */
