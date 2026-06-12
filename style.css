@@ -780,9 +780,9 @@ body {
   border: 2px solid var(--secondary);
   cursor: pointer;
 }
-.icon-tips {
+.carousel-icon {
   height: 5rem;
-  stroke: var(--primary);
+  stroke: var(--secondary);
 }
 
 /* Stats grid */
