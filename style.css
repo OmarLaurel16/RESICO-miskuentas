@@ -751,6 +751,14 @@ body {
   padding: 2.8rem 1.5rem;
   align-items: center;
 }
+.carousel-chevron-left-btn {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  cursor: pointer;
+}
 /* Stats grid */
 .stats-grid {
   display: grid;
