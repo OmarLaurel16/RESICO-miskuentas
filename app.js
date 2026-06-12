@@ -692,7 +692,7 @@ function actualizarFacturas() {
     exitoTxt.textContent =
       "¡Descarga de " +
       mesNombre +
-      " completada con éxito! Ya puedes cerrar esta ventana o continuar revisando la app.";
+      " completada con éxito! Ya puedes cerrar esta ventana.";
     exito.classList.remove("ob-hidden");
   }, 5400);
 }
