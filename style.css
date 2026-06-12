@@ -2840,32 +2840,27 @@ body {
 }
 
 /* ══════════════════════════════════════════════
-   SITUACIÓN TRIBUTARIA (.metrics)
+   SITUACIÓN TRIBUTARIA — propuesta de diseño
    ══════════════════════════════════════════════ */
-
-/* Contenedor interno */
 .metrics {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-
-/* Título reutiliza .card-title pero con clase propia por si se necesita ajustar */
 .st-titulo {
   margin-bottom: 8px;
 }
 
-/* Layout de dos columnas */
+/* Layout */
 .st-cuerpo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 /* ── Gauge ── */
 .st-gauge-wrap {
-  position: relative;
   flex-shrink: 0;
   width: 130px;
   display: flex;
@@ -2883,16 +2878,14 @@ body {
 .st-arc-val {
   stroke: var(--primary);
   transition:
-    stroke-dasharray 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-    stroke 0.5s ease;
+    stroke-dasharray 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.45s ease;
 }
-
-/* Puntaje encima del gauge */
 .st-puntaje-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -6px;
+  margin-top: -4px;
   line-height: 1.2;
 }
 .st-puntaje {
@@ -2900,7 +2893,7 @@ body {
   font-weight: 700;
   color: var(--primary);
   font-family: "Rubik", sans-serif;
-  transition: color 0.5s ease;
+  transition: color 0.45s ease;
 }
 .st-de-mil {
   font-size: 10px;
@@ -2909,13 +2902,13 @@ body {
   letter-spacing: 0.04em;
 }
 .st-estado-label {
-  margin-top: 4px;
+  margin-top: 5px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
-  transition: color 0.5s ease;
+  transition: color 0.45s ease;
   text-align: center;
 }
 
@@ -2929,11 +2922,11 @@ body {
 }
 
 .st-muybien .st-arc-val {
-  stroke: #3583a6;
+  stroke: var(--primary);
 }
 .st-muybien .st-puntaje,
 .st-muybien .st-estado-label {
-  color: #3583a6;
+  color: var(--primary);
 }
 
 .st-bien .st-arc-val {
@@ -2977,7 +2970,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
 }
 .st-checklist li {
   display: flex;
@@ -2995,7 +2988,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 9px;
+  font-weight: 700;
 }
 .st-checklist li.st-ok .st-ico {
   background: color-mix(in srgb, var(--green) 18%, white);
@@ -3005,8 +2999,58 @@ body {
   background: color-mix(in srgb, #e0993a 18%, white);
   color: #e0993a;
 }
+.st-checklist li.st-mal .st-ico {
+  background: color-mix(in srgb, #c94d3f 15%, white);
+  color: #c94d3f;
+}
 
-/* ── Responsive: móvil apila verticalmente ── */
+/* ── Barra de simulación ── */
+.st-sim-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+.st-sim-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-right: 2px;
+}
+.st-sim-btn {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.st-sim-btn:hover {
+  opacity: 0.75;
+}
+.st-sim-buena {
+  background: color-mix(in srgb, var(--green) 14%, white);
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 35%, white);
+}
+.st-sim-media {
+  background: color-mix(in srgb, #e0993a 14%, white);
+  color: #e0993a;
+  border-color: color-mix(in srgb, #e0993a 35%, white);
+}
+.st-sim-mala {
+  background: color-mix(in srgb, #c94d3f 12%, white);
+  color: #c94d3f;
+  border-color: color-mix(in srgb, #c94d3f 32%, white);
+}
+
+/* Responsive */
 @media (max-width: 520px) {
   .st-cuerpo {
     flex-direction: column;

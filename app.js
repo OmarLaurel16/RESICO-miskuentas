@@ -221,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
   navigate("perfil", "Perfil");
   navigate("first-msg");
   taxSetEstado("pendiente", 1);
-  stActualizar();
 
   // cerrar submenu al hacer click fuera del sidebar
   document.addEventListener("click", (e) => {
@@ -916,11 +915,9 @@ function taxSetEstado(estado, mesesPendientes) {
     if (sub) sub.textContent = txt;
     elPending.style.display = "";
     elOk.style.display = "none";
-    stSetFactor("declaraciones", true);
   } else {
     elOk.style.display = "";
     elPending.style.display = "none";
-    stSetFactor("declaraciones", false);
   }
 }
 
@@ -1135,147 +1132,100 @@ function regresarAGastos() {
 }
 
 // ══════════════════════════════════════════════
-//  SITUACIÓN TRIBUTARIA
+//  SITUACIÓN TRIBUTARIA — propuesta de diseño
+//  (sin conexión a datos reales, solo simulación)
 // ══════════════════════════════════════════════
 
-/**
- * Factores que componen la puntuación.
- * Cada factor descuenta `penalizacion` puntos si `activo` es true.
- * Para conectar datos reales, actualiza el campo `activo` desde
- * la fuente correspondiente antes de llamar a stActualizar().
- *
- * @type {Array<{id: string, label: string, penalizacion: number, activo: boolean}>}
- */
-var ST_FACTORES = [
-  {
-    id: "notificaciones",
-    label: "Sin notificaciones pendientes",
-    penalizacion: 80,
-    activo: false, // true = hay notificaciones sin leer
-  },
-  {
-    id: "declaraciones",
-    label: "Declaraciones al corriente",
-    penalizacion: 200,
-    activo: true, // conectado a taxSetEstado: pendiente = true
-  },
-  {
-    id: "descargasSat",
-    label: "Descargas SAT recientes",
-    penalizacion: 100,
-    activo: false,
-  },
-  {
-    id: "facturasError",
-    label: "Sin facturas con errores",
-    penalizacion: 120,
-    activo: false,
-  },
-  {
-    id: "rfcIncorrecto",
-    label: "Sin facturas con RFC incorrecto",
-    penalizacion: 100,
-    activo: false,
-  },
-  {
-    id: "canceladas",
-    label: "Facturas canceladas revisadas",
-    penalizacion: 80,
-    activo: false,
-  },
-  {
-    id: "infoFiscal",
-    label: "Información fiscal completa",
-    penalizacion: 60,
-    activo: false,
-  },
-];
-
-/** Longitud total del arco semicircular del gauge (perímetro del path) */
 var ST_ARC_LEN = 157;
 
-/**
- * Calcula el puntaje actual, actualiza el gauge y el checklist.
- * Puede llamarse en cualquier momento para refrescar el componente.
- */
-function stActualizar() {
-  // 1. Calcular puntaje
-  var penTotal = ST_FACTORES.reduce(function (acc, f) {
-    return acc + (f.activo ? f.penalizacion : 0);
-  }, 0);
-  var puntaje = Math.max(0, 1000 - penTotal);
+/** Escenarios de simulación */
+var ST_ESCENARIOS = {
+  buena: {
+    puntaje: 950,
+    items: [
+      { ok: true, texto: "Declaraciones al corriente" },
+      { ok: true, texto: "Sin facturas con errores" },
+      { ok: true, texto: "Descargas SAT recientes" },
+      { ok: true, texto: "Información fiscal completa" },
+      { ok: false, texto: "1 notificación pendiente de leer", nivel: "warn" },
+    ],
+  },
+  media: {
+    puntaje: 680,
+    items: [
+      { ok: true, texto: "Declaraciones al corriente" },
+      { ok: false, texto: "3 facturas con posibles errores", nivel: "warn" },
+      { ok: false, texto: "Descarga SAT desactualizada", nivel: "warn" },
+      { ok: true, texto: "Sin facturas canceladas pendientes" },
+      { ok: false, texto: "5 notificaciones sin leer", nivel: "warn" },
+    ],
+  },
+  mala: {
+    puntaje: 340,
+    items: [
+      { ok: false, texto: "2 meses de declaraciones pendientes", nivel: "mal" },
+      { ok: false, texto: "8 facturas con RFC incorrecto", nivel: "mal" },
+      { ok: false, texto: "Sin descargas SAT en 60 días", nivel: "mal" },
+      { ok: false, texto: "Información fiscal incompleta", nivel: "warn" },
+      { ok: false, texto: "12 notificaciones sin leer", nivel: "warn" },
+    ],
+  },
+};
 
-  // 2. Determinar clase y etiqueta de estado
-  var clase, etiqueta;
-  if (puntaje >= 900) {
-    clase = "st-excelente";
-    etiqueta = "Excelente";
-  } else if (puntaje >= 800) {
-    clase = "st-muybien";
-    etiqueta = "Muy bien";
-  } else if (puntaje >= 650) {
-    clase = "st-bien";
-    etiqueta = "Bien";
-  } else if (puntaje >= 500) {
-    clase = "st-atencion";
-    etiqueta = "Atención";
-  } else {
-    clase = "st-riesgo";
-    etiqueta = "Riesgo";
-  }
+function stClaseEstado(puntaje) {
+  if (puntaje >= 900) return { clase: "st-excelente", etiqueta: "Excelente" };
+  if (puntaje >= 800) return { clase: "st-muybien", etiqueta: "Muy bien" };
+  if (puntaje >= 650) return { clase: "st-bien", etiqueta: "Bien" };
+  if (puntaje >= 500) return { clase: "st-atencion", etiqueta: "Atención" };
+  return { clase: "st-riesgo", etiqueta: "Riesgo" };
+}
 
-  // 3. Actualizar gauge SVG
+function stSimular(escenario) {
+  var datos = ST_ESCENARIOS[escenario];
+  if (!datos) return;
+
+  var puntaje = datos.puntaje;
+  var info = stClaseEstado(puntaje);
+
+  // Arco gauge
   var arc = document.getElementById("st-arc");
   if (arc) {
     var fill = (puntaje / 1000) * ST_ARC_LEN;
     arc.setAttribute("stroke-dasharray", fill + " " + ST_ARC_LEN);
   }
 
-  // 4. Actualizar texto del puntaje y etiqueta
+  // Número y etiqueta
   var elPuntaje = document.getElementById("st-puntaje");
   var elLabel = document.getElementById("st-estado-label");
   if (elPuntaje) elPuntaje.textContent = puntaje;
-  if (elLabel) elLabel.textContent = etiqueta;
+  if (elLabel) elLabel.textContent = info.etiqueta;
 
-  // 5. Aplicar clase de color al cuerpo del componente
-  var cuerpo = document.querySelector(".st-cuerpo");
-  if (cuerpo) {
-    cuerpo.className = "st-cuerpo " + clase;
-  }
+  // Clase de color en el cuerpo
+  var cuerpo = document.getElementById("st-cuerpo");
+  if (cuerpo) cuerpo.className = "st-cuerpo " + info.clase;
 
-  // 6. Renderizar checklist
+  // Checklist
   var lista = document.getElementById("st-checklist");
-  if (!lista) return;
-  lista.innerHTML = ST_FACTORES.map(function (f) {
-    var ok = !f.activo;
-    return (
-      '<li class="' +
-      (ok ? "st-ok" : "st-warn") +
-      '">' +
-      '<span class="st-ico">' +
-      (ok ? "✓" : "!") +
-      "</span>" +
-      "<span>" +
-      f.label +
-      "</span>" +
-      "</li>"
-    );
-  }).join("");
-}
-
-/**
- * Marca un factor como activo (problema presente) o inactivo (resuelto).
- * Llama a stActualizar() automáticamente.
- *
- * @param {string}  id     - id del factor en ST_FACTORES
- * @param {boolean} activo - true = problema presente, false = resuelto
- */
-function stSetFactor(id, activo) {
-  var factor = ST_FACTORES.find(function (f) {
-    return f.id === id;
-  });
-  if (factor) {
-    factor.activo = activo;
-    stActualizar();
+  if (lista) {
+    lista.innerHTML = datos.items
+      .map(function (item) {
+        var cls = item.ok ? "st-ok" : item.nivel || "warn";
+        var ico = item.ok ? "✓" : "!";
+        return (
+          '<li class="' +
+          cls +
+          '"><span class="st-ico">' +
+          ico +
+          "</span><span>" +
+          item.texto +
+          "</span></li>"
+        );
+      })
+      .join("");
   }
 }
+
+// Mostrar escenario "buena" al cargar como estado inicial de la propuesta
+document.addEventListener("DOMContentLoaded", function () {
+  stSimular("buena");
+});

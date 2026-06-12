@@ -653,24 +653,21 @@
                 </div>
                 <div class="card" style="width: 100%">
                   <div class="metrics">
-                    <!-- ══ SITUACIÓN TRIBUTARIA ══ -->
                     <div class="st-titulo card-title">Situación tributaria</div>
-                    <div class="st-cuerpo">
-                      <!-- Lado izquierdo: gauge -->
+                    <div class="st-cuerpo" id="st-cuerpo">
+                      <!-- Gauge -->
                       <div class="st-gauge-wrap">
                         <svg
                           class="st-gauge-svg"
                           viewBox="0 0 120 72"
                           fill="none"
                         >
-                          <!-- Arco de fondo -->
                           <path
                             class="st-arc-bg"
                             d="M10 66 A50 50 0 0 1 110 66"
                             stroke-width="10"
                             stroke-linecap="round"
                           />
-                          <!-- Arco de valor (longitud controlada por JS via stroke-dasharray) -->
                           <path
                             class="st-arc-val"
                             id="st-arc"
@@ -689,13 +686,36 @@
                         </div>
                       </div>
 
-                      <!-- Lado derecho: checklist -->
+                      <!-- Checklist -->
                       <div class="st-checklist-wrap">
                         <p class="st-checklist-titulo">
                           ¿Cómo mejorar tu situación?
                         </p>
                         <ul class="st-checklist" id="st-checklist"></ul>
                       </div>
+                    </div>
+
+                    <!-- Botones de simulación (solo propuesta de diseño) -->
+                    <div class="st-sim-bar">
+                      <span class="st-sim-label">Simular:</span>
+                      <button
+                        class="st-sim-btn st-sim-buena"
+                        onclick="stSimular('buena')"
+                      >
+                        Buena
+                      </button>
+                      <button
+                        class="st-sim-btn st-sim-media"
+                        onclick="stSimular('media')"
+                      >
+                        Regular
+                      </button>
+                      <button
+                        class="st-sim-btn st-sim-mala"
+                        onclick="stSimular('mala')"
+                      >
+                        Crítica
+                      </button>
                     </div>
                   </div>
                 </div>
