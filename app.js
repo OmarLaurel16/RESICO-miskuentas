@@ -297,10 +297,10 @@ function validarEfirma() {
 }
 
 function validarPago() {
-  const btn = document.getElementById("ob-validarpago-btn");
-  const progressWrap = document.getElementById("ob-progress-wrap");
-  const progressBar = document.getElementById("ob-progress-bar");
-  const validacionOk = document.getElementById("ob-validacion-ok");
+  const btn = document.getElementById("ob-validarPago-btn");
+  const progressWrap = document.getElementById("ob-progressPago-wrap");
+  const progressBar = document.getElementById("ob-progressPago-bar");
+  const validacionOk = document.getElementById("ob-validacionPago-ok");
   if (!btn) return;
 
   // Bloquear botón y mostrar barra de progreso
