@@ -345,7 +345,6 @@ body {
   z-index: 3;
   background: none;
   border: none;
-  border-top: 3px solid var(--card-bg);
   color: var(--text-main);
   display: flex;
   flex-direction: column;
