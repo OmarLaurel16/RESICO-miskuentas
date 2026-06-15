@@ -1074,8 +1074,25 @@ body {
   font-family: "Rubik", sans-serif;
 }
 .alert-action-btn {
+  background: var(--green);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
   padding: 3px 5px;
-  font-size: 11px;
+
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition:
+    background var(--transition),
+    transform var(--transition);
+
   margin-left: auto;
   margin-right: 30px;
   height: 30%;
