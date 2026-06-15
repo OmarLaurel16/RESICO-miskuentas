@@ -1057,7 +1057,7 @@ body {
   background: var(--primary);
 }
 .alert-title {
-  font-size: 13px;
+  font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 2px;
 }
