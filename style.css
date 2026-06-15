@@ -1297,6 +1297,7 @@ body {
     height: 3.2rem;
   }
   .welcome-strip-text {
+    width: 80%;
     font-size: 1.3rem;
   }
   .welcome-strip-text strong {
