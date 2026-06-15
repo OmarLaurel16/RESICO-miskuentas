@@ -1255,3 +1255,15 @@ function compartirNativo() {
     );
   }
 }
+
+// Alerts accordion
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("accordion-toggle");
+  const contentCard = document.getElementById("accordion-content");
+
+  toggleButton.addEventListener("click", () => {
+    // Alterna la clase para abrir o cerrar
+    contentCard.classList.toggle("is-open");
+  });
+});
