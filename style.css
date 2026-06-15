@@ -3011,7 +3011,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  margin: 14px auto;
   padding-top: 12px;
   border-top: 1px solid var(--border);
 }
