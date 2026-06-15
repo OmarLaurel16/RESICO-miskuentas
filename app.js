@@ -1236,11 +1236,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Compartir nativo para IOS
 function compartirNativo() {
-  // Verifica si el navegador (Safari iOS) soporta el menú nativo
   if (navigator.share) {
     navigator
       .share({
-        title: document.title, // Título de tu página
+        title: document.title,
         text: "¡Mira este contenido tan interesante!",
         url: window.location.href,
       })
