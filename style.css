@@ -1380,7 +1380,7 @@ body {
   .cfdi-tipos .form-actions {
     flex-direction: row !important;
     flex-wrap: wrap;
-    gap: 0.8rem !important;
+    gap: 0.2rem !important;
   }
   .cfdi-form > .form-grid {
     width: 100% !important;
