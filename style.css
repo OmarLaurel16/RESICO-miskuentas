@@ -1110,7 +1110,7 @@ body {
   user-select: none;
 }
 
-.card #accordion-content {
+.card#accordion-content {
   max-height: 0;
   overflow: hidden;
   transition:
