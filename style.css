@@ -1117,9 +1117,7 @@ body {
 .card#accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition:
-    max-height 0.4s ease-out,
-    padding 0.4s ease;
+
   opacity: 0;
 }
 .card#accordion-content.is-open {
