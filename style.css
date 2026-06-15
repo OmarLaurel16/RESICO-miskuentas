@@ -1057,6 +1057,12 @@ body {
 .alert-dot.green {
   background: var(--primary);
 }
+.alert-dot.orange {
+  background: orange;
+}
+.alert-dot.blue {
+  background: orangered;
+}
 .alert-title {
   font-size: 1.4rem;
   font-weight: 500;
