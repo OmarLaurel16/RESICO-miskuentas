@@ -769,6 +769,7 @@ body {
   width: 3.2rem;
   height: 3.2rem;
   border: none;
+  border-radius: 50%;
   background: none;
   position: absolute;
   top: 50%;
@@ -779,6 +780,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.carousel-chevron-btn:hover {
+  background: var(--item-hover);
 }
 .carousel-chevron-left-btn {
   left: 2.2rem;
