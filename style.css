@@ -2751,6 +2751,7 @@ body {
 }
 .factura-conceptos-table {
   margin-bottom: 0;
+  overflow-x: auto;
 }
 
 /* Totales */
@@ -2813,7 +2814,6 @@ body {
   }
   .factura-conceptos-wrap {
     padding: 16px 18px 0;
-    overflow-x: scroll;
   }
   .factura-totales {
     padding: 14px 18px 18px;
