@@ -1062,13 +1062,13 @@ body {
   margin-bottom: 2px;
 }
 .alert-desc {
-  font-size: 12px;
+  font-size: 1.3rem;
   color: var(--text-light);
   line-height: 1.45;
 }
 .alert-date {
-  font-size: 10px;
-  color: #a8bc98;
+  font-size: 1.2rem;
+  color: var(--text-main);
   margin-top: 3px;
   font-family: "Rubik", sans-serif;
 }
