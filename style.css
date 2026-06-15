@@ -1120,7 +1120,7 @@ body {
   padding-bottom: 0;
   opacity: 0;
 }
-.card.is-open {
+.card#accordion-content.is-open {
   max-height: 2000px;
   opacity: 1;
   padding: 1.5rem;
