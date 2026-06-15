@@ -1233,3 +1233,27 @@ function stSimular(escenario) {
 document.addEventListener("DOMContentLoaded", function () {
   stSimular("buena");
 });
+
+// Compartir nativo para IOS
+function compartirNativo() {
+  // Verifica si el navegador (Safari iOS) soporta el menú nativo
+  if (navigator.share) {
+    navigator
+      .share({
+        title: document.title, // Título de tu página
+        text: "¡Mira este contenido tan interesante!", // Texto que acompañará al enlace
+        url: window.location.href, // URL actual de la página
+      })
+      .then(() => console.log("Contenido compartido con éxito"))
+      .catch((error) =>
+        console.log("El usuario canceló o hubo un error:", error),
+      );
+  } else {
+    // Alternativa por si abren la web desde una app o navegador de escritorio viejo
+    window.open(
+      "https://wa.me" +
+        encodeURIComponent("¡Mira esto! " + window.location.href),
+      "_blank",
+    );
+  }
+}
