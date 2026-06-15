@@ -2600,7 +2600,7 @@ body {
   font-weight: 500;
   color: var(--text-main);
   cursor: pointer;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition:
     background var(--transition),
     border-color var(--transition);
