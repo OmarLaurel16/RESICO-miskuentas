@@ -1115,6 +1115,10 @@ body {
   margin-right: 10px;
 }
 
+.welcome-strip.active .chevron {
+  transform: rotate(180deg);
+}
+
 .card#accordion-content {
   max-height: 0;
   overflow: hidden;

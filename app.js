@@ -1263,7 +1263,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contentCard = document.getElementById("accordion-content");
 
   toggleButton.addEventListener("click", () => {
-    // Alterna la clase para abrir o cerrar
     contentCard.classList.toggle("is-open");
+    toggleButton.classList.toggle("active");
   });
 });
