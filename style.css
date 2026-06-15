@@ -1114,8 +1114,6 @@ body {
   transition:
     max-height 0.4s ease-out,
     padding 0.4s ease;
-  padding-top: 0;
-  padding-bottom: 0;
   opacity: 0;
 }
 .card#accordion-content.is-open {
