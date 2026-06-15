@@ -1108,9 +1108,9 @@ body {
 .welcome-strip {
   cursor: pointer;
 }
-.welcome-strip.chevron {
-  width: 10px;
-  height: 11px;
+.welcome-strip .chevron {
+  width: 15px;
+  height: 16px;
 }
 .card#accordion-content {
   max-height: 0;
