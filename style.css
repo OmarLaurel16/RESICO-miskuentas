@@ -1104,6 +1104,28 @@ body {
   height: 30%;
 }
 
+/* Accordion */
+.welcome-strip {
+  cursor: pointer;
+  user-select: none;
+}
+
+.card #accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease-out,
+    padding 0.4s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+.card.is-open {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 1.5rem;
+}
+
 /* Progress bar */
 .progress-wrap {
   margin-top: 6px;
