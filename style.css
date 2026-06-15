@@ -1108,6 +1108,10 @@ body {
 .welcome-strip {
   cursor: pointer;
 }
+.welcome-strip.chevron {
+  width: 10px;
+  height: 11px;
+}
 .card#accordion-content {
   max-height: 0;
   overflow: hidden;
