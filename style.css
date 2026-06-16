@@ -873,6 +873,11 @@ summary::marker {
 summary:hover {
   cursor: pointer;
 }
+.add-filter-btn {
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1rem;
+}
 
 /* Table */
 .data-table {
