@@ -870,6 +870,9 @@ body {
 summary::marker {
   content: "+ ";
 }
+summary:hover {
+  cursor: pointer;
+}
 
 /* Table */
 .data-table {
