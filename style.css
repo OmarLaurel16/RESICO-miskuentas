@@ -176,7 +176,7 @@ body {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -59%);
   min-width: 400px;
   max-width: 480px;
   z-index: 10000;
