@@ -20,7 +20,7 @@
   --border: #e2e8f0;
   --item-hover: color-mix(in srgb, var(--primary) 15%, white);
   --shadow: 0 3px 10px color-mix(in srgb, var(--primary) 20%, white);
-  --transition: 22s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 
   --input-bg: #ffffff;
 }
@@ -637,10 +637,6 @@ body {
   cursor: pointer;
   color: var(--input);
   width: max-content;
-  transition:
-    border-color var(--transition),
-    background-color var(--transition),
-    color var(--transition);
 }
 .report-select:focus {
   outline: none;
