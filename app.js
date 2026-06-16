@@ -1228,3 +1228,11 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.classList.toggle("active");
   });
 });
+
+function openChatBot() {
+  document.getElementById("view-chat-with-bot").classList.add("active");
+}
+
+function closeChatBot() {
+  document.getElementById("view-chat-with-bot").classList.remove("active");
+}
