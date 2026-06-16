@@ -1111,6 +1111,7 @@ body {
 .welcome-strip .chevron {
   width: 15px;
   height: 16px;
+  margin-left: auto;
 }
 
 .welcome-strip.active .chevron {
