@@ -1193,8 +1193,8 @@ body {
     z-index: 998;
     background: linear-gradient(
       135deg,
-      var(--primary),
-      color-mix(in srgb, var(--primary) 65%, white)
+      color-mix(in srgb, var(--primary) 65%, white),
+      color-mix(in srgb, var(--primary) 45%, white)
     );
     border-radius: 8px;
   }
