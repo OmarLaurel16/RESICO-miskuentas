@@ -179,6 +179,7 @@ body {
   transform: translate(-50%, -50%);
   min-width: 400px;
   max-width: 480px;
+  z-index: 10000;
 }
 
 /* FIRST MESSAGE */
