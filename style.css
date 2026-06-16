@@ -1082,7 +1082,7 @@ body {
 .alert-action-btn {
   width: 7rem;
   height: auto;
-  background: var(--green);
+  background: color-mix(in srgb, var(--primary) 65%, white);
   color: var(--text-white);
   border: none;
   border-radius: 5px;
