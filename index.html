@@ -8068,101 +8068,107 @@
               <strong>Mensajes y notificaciones del SAT</strong>
             </div>
           </div>
-          <div class="card">
-            <div class="card-title">Mensajes</div>
-            <div class="tabs">
-              <button
-                class="tab-btn active"
-                onclick="switchTab(this, 'tab-no-leidos')"
-              >
-                No leídos
-                <span class="badge badge-red" style="margin-left: 6px">2</span>
-              </button>
-              <button class="tab-btn" onclick="switchTab(this, 'tab-leidos')">
-                Leídos
-              </button>
-            </div>
-            <div class="tab-panel active" id="tab-no-leidos">
-              <div class="alert-item">
-                <div style="width: 100%">
-                  <div style="display: flex; gap: 1.5rem">
-                    <div class="alert-dot-wrap">
-                      <div class="alert-dot yellow"></div>
-                    </div>
-                    <div class="alert-title">
-                      Aviso de actualización de datos
-                    </div>
-                  </div>
-
-                  <div class="alert-desc">
-                    Se requiere actualizar la información de domicilio fiscal.
-                  </div>
-                  <div class="alert-date">2025-05-10</div>
-                </div>
-                <button class="alert-action-btn">Marcar como leído</button>
+          <div class="two-col-cards">
+            <div class="card">
+              <div class="card-title">Mensajes</div>
+              <div class="tabs">
+                <button
+                  class="tab-btn active"
+                  onclick="switchTab(this, 'tab-no-leidos')"
+                >
+                  No leídos
+                  <span class="badge badge-red" style="margin-left: 6px"
+                    >2</span
+                  >
+                </button>
+                <button class="tab-btn" onclick="switchTab(this, 'tab-leidos')">
+                  Leídos
+                </button>
               </div>
-              <div class="alert-item">
-                <div style="width: 100%">
-                  <div style="display: flex; gap: 1.5rem">
-                    <div class="alert-dot-wrap">
-                      <div class="alert-dot yellow"></div>
+              <div class="tab-panel active" id="tab-no-leidos">
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot yellow"></div>
+                      </div>
+                      <div class="alert-title">
+                        Aviso de actualización de datos
+                      </div>
                     </div>
-                    <div class="alert-title">Recordatorio de declaración</div>
-                  </div>
 
-                  <div class="alert-desc">
-                    La fecha límite para presentar la declaración de Mayo 2025
-                    es el 17 de junio.
+                    <div class="alert-desc">
+                      Se requiere actualizar la información de domicilio fiscal.
+                    </div>
+                    <div class="alert-date">2025-05-10</div>
                   </div>
-                  <div class="alert-date">2025-05-08</div>
+                  <button class="alert-action-btn">Marcar como leído</button>
                 </div>
-                <button class="alert-action-btn">Marcar como leído</button>
-              </div>
-            </div>
-
-            <div class="tab-panel" id="tab-leidos"></div>
-          </div>
-          <div class="card">
-            <div class="card-title">Notificaciones</div>
-            <div class="tabs">
-              <button
-                class="tab-btn active"
-                onclick="switchTab(this, 'tab-noti-no-leidos')"
-              >
-                No leídas
-                <span class="badge badge-red" style="margin-left: 6px">1</span>
-              </button>
-              <button
-                class="tab-btn"
-                onclick="switchTab(this, 'tab-noti-leidos')"
-              >
-                Leídas
-              </button>
-            </div>
-            <div class="tab-panel active" id="tab-noti-no-leidos">
-              <div class="alert-item">
-                <div style="width: 100%">
-                  <div style="display: flex; gap: 1.5rem">
-                    <div class="alert-dot-wrap">
-                      <div class="alert-dot red"></div>
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot yellow"></div>
+                      </div>
+                      <div class="alert-title">Recordatorio de declaración</div>
                     </div>
-                    <div class="alert-title">
-                      Resolución Provisional y Oficio de Preliquidación
-                    </div>
-                  </div>
 
-                  <div class="alert-desc">
-                    Del análisis sistémico a sus Comprobantes Fiscales Digitales
-                    por Internet (CFDI) y las declaraciones presentadas, se
-                    observaron discrepancias en el Impuesto Sobre la Renta (ISR)
-                    propio del ejercicio 2025.
+                    <div class="alert-desc">
+                      La fecha límite para presentar la declaración de Mayo 2025
+                      es el 17 de junio.
+                    </div>
+                    <div class="alert-date">2025-05-08</div>
                   </div>
-                  <div class="alert-date">2025-06-10</div>
+                  <button class="alert-action-btn">Marcar como leído</button>
                 </div>
-                <button class="alert-action-btn">Marcar como leído</button>
               </div>
+
+              <div class="tab-panel" id="tab-leidos"></div>
             </div>
-            <div class="tab-panel" id="tab-noti-leidos"></div>
+            <div class="card">
+              <div class="card-title">Notificaciones</div>
+              <div class="tabs">
+                <button
+                  class="tab-btn active"
+                  onclick="switchTab(this, 'tab-noti-no-leidos')"
+                >
+                  No leídas
+                  <span class="badge badge-red" style="margin-left: 6px"
+                    >1</span
+                  >
+                </button>
+                <button
+                  class="tab-btn"
+                  onclick="switchTab(this, 'tab-noti-leidos')"
+                >
+                  Leídas
+                </button>
+              </div>
+              <div class="tab-panel active" id="tab-noti-no-leidos">
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot red"></div>
+                      </div>
+                      <div class="alert-title">
+                        Resolución Provisional y Oficio de Preliquidación
+                      </div>
+                    </div>
+
+                    <div class="alert-desc">
+                      Del análisis sistémico a sus Comprobantes Fiscales
+                      Digitales por Internet (CFDI) y las declaraciones
+                      presentadas, se observaron discrepancias en el Impuesto
+                      Sobre la Renta (ISR) propio del ejercicio 2025.
+                    </div>
+                    <div class="alert-date">2025-06-10</div>
+                  </div>
+                  <button class="alert-action-btn">Marcar como leído</button>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab-noti-leidos"></div>
+            </div>
           </div>
 
           <div class="welcome-strip">
