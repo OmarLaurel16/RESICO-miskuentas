@@ -874,6 +874,7 @@ summary:hover {
   cursor: pointer;
 }
 .add-filter-btn {
+  width: max-content;
   text-transform: uppercase;
   font-family: inherit;
   font-size: 1rem;
@@ -881,6 +882,9 @@ summary:hover {
   letter-spacing: 0.14em;
   color: var(--text-light);
   margin-bottom: 7px;
+  border: 2px solid var(--border);
+  padding: 4px 11px;
+  border-radius: 5px;
 }
 
 /* Table */
