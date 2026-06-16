@@ -1080,7 +1080,7 @@ body {
   font-family: "Rubik", sans-serif;
 }
 .alert-action-btn {
-  background: var(--green);
+  background: var(--primary);
   color: var(--text-white);
   border: none;
   border-radius: 5px;
