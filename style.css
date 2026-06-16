@@ -1085,10 +1085,9 @@ body {
   border: none;
   border-radius: 5px;
   padding: 3px 5px;
-  font-size: 1.1rem;
-
+  font-size: 1rem;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 450;
   cursor: pointer;
   letter-spacing: 0.04em;
   display: inline-flex;
