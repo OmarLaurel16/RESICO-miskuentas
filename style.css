@@ -1031,7 +1031,7 @@ body {
 /* Alert item */
 .alert-item {
   display: flex;
-  gap: 12px;
+  gap: 15px;
   padding: 14px 10px;
   border-bottom: 1px solid var(--border);
   align-items: center;
