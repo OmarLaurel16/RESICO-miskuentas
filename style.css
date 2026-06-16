@@ -1034,6 +1034,7 @@ body {
   gap: 12px;
   padding: 14px 10px;
   border-bottom: 1px solid var(--border);
+  align-items: center;
 }
 .alert-item:last-child {
   border-bottom: none;
