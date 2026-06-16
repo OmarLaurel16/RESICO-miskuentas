@@ -158,45 +158,6 @@ function switchTab(btn, panelId) {
   document.getElementById(panelId).classList.add("active");
 }
 
-// ── REPORTE ──
-function generarReporte() {
-  const tipo = document.getElementById("tipo-reporte").value;
-  const anio = document.getElementById("anio-reporte").value;
-  const mes = document.getElementById("mes-reporte").value;
-  if (!tipo || !anio) {
-    alert("Selecciona el tipo de reporte y el año.");
-    return;
-  }
-
-  document.getElementById("reporte-empty").style.display = "none";
-  const res = document.getElementById("reporte-resultado");
-  res.style.display = "block";
-
-  // Stats mock
-  const stats = document.getElementById("reporte-stats");
-  stats.innerHTML = `
-        <div class="stat-card"><div class="stat-label">Total periodo</div><div class="stat-value positive">$ 245,400</div><div class="stat-sub">${mes || "Todo el año"} ${anio}</div></div>
-        <div class="stat-card"><div class="stat-label">Operaciones</div><div class="stat-value">67</div><div class="stat-sub">CFDIs considerados</div></div>
-        <div class="stat-card"><div class="stat-label">Promedio mensual</div><div class="stat-value">$ 49,080</div><div class="stat-sub">Por mes</div></div>
-        <div class="stat-card"><div class="stat-label">Variación</div><div class="stat-value positive">+12%</div><div class="stat-sub">vs periodo anterior</div></div>
-      `;
-
-  // Tabla mock
-  const titulo = document.getElementById("reporte-tabla-titulo");
-  titulo.textContent = tipo + " — " + (mes ? mes + " " : "") + anio;
-  const tabla = document.getElementById("reporte-tabla");
-  tabla.innerHTML = `
-        <thead><tr><th>Mes</th><th>Monto</th><th>IVA</th><th>ISR</th><th>Neto</th></tr></thead>
-        <tbody>
-          <tr><td>Enero</td><td class="mono">$ 42,000</td><td class="mono">$ 6,720</td><td class="mono">$ 4,200</td><td class="mono positive" style="font-weight:600;">$ 31,080</td></tr>
-          <tr><td>Febrero</td><td class="mono">$ 38,500</td><td class="mono">$ 6,160</td><td class="mono">$ 3,850</td><td class="mono positive" style="font-weight:600;">$ 28,490</td></tr>
-          <tr><td>Marzo</td><td class="mono">$ 55,200</td><td class="mono">$ 8,832</td><td class="mono">$ 5,520</td><td class="mono positive" style="font-weight:600;">$ 40,848</td></tr>
-          <tr><td>Abril</td><td class="mono">$ 61,500</td><td class="mono">$ 9,840</td><td class="mono">$ 6,150</td><td class="mono positive" style="font-weight:600;">$ 45,510</td></tr>
-          <tr><td>Mayo</td><td class="mono">$ 48,200</td><td class="mono">$ 7,712</td><td class="mono">$ 4,820</td><td class="mono positive" style="font-weight:600;">$ 35,668</td></tr>
-        </tbody>
-      `;
-}
-
 // ── CALCULAR DECLARACIÓN ──
 function calcularDeclaracion() {
   const res = document.getElementById("calculo-resultado");
