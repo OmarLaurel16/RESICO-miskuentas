@@ -866,6 +866,11 @@ body {
   margin-top: 4px;
 }
 
+/* Agregar filtro a ingresos y gastos */
+summary::marker {
+  content: "+ ";
+}
+
 /* Table */
 .data-table {
   width: 100%;
