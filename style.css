@@ -1097,6 +1097,7 @@ body {
   justify-content: center;
   margin-left: auto;
   height: 30%;
+  flex-shrink: 0;
 }
 
 /* Accordion */
