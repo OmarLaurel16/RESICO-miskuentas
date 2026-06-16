@@ -8818,17 +8818,29 @@
       </button>
     </div>
 
-    <!-- chat with bot -->
+    <!-- CHAT WITH BOT -->
     <div class="view" id="view-chat-with-bot" style="animation: none">
-      <div class="black-bg">
-        <img
-          class="chatbot-img-fullbody"
-          alt="chatbot-img"
-          src="bot-medio-cuerpo-sinfondo.png"
-          style="height: 500px; width: 400px"
-        />
+      <div class="chatbot-window">
+        <div class="chatbot-header">
+          <button class="chatbot-close" onclick="closeChatBot()">✕</button>
 
-        <div class="first-msg-card"></div>
+          <img
+            class="chatbot-img"
+            alt="chatbot"
+            src="bot-medio-cuerpo-sinfondo.png"
+          />
+
+          <h3>Hola 👋</h3>
+          <p>¿Con qué te puedo ayudar hoy?</p>
+        </div>
+
+        <div class="chatbot-options">
+          <button>¿Qué es RESICO?</button>
+          <button>¿Cómo funciona la plataforma?</button>
+          <button>¿Cómo facturo?</button>
+          <button>Problemas para ingresar</button>
+          <button>Preguntas frecuentes</button>
+        </div>
       </div>
     </div>
 
