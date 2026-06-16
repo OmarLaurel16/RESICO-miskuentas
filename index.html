@@ -8135,6 +8135,57 @@
             </div>
 
             <div class="tab-panel" id="tab-leidos"></div>
+
+            <div class="card-title">Mensajes SAT</div>
+            <div class="tabs">
+              <button
+                class="tab-btn active"
+                onclick="switchTab(this, 'tab-no-leidos')"
+              >
+                No leídos
+                <span class="badge badge-red" style="margin-left: 6px">2</span>
+              </button>
+              <button class="tab-btn" onclick="switchTab(this, 'tab-leidos')">
+                Leídos
+              </button>
+            </div>
+            <div class="tab-panel active" id="tab-noti-no-leidos">
+              <div class="alert-item">
+                <div style="width: 100%">
+                  <div style="display: flex; gap: 1.5rem">
+                    <div class="alert-dot-wrap">
+                      <div class="alert-dot yellow"></div>
+                    </div>
+                    <div class="alert-title">
+                      Aviso de actualización de datos
+                    </div>
+                  </div>
+
+                  <div class="alert-desc">
+                    Se requiere actualizar la información de domicilio fiscal.
+                  </div>
+                  <div class="alert-date">2025-05-10</div>
+                </div>
+              </div>
+              <div class="alert-item">
+                <div style="width: 100%">
+                  <div style="display: flex; gap: 1.5rem">
+                    <div class="alert-dot-wrap">
+                      <div class="alert-dot yellow"></div>
+                    </div>
+                    <div class="alert-title">Recordatorio de declaración</div>
+                  </div>
+
+                  <div class="alert-desc">
+                    La fecha límite para presentar la declaración de Mayo 2025
+                    es el 17 de junio.
+                  </div>
+                  <div class="alert-date">2025-05-08</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-noti-leidos"></div>
           </div>
           <div class="form-actions">
             <button
