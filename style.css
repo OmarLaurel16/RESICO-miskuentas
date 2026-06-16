@@ -1419,7 +1419,6 @@ summary:hover {
   }
   .date-group .report-select {
     flex: 1;
-    min-width: 6rem;
   }
 
   /* --- Tax status container --- */
