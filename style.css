@@ -171,6 +171,11 @@ body {
 }
 
 /* ----------------------CHATBOT------------------------- */
+.prueba {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+}
 .chat-with-bot-wrap {
   /*position: fixed;
   bottom: 380px;
