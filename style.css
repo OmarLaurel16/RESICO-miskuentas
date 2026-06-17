@@ -186,6 +186,7 @@ body {
   z-index: 10001;
   padding: 0 15px;*/
   width: 300px;
+  margin: 0 auto;
 }
 .chatbot-window {
   width: 380px;
