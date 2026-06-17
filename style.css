@@ -2719,6 +2719,10 @@ summary:hover {
     bottom: 20px;
     left: 20px;
   }
+
+  .chatwith-bot-container {
+    left: 220px;
+  }
 }
 
 /* ══════════════════════════════════════════════
