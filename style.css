@@ -1265,9 +1265,6 @@ summary:hover {
   background: color-mix(in srgb, var(--primary) 25%, white) !important;
   color: var(--primary) !important;
 }
-.cfdi-tipos-btns .btn-primary.hidden {
-  background: yellow !important;
-}
 
 @media (max-width: 1160px) {
   .topbar {
