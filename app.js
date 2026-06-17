@@ -1242,3 +1242,92 @@ function closeChatBot() {
     bot.classList.remove("closing");
   }, 250);
 }
+
+// ══════════════════════════════════════════════
+//  CAROUSEL DE CONSEJOS FISCALES
+// ══════════════════════════════════════════════
+
+var _carousel = {
+  idx: 0,
+  consejos: [
+    {
+      titulo: "Gasolina y forma de pago",
+      texto:
+        "Procura que la forma de pago sea distinta a efectivo para que sea deducible.",
+      icon: '<path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5"/><path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16"/><path d="M2 21h13"/><path d="M3 9h11"/>',
+    },
+    {
+      titulo: "Gastos en efectivo mayores a $2,000",
+      texto:
+        "Todo gasto mayor a $2,000 pagado en efectivo es considerado no deducible por la autoridad fiscal.",
+      icon: '<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>',
+    },
+    {
+      titulo: "Compra de vehículos",
+      texto:
+        "Al adquirir un automóvil, solicita que el uso de CFDI sea 'Adquisición de mercancias' o el relacionado a activo fijo para poder deducirlo correctamente.",
+      icon: '<path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h11l4 5v5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/>',
+    },
+    {
+      titulo: "Emite tus complementos de pago a tiempo",
+      texto:
+        "Cuando cobres en parcialidades, emite el complemento de pago dentro de los primeros 5 días del mes siguiente. Evitarás diferencias con el SAT.",
+      icon: '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>',
+    },
+    {
+      titulo: "Revisa tu buzón tributario",
+      texto:
+        "El SAT notifica auditorías y requerimientos solo por buzón. Revisarlo frecuentemente puede evitarte multas por omisión.",
+      icon: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+    },
+    {
+      titulo: "Facturas canceladas",
+      texto:
+        "Si un cliente cancela una factura que ya declaraste, deberás reflejar ese ajuste en tu siguiente declaración para no pagar de más.",
+      icon: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M9 15l2 2 4-4"/>',
+    },
+    {
+      titulo: "Límite RESICO mensual",
+      texto:
+        "Si tus ingresos acumulados superan $3.5 millones en el año, saldrás automáticamente del régimen RESICO. Mantén control de tus ingresos.",
+      icon: '<line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>',
+    },
+  ],
+};
+
+function _carouselRender() {
+  var c = _carousel.consejos[_carousel.idx];
+
+  document.getElementById("carousel-titulo").textContent = c.titulo;
+  document.getElementById("carousel-texto").textContent = c.texto;
+  document.getElementById("carousel-icon").innerHTML = c.icon;
+
+  // Dots
+  var dotsEl = document.getElementById("carousel-dots");
+  dotsEl.querySelectorAll(".carousel-dot").forEach(function (d, i) {
+    d.style.background = i === _carousel.idx ? "var(--primary)" : "";
+  });
+}
+
+function carouselNav(dir) {
+  var total = _carousel.consejos.length;
+  _carousel.idx = (_carousel.idx + dir + total) % total;
+  _carouselRender();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Construir dots dinámicamente según cantidad de consejos
+  var dotsEl = document.getElementById("carousel-dots");
+  if (!dotsEl) return;
+  _carousel.consejos.forEach(function (_, i) {
+    var btn = document.createElement("button");
+    btn.className = "carousel-dot";
+    btn.setAttribute("aria-label", "Consejo " + (i + 1));
+    btn.addEventListener("click", function () {
+      _carousel.idx = i;
+      _carouselRender();
+    });
+    dotsEl.appendChild(btn);
+  });
+  _carouselRender();
+});
