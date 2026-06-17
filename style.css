@@ -177,15 +177,7 @@ body {
   right: 20px;
 }
 .chatwith-bot-wrap {
-  /*position: fixed;
-  bottom: 380px;
-  right: 60px;
-  width: 300px;
-  height: auto;
-  max-width: calc(100vw - 20px);
-  z-index: 10001;
-  padding: 0 15px;*/
-  width: 300px;
+  width: 100%;
   margin: 0 auto;
 }
 .chatbot-window {
