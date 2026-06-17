@@ -1290,6 +1290,10 @@ summary:hover {
     bottom: 80px;
     right: 10px;
   }
+
+  .chatwith-bot-container {
+    bottom: 150px;
+  }
 }
 
 /* ══════════════════════════════════════════════
