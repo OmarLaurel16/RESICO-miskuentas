@@ -1261,6 +1261,11 @@ summary:hover {
   transition: width 0.4s ease;
 }
 
+.cfdi-tipos-btns .btn-primary.active-estado {
+  background: color-mix(in srgb, var(--primary) 25%, white) !important;
+  color: var(--primary) !important;
+}
+
 @media (max-width: 1160px) {
   .topbar {
     position: fixed;
