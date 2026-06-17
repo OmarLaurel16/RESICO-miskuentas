@@ -240,10 +240,13 @@ body {
 
 .chatbot-close {
   border: none;
-  background: transparent;
+  background: var(--card-bg);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   font-size: 20px;
-  z-index: 100000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
 
 /* -----------------FIRST MESSAGE---------------------- */
