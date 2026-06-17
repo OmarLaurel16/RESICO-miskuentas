@@ -172,14 +172,15 @@ body {
 
 /* ----------------------CHATBOT------------------------- */
 .chat-with-bot-wrap {
-  position: fixed;
+  /*position: fixed;
   bottom: 380px;
   right: 60px;
   width: 300px;
   height: auto;
   max-width: calc(100vw - 20px);
   z-index: 10001;
-  padding: 0 15px;
+  padding: 0 15px;*/
+  width: 300px;
 }
 .chatbot-window {
   position: fixed;
