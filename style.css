@@ -173,7 +173,7 @@ body {
 /* ----------------------CHATBOT------------------------- */
 .chatwith-bot-container {
   position: fixed;
-  bottom: 90px;
+  bottom: 10vh;
   right: 20px;
 }
 .chatwith-bot-wrap {
