@@ -202,7 +202,6 @@ body {
 .chatbot-header {
   text-align: left;
   padding: 20px 30px 10px;
-  position: relative;
 }
 
 .chatwith-bot-img {
@@ -240,10 +239,6 @@ body {
 }
 
 .chatbot-close {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-
   border: none;
   background: transparent;
   cursor: pointer;
