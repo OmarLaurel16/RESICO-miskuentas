@@ -183,12 +183,9 @@ body {
 .chatbot-window {
   width: 280px;
   height: auto;
-  max-height: auto;
-  max-width: calc(100vw - 20px);
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
-  overflow: visible;
   z-index: 10000;
 }
 .chatwith-bot-img {
