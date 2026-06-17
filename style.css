@@ -190,7 +190,7 @@ body {
   right: 20px;
 
   width: 380px;
-  height: 300px;
+  height: auto;
   max-width: calc(100vw - 20px);
 
   background: #fff;
