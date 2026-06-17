@@ -179,7 +179,7 @@ body {
   width: 380px;
   height: auto;
   max-width: calc(100vw - 20px);
-  z-index: 10001;
+  z-index: 10000;
 }
 .chatbot-window {
   position: fixed;
@@ -207,7 +207,7 @@ body {
 
 .chat-with-bot-img {
   width: 100%;
-  transform: translate(0, -26%);
+  transform: translate(0, -60.5%);
 }
 
 .chatbot-header h3 {
