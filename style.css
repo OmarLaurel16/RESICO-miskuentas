@@ -175,13 +175,14 @@ body {
   position: fixed;
   bottom: 10vh;
   right: 1vw;
+  width: 200px;
 }
 .chatwith-bot-wrap {
-  width: 200px;
+  width: 80%;
   margin: 0 auto;
 }
 .chatbot-window {
-  width: 280px;
+  width: 100%;
   height: auto;
   background: #fff;
   border-radius: 20px;
