@@ -1230,17 +1230,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function openChatBot() {
-  document.getElementById("view-chat-with-bot").classList.add("active");
+  document.getElementById("view-chat-with-bot").classList.remove("ob-hidden");
 }
 
 function closeChatBot() {
   const bot = document.querySelector(".chatwith-bot-container");
   const view = document.getElementById("view-chat-with-bot");
-
   bot.classList.add("closing");
-
   setTimeout(() => {
-    view.classList.remove("active");
+    view.classList.add("ob-hidden");
     bot.classList.remove("closing");
   }, 250);
 }
