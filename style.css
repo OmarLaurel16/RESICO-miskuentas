@@ -173,8 +173,6 @@ body {
 /* ----------------------CHATBOT------------------------- */
 .chatwith-bot-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
   width: 280px;
   z-index: 10000;
 }
@@ -1292,6 +1290,7 @@ summary:hover {
   }
   .chatwith-bot-container {
     bottom: 90px;
+    right: 20px;
   }
 }
 
