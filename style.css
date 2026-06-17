@@ -176,6 +176,7 @@ body {
   bottom: 10vh;
   right: 1vw;
   width: 200px;
+  height: 60vh;
 }
 .chatwith-bot-wrap {
   width: 80%;
@@ -199,13 +200,12 @@ body {
 }
 .chatbot-header h3 {
   margin: 0;
-  font-size: 22px;
+  font-size: 1.8rem;
 }
 
 .chatbot-header p {
-  margin-top: 8px;
   color: #666;
-  font-size: 14px;
+  font-size: 1.3rem;
 }
 
 .chatbot-options {
@@ -223,7 +223,7 @@ body {
   cursor: pointer;
   color: var(--text-main);
   font-family: inherit;
-  font-size: 14px;
+  font-size: 1.2rem;
 }
 
 .chatbot-close {
