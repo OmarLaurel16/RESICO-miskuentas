@@ -189,6 +189,21 @@ body {
   }
 }
 
+.chatwith-bot-container.closing {
+  animation: chatbotClose 0.29s ease forwards;
+}
+
+@keyframes chatbotClose {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.85);
+  }
+}
+
 .chatwith-bot-wrap {
   width: 80%;
   margin: 0 auto;

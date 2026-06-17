@@ -1234,5 +1234,13 @@ function openChatBot() {
 }
 
 function closeChatBot() {
-  document.getElementById("view-chat-with-bot").classList.remove("active");
+  const bot = document.querySelector(".chatwith-bot-container");
+  const view = document.getElementById("view-chat-with-bot");
+
+  bot.classList.add("closing");
+
+  setTimeout(() => {
+    view.classList.remove("active");
+    bot.classList.remove("closing");
+  }, 250);
 }
