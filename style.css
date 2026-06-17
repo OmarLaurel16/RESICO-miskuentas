@@ -175,7 +175,20 @@ body {
   position: fixed;
   width: 280px;
   z-index: 10000;
+  animation: chatbotOpen 0.29s ease-out;
 }
+
+@keyframes chatbotOpen {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .chatwith-bot-wrap {
   width: 80%;
   margin: 0 auto;
