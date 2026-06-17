@@ -236,6 +236,9 @@ body {
   margin-left: auto;
   transform: translate(20%, -20%);
 }
+.chatbot-close:hover {
+  background: var(--item-hover);
+}
 
 /* -----------------FIRST MESSAGE---------------------- */
 .black-bg {
