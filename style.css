@@ -174,7 +174,7 @@ body {
 .chatwith-bot-container {
   position: fixed;
   bottom: 10vh;
-  right: 20px;
+  right: 1vw;
 }
 .chatwith-bot-wrap {
   width: 200px;
