@@ -260,6 +260,7 @@ body {
   background: transparent;
   cursor: pointer;
   font-size: 20px;
+  z-index: 100000;
 }
 
 /* FIRST MESSAGE */
