@@ -171,6 +171,23 @@ body {
 }
 
 /* ----------------------CHATBOT------------------------- */
+/* AGREGAR — reemplaza el comportamiento de .view para el chat */
+.chatwith-bot-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* permite clicks en el panel debajo */
+  z-index: 9999;
+}
+
+.chatwith-bot-overlay.ob-hidden {
+  display: none;
+}
+
+/* El container del bot ya tiene pointer-events propios, se los damos de vuelta */
+.chatwith-bot-overlay .chatwith-bot-container {
+  pointer-events: auto;
+}
+
 .chatwith-bot-container {
   position: fixed;
   width: 280px;
