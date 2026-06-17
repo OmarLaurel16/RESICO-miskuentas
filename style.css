@@ -1287,7 +1287,7 @@ summary:hover {
     border-radius: 8px;
   }
   .chatbot {
-    bottom: 80px;
+    bottom: 20px;
     right: 10px;
   }
 
@@ -2971,6 +2971,11 @@ summary:hover {
   }
   .factura-divider {
     margin: 0 18px;
+  }
+
+  .chatbot {
+    bottom: 80px;
+    right: 10px;
   }
 }
 
