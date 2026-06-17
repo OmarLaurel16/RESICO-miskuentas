@@ -183,7 +183,7 @@ body {
 .chatbot-window {
   width: 280px;
   height: auto;
-  max-height: 60vh;
+  max-height: auto;
   max-width: calc(100vw - 20px);
   background: #fff;
   border-radius: 20px;
@@ -224,7 +224,7 @@ body {
 .chatbot-options button {
   border: none;
   border-radius: 12px;
-  padding: 14px;
+  padding: 8px;
   cursor: pointer;
   color: var(--text-main);
   font-family: inherit;
@@ -238,11 +238,12 @@ body {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
+  transform: translate(20%, -20%);
 }
 
 /* -----------------FIRST MESSAGE---------------------- */
