@@ -175,26 +175,22 @@ body {
   position: fixed;
   bottom: 90px;
   right: 20px;
-
   width: 380px;
   height: auto;
   max-width: calc(100vw - 20px);
   z-index: 10000;
+  padding: 0 35px;
 }
 .chatbot-window {
   position: fixed;
   bottom: 90px;
   right: 20px;
-
   width: 380px;
   height: auto;
   max-width: calc(100vw - 20px);
-
   background: #fff;
   border-radius: 20px;
-
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
-
   overflow: visible;
   z-index: 10000;
 }
