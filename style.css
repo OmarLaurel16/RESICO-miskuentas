@@ -171,12 +171,12 @@ body {
 }
 
 /* ----------------------CHATBOT------------------------- */
-.prueba {
+.chatwith-bot-container {
   position: fixed;
   bottom: 90px;
   right: 20px;
 }
-.chat-with-bot-wrap {
+.chatwith-bot-wrap {
   /*position: fixed;
   bottom: 380px;
   right: 60px;
@@ -205,7 +205,7 @@ body {
   position: relative;
 }
 
-.chat-with-bot-img {
+.chatwith-bot-img {
   width: 100%;
   transform: translate(0, 27.5%);
 }
