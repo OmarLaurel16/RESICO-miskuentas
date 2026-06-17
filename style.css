@@ -174,12 +174,12 @@ body {
 .chat-with-bot-wrap {
   position: fixed;
   bottom: 380px;
-  right: 20px;
-  width: 380px;
+  right: 60px;
+  width: 300px;
   height: auto;
   max-width: calc(100vw - 20px);
   z-index: 10001;
-  padding: 0 35px;
+  padding: 0 15px;
 }
 .chatbot-window {
   position: fixed;
@@ -203,7 +203,7 @@ body {
 
 .chat-with-bot-img {
   width: 100%;
-  transform: translate(0, -5.5%);
+  transform: translate(0, -10%);
 }
 
 .chatbot-header h3 {
@@ -238,12 +238,10 @@ body {
 .chatbot-close {
   position: absolute;
   right: 12px;
-  bottom: 12px;
-  padding: 5px 5px;
+  top: 12px;
 
   border: none;
-  background: var(--card-bg);
-  border-radius: 50%;
+  background: transparent;
   cursor: pointer;
   font-size: 20px;
   z-index: 100000;
