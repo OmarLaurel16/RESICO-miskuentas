@@ -30,7 +30,7 @@ function switchEstado(estado) {
     p.classList.add("hidden");
   });
   document
-    .querySelectorAll("#view-buzon .cfdi-tipos-btns .btn-secondary")
+    .querySelectorAll("#view-buzon .cfdi-tipos-btns .btn-primary")
     .forEach(function (b) {
       b.classList.remove("active-estado");
     });
