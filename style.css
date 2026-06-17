@@ -239,14 +239,13 @@ body {
 }
 
 .chatbot-close {
-  border: none;
+  border: 2px solid var(--border);
   background: var(--card-bg);
   border-radius: 50%;
   width: 20px;
   height: 20px;
   cursor: pointer;
   font-size: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
 
 /* -----------------FIRST MESSAGE---------------------- */
