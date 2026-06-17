@@ -175,8 +175,7 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: min(400px, 95vw);
-  /*height: min(700px, 85vh);*/
+  width: 280px;
   z-index: 10000;
 }
 .chatwith-bot-wrap {
