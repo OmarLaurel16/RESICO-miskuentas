@@ -189,8 +189,9 @@ body {
   margin: 0 auto;
 }
 .chatbot-window {
-  width: 380px;
+  width: 280px;
   height: auto;
+  max-height: calc(100vw - 20px);
   max-width: calc(100vw - 20px);
   background: #fff;
   border-radius: 20px;
