@@ -208,7 +208,7 @@ body {
 }
 
 .chatbot-img {
-  margin-bottom: 10px;
+  transform: translate(0, 45%);
 }
 
 .chatbot-header h3 {
