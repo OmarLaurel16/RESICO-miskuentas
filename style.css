@@ -173,10 +173,11 @@ body {
 /* ----------------------CHATBOT------------------------- */
 .chatwith-bot-container {
   position: fixed;
-  bottom: 10vh;
-  right: 1vw;
-  width: 250px;
-  height: 60vh;
+  bottom: 20px;
+  right: 20px;
+  width: min(400px, 95vw);
+  height: min(700px, 85vh);
+  z-index: 10000;
 }
 .chatwith-bot-wrap {
   width: 80%;
@@ -188,7 +189,6 @@ body {
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
-  z-index: 10000;
 }
 .chatwith-bot-img {
   width: 100%;
