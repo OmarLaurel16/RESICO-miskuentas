@@ -170,19 +170,7 @@ body {
   font-size: 1.4rem;
 }
 
-/* CHAT WITH BOT */
-/*
-.chatbot-img-fullbody {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -59%);
-  min-width: 400px;
-  max-width: 480px;
-  z-index: 10000;
-}*/
-
-/* CHATBOT */
+/* ----------------------CHATBOT------------------------- */
 .chat-with-bot-wrap {
   position: fixed;
   bottom: 90px;
@@ -263,7 +251,7 @@ body {
   z-index: 100000;
 }
 
-/* FIRST MESSAGE */
+/* -----------------FIRST MESSAGE---------------------- */
 .black-bg {
   position: fixed;
   left: 0;
