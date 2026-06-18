@@ -145,6 +145,17 @@ body {
 }
 
 /*---------------BUZÓN DE CANCELACIONES------------------*/
+.actions-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+}
+
+.alert-action-btn {
+  width: 100%;
+  min-width: 90px;
+}
 .btn-success {
   background: #22c55e;
   color: white;
