@@ -175,16 +175,6 @@ summary:hover {
   transform: translateX(4px);
 }
 
-.details-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 10.35s ease;
-}
-
-details[open] .details-content {
-  max-height: 1000px;
-}
-
 /* --------------------CHATBOT BTN ICON------------------------ */
 .chatbot {
   background: var(--card-bg);
