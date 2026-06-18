@@ -144,6 +144,16 @@ body {
   align-items: center;
 }
 
+/*---------------BUZÓN DE CANCELACIONES------------------*/
+.btn-success {
+  background: #22c55e;
+  color: white;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
 /* CHATBOT ICON */
 .chatbot {
   background: var(--card-bg);
