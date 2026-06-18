@@ -1308,6 +1308,7 @@ summary:hover {
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 2rem;
   width: 100%;
+  gap: 0;
 }
 .months-filter-btns {
   background: color-mix(in srgb, var(--secondary) 75%, white 15%);
@@ -1322,6 +1323,7 @@ summary:hover {
   letter-spacing: 0.04em;
   align-items: center;
   justify-content: center;
+
   width: 5%;
 }
 
