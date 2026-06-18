@@ -209,23 +209,18 @@ summary:hover {
   pointer-events: none; /* permite clicks en el panel debajo */
   z-index: 9999;
 }
-
 .chatwith-bot-overlay.ob-hidden {
   display: none;
 }
-
-/* El container del bot ya tiene pointer-events propios, se los damos de vuelta */
 .chatwith-bot-overlay .chatwith-bot-container {
   pointer-events: auto;
 }
-
 .chatwith-bot-container {
   position: fixed;
   width: 280px;
   z-index: 10000;
   animation: chatbotOpen 0.29s ease-out;
 }
-
 @keyframes chatbotOpen {
   from {
     opacity: 0;
@@ -236,11 +231,9 @@ summary:hover {
     transform: translateY(0) scale(1);
   }
 }
-
 .chatwith-bot-container.closing {
   animation: chatbotClose 0.29s ease forwards;
 }
-
 @keyframes chatbotClose {
   from {
     opacity: 1;
@@ -251,7 +244,6 @@ summary:hover {
     transform: translateY(30px) scale(0.85);
   }
 }
-
 .chatwith-bot-wrap {
   width: 80%;
   margin: 0 auto;
@@ -276,12 +268,10 @@ summary:hover {
   margin: 0;
   font-size: 1.8rem;
 }
-
 .chatbot-header p {
   color: #666;
   font-size: 1.3rem;
 }
-
 .chatbot-options {
   display: flex;
   flex-direction: column;
@@ -289,7 +279,6 @@ summary:hover {
   padding: 20px;
   font-family: inherit;
 }
-
 .chatbot-options button {
   border: none;
   border-radius: 12px;
@@ -299,7 +288,6 @@ summary:hover {
   font-family: inherit;
   font-size: 1.2rem;
 }
-
 .chatbot-close {
   border: 2px solid var(--border);
   background: var(--card-bg);
@@ -1313,6 +1301,8 @@ summary:hover {
   background: color-mix(in srgb, var(--primary) 25%, white) !important;
   color: var(--primary) !important;
 }
+
+/*----------------------CALCULAR IMPUESTOS-------------------------*/
 
 @media (max-width: 1160px) {
   .topbar {
