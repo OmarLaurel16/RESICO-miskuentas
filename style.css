@@ -3079,6 +3079,9 @@ summary:hover {
   .chatwith-bot-container {
     bottom: 150px;
   }
+  .months-filter-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 /* ── Variantes de color para egresos ── */
