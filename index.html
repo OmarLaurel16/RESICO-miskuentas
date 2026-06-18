@@ -7810,7 +7810,65 @@
             </div>
           </div>
 
-          <!-- FILTRO FACTURAS DE INGRESOS -->
+          <div class="card" id="calculo-resultado" style="display: none">
+            <div class="card-title">Resultado del Cálculo — Mayo 2025</div>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-label">Ingresos del mes</div>
+                <div class="stat-value positive">$ 48,200</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">Gastos deducibles</div>
+                <div class="stat-value negative">$ 8,440</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">ISR a pagar</div>
+                <div class="stat-value">$ 4,820</div>
+                <div class="stat-sub">Tasa efectiva 10%</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label">IVA a cargo</div>
+                <div class="stat-value">$ 4,760</div>
+                <div class="stat-sub">IVA cobrado – acreditable</div>
+              </div>
+            </div>
+            <div class="form-actions" style="margin-top: 0">
+              <button
+                class="btn-primary"
+                onclick="
+                  navigate(
+                    'declaraciones-presentar',
+                    'Declaraciones',
+                    'Presentar',
+                  )
+                "
+              >
+                Ir a presentar declaración →
+              </button>
+            </div>
+            <div class="welcome-strip">
+              <div class="welcome-strip-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  width="100%"
+                  height="100%"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                  />
+                </svg>
+              </div>
+              <div class="welcome-strip-text">
+                <strong>Presentar Impuestos</strong>Envía tu declaración mensual
+                al SAT.
+              </div>
+            </div>
+          </div>
 
           <details>
             <summary class="add-filter-btn">
@@ -7872,65 +7930,6 @@
               </div>
             </div>
           </details>
-          <div class="card" id="calculo-resultado" style="display: none">
-            <div class="card-title">Resultado del Cálculo — Mayo 2025</div>
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-label">Ingresos del mes</div>
-                <div class="stat-value positive">$ 48,200</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">Gastos deducibles</div>
-                <div class="stat-value negative">$ 8,440</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">ISR a pagar</div>
-                <div class="stat-value">$ 4,820</div>
-                <div class="stat-sub">Tasa efectiva 10%</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-label">IVA a cargo</div>
-                <div class="stat-value">$ 4,760</div>
-                <div class="stat-sub">IVA cobrado – acreditable</div>
-              </div>
-            </div>
-            <div class="form-actions" style="margin-top: 0">
-              <button
-                class="btn-primary"
-                onclick="
-                  navigate(
-                    'declaraciones-presentar',
-                    'Declaraciones',
-                    'Presentar',
-                  )
-                "
-              >
-                Ir a presentar declaración →
-              </button>
-            </div>
-            <div class="welcome-strip">
-              <div class="welcome-strip-icon">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  width="100%"
-                  height="100%"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                  />
-                </svg>
-              </div>
-              <div class="welcome-strip-text">
-                <strong>Presentar Impuestos</strong>Envía tu declaración mensual
-                al SAT.
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- ══ VIEW: DECLARACIONES (Presentar) ══ -->
