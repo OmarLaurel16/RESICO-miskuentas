@@ -1307,6 +1307,22 @@ summary:hover {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 2rem;
+  width: 100%;
+}
+.months-filter-btns {
+  background: color-mix(in srgb, var(--secondary) 75%, white 15%);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 18px;
+  font-size: 1.2rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
 }
 
 @media (max-width: 1160px) {
