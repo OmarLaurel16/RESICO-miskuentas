@@ -1311,7 +1311,7 @@ summary:hover {
   overflow: hidden;
 }
 .months-filter-btns {
-  background: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 75%, white 15%);
   color: var(--text-white);
   border: 1px solid var(--border);
   padding: 8px 8px;
@@ -1324,7 +1324,7 @@ summary:hover {
   justify-content: center;
 }
 .months-filter-btns:hover {
-  background: var(--item-hover);
+  background: color-mix(in srgb, var(--secondary) 75%, black);
 }
 
 @media (max-width: 1160px) {
