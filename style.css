@@ -1303,6 +1303,11 @@ summary:hover {
 }
 
 /*----------------------CALCULAR IMPUESTOS-------------------------*/
+.months-filter-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 2rem;
+}
 
 @media (max-width: 1160px) {
   .topbar {
