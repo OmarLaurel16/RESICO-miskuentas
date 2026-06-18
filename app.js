@@ -1281,7 +1281,7 @@ var _carousel = {
       icon: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M9 15l2 2 4-4"/>',
     },
     {
-      titulo: "Límite RESICO mensual",
+      titulo: "Límite RESICO",
       texto:
         "Si tus ingresos acumulados superan $3.5 millones en el año, saldrás automáticamente del régimen RESICO. Mantén control de tus ingresos.",
       icon: '<line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>',
