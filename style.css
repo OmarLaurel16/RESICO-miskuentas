@@ -1313,7 +1313,7 @@ summary:hover {
   color: var(--text-white);
   border: none;
   border-radius: 5px;
-  padding: 8px 18px;
+  padding: 8px 8px;
   font-size: 1.2rem;
   font-family: inherit;
   font-weight: 500;
@@ -1321,7 +1321,6 @@ summary:hover {
   letter-spacing: 0.04em;
   align-items: center;
   justify-content: center;
-  flex-shrink: 1;
 }
 
 @media (max-width: 1160px) {
