@@ -1323,7 +1323,7 @@ summary:hover {
   align-items: center;
   justify-content: center;
 }
-.months-filter-btns:hover {
+.months-filter-btns:hover .months-filter-btns:active {
   background: color-mix(in srgb, var(--secondary) 75%, black);
 }
 
