@@ -1260,7 +1260,7 @@ var _carousel = {
       titulo: "Gastos en efectivo mayores a $2,000",
       texto:
         "Todo gasto mayor a $2,000 pagado en efectivo es considerado no deducible por la autoridad fiscal.",
-      icon: '<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/>',
+      icon: '<rect width="20" height="14" x="2" y="5" rx="2"/><path d="M12 18V6"/>',
     },
     {
       titulo: "Compra de vehículos",
