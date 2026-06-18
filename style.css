@@ -155,6 +155,7 @@ body {
 .alert-action-btn {
   width: 100%;
   min-width: 90px;
+  margin: 0 !important;
 }
 .alert-action-btn.btn-success {
   background: var(--green);
