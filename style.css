@@ -1321,8 +1321,7 @@ summary:hover {
   letter-spacing: 0.04em;
   align-items: center;
   justify-content: center;
-
-  width: 100%;
+  flex-shrink: 1;
 }
 
 @media (max-width: 1160px) {
