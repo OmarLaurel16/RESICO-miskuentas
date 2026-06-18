@@ -1307,12 +1307,13 @@ summary:hover {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-bottom: 2rem;
+  border-radius: 9px;
+  overflow: hidden;
 }
 .months-filter-btns {
   background: color-mix(in srgb, var(--secondary) 75%, white 15%);
   color: var(--text-white);
-  border: none;
-  border-radius: 5px;
+  border: 1px solid var(--border);
   padding: 8px 8px;
   font-size: 1.2rem;
   font-family: inherit;
