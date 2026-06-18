@@ -1326,6 +1326,10 @@ summary:hover {
 .months-filter-btns:hover {
   background: color-mix(in srgb, var(--secondary) 75%, black);
 }
+.calc-table {
+  font-size: 1.2rem;
+  font-family: inherit;
+}
 
 @media (max-width: 1160px) {
   .topbar {
