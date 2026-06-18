@@ -152,21 +152,19 @@ body {
   gap: 3px;
   align-items: center;
 }
-
 .alert-action-btn {
   width: 100%;
   min-width: 90px;
 }
 .alert-action-btn.btn-success {
-  background: #22c55e;
-  color: white;
+  background: var(--green);
+  color: var(--text-white);
 }
-
 .alert-action-btn.btn-danger {
-  background: #ef4444;
-  color: white;
+  background: var(--red);
+  color: var(--text-white);
 }
-/* CHATBOT ICON */
+/* --------------------CHATBOT BTN ICON------------------------ */
 .chatbot {
   background: var(--card-bg);
   position: fixed;
