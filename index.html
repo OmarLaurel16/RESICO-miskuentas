@@ -7780,6 +7780,16 @@
           </div>
           <div class="card">
             <div class="card-title">Selecciona el periodo a calcular</div>
+            <div class="report-row">
+              <div class="date-group">
+                <select class="report-select" id="anio-reporte">
+                  <option value="">Año</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                </select>
+              </div>
+            </div>
             <div class="months-filter-container">
               <button class="months-filter-btns">ENE</button>
               <button class="months-filter-btns">FEB</button>
@@ -7794,34 +7804,9 @@
               <button class="months-filter-btns">NOV</button>
               <button class="months-filter-btns">DIC</button>
             </div>
-            <div class="report-row">
-              <div class="date-group">
-                <select class="report-select" id="anio-reporte">
-                  <option value="">Año</option>
-                  <option>2024</option>
-                  <option>2025</option>
-                  <option>2026</option>
-                </select>
-                <select class="report-select" id="mes-reporte">
-                  <option value="">Mes</option>
-                  <option>Enero</option>
-                  <option>Febrero</option>
-                  <option>Marzo</option>
-                  <option>Abril</option>
-                  <option>Mayo</option>
-                  <option>Junio</option>
-                  <option>Julio</option>
-                  <option>Agosto</option>
-                  <option>Septiembre</option>
-                  <option>Octubre</option>
-                  <option>Noviembre</option>
-                  <option>Diciembre</option>
-                </select>
-              </div>
-              <button class="btn-primary" onclick="calcularDeclaracion()">
-                Calcular
-              </button>
-            </div>
+            <button class="btn-primary" onclick="calcularDeclaracion()">
+              Calcular
+            </button>
           </div>
 
           <div class="card" id="calculo-resultado" style="display: none">
