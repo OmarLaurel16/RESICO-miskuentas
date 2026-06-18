@@ -1322,8 +1322,9 @@ summary:hover {
   letter-spacing: 0.04em;
   align-items: center;
   justify-content: center;
+  border-radius: 8px 8px 0 0;
 }
-.months-filter-btns:hover .months-filter-btns:active {
+.months-filter-btns:hover {
   background: color-mix(in srgb, var(--secondary) 75%, black);
 }
 
