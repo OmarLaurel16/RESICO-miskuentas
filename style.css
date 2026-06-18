@@ -165,6 +165,26 @@ body {
   background: var(--red);
   color: var(--text-white);
 }
+
+summary {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+summary:hover {
+  transform: translateX(4px);
+}
+
+.details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+details[open] .details-content {
+  max-height: 1000px;
+}
+
 /* --------------------CHATBOT BTN ICON------------------------ */
 .chatbot {
   background: var(--card-bg);
