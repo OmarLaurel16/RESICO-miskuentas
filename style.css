@@ -156,12 +156,12 @@ body {
   width: 100%;
   min-width: 90px;
 }
-.btn-success {
+.alert-action-btn.btn-success {
   background: #22c55e;
   color: white;
 }
 
-.btn-danger {
+.alert-action-btn.btn-danger {
   background: #ef4444;
   color: white;
 }
