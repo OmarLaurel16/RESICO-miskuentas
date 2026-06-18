@@ -1263,12 +1263,6 @@ var _carousel = {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>',
     },
     {
-      titulo: "Compra de vehículos",
-      texto:
-        "Al adquirir un automóvil, solicita que el uso de CFDI sea 'Adquisición de mercancias' o el relacionado a activo fijo para poder deducirlo correctamente.",
-      icon: '<path d="M19 17H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h11l4 5v5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/>',
-    },
-    {
       titulo: "Emite tus complementos de pago a tiempo",
       texto:
         "Cuando cobres en parcialidades, emite el complemento de pago dentro de los primeros 5 días del mes siguiente. Evitarás diferencias con el SAT.",
@@ -1308,6 +1302,29 @@ function _carouselRender() {
     d.style.background = i === _carousel.idx ? "var(--primary)" : "";
   });
 }
+
+// Auto-avance cada 6 segundos
+var _carouselTimer = setInterval(function () {
+  carouselNav(1);
+}, 6000);
+
+// Reinicia el timer cuando el usuario navega manualmente
+document
+  .querySelector(".carousel-chevron-left-btn")
+  .addEventListener("click", function () {
+    clearInterval(_carouselTimer);
+    _carouselTimer = setInterval(function () {
+      carouselNav(1);
+    }, 6000);
+  });
+document
+  .querySelector(".carousel-chevron-right-btn")
+  .addEventListener("click", function () {
+    clearInterval(_carouselTimer);
+    _carouselTimer = setInterval(function () {
+      carouselNav(1);
+    }, 6000);
+  });
 
 function carouselNav(dir) {
   var total = _carousel.consejos.length;
