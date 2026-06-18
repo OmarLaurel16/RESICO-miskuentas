@@ -1249,6 +1249,7 @@ function closeChatBot() {
 
 var _carousel = {
   idx: 0,
+  busy: false,
   consejos: [
     {
       titulo: "Gasolina y forma de pago",
