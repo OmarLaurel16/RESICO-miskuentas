@@ -1345,6 +1345,7 @@ summary:hover {
 }
 .sumtotal-tax {
   font-weight: 700;
+  text-align: right;
 }
 
 @media (max-width: 1160px) {
