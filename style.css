@@ -1370,6 +1370,7 @@ summary:hover {
   justify-content: center;
 }
 .tax-presentation-container {
+  width: 190px;
   display: flex;
   flex-direction: column;
   justify-content: center;
