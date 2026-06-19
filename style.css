@@ -1334,6 +1334,7 @@ summary:hover {
   padding: 6px 4px;
 }
 .calc-table th {
+  font-size: 1.3rem;
   padding: 15px 0;
 }
 .calc-table td:last-child {
@@ -1345,8 +1346,10 @@ summary:hover {
 }
 .sumtotal-tax {
   width: 100%;
-  font-weight: 700;
-  margin-left: auto;
+  font-weight: 600;
+  text-align: right;
+  padding: 18px 15px;
+  font-size: 1.7rem;
 }
 
 @media (max-width: 1160px) {
