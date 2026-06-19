@@ -1330,6 +1330,10 @@ summary:hover {
   font-size: 1.2rem;
   font-family: inherit;
 }
+.calc-table td:last-child {
+  width: 100px;
+  text-align: right;
+}
 
 @media (max-width: 1160px) {
   .topbar {
