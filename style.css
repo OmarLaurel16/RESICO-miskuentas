@@ -1350,6 +1350,7 @@ summary:hover {
   text-align: right;
   padding: 18px 15px;
   font-size: 1.7rem;
+  letter-spacing: 0.06em;
 }
 
 @media (max-width: 1160px) {
