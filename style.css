@@ -1331,7 +1331,10 @@ summary:hover {
   font-family: inherit;
 }
 .calc-table td {
-  padding: 8px 4px;
+  padding: 6px 4px;
+}
+.calc-table th {
+  padding: 15px 0;
 }
 .calc-table td:last-child {
   width: auto;
