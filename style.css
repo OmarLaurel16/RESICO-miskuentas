@@ -1340,6 +1340,9 @@ summary:hover {
   width: auto;
   text-align: right;
 }
+.calc-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
 
 @media (max-width: 1160px) {
   .topbar {
