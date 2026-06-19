@@ -1357,8 +1357,9 @@ summary:hover {
 .taxes-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   padding: 20px 20px;
+  gap: 60px;
+  justify-content: center;
 }
 .tax-presentation-container {
   display: flex;
