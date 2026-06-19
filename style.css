@@ -1343,6 +1343,9 @@ summary:hover {
 .calc-table tbody tr:not(:last-child) td {
   border-bottom: 1px solid var(--border);
 }
+.sumtotal-tax {
+  font-weight: 700;
+}
 
 @media (max-width: 1160px) {
   .topbar {
