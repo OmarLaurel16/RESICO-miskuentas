@@ -1372,6 +1372,9 @@ summary:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-main);
   width: 50px;
   height: 50px;
   background: var(--border);
