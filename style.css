@@ -1375,7 +1375,7 @@ summary:hover {
   height: 50px;
   background: var(--border);
   border: none;
-  border-radius: 50%;
+  border-radius: 9px;
   box-shadow: var(--shadow);
 }
 .tax-btn:hover {
