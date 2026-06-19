@@ -1401,6 +1401,14 @@ summary:hover {
   font-size: 1.5rem;
   text-align: center;
 }
+.tax-btn.active.tax-name {
+  display: none;
+}
+.tax-btn.active::after {
+  content: "✓";
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 @media (max-width: 1160px) {
   .topbar {
