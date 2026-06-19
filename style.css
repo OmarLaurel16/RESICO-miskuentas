@@ -1367,6 +1367,7 @@ summary:hover {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  height: 200px;
 }
 .tax-btn {
   display: flex;
@@ -1381,6 +1382,9 @@ summary:hover {
 }
 .tax-btn:hover {
   cursor: pointer;
+  width: 55px;
+  height: 55px;
+  transition: var(--transition);
 }
 .tax-label {
   font-size: 1.5rem;
