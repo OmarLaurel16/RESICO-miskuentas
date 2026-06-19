@@ -1354,6 +1354,14 @@ summary:hover {
 }
 
 /*-------------------PRESENTACIÓN AUTOMÁTICA----------------------*/
+.automatic-presentation-title {
+  width: 100%;
+  text-align: center;
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 35px 0 10px 0;
+}
 .taxes-wrap {
   display: flex;
   flex-direction: row;
