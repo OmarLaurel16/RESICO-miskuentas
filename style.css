@@ -1353,6 +1353,8 @@ summary:hover {
   letter-spacing: 0.06em;
 }
 
+/*-------------------PRESENTACIÓN AUTOMÁTICA----------------------*/
+
 @media (max-width: 1160px) {
   .topbar {
     position: fixed;
