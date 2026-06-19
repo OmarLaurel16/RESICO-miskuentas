@@ -1378,11 +1378,11 @@ summary:hover {
   border: none;
   border-radius: 9px;
   box-shadow: var(--shadow);
+  transition: transform 455ms ease;
 }
 .tax-btn:hover {
   cursor: pointer;
   transform: scale(1.2);
-  transition-duration: 455ms;
 }
 .tax-label {
   font-size: 1.5rem;
