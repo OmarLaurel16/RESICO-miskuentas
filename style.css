@@ -1422,6 +1422,9 @@ summary:hover {
   justify-content: center;
   display: none;
 }
+.card:has(.tax-btn.active) .validate-tax-btn {
+  display: flex;
+}
 
 @media (max-width: 1160px) {
   .topbar {
