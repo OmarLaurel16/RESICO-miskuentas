@@ -1378,6 +1378,9 @@ summary:hover {
   border-radius: 50%;
   box-shadow: var(--shadow);
 }
+.tax-btn:hover {
+  cursor: pointer;
+}
 .tax-label {
   font-size: 1.5rem;
 }
