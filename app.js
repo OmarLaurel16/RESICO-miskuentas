@@ -164,6 +164,12 @@ function calcularDeclaracion() {
   res.style.display = "block";
   res.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+// ── Preview de la presentación ──
+function presentacionPrevista() {
+  const res = document.getElementById("presentation-preview");
+  res.style.display = "block";
+  res.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
 
 // ── HELPER: fila de concepto ──
 function conceptoRow() {
