@@ -1331,7 +1331,7 @@ summary:hover {
   font-family: inherit;
 }
 .calc-table td:last-child {
-  width: 100px;
+  width: auto;
   text-align: right;
 }
 
