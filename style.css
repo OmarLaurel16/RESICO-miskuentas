@@ -1330,6 +1330,9 @@ summary:hover {
   font-size: 1.2rem;
   font-family: inherit;
 }
+.calc-table td {
+  padding: 8px 4px;
+}
 .calc-table td:last-child {
   width: auto;
   text-align: right;
