@@ -1354,6 +1354,14 @@ summary:hover {
 }
 
 /*-------------------PRESENTACIÓN AUTOMÁTICA----------------------*/
+.taxes-wrap {
+}
+.tax-presentation-container {
+}
+.tax-btn {
+}
+.tax-label {
+}
 
 @media (max-width: 1160px) {
   .topbar {
