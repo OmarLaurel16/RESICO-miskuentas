@@ -1418,6 +1418,10 @@ summary:hover {
   font-size: 3rem;
   font-weight: 700;
 }
+.validate-tax-btn {
+  justify-content: center;
+  display: none;
+}
 
 @media (max-width: 1160px) {
   .topbar {
