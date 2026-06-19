@@ -1390,8 +1390,9 @@ summary:hover {
   transform: scale(1.2);
 }
 .tax-btn.active {
-  background: var(--primary);
+  background: var(--green);
   color: white;
+  border-radius: 50%;
 }
 .tax-label {
   font-size: 1.5rem;
