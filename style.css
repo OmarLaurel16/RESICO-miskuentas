@@ -1378,7 +1378,9 @@ summary:hover {
   border: none;
   border-radius: 9px;
   box-shadow: var(--shadow);
-  transition: transform 455ms ease;
+  transition:
+    transform 455ms ease,
+    box-shadow 250ms ease;
 }
 .tax-btn:hover {
   cursor: pointer;
