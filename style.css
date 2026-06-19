@@ -1405,7 +1405,7 @@ summary:hover {
   display: none;
 }
 .tax-btn.active::after {
-  content: "✓";
+  content: "✔";
   font-size: 3rem;
   font-weight: 700;
 }
