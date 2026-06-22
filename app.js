@@ -177,6 +177,24 @@ function presentacionValidacion() {
   res.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
+function presentacionValidacion() {
+  const btn = document.getElementById("validate-btn");
+
+  // Deshabilitar botón y mostrar carga
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>';
+
+  // Simula la validación (3 segundos)
+  setTimeout(() => {
+    document.getElementById("presentation-preview").style.display = "none";
+
+    document.getElementById("presentation-validation").style.display = "block";
+
+    btn.disabled = false;
+    btn.innerHTML = "Cargar y validar <br>información";
+  }, 3000);
+}
+
 // ── HELPER: fila de concepto ──
 function conceptoRow() {
   return `<tr>
