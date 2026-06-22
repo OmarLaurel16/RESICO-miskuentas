@@ -1426,7 +1426,7 @@ summary:hover {
   display: flex;
 }
 
-/* TAX VALIDATION */
+/* --------------------------TAX VALIDATION------------------------- */
 .validation-section {
   margin-top: 24px;
 }
@@ -1440,6 +1440,8 @@ summary:hover {
 }
 
 .validation-table {
+  font-size: 1.2rem;
+  font-family: inherit;
   width: 100%;
   border-collapse: collapse;
 }
