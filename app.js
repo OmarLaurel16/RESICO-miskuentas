@@ -185,7 +185,7 @@ function presentacionValidacion() {
     document.getElementById("presentation-validation").style.display = "block";
 
     btn.style.display = "none";
-  }, 5000);
+  }, 1000);
 }
 
 // ── HELPER: fila de concepto ──
