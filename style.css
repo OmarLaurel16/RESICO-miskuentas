@@ -1393,9 +1393,9 @@ summary:hover {
   transition:
     transform 455ms ease,
     box-shadow 250ms ease,
-    background-color 250ms ease,
+    background-color 650ms ease,
     color 250ms ease,
-    border-radius 250ms ease;
+    border-radius 290ms ease;
 }
 .tax-btn:hover {
   cursor: pointer;
