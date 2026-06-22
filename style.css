@@ -1463,13 +1463,8 @@ summary:hover {
   white-space: nowrap;
 }
 
-.validation-table small {
-  color: #a33;
-  font-style: italic;
-}
-
 .validation-table tr:hover {
-  background: #fafafa;
+  background: var(--item-hover);
 }
 
 @media (max-width: 1160px) {
