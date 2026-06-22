@@ -1456,13 +1456,6 @@ summary:hover {
   text-align: center;
 }
 
-.validation-table td:nth-child(2),
-.validation-table td:nth-child(3),
-.validation-table td:nth-child(4) {
-  text-align: center;
-  white-space: nowrap;
-}
-
 .validation-table tr:hover {
   background: var(--item-hover);
 }
