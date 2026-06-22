@@ -170,6 +170,12 @@ function presentacionPrevista() {
   res.style.display = "block";
   res.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+// ── Validación de la presentación ──
+function presentacionValidacion() {
+  const res = document.getElementById("presentation-validation");
+  res.style.display = "block";
+  res.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
 
 // ── HELPER: fila de concepto ──
 function conceptoRow() {
