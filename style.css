@@ -1446,6 +1446,7 @@ summary:hover {
   width: 100%;
   max-width: 70rem;
   border-collapse: collapse;
+  margin: 0 auto;
 }
 
 .validation-table th,
@@ -1460,10 +1461,6 @@ summary:hover {
 
 .validation-table tr:hover {
   background: var(--item-hover);
-}
-
-.validation-table tbody tr:not(:last-child) td {
-  border-bottom: 1px solid var(--border);
 }
 
 /* Columna de conceptos */
