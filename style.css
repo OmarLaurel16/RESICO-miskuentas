@@ -1464,6 +1464,34 @@ summary:hover {
   border-bottom: 1px solid var(--border);
 }
 
+/* Columna de conceptos */
+.calc-table th:first-child,
+.calc-table td:first-child {
+  width: 60%;
+  padding-right: 60px; /* crea el espacio central */
+}
+
+/* Monto */
+.calc-table th:nth-child(2),
+.calc-table td:nth-child(2) {
+  width: 15%;
+  text-align: right;
+}
+
+/* Diferencia */
+.calc-table th:nth-child(3),
+.calc-table td:nth-child(3) {
+  width: 15%;
+  text-align: right;
+}
+
+/* Icono */
+.calc-table th:nth-child(4),
+.calc-table td:nth-child(4) {
+  width: 10%;
+  text-align: center;
+}
+
 @media (max-width: 1160px) {
   .topbar {
     position: fixed;
