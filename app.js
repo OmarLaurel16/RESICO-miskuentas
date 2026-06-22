@@ -181,8 +181,6 @@ function presentacionValidacion() {
 
   // Simula la validación (3 segundos)
   setTimeout(() => {
-    document.getElementById("presentation-preview").style.display = "none";
-
     document.getElementById("presentation-validation").style.display = "block";
 
     btn.disabled = false;
