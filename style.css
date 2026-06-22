@@ -1426,6 +1426,52 @@ summary:hover {
   display: flex;
 }
 
+/* TAX VALIDATION */
+.validation-section {
+  margin-top: 24px;
+}
+
+.validation-section h3 {
+  text-align: center;
+  color: #0f9d58;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.validation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.validation-table th,
+.validation-table td {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.validation-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.validation-table td:nth-child(2),
+.validation-table td:nth-child(3),
+.validation-table td:nth-child(4) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.validation-table small {
+  color: #a33;
+  font-style: italic;
+}
+
+.validation-table tr:hover {
+  background: #fafafa;
+}
+
 @media (max-width: 1160px) {
   .topbar {
     position: fixed;
