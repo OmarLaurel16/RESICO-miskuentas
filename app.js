@@ -183,7 +183,7 @@ function presentacionValidacion() {
   setTimeout(() => {
     document.getElementById("presentation-validation").style.display = "block";
 
-    btn.disabled = false;
+    //btn.disabled = false;
     btn.innerHTML = "Cargar y validar <br>información";
   }, 5000);
 }
