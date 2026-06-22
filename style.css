@@ -1462,6 +1462,10 @@ summary:hover {
   background: var(--item-hover);
 }
 
+.validation-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
+
 @media (max-width: 1160px) {
   .topbar {
     position: fixed;
