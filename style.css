@@ -1429,6 +1429,7 @@ summary:hover {
 /* --------------------------TAX VALIDATION------------------------- */
 .validation-section {
   margin-top: 24px;
+  text-align: center;
 }
 
 .validation-section h3 {
@@ -1442,7 +1443,6 @@ summary:hover {
 .validation-table {
   font-size: 1.2rem;
   font-family: inherit;
-  width: 100%;
   max-width: 70rem;
   border-collapse: collapse;
 }
