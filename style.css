@@ -1468,21 +1468,22 @@ summary:hover {
 .validation-table th:first-child,
 .validation-table td:first-child {
   width: 60%;
-  padding-right: 60px; /* crea el espacio central */
+  padding-right: 10px;
+  text-align: right;
 }
 
 /* Monto */
 .validation-table th:nth-child(2),
 .validation-table td:nth-child(2) {
   width: 15%;
-  text-align: right;
+  text-align: center;
 }
 
 /* Diferencia */
 .validation-table th:nth-child(3),
 .validation-table td:nth-child(3) {
   width: 15%;
-  text-align: right;
+  text-align: center;
 }
 
 /* Icono */
