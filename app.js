@@ -171,18 +171,13 @@ function presentacionPrevista() {
   res.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 // ── Validación de la presentación ──
-function presentacionValidacion() {
-  const res = document.getElementById("presentation-validation");
-  res.style.display = "block";
-  res.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
 
 function presentacionValidacion() {
   const btn = document.getElementById("validate-btn");
 
   // Deshabilitar botón y mostrar carga
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>';
+  btn.innerHTML = '<span class="fct-spinner"></span>';
 
   // Simula la validación (3 segundos)
   setTimeout(() => {
@@ -192,7 +187,7 @@ function presentacionValidacion() {
 
     btn.disabled = false;
     btn.innerHTML = "Cargar y validar <br>información";
-  }, 3000);
+  }, 5000);
 }
 
 // ── HELPER: fila de concepto ──
