@@ -1448,7 +1448,7 @@ summary:hover {
 
 .validation-table th,
 .validation-table td {
-  padding: 12px;
+  padding: 6px 4px;
   border: 1px solid #e5e7eb;
 }
 
