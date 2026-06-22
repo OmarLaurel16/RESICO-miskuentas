@@ -175,17 +175,16 @@ function presentacionPrevista() {
 function presentacionValidacion() {
   const btn = document.getElementById("validate-btn");
 
-  // Deshabilitar botón y mostrar carga
   btn.disabled = true;
-  btn.innerHTML = '<span class="fct-spinner"></span>';
+  btn.innerHTML = `
+    <span class="fct-spinner"></span>
+    <span style="margin-left:8px;">Validando...</span>
+  `;
 
-  // Simula la validación (3 segundos)
   setTimeout(() => {
     document.getElementById("presentation-validation").style.display = "block";
 
-    btn.disabled = false;
-    btn.innerHTML = `<span class="fct-spinner"></span>
-  <span style="margin-left:8px;">Validando...</span>`;
+    btn.style.display = "none";
   }, 5000);
 }
 
