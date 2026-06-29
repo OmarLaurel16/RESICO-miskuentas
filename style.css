@@ -3495,10 +3495,12 @@ summary:hover {
    BOTÓN "Ver alertas" en la card Situación Tributaria
    ══════════════════════════════════════════════ */
 .st-alertas-btn {
+  width: 165px;
+  text-align: center;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin: 8px 0 4px;
+  margin: 8px auto;
   padding: 6px 14px;
   font-size: 12.5px;
   font-family: inherit;
