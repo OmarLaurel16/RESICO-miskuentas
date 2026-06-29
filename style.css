@@ -1920,7 +1920,7 @@ summary:hover {
 }
 .cfdi-panel {
   padding: 28px 18px;
-  background: color-mix(in srgb, var(--primary) 25%, white);
+  /*background: color-mix(in srgb, var(--primary) 25%, white);*/
   margin-bottom: 18px;
   border-radius: 0 8px 8px 8px;
 }
