@@ -646,6 +646,25 @@
                       </div>
                     </div>
 
+                    <!-- Botón acceso rápido a alertas -->
+                    <button class="st-alertas-btn" onclick="openAlertasModal()">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                        />
+                      </svg>
+                      Ver alertas activas
+                    </button>
+
                     <!-- Botones de simulación (solo propuesta de diseño) -->
                     <div class="st-sim-bar">
                       <span class="st-sim-label">Simular:</span>
@@ -9984,6 +10003,66 @@
         </svg>
         Sincronizar ahora
       </button>
+    </div>
+
+    <!-- ══ MODAL: Alertas Tributarias ══ -->
+    <div
+      class="black-bg ob-hidden"
+      id="alertas-modal-overlay"
+      onclick="closeAlertasModal()"
+    ></div>
+    <div
+      class="alertas-modal ob-hidden"
+      id="alertas-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="alertas-modal-titulo"
+    >
+      <div class="alertas-modal-header">
+        <div class="alertas-modal-header-text">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            width="22"
+            height="22"
+            style="flex-shrink: 0; color: var(--primary)"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+            />
+          </svg>
+          <div>
+            <div class="alertas-modal-titulo" id="alertas-modal-titulo">
+              Atiende tus alertas
+            </div>
+            <div class="alertas-modal-subtitulo">
+              Resolver estas alertas mejorará tu situación tributaria.
+            </div>
+          </div>
+        </div>
+        <button
+          class="ob-close-btn"
+          onclick="closeAlertasModal()"
+          title="Cerrar"
+        >
+          <svg
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M1 1l12 12M13 1L1 13" />
+          </svg>
+        </button>
+      </div>
+      <div class="alertas-modal-body" id="alertas-modal-body">
+        <!-- Se inyectan las alertas por JS al abrir -->
+      </div>
     </div>
 
     <script src="app.js"></script>

@@ -227,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeAllSubmenus();
+      closeAlertasModal();
     }
   });
 });
@@ -1251,6 +1252,43 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.classList.toggle("active");
   });
 });
+
+function openAlertasModal() {
+  const overlay = document.getElementById("alertas-modal-overlay");
+  const modal = document.getElementById("alertas-modal");
+  const body = document.getElementById("alertas-modal-body");
+
+  // Clonar las alertas del accordion original (sin duplicar en el DOM)
+  const fuente = document.getElementById("accordion-content");
+  if (fuente && body) {
+    body.innerHTML = "";
+    fuente.querySelectorAll(".alert-item").forEach(function (item) {
+      body.appendChild(item.cloneNode(true));
+    });
+  }
+
+  overlay.classList.remove("ob-hidden");
+  modal.classList.remove("ob-hidden");
+  // Forzar reflow para que la animación CSS arranque
+  modal.getBoundingClientRect();
+  modal.classList.add("alertas-modal--open");
+  overlay.classList.add("alertas-overlay--open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeAlertasModal() {
+  const overlay = document.getElementById("alertas-modal-overlay");
+  const modal = document.getElementById("alertas-modal");
+
+  modal.classList.remove("alertas-modal--open");
+  overlay.classList.remove("alertas-overlay--open");
+
+  setTimeout(function () {
+    modal.classList.add("ob-hidden");
+    overlay.classList.add("ob-hidden");
+    document.body.style.overflow = "";
+  }, 260);
+}
 
 function openChatBot() {
   document.getElementById("view-chat-with-bot").classList.remove("ob-hidden");
