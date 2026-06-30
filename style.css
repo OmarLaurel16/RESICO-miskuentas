@@ -908,6 +908,7 @@ summary:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
   font-family: inherit;
   font-size: 0.9rem;
@@ -924,6 +925,8 @@ summary:hover {
 }
 .fast-action-icon {
   color: var(--secondary);
+  width: 25px;
+  height: 25px;
 }
 
 /* Carousel */
