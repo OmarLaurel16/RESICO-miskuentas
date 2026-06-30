@@ -922,6 +922,9 @@ summary:hover {
 .fast-action-btn:hover {
   cursor: pointer;
 }
+.fast-action-icon {
+  color: var(--secondary);
+}
 
 /* Carousel */
 .carousel {
