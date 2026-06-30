@@ -1104,6 +1104,10 @@ summary:hover {
 .form-grid.cols-3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
+/*This is for menú*/
+.form-grid.cols-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .form-group {
   display: flex;
   flex-direction: column;
