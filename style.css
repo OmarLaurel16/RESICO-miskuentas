@@ -896,7 +896,7 @@ summary:hover {
 /*This is for menú*/
 .cols-4 {
   max-width: 100%;
-  margin: 0 auto;
+  margin: 8px auto;
   gap: 6px;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
