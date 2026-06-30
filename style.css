@@ -919,6 +919,7 @@ summary:hover {
   background: none;
   border: 2px solid var(--border);
   border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 .fast-action-btn:hover {
   cursor: pointer;
