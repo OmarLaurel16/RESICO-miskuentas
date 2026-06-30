@@ -1111,8 +1111,13 @@ summary:hover {
 }
 /*This is for menú*/
 .cols-4 {
+  width: 340px;
+  margin: 0 auto;
+  gap: 6px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 .form-group {
   display: flex;
