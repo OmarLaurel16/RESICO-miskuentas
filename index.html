@@ -938,92 +938,24 @@
             </div>
           </div>
 
-          <div class="two-col-cards">
-            <div class="card" style="width: 100%">
-              <!-- Estado: Pendiente -->
-              <div id="tax-state-pending">
-                <div class="tax-status-container">
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      gap: 10px;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 8px;
-                      "
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="tax-status-icon tax-warn-icon"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
-                        />
-                      </svg>
-                      <div class="tax-status-tag tax-warn-tag">
-                        Declaración pendiente
-                      </div>
-                    </div>
-                    <div class="tax-status-desc">
-                      No has presentado impuestos de mayo 2026
-                    </div>
-                  </div>
-                </div>
-                <div style="display: flex; justify-content: center">
-                  <button
-                    class="btn-secondary"
-                    style="margin-top: 10px; font-size: 12px; padding: 6px 14px"
-                    onclick="
-                      navigate(
-                        'declaraciones-calcular',
-                        'Declaraciones',
-                        'Calcular',
-                      )
-                    "
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      width="14"
-                      height="14"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                      />
-                    </svg>
-
-                    Ir a presentar
-                  </button>
-                </div>
-              </div>
-
-              <!-- Estado: Al día (oculto por defecto) -->
-              <div id="tax-state-ok" style="display: none">
-                <div class="tax-status-container">
+          <div class="card" style="width: 100%">
+            <!-- Estado: Pendiente -->
+            <div id="tax-state-pending">
+              <div class="tax-status-container">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
                   <div
                     style="
                       display: flex;
                       flex-direction: row;
                       align-items: center;
-                      gap: 10px;
+                      gap: 8px;
                     "
                   >
                     <svg
@@ -1032,55 +964,120 @@
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      class="tax-status-icon"
+                      class="tax-status-icon tax-warn-icon"
                     >
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
                       />
                     </svg>
-                    <div>
-                      <div class="tax-status-tag">
-                        Tus impuestos están al día
-                      </div>
-                      <div class="tax-status-desc">
-                        Impuestos Mayo 2026 declarados
-                      </div>
-                      <div class="tax-status-desc">con éxito</div>
+                    <div class="tax-status-tag tax-warn-tag">
+                      Declaración pendiente
                     </div>
                   </div>
+                  <div class="tax-status-desc">
+                    No has presentado impuestos de mayo 2026
+                  </div>
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    justify-content: center;
-                    margin-top: 20px;
+              </div>
+              <div style="display: flex; justify-content: center">
+                <button
+                  class="btn-secondary"
+                  style="margin-top: 10px; font-size: 12px; padding: 6px 14px"
+                  onclick="
+                    navigate(
+                      'declaraciones-calcular',
+                      'Declaraciones',
+                      'Calcular',
+                    )
                   "
                 >
-                  <div class="tax-status-desc">Próxima presentación:</div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="ico"
+                    width="14"
+                    height="14"
                   >
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                     />
                   </svg>
-                  <div class="tax-status-desc">05 julio 2026</div>
-                </div>
+
+                  Ir a presentar
+                </button>
               </div>
             </div>
 
-            <!-- 
+            <!-- Estado: Al día (oculto por defecto) -->
+            <div id="tax-state-ok" style="display: none">
+              <div class="tax-status-container">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="tax-status-icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <div>
+                    <div class="tax-status-tag">Tus impuestos están al día</div>
+                    <div class="tax-status-desc">
+                      Impuestos Mayo 2026 declarados
+                    </div>
+                    <div class="tax-status-desc">con éxito</div>
+                  </div>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  justify-content: center;
+                  margin-top: 20px;
+                "
+              >
+                <div class="tax-status-desc">Próxima presentación:</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="ico"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                  />
+                </svg>
+                <div class="tax-status-desc">05 julio 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 
             <div class="card" style="width: 100%">
               <div class="inv-cont">
                 <div class="inv-status-container">
@@ -1185,7 +1182,6 @@
               </div>
             </div>
             -->
-          </div>
 
           <!-- ══ VIEW: CONSTANCIAS ══ -->
           <!--
