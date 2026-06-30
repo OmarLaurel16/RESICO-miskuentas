@@ -982,7 +982,7 @@ function taxSetEstado(estado, mesesPendientes) {
         : "Se detectaron " + n + " meses pendientes por presentar";
     var sub = document.getElementById("tax-pending-meses");
     if (sub) sub.textContent = txt;
-    elPending.style.display = "";
+    elPending.style.display = "flex";
     elOk.style.display = "none";
   } else {
     elOk.style.display = "";
