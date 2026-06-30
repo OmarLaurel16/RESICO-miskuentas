@@ -914,6 +914,7 @@ summary:hover {
   background: none;
   border: 2px solid var(--border);
   border-radius: 10px;
+  text-align: center;
 }
 .fast-action-btn:hover {
   cursor: pointer;
