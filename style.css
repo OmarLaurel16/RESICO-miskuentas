@@ -894,13 +894,17 @@ summary:hover {
 /* ------------MENU CARD ---------------*/
 .fast-action-btn {
   font-family: inherit;
+  font-size: 0.9rem;
   color: var(--text-main);
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   padding: 4px;
   background: none;
   border: 2px solid var(--border);
   border-radius: 50%;
+}
+.fast-action-btn:hover {
+  cursor: pointer;
 }
 
 /* Carousel */
