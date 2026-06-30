@@ -893,6 +893,17 @@ summary:hover {
 
 /* ------------MENU CARD ---------------*/
 
+/*This is for menú*/
+.cols-4 {
+  width: 340px;
+  margin: 0 auto;
+  gap: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
 .fast-action-btn {
   font-family: inherit;
   font-size: 0.9rem;
@@ -902,7 +913,7 @@ summary:hover {
   padding: 4px;
   background: none;
   border: 2px solid var(--border);
-  border-radius: 50%;
+  border-radius: 10px;
 }
 .fast-action-btn:hover {
   cursor: pointer;
@@ -1109,16 +1120,7 @@ summary:hover {
 .form-grid.cols-3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
-/*This is for menú*/
-.cols-4 {
-  width: 340px;
-  margin: 0 auto;
-  gap: 6px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
-}
+
 .form-group {
   display: flex;
   flex-direction: column;
