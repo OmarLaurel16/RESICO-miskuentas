@@ -1409,3 +1409,108 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   _carouselRender();
 });
+
+// ══════════════════════════════════════════════
+//  PAGINACIÓN DE TABLAS (Ingresos / Gastos)
+// ══════════════════════════════════════════════
+
+/**
+ * Pagina un conjunto de filas ya presentes en el DOM (no las genera,
+ * solo controla su visibilidad con la clase ob-hidden) y dibuja los
+ * botones de paginación dentro del contenedor indicado.
+ *
+ * @param {string} rowSelector       Selector CSS de las filas (ej. ".ingreso-row")
+ * @param {string} paginationId      ID del contenedor donde se dibujan los botones
+ * @param {number} porPagina         Filas a mostrar por página
+ */
+function paginarTabla(rowSelector, paginationId, porPagina) {
+  var filas = document.querySelectorAll(rowSelector);
+  var contenedor = document.getElementById(paginationId);
+  if (!filas.length || !contenedor) return;
+
+  var totalPaginas = Math.ceil(filas.length / porPagina);
+  var paginaActual = 1;
+
+  function mostrarPagina(pagina) {
+    paginaActual = pagina;
+    var inicio = (pagina - 1) * porPagina;
+    var fin = inicio + porPagina;
+
+    filas.forEach(function (fila, i) {
+      fila.classList.toggle("ob-hidden", i < inicio || i >= fin);
+    });
+
+    dibujarBotones();
+  }
+
+  function botonPagina(num) {
+    var btn = document.createElement("button");
+    btn.className = "page-btn" + (num === paginaActual ? " active" : "");
+    btn.textContent = num;
+    btn.addEventListener("click", function () {
+      mostrarPagina(num);
+    });
+    return btn;
+  }
+
+  function elipsis() {
+    var span = document.createElement("span");
+    span.className = "page-ellipsis";
+    span.textContent = "…";
+    return span;
+  }
+
+  function dibujarBotones() {
+    contenedor.innerHTML = "";
+    if (totalPaginas <= 1) return;
+
+    // Botón anterior
+    var prev = document.createElement("button");
+    prev.className = "page-btn";
+    prev.textContent = "‹";
+    prev.disabled = paginaActual === 1;
+    prev.addEventListener("click", function () {
+      if (paginaActual > 1) mostrarPagina(paginaActual - 1);
+    });
+    contenedor.appendChild(prev);
+
+    // Números de página con elipsis si son muchas
+    var rango = [];
+    rango.push(1);
+    for (var p = paginaActual - 1; p <= paginaActual + 1; p++) {
+      if (p > 1 && p < totalPaginas) rango.push(p);
+    }
+    if (totalPaginas > 1) rango.push(totalPaginas);
+    rango = rango
+      .filter(function (v, i, arr) {
+        return arr.indexOf(v) === i;
+      })
+      .sort(function (a, b) {
+        return a - b;
+      });
+
+    var anterior = 0;
+    rango.forEach(function (num) {
+      if (num - anterior > 1) contenedor.appendChild(elipsis());
+      contenedor.appendChild(botonPagina(num));
+      anterior = num;
+    });
+
+    // Botón siguiente
+    var next = document.createElement("button");
+    next.className = "page-btn";
+    next.textContent = "›";
+    next.disabled = paginaActual === totalPaginas;
+    next.addEventListener("click", function () {
+      if (paginaActual < totalPaginas) mostrarPagina(paginaActual + 1);
+    });
+    contenedor.appendChild(next);
+  }
+
+  mostrarPagina(1);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  paginarTabla(".ingreso-row", "ingresos-pagination", 20);
+  paginarTabla(".egreso-row", "gastos-pagination", 20);
+});

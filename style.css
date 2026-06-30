@@ -1095,6 +1095,53 @@ summary:hover {
   font-size: 12px;
 }
 
+/* Paginación de tablas (ingresos / gastos) */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 0 4px;
+  flex-wrap: wrap;
+}
+.page-btn {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+.page-btn:hover {
+  background: var(--item-hover);
+}
+.page-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-white);
+  cursor: default;
+}
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.page-ellipsis {
+  padding: 0 4px;
+  color: var(--text-light);
+  font-size: 12px;
+}
+
 /* Badge */
 .badge {
   display: inline-flex;
