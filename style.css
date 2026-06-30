@@ -895,11 +895,11 @@ summary:hover {
 
 /*This is for menú*/
 .cols-4 {
-  width: 340px;
+  max-width: 100%;
   margin: 0 auto;
   gap: 6px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
   justify-items: center;
   align-items: center;
 }
