@@ -913,8 +913,8 @@ summary:hover {
   font-family: inherit;
   font-size: 0.9rem;
   color: var(--text-main);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   padding: 4px;
   background: none;
   border: 2px solid var(--border);
