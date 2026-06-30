@@ -907,7 +907,7 @@ summary:hover {
 .fast-action-btn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 
   align-items: center;
   font-family: inherit;
