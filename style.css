@@ -891,6 +891,18 @@ summary:hover {
   color: var(--primary);
 }
 
+/* ------------MENU CARD ---------------*/
+.fast-action-btn {
+  font-family: inherit;
+  color: var(--text-main);
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  background: none;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+}
+
 /* Carousel */
 .carousel {
   display: flex;
