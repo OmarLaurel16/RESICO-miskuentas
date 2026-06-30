@@ -892,6 +892,7 @@ summary:hover {
 }
 
 /* ------------MENU CARD ---------------*/
+
 .fast-action-btn {
   font-family: inherit;
   font-size: 0.9rem;
@@ -1109,7 +1110,8 @@ summary:hover {
   grid-template-columns: 1fr 1fr 1fr;
 }
 /*This is for menú*/
-.form-grid.cols-4 {
+.cols-4 {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .form-group {
