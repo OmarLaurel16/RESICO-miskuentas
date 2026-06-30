@@ -911,7 +911,7 @@ summary:hover {
   gap: 3px;
   align-items: center;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--text-main);
   width: 70px;
   height: 70px;
@@ -925,8 +925,8 @@ summary:hover {
 }
 .fast-action-icon {
   color: var(--secondary);
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 
 /* Carousel */
