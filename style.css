@@ -2402,6 +2402,51 @@ summary:hover {
   opacity: 1;
 }
 
+/* Selector de método de acceso: CIEC / e.firma */
+.ob-metodo-selector {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 2px;
+}
+.ob-metodo-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+  text-align: center;
+}
+.ob-metodo-btn:hover {
+  border-color: var(--primary);
+  background: var(--item-hover);
+}
+.ob-metodo-btn-titulo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.ob-metodo-btn-desc {
+  font-size: 10.5px;
+  color: var(--text-light);
+}
+.ob-metodo-btn.active {
+  border-color: var(--green);
+  border-style: solid;
+  background: color-mix(in srgb, var(--green) 8%, white);
+}
+.ob-metodo-btn.active .ob-metodo-btn-titulo {
+  color: var(--green);
+}
+
 /* ── Paso 3: pantalla final ── */
 .ob-step3 {
   align-items: center;

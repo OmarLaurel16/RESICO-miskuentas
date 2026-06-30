@@ -325,7 +325,31 @@ document.addEventListener("DOMContentLoaded", () => {
 const _ob = {
   cerActivo: false,
   keyActivo: false,
+  metodo: "efirma",
 };
+
+/** Cambia el método de acceso al SAT entre e.firma y CIEC */
+function seleccionarMetodoAcceso(metodo) {
+  _ob.metodo = metodo;
+
+  document
+    .getElementById("ob-metodo-btn-efirma")
+    .classList.toggle("active", metodo === "efirma");
+  document
+    .getElementById("ob-metodo-btn-ciec")
+    .classList.toggle("active", metodo === "ciec");
+
+  document
+    .getElementById("ob-campos-efirma")
+    .classList.toggle("ob-hidden", metodo !== "efirma");
+  document
+    .getElementById("ob-campos-ciec")
+    .classList.toggle("ob-hidden", metodo !== "ciec");
+
+  const label = document.getElementById("btn-upload-files-label");
+  if (label)
+    label.textContent = metodo === "efirma" ? "Subir e.firma" : "Ingresar CIEC";
+}
 
 /** Muestra la subsección de subida de archivos */
 function mostrarUploader() {
@@ -336,8 +360,8 @@ function mostrarUploader() {
   btn.classList.add("ob-hidden");
 }
 
-/** Animación de validación → muestra resultado exitoso */
-function validarEfirma() {
+/** Animación de validación → muestra resultado exitoso (e.firma o CIEC) */
+function validarAccesoSAT() {
   const btn = document.getElementById("ob-validar-btn");
   const progressWrap = document.getElementById("ob-progress-wrap");
   const progressBar = document.getElementById("ob-progress-bar");
@@ -494,6 +518,15 @@ function cerrarOnboarding(completado) {
       if (c) c.classList.remove("visible");
       _ob[tipo + "Activo"] = false;
     });
+
+    // Resetear método de acceso (CIEC/e.firma) y campos CIEC
+    const ciecRfc = document.getElementById("ob-ciec-rfc");
+    const ciecPass = document.getElementById("ob-ciec-password");
+    if (ciecRfc) ciecRfc.value = "";
+    if (ciecPass) ciecPass.value = "";
+    if (document.getElementById("ob-metodo-btn-efirma")) {
+      seleccionarMetodoAcceso("efirma");
+    }
 
     // Resetear validación
     const validarBtn = document.getElementById("ob-validar-btn");
