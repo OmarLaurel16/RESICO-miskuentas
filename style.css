@@ -1441,6 +1441,57 @@ summary:hover {
   letter-spacing: 0.06em;
 }
 
+/* Resumen de impuesto a cargo/a favor (Declaraciones > Calcular) */
+.resumen-impuestos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 14px 0 6px;
+}
+.resumen-impuesto-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.resumen-impuesto-nombre {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.resumen-impuesto-linea {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  padding: 5px 0;
+  color: var(--text-main);
+}
+.resumen-impuesto-linea + .resumen-impuesto-linea {
+  border-top: 1px solid #edf0e8;
+}
+.btn-ver-detalle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.btn-ver-detalle:hover {
+  background: var(--item-hover);
+}
+
 /*-------------------PRESENTACIÓN AUTOMÁTICA----------------------*/
 .automatic-presentation-title {
   width: 100%;
@@ -1549,6 +1600,29 @@ summary:hover {
 
 .validation-table tr:hover {
   background: var(--item-hover);
+}
+
+.validation-table tr[data-diff="true"] td {
+  background: color-mix(in srgb, #c0392b 6%, white);
+}
+
+.validacion-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  margin-left: 6px;
+  border-radius: 9px;
+  background: var(--border);
+  color: var(--text-main);
+  font-size: 10px;
+  font-weight: 700;
+}
+.tab-btn.active .validacion-tab-count {
+  background: var(--primary);
+  color: var(--text-white);
 }
 
 /* Columna de conceptos */

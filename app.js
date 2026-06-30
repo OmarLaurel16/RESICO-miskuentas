@@ -164,6 +164,14 @@ function calcularDeclaracion() {
   res.style.display = "block";
   res.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+
+// ── Mostrar/ocultar el detalle completo del cálculo (resumen vs. desglose) ──
+function toggleDetalleCalculo() {
+  const detalle = document.getElementById("calculo-detalle");
+  const txt = document.getElementById("toggle-detalle-calculo-txt");
+  const oculto = detalle.classList.toggle("ob-hidden");
+  txt.textContent = oculto ? "Ver detalle" : "Ocultar detalle";
+}
 // ── Preview de la presentación ──
 function presentacionPrevista() {
   const res = document.getElementById("presentation-preview");
@@ -183,9 +191,85 @@ function presentacionValidacion() {
 
   setTimeout(() => {
     document.getElementById("presentation-validation").style.display = "block";
-
     btn.style.display = "none";
+
+    // Filtro inicial: mostrar solo líneas con diferencia
+    filtrarValidacion(
+      "diff",
+      document.querySelector("#validacion-tabs .tab-btn"),
+    );
   }, 1000);
+}
+
+// ── Filtra las tablas de validación por líneas con/sin diferencia ──
+function filtrarValidacion(modo, btn) {
+  const filas = document.querySelectorAll(".validation-table tbody tr");
+  const mostrarDiff = modo === "diff";
+
+  let totalDiff = 0;
+  let totalOk = 0;
+
+  filas.forEach(function (fila) {
+    const esDiff = fila.dataset.diff === "true";
+    if (esDiff) totalDiff++;
+    else totalOk++;
+    fila.classList.toggle("ob-hidden", esDiff !== mostrarDiff);
+  });
+
+  document.getElementById("count-diff").textContent = totalDiff;
+  document.getElementById("count-ok").textContent = totalOk;
+
+  if (btn) {
+    document
+      .querySelectorAll("#validacion-tabs .tab-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  }
+
+  // Alterna mensaje de alerta / éxito y habilita el botón de presentar
+  // solo cuando no hay diferencias en ninguna sección.
+  document
+    .getElementById("validacion-alerta-diff")
+    .classList.toggle("ob-hidden", totalDiff === 0);
+  document
+    .getElementById("validacion-exito-sin-diff")
+    .classList.toggle("ob-hidden", totalDiff !== 0);
+  document.getElementById("btn-presentar-declaracion").disabled =
+    totalDiff !== 0;
+}
+
+// ── Presentación final: pantalla de carga amigable + confirmación ──
+function iniciarPresentacionFinal() {
+  const btn = document.getElementById("btn-presentar-declaracion");
+  if (btn.disabled) return;
+
+  const loading = document.getElementById("presentacion-final-loading");
+  const loadTxt = document.getElementById("presentacion-final-loading-txt");
+  const exito = document.getElementById("presentacion-final-exito");
+
+  document.getElementById("presentation-validation").style.display = "none";
+  loading.classList.remove("ob-hidden");
+  loadTxt.textContent = "Conectando con el SAT…";
+  loading.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  var mensajes = [
+    "Conectando con el SAT…",
+    "Enviando declaración…",
+    "Generando acuse de recibo…",
+    "Finalizando…",
+  ];
+  var idx = 0;
+  var intervalo = setInterval(function () {
+    idx++;
+    if (idx < mensajes.length) loadTxt.textContent = mensajes[idx];
+  }, 900);
+
+  setTimeout(function () {
+    clearInterval(intervalo);
+    loading.classList.add("ob-hidden");
+    exito.classList.remove("ob-hidden");
+    exito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, 3800);
 }
 
 // ── HELPER: fila de concepto ──
