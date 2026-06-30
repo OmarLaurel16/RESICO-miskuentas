@@ -927,7 +927,7 @@ summary:hover {
   color: var(--secondary);
   width: 30px;
   height: 30px;
-  stroke-width: 10;
+  stroke-width: 2.1;
 }
 
 /* Carousel */
