@@ -183,6 +183,20 @@ function toggleDetalleCalculo() {
   const resumen = document.querySelector(".resumen-impuestos-grid"); // ← NUEVA
   if (resumen) resumen.style.display = oculto ? "" : "none"; // ← NUEVA
 }
+
+// ── Impuestos: alternar entre la vista normal y el historial de declaraciones ──
+function mostrarHistorialDeclaraciones() {
+  document.getElementById("impuestos-vista-normal").style.display = "none";
+  document.getElementById("impuestos-vista-historial").style.display = "block";
+  document.getElementById("btn-ver-historial-declaraciones").style.display =
+    "none";
+}
+
+function regresarAImpuestos() {
+  document.getElementById("impuestos-vista-historial").style.display = "none";
+  document.getElementById("impuestos-vista-normal").style.display = "block";
+  document.getElementById("btn-ver-historial-declaraciones").style.display = "";
+}
 // ── Preview de la presentación ──
 function presentacionPrevista() {
   const res = document.getElementById("presentation-preview");
