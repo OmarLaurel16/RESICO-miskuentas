@@ -1414,6 +1414,12 @@ summary:hover {
 .months-filter-btns:hover {
   background: color-mix(in srgb, var(--secondary) 75%, black);
 }
+
+.months-filter-btns.active {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
 .calc-table {
   font-size: 1.2rem;
   font-family: inherit;
