@@ -1446,7 +1446,7 @@ summary:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
-  margin: 14px 0 6px;
+  margin: 14px 0 16px;
 }
 .resumen-impuesto-card {
   background: var(--card-bg);
