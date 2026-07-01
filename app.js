@@ -226,6 +226,7 @@ function iniciarPresentacionFinal() {
     loading.classList.add("ob-hidden");
     exito.classList.remove("ob-hidden");
     exito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    taxSetEstado("ok");
   }, 3800);
 }
 
