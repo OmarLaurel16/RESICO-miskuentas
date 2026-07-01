@@ -192,50 +192,7 @@ function presentacionValidacion() {
   setTimeout(() => {
     document.getElementById("presentation-validation").style.display = "block";
     btn.style.display = "none";
-
-    // Filtro inicial: mostrar solo líneas con diferencia
-    filtrarValidacion(
-      "diff",
-      document.querySelector("#validacion-tabs .tab-btn"),
-    );
   }, 1000);
-}
-
-// ── Filtra las tablas de validación por líneas con/sin diferencia ──
-function filtrarValidacion(modo, btn) {
-  const filas = document.querySelectorAll(".validation-table tbody tr");
-  const mostrarDiff = modo === "diff";
-
-  let totalDiff = 0;
-  let totalOk = 0;
-
-  filas.forEach(function (fila) {
-    const esDiff = fila.dataset.diff === "true";
-    if (esDiff) totalDiff++;
-    else totalOk++;
-    fila.classList.toggle("ob-hidden", esDiff !== mostrarDiff);
-  });
-
-  document.getElementById("count-diff").textContent = totalDiff;
-  document.getElementById("count-ok").textContent = totalOk;
-
-  if (btn) {
-    document
-      .querySelectorAll("#validacion-tabs .tab-btn")
-      .forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-  }
-
-  // Alterna mensaje de alerta / éxito y habilita el botón de presentar
-  // solo cuando no hay diferencias en ninguna sección.
-  document
-    .getElementById("validacion-alerta-diff")
-    .classList.toggle("ob-hidden", totalDiff === 0);
-  document
-    .getElementById("validacion-exito-sin-diff")
-    .classList.toggle("ob-hidden", totalDiff !== 0);
-  document.getElementById("btn-presentar-declaracion").disabled =
-    totalDiff !== 0;
 }
 
 // ── Presentación final: pantalla de carga amigable + confirmación ──
