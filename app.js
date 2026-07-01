@@ -116,6 +116,23 @@ function navigate(viewId, module, sub) {
       b.classList.add("active");
     }
   });
+
+  // ── Sidebar desktop (lateral): mantener el submenú del módulo activo
+  // abierto mientras se navega dentro de él, y cerrarlo al cambiar de módulo ──
+  if (window.matchMedia("(min-width: 1160px)").matches) {
+    const activeBtn = document.querySelector(".nav-module-btn.active");
+    const activeSub = activeBtn?.nextElementSibling;
+
+    if (activeSub && activeSub.classList.contains("nav-sub")) {
+      if (!activeSub.classList.contains("open")) {
+        closeAllSubmenus();
+        activeSub.classList.add("open");
+        activeBtn.classList.add("open");
+      }
+    } else {
+      closeAllSubmenus();
+    }
+  }
 }
 
 function closeAllSubmenus() {
@@ -283,10 +300,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // cerrar submenu al navegar desde un link
+  // cerrar submenu al navegar desde un link (solo móvil/tablet;
+  // en escritorio lo gestiona navigate() para mantenerlo abierto dentro del mismo módulo)
   document.querySelectorAll(".nav-sub a").forEach((link) => {
     link.addEventListener("click", () => {
-      closeAllSubmenus();
+      if (window.matchMedia("(max-width: 1160px)").matches) {
+        closeAllSubmenus();
+      }
     });
   });
 
