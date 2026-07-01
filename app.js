@@ -549,15 +549,6 @@ function cerrarOnboarding(completado) {
     });
     const continuar2 = document.getElementById("ob-paso2-continuar");
     if (continuar2) continuar2.disabled = true;
-
-    // Solo actualizar indicadores si el flujo se completó
-    if (completado) {
-      const elIngr = document.getElementById("inicio-ingresos");
-      const elEgr = document.getElementById("inicio-egresos");
-      if (elIngr) elIngr.textContent = "$ 285,400";
-      if (elEgr) elEgr.textContent = "$ 248,200";
-      taxSetEstado("al-dia");
-    }
   }, 250);
 }
 
