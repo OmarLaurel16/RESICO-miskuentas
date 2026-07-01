@@ -179,6 +179,9 @@ function toggleDetalleCalculo() {
   const txt = document.getElementById("toggle-detalle-calculo-txt");
   const oculto = detalle.classList.toggle("ob-hidden");
   txt.textContent = oculto ? "Ver detalle" : "Ocultar detalle";
+
+  const resumen = document.querySelector(".resumen-impuestos-grid"); // ← NUEVA
+  if (resumen) resumen.style.display = oculto ? "" : "none"; // ← NUEVA
 }
 // ── Preview de la presentación ──
 function presentacionPrevista() {
