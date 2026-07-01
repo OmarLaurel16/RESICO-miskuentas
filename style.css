@@ -1606,25 +1606,6 @@ summary:hover {
   background: color-mix(in srgb, #c0392b 6%, white);
 }
 
-.validacion-tab-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 18px;
-  height: 18px;
-  padding: 0 5px;
-  margin-left: 6px;
-  border-radius: 9px;
-  background: var(--border);
-  color: var(--text-main);
-  font-size: 10px;
-  font-weight: 700;
-}
-.tab-btn.active .validacion-tab-count {
-  background: var(--primary);
-  color: var(--text-white);
-}
-
 /* Columna de conceptos */
 .validation-table th:first-child,
 .validation-table td:first-child {
