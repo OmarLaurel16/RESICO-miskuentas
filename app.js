@@ -158,6 +158,14 @@ function switchTab(btn, panelId) {
   document.getElementById(panelId).classList.add("active");
 }
 
+// ── Selección única de mes en filtro de declaraciones ──
+function seleccionarMesFiltro(btn) {
+  document
+    .querySelectorAll(".months-filter-btns.active")
+    .forEach((b) => b.classList.remove("active"));
+  btn.classList.add("active");
+}
+
 // ── CALCULAR DECLARACIÓN ──
 function calcularDeclaracion() {
   const res = document.getElementById("calculo-resultado");
