@@ -791,35 +791,6 @@ function fctIniciarVerificacion() {
   }, 5400);
 }
 
-/** Muestra un toast de éxito temporal */
-function _fctToast(msg) {
-  var toast = document.createElement("div");
-  toast.style.cssText = [
-    "position:fixed",
-    "bottom:28px",
-    "left:50%",
-    "transform:translateX(-50%)",
-    "background:var(--primary)",
-    "color:#fff",
-    "padding:10px 22px",
-    "border-radius:8px",
-    "font-size:14px",
-    "z-index:99999",
-    "box-shadow:0 4px 18px rgba(0,0,0,.18)",
-    "display:flex",
-    "align-items:center",
-    "gap:10px",
-    "animation:ob-fadeIn .25s ease both",
-  ].join(";");
-  toast.innerHTML =
-    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="width:18px;height:18px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>' +
-    msg;
-  document.body.appendChild(toast);
-  setTimeout(function () {
-    toast.remove();
-  }, 3500);
-}
-
 // ══════════════════════════════════════════════
 //  PASO PROCESAMIENTO DE FACTURAS
 // ══════════════════════════════════════════════
