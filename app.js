@@ -1626,7 +1626,7 @@ function animar() {
   frame++;
 
   if (frame < totalFrames) {
-    setTimeout(animar, 1000 / 24); // 24 FPS
+    setTimeout(animar, 1000 / 19); // 24 FPS
   }
 }
 
