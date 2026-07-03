@@ -1604,30 +1604,54 @@ document.addEventListener("DOMContentLoaded", function () {
   paginarTabla(".egreso-row", "gastos-pagination", 20);
 });
 
-const canvas = document.getElementById("botCanvas");
+const canvas = document.getElementById("animacion");
 const ctx = canvas.getContext("2d");
 
-const frames = [];
-const totalFrames = 44;
+const TOTAL_FRAMES = 44;
+const FPS = 24;
+const SCALE = 5;
 
-for (let i = 1; i <= totalFrames; i++) {
+const frames = [];
+
+// Cargar imágenes
+for (let i = 1; i <= TOTAL_FRAMES; i++) {
   const img = new Image();
-  img.src = `Fotogramas/SinFondo${i}.png`;
+  img.src = `assets/frames/frame-${i}.png`;
   frames.push(img);
 }
 
 let frame = 0;
 
-function animar() {
+// Esperar a que todas las imágenes carguen
+Promise.all(
+  frames.map(
+    (img) =>
+      new Promise((resolve) => {
+        img.onload = resolve;
+      }),
+  ),
+).then(() => {
+  animate();
+});
+
+function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.drawImage(frames[frame], 0, 0);
+  const img = frames[frame];
+
+  // Escalar la imagen
+  const width = img.width * SCALE;
+  const height = img.height * SCALE;
+
+  // Centrar en el canvas
+  const x = (canvas.width - width) / 2;
+  const y = (canvas.height - height) / 2;
+
+  ctx.drawImage(img, x, y, width, height);
 
   frame++;
 
-  if (frame < totalFrames) {
-    setTimeout(animar, 1000 / 19); // 24 FPS
+  if (frame < TOTAL_FRAMES) {
+    setTimeout(animate, 1000 / FPS);
   }
 }
-
-frames[0].onload = animar;
