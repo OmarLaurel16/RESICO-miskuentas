@@ -1609,14 +1609,14 @@ const ctx = canvas.getContext("2d");
 
 const TOTAL_FRAMES = 44;
 const FPS = 24;
-const SCALE = 5;
+const SCALE = 0.35;
 
 const frames = [];
 
 // Cargar imágenes
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
   const img = new Image();
-  img.src = `assets/frames/frame-${i}.png`;
+  img.src = `Fotogramas/SinFondo${i}.png`;
   frames.push(img);
 }
 
