@@ -1608,14 +1608,14 @@ const canvas = document.getElementById("animacion");
 const ctx = canvas.getContext("2d");
 
 const TOTAL_FRAMES = 44;
-const FPS = 11;
+const FPS = 15;
 const SCALE = 0.35;
 
 const frames = [];
 
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
   const img = new Image();
-  img.src = `Fotogramas2/bot${i}.png`;
+  img.src = `Intento3/${i}.png`;
   frames.push(img);
 }
 
