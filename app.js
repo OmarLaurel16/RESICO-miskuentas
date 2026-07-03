@@ -1608,7 +1608,7 @@ const canvas = document.getElementById("animacion");
 const ctx = canvas.getContext("2d");
 
 const TOTAL_FRAMES = 44;
-const FPS = 6;
+const FPS = 8;
 const SCALE = 0.35;
 
 const frames = [];
