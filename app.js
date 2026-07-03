@@ -1603,3 +1603,6 @@ document.addEventListener("DOMContentLoaded", function () {
   paginarTabla(".ingreso-row", "ingresos-pagination", 20);
   paginarTabla(".egreso-row", "gastos-pagination", 20);
 });
+
+const canvas = document.getElementById("botCanvas");
+const ctx = canvas.getContext("2d");
