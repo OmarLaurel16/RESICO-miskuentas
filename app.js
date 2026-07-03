@@ -1656,7 +1656,7 @@ function animate(timestamp) {
   requestAnimationFrame(animate);
 }
 
-document.getElementById("btnIniciar").addEventListener("click", () => {
+document.getElementById("chatbot-btn").addEventListener("click", () => {
   if (isPlaying) return; // Evita iniciar varias veces
 
   isPlaying = true;
@@ -1664,6 +1664,6 @@ document.getElementById("btnIniciar").addEventListener("click", () => {
   requestAnimationFrame(animate);
 });
 
-document.getElementById("btnDetener").addEventListener("click", () => {
+document.getElementById("chatbot-close").addEventListener("click", () => {
   isPlaying = false;
 });
