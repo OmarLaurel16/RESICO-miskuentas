@@ -1616,7 +1616,7 @@ const frames = [];
 // Cargar imágenes
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
   const img = new Image();
-  img.src = `Fotogramas/SinFondo${i}.png`;
+  img.src = `Fotogramas2/bot${i}.png`;
   frames.push(img);
 }
 
