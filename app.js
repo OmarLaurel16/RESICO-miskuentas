@@ -1612,7 +1612,7 @@ const totalFrames = 44;
 
 for (let i = 1; i <= totalFrames; i++) {
   const img = new Image();
-  img.src = `frames/frame-${i}.png`;
+  img.src = `SinFondo${i}.png`;
   frames.push(img);
 }
 
