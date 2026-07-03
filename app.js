@@ -1606,5 +1606,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const canvas = document.getElementById("botCanvas");
 const ctx = canvas.getContext("2d");
-ctx.fillStyle = "#4CAF50";
-ctx.fillRect(50, 50, 100, 60);
+
+const frames = [];
+const totalFrames = 44;
+
+for (let i = 1; i <= totalFrames; i++) {
+  const img = new Image();
+  img.src = `frames/frame-${i}.png`;
+  frames.push(img);
+}
+
+let frame = 0;
+
+function animar() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.drawImage(frames[frame], 0, 0);
+
+  frame++;
+
+  if (frame < totalFrames) {
+    setTimeout(animar, 1000 / 24); // 24 FPS
+  }
+}
+
+frames[0].onload = animar;
