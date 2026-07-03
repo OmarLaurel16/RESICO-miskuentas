@@ -1608,50 +1608,62 @@ const canvas = document.getElementById("animacion");
 const ctx = canvas.getContext("2d");
 
 const TOTAL_FRAMES = 44;
-const FPS = 13;
+const FPS = 24;
 const SCALE = 0.35;
 
 const frames = [];
 
-// Cargar imágenes
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
   const img = new Image();
-  img.src = `Fotogramas2/bot${i}.png`;
+  img.src = `Fotogramas/bot${i}.png`;
   frames.push(img);
 }
 
-let frame = 0;
+let currentFrame = 0;
+let lastFrameTime = 0;
+let isPlaying = false;
 
 // Esperar a que todas las imágenes carguen
 Promise.all(
-  frames.map(
-    (img) =>
-      new Promise((resolve) => {
-        img.onload = resolve;
-      }),
-  ),
+  frames.map((img) => new Promise((resolve) => (img.onload = resolve))),
 ).then(() => {
-  animate();
+  drawFrame(); // Muestra el primer frame
 });
 
-function animate() {
+function drawFrame() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const img = frames[frame];
+  const img = frames[currentFrame];
 
-  // Escalar la imagen
   const width = img.width * SCALE;
   const height = img.height * SCALE;
 
-  // Centrar en el canvas
   const x = (canvas.width - width) / 2;
   const y = (canvas.height - height) / 2;
 
   ctx.drawImage(img, x, y, width, height);
-
-  frame++;
-
-  if (frame < TOTAL_FRAMES) {
-    setTimeout(animate, 1000 / FPS);
-  }
 }
+
+function animate(timestamp) {
+  if (!isPlaying) return;
+
+  if (timestamp - lastFrameTime >= 1000 / FPS) {
+    currentFrame = (currentFrame + 1) % TOTAL_FRAMES;
+    drawFrame();
+    lastFrameTime = timestamp;
+  }
+
+  requestAnimationFrame(animate);
+}
+
+document.getElementById("btnIniciar").addEventListener("click", () => {
+  if (isPlaying) return; // Evita iniciar varias veces
+
+  isPlaying = true;
+  lastFrameTime = performance.now();
+  requestAnimationFrame(animate);
+});
+
+document.getElementById("btnDetener").addEventListener("click", () => {
+  isPlaying = false;
+});
