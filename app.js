@@ -1606,3 +1606,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const canvas = document.getElementById("botCanvas");
 const ctx = canvas.getContext("2d");
+ctx.fillStyle = "#4CAF50";
+ctx.fillRect(50, 50, 100, 60);
