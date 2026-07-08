@@ -1780,37 +1780,6 @@
                 <div class="fact-quick-title">Clientes y productos</div>
                 <div class="fact-quick-desc">Administra tu catálogo.</div>
               </button>
-
-              <button
-                class="fact-quick-card"
-                onclick="
-                  navigate(
-                    'facturacion-cancelaciones',
-                    'Facturación',
-                    'Cancelaciones de facturas',
-                  )
-                "
-              >
-                <div class="fact-quick-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.8"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M9.75 9.75l4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    />
-                  </svg>
-                </div>
-                <div class="fact-quick-title">Cancelaciones de facturas</div>
-                <div class="fact-quick-desc">
-                  Solicita y da seguimiento a cancelaciones.
-                </div>
-              </button>
             </div>
           </div>
         </div>
@@ -9586,66 +9555,7 @@
               <button class="btn-primary">Actualizar buzón</button>
             </div>
           </div>
-
-          <div id="buzon-dashboard">
-            <div class="fact-quick-grid cols-2" style="margin-top: 46px">
-              <button class="fact-quick-card" onclick="mostrarBuzonMensajes()">
-                <div class="fact-quick-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.8"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                    />
-                  </svg>
-                </div>
-                <div class="fact-quick-title">Mensajes del SAT</div>
-                <div class="fact-quick-desc">
-                  Consulta los mensajes recibidos en tu buzón tributario.
-                </div>
-              </button>
-
-              <button
-                class="fact-quick-card"
-                onclick="mostrarBuzonNotificaciones()"
-              >
-                <div class="fact-quick-icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.8"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                    />
-                  </svg>
-                </div>
-                <div class="fact-quick-title">Notificaciones del SAT</div>
-                <div class="fact-quick-desc">
-                  Revisa notificaciones, requerimientos y avisos importantes.
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <div id="buzon-mensajes" style="display: none">
-            <button
-              class="add-filter-btn"
-              style="margin-top: 46px; margin-bottom: 14px"
-              onclick="regresarABuzon()"
-            >
-              Regresar al Buzón
-            </button>
+          <div class="two-col-cards" style="margin-top: 46px">
             <div class="card" style="width: 100%">
               <div class="card-title">Mensajes</div>
               <div class="tabs">
@@ -9702,16 +9612,6 @@
 
               <div class="tab-panel" id="tab-leidos"></div>
             </div>
-          </div>
-
-          <div id="buzon-notificaciones" style="display: none">
-            <button
-              class="add-filter-btn"
-              style="margin-top: 46px; margin-bottom: 14px"
-              onclick="regresarABuzon()"
-            >
-              Regresar al Buzón
-            </button>
             <div class="card" style="width: 100%">
               <div class="card-title">Notificaciones</div>
               <div class="tabs">
@@ -9757,10 +9657,7 @@
               <div class="tab-panel" id="tab-noti-leidos"></div>
             </div>
           </div>
-        </div>
 
-        <!--VIEW: Facturación · Cancelaciones-->
-        <div class="view" id="view-facturacion-cancelaciones">
           <div class="welcome-strip">
             <div class="welcome-strip-text">
               <strong>Buzón de cancelaciones</strong>Solicita y da seguimiento a
@@ -10282,7 +10179,7 @@
               </div>
               <div class="form-actions">
                 <div class="form-actions">
-                  <button class="btn-secondary">+ Agregar producto</button>
+                  <button class="btn-secondary">+ Agregar productos</button>
                 </div>
                 <div class="form-actions">
                   <button class="btn-primary">Guardar cambios</button>
@@ -10294,7 +10191,7 @@
       </main>
     </div>
     <div class="chatbot">
-      <button class="chatbot-btn" onclick="openChatBot()">
+      <button id="chatbot-btn" class="chatbot-btn" onclick="openChatBot()">
         <img
           class="chatbot-img"
           alt="chatbot-img"
@@ -10308,14 +10205,28 @@
     <div class="chatwith-bot-overlay ob-hidden" id="view-chat-with-bot">
       <div class="chatwith-bot-container">
         <div class="chatwith-bot-wrap">
-          <img
+          <!--<img
             class="chatwith-bot-img"
             alt="chatbot"
             src="bot-medio-cuerpo-sinfondo.png"
-          />
+          />-->
+          <div>
+            <canvas
+              id="animacion"
+              width="224"
+              height="350"
+              style="transform: translate(0, 28.8%)"
+            ></canvas>
+          </div>
         </div>
         <div class="chatbot-window">
-          <button class="chatbot-close" onclick="closeChatBot()">✕</button>
+          <button
+            id="chatbot-close"
+            class="chatbot-close"
+            onclick="closeChatBot()"
+          >
+            ✕
+          </button>
           <div class="chatbot-header">
             <h3>Hola</h3>
             <p>¿Con qué te puedo ayudar hoy?</p>

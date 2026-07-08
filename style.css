@@ -1024,14 +1024,8 @@ summary:hover {
 
 .fact-quick-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-}
-
-@media (min-width: 769px) {
-  .fact-quick-grid.cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .fact-quick-card {
