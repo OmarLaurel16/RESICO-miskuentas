@@ -2821,11 +2821,12 @@
         <div class="view" id="view-ingresos">
           <!-- ── PANEL: DETALLE FACTURA (oculto por defecto) ── -->
           <div id="ingresos-detalle" class="ob-hidden">
-            <div>
+            <div style="flex-direction: row">
               <!-- Botón regresar -->
               <button
                 class="btn-detalle-regresar"
                 onclick="regresarAIngresos()"
+                style="display: flex"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2845,7 +2846,6 @@
                 Regresar a ingresos
               </button>
               <button
-                class="btn-secondary"
                 style="
                   background: orangered;
                   align-items: center;
