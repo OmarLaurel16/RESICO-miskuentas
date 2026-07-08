@@ -1128,7 +1128,6 @@ function verDetalleEgreso(row) {
   var d = row.dataset;
 
   var folio = d.folio || "—";
-  var status = d.status || "Vigente";
   var metodo = d.metodo || "—";
   var emisor = d.emisor || "—";
   var totalRaw = d.total || "0.00";
@@ -1136,11 +1135,6 @@ function verDetalleEgreso(row) {
 
   // Folio
   document.getElementById("det-eg-folio").textContent = folio;
-
-  // Estado badge
-  var badge = document.getElementById("det-eg-estado-badge");
-  document.getElementById("det-eg-estado-texto").textContent = status;
-  badge.classList.toggle("cancelado", status === "Cancelado");
 
   // Emisor (logo inicial + nombre + RFC simulado)
   var inicial = emisor.trim().charAt(0).toUpperCase();
