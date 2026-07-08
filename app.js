@@ -1031,7 +1031,6 @@ function verDetalleIngreso(row) {
 
   // ── Folio y estado ──
   var folio = d.folio || "—";
-  var status = d.status || "Vigente";
   var metodo = d.metodo || "—";
   var receptor = d.receptor || "—";
   var fecha = d.fecha || "—";
