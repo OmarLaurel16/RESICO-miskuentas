@@ -1042,8 +1042,6 @@ function verDetalleIngreso(row) {
   // Estado badge
   var badge = document.getElementById("det-estado-badge");
   var badgeTexto = document.getElementById("det-estado-texto");
-  badgeTexto.textContent = status;
-  badge.classList.toggle("cancelado", status === "Cancelado");
 
   // Receptor
   document.getElementById("det-receptor").textContent = receptor;
