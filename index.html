@@ -7797,24 +7797,48 @@
         <div class="view" id="view-gastos">
           <!-- ── PANEL: DETALLE EGRESO (oculto por defecto) ── -->
           <div id="gastos-detalle" class="ob-hidden">
-            <button class="btn-detalle-regresar" onclick="regresarAGastos()">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                width="16"
-                height="16"
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <button
+                class="btn-detalle-regresar"
+                onclick="regresarAGastos()"
+                style="display: flex"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              Regresar a gastos
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                  />
+                </svg>
+                Regresar a gastos
+              </button>
+              <button
+                class="btn-secondary"
+                style="
+                  background: orangered;
+                  align-items: center;
+                  display: flex;
+                  margin-bottom: 15px;
+                "
+              >
+                Cancelar
+              </button>
+            </div>
 
             <div class="factura-doc">
               <div class="factura-header">
