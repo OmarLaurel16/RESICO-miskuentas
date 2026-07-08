@@ -1035,7 +1035,7 @@ summary:hover {
 }
 
 .fact-quick-card {
-  background: color-mix(in srgb, var(--primary) 10%, white);
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px 18px;
