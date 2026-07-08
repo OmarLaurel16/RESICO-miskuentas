@@ -1131,7 +1131,6 @@ function verDetalleEgreso(row) {
   var metodo = d.metodo || "—";
   var emisor = d.emisor || "—";
   var totalRaw = d.total || "0.00";
-  var deducible = d.deducible || "—";
 
   // Folio
   document.getElementById("det-eg-folio").textContent = folio;
