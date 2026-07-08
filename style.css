@@ -3894,8 +3894,8 @@ summary:hover {
   left: 50%;
   transform: translate(-50%, -48%) scale(0.7);
   opacity: 0;
-  width: min(560px, calc(100vw - 32px));
-  max-height: min(82vh, 780px);
+  width: min(760px, calc(100vw - 32px));
+  max-height: min(82vh, 680px);
   background: var(--bg-card, #fff);
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
