@@ -1661,13 +1661,10 @@ function drawFrame() {
 
   const x = (canvas.width - width) / 2;
   const y = (canvas.height - height) / 2;
-  // Aplicas el filtro compuesto en una sola línea de texto
-  ctx.filter =
-    "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 15px rgba(86, 140, 255, 0.25))";
+  ctx.filter = "drop-shadow(0 0 15px rgba(86, 140, 255, 0.25))";
 
   ctx.drawImage(img, x, y, width, height);
 
-  // Limpias el filtro para el siguiente fotograma
   ctx.filter = "none";
 }
 
