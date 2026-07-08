@@ -1152,18 +1152,6 @@ function verDetalleEgreso(row) {
         ? "Pago en Una Sola Exhibición"
         : "—";
 
-  // Deducible
-  var deducibleEl = document.getElementById("det-eg-deducible");
-  deducibleEl.textContent = deducible;
-  deducibleEl.style.color =
-    deducible === "Sí"
-      ? "var(--green)"
-      : deducible === "Parcial"
-        ? "#b7770d"
-        : deducible === "No"
-          ? "#c0392b"
-          : "inherit";
-
   // UUID simulado
   document.getElementById("det-eg-uuid").textContent =
     "a3f9c" +
