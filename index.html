@@ -2821,28 +2821,33 @@
         <div class="view" id="view-ingresos">
           <!-- ── PANEL: DETALLE FACTURA (oculto por defecto) ── -->
           <div id="ingresos-detalle" class="ob-hidden">
-            <!-- Botón regresar -->
-            <button class="btn-detalle-regresar" onclick="regresarAIngresos()">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                width="16"
-                height="16"
+            <div>
+              <!-- Botón regresar -->
+              <button
+                class="btn-detalle-regresar"
+                onclick="regresarAIngresos()"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                />
-              </svg>
-              Regresar a ingresos
-            </button>
-            <button class="btn-secondary" style="background: orangered">
-              Cancelar
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                  />
+                </svg>
+                Regresar a ingresos
+              </button>
+              <button class="btn-secondary" style="background: orangered">
+                Cancelar
+              </button>
+            </div>
 
             <!-- Encabezado de factura -->
             <div class="factura-doc">
