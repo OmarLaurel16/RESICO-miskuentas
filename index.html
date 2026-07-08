@@ -2821,7 +2821,14 @@
         <div class="view" id="view-ingresos">
           <!-- ── PANEL: DETALLE FACTURA (oculto por defecto) ── -->
           <div id="ingresos-detalle" class="ob-hidden">
-            <div style="flex-direction: row">
+            <div
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
               <!-- Botón regresar -->
               <button
                 class="btn-detalle-regresar"
@@ -2846,10 +2853,12 @@
                 Regresar a ingresos
               </button>
               <button
+                class="btn-secondary"
                 style="
                   background: orangered;
                   align-items: center;
                   display: flex;
+                  margin-bottom: 15px;
                 "
               >
                 Cancelar
