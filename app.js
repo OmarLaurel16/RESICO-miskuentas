@@ -30,7 +30,9 @@ function switchEstado(estado) {
     p.classList.add("hidden");
   });
   document
-    .querySelectorAll("#view-buzon .cfdi-tipos-btns .btn-primary")
+    .querySelectorAll(
+      "#view-facturacion-cancelaciones .cfdi-tipos-btns .btn-primary",
+    )
     .forEach(function (b) {
       b.classList.remove("active-estado");
     });
@@ -38,6 +40,25 @@ function switchEstado(estado) {
   if (panel) panel.classList.remove("hidden");
   var btn = document.getElementById("estado-btn-" + estado);
   if (btn) btn.classList.add("active-estado");
+}
+
+// ── Buzones: alternar entre el dashboard y las vistas de mensajes/notificaciones ──
+function mostrarBuzonMensajes() {
+  document.getElementById("buzon-dashboard").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-mensajes").style.display = "block";
+}
+
+function mostrarBuzonNotificaciones() {
+  document.getElementById("buzon-dashboard").style.display = "none";
+  document.getElementById("buzon-mensajes").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "block";
+}
+
+function regresarABuzon() {
+  document.getElementById("buzon-mensajes").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-dashboard").style.display = "block";
 }
 
 function switchTipoFactura(tipo) {
@@ -1602,68 +1623,4 @@ function paginarTabla(rowSelector, paginationId, porPagina) {
 document.addEventListener("DOMContentLoaded", function () {
   paginarTabla(".ingreso-row", "ingresos-pagination", 20);
   paginarTabla(".egreso-row", "gastos-pagination", 20);
-});
-
-const canvas = document.getElementById("animacion");
-const ctx = canvas.getContext("2d");
-
-const TOTAL_FRAMES = 44;
-const FPS = 22;
-const SCALE = 0.35;
-
-const frames = [];
-
-for (let i = 1; i <= TOTAL_FRAMES; i++) {
-  const img = new Image();
-  img.src = `Intento3/${i}.png`;
-  frames.push(img);
-}
-
-let currentFrame = 0;
-let lastFrameTime = 0;
-let isPlaying = false;
-
-// Esperar a que todas las imágenes carguen
-Promise.all(
-  frames.map((img) => new Promise((resolve) => (img.onload = resolve))),
-).then(() => {
-  drawFrame(); // Muestra el primer frame
-});
-
-function drawFrame() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  const img = frames[currentFrame];
-
-  const width = img.width * SCALE;
-  const height = img.height * SCALE;
-
-  const x = (canvas.width - width) / 2;
-  const y = (canvas.height - height) / 2;
-
-  ctx.drawImage(img, x, y, width, height);
-}
-
-function animate(timestamp) {
-  if (!isPlaying) return;
-
-  if (timestamp - lastFrameTime >= 1000 / FPS) {
-    currentFrame = (currentFrame + 1) % TOTAL_FRAMES;
-    drawFrame();
-    lastFrameTime = timestamp;
-  }
-
-  requestAnimationFrame(animate);
-}
-
-document.getElementById("chatbot-btn").addEventListener("click", () => {
-  if (isPlaying) return; // Evita iniciar varias veces
-
-  isPlaying = true;
-  lastFrameTime = performance.now();
-  requestAnimationFrame(animate);
-});
-
-document.getElementById("chatbot-close").addEventListener("click", () => {
-  isPlaying = false;
 });
