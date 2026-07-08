@@ -30,7 +30,9 @@ function switchEstado(estado) {
     p.classList.add("hidden");
   });
   document
-    .querySelectorAll("#view-buzon .cfdi-tipos-btns .btn-primary")
+    .querySelectorAll(
+      "#view-facturacion-cancelaciones .cfdi-tipos-btns .btn-primary",
+    )
     .forEach(function (b) {
       b.classList.remove("active-estado");
     });
@@ -38,6 +40,25 @@ function switchEstado(estado) {
   if (panel) panel.classList.remove("hidden");
   var btn = document.getElementById("estado-btn-" + estado);
   if (btn) btn.classList.add("active-estado");
+}
+
+// ── Buzones: alternar entre el dashboard y las vistas de mensajes/notificaciones ──
+function mostrarBuzonMensajes() {
+  document.getElementById("buzon-dashboard").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-mensajes").style.display = "block";
+}
+
+function mostrarBuzonNotificaciones() {
+  document.getElementById("buzon-dashboard").style.display = "none";
+  document.getElementById("buzon-mensajes").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "block";
+}
+
+function regresarABuzon() {
+  document.getElementById("buzon-mensajes").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-dashboard").style.display = "block";
 }
 
 function switchTipoFactura(tipo) {

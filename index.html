@@ -1780,6 +1780,7 @@
                 <div class="fact-quick-title">Clientes y productos</div>
                 <div class="fact-quick-desc">Administra tu catálogo.</div>
               </button>
+
               <button
                 class="fact-quick-card"
                 onclick="
@@ -9588,194 +9589,177 @@
 
           <div id="buzon-dashboard">
             <div class="fact-quick-grid cols-2" style="margin-top: 46px">
-              <div class="two-col-cards" style="margin-top: 46px">
-                <button
-                  class="fact-quick-card"
-                  onclick="mostrarBuzonMensajes()"
-                >
-                  <div class="fact-quick-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.8"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                      />
-                    </svg>
-                  </div>
-
-                  <div class="fact-quick-title">Mensajes del SAT</div>
-
-                  <div class="fact-quick-desc">
-                    Consulta los mensajes recibidos en tu buzón tributario.
-                  </div>
-                </button>
-
-                <button
-                  class="fact-quick-card"
-                  onclick="mostrarBuzonNotificaciones()"
-                >
-                  <div class="fact-quick-icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.8"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                      />
-                    </svg>
-                  </div>
-
-                  <div class="fact-quick-title">Notificaciones del SAT</div>
-
-                  <div class="fact-quick-desc">
-                    Revisa notificaciones, requerimientos y avisos importantes.
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <div id="buzon-mensajes" style="display: none">
-              <button
-                class="add-filter-btn"
-                style="margin-top: 46px; margin-bottom: 14px"
-                onclick="regresarABuzon()"
-              >
-                Regresar al Buzón
+              <button class="fact-quick-card" onclick="mostrarBuzonMensajes()">
+                <div class="fact-quick-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Mensajes del SAT</div>
+                <div class="fact-quick-desc">
+                  Consulta los mensajes recibidos en tu buzón tributario.
+                </div>
               </button>
 
-              <div class="card" style="width: 100%">
-                <div class="card-title">Mensajes</div>
-                <div class="tabs">
-                  <button
-                    class="tab-btn active"
-                    onclick="switchTab(this, 'tab-no-leidos')"
-                  >
-                    No leídos
-                    <span class="badge badge-red" style="margin-left: 6px"
-                      >2</span
-                    >
-                  </button>
-                  <button
-                    class="tab-btn"
-                    onclick="switchTab(this, 'tab-leidos')"
-                  >
-                    Leídos
-                  </button>
-                </div>
-                <div class="tab-panel active" id="tab-no-leidos">
-                  <div class="alert-item">
-                    <div style="width: 100%">
-                      <div style="display: flex; gap: 1.5rem">
-                        <div class="alert-dot-wrap">
-                          <div class="alert-dot yellow"></div>
-                        </div>
-                        <div class="alert-title">
-                          Aviso de actualización de datos
-                        </div>
-                      </div>
-
-                      <div class="alert-desc">
-                        Se requiere actualizar la información de domicilio
-                        fiscal.
-                      </div>
-                      <div class="alert-date">2025-05-10</div>
-                    </div>
-                    <button class="alert-action-btn">Marcar como leído</button>
-                  </div>
-                  <div class="alert-item">
-                    <div style="width: 100%">
-                      <div style="display: flex; gap: 1.5rem">
-                        <div class="alert-dot-wrap">
-                          <div class="alert-dot yellow"></div>
-                        </div>
-                        <div class="alert-title">
-                          Recordatorio de declaración
-                        </div>
-                      </div>
-
-                      <div class="alert-desc">
-                        La fecha límite para presentar la declaración de Mayo
-                        2025 es el 17 de junio.
-                      </div>
-                      <div class="alert-date">2025-05-08</div>
-                    </div>
-                    <button class="alert-action-btn">Marcar como leído</button>
-                  </div>
-                </div>
-
-                <div class="tab-panel" id="tab-leidos"></div>
-              </div>
-            </div>
-            <div id="buzon-notificaciones" style="display: none">
               <button
-                class="add-filter-btn"
-                style="margin-top: 46px; margin-bottom: 14px"
-                onclick="regresarABuzon()"
+                class="fact-quick-card"
+                onclick="mostrarBuzonNotificaciones()"
               >
-                Regresar al Buzón
+                <div class="fact-quick-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Notificaciones del SAT</div>
+                <div class="fact-quick-desc">
+                  Revisa notificaciones, requerimientos y avisos importantes.
+                </div>
               </button>
+            </div>
+          </div>
 
-              <div class="card" style="width: 100%">
-                <div class="card-title">Notificaciones</div>
-                <div class="tabs">
-                  <button
-                    class="tab-btn active"
-                    onclick="switchTab(this, 'tab-noti-no-leidos')"
+          <div id="buzon-mensajes" style="display: none">
+            <button
+              class="add-filter-btn"
+              style="margin-top: 46px; margin-bottom: 14px"
+              onclick="regresarABuzon()"
+            >
+              Regresar al Buzón
+            </button>
+            <div class="card" style="width: 100%">
+              <div class="card-title">Mensajes</div>
+              <div class="tabs">
+                <button
+                  class="tab-btn active"
+                  onclick="switchTab(this, 'tab-no-leidos')"
+                >
+                  No leídos
+                  <span class="badge badge-red" style="margin-left: 6px"
+                    >2</span
                   >
-                    No leídas
-                    <span class="badge badge-red" style="margin-left: 6px"
-                      >1</span
-                    >
-                  </button>
-                  <button
-                    class="tab-btn"
-                    onclick="switchTab(this, 'tab-noti-leidos')"
-                  >
-                    Leídas
-                  </button>
-                </div>
-                <div class="tab-panel active" id="tab-noti-no-leidos">
-                  <div class="alert-item">
-                    <div style="width: 100%">
-                      <div style="display: flex; gap: 1.5rem">
-                        <div class="alert-dot-wrap">
-                          <div class="alert-dot red"></div>
-                        </div>
-                        <div class="alert-title">
-                          Resolución Provisional y Oficio de Preliquidación
-                        </div>
-                      </div>
-
-                      <div class="alert-desc">
-                        Del análisis sistémico a sus Comprobantes Fiscales
-                        Digitales por Internet (CFDI) y las declaraciones
-                        presentadas, se observaron discrepancias en el Impuesto
-                        Sobre la Renta (ISR) propio del ejercicio 2025.
-                      </div>
-                      <div class="alert-date">2025-06-10</div>
-                    </div>
-                    <button class="alert-action-btn">Marcar como leído</button>
-                  </div>
-                </div>
-                <div class="tab-panel" id="tab-noti-leidos"></div>
+                </button>
+                <button class="tab-btn" onclick="switchTab(this, 'tab-leidos')">
+                  Leídos
+                </button>
               </div>
+              <div class="tab-panel active" id="tab-no-leidos">
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot yellow"></div>
+                      </div>
+                      <div class="alert-title">
+                        Aviso de actualización de datos
+                      </div>
+                    </div>
+
+                    <div class="alert-desc">
+                      Se requiere actualizar la información de domicilio fiscal.
+                    </div>
+                    <div class="alert-date">2025-05-10</div>
+                  </div>
+                  <button class="alert-action-btn">Marcar como leído</button>
+                </div>
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot yellow"></div>
+                      </div>
+                      <div class="alert-title">Recordatorio de declaración</div>
+                    </div>
+
+                    <div class="alert-desc">
+                      La fecha límite para presentar la declaración de Mayo 2025
+                      es el 17 de junio.
+                    </div>
+                    <div class="alert-date">2025-05-08</div>
+                  </div>
+                  <button class="alert-action-btn">Marcar como leído</button>
+                </div>
+              </div>
+
+              <div class="tab-panel" id="tab-leidos"></div>
+            </div>
+          </div>
+
+          <div id="buzon-notificaciones" style="display: none">
+            <button
+              class="add-filter-btn"
+              style="margin-top: 46px; margin-bottom: 14px"
+              onclick="regresarABuzon()"
+            >
+              Regresar al Buzón
+            </button>
+            <div class="card" style="width: 100%">
+              <div class="card-title">Notificaciones</div>
+              <div class="tabs">
+                <button
+                  class="tab-btn active"
+                  onclick="switchTab(this, 'tab-noti-no-leidos')"
+                >
+                  No leídas
+                  <span class="badge badge-red" style="margin-left: 6px"
+                    >1</span
+                  >
+                </button>
+                <button
+                  class="tab-btn"
+                  onclick="switchTab(this, 'tab-noti-leidos')"
+                >
+                  Leídas
+                </button>
+              </div>
+              <div class="tab-panel active" id="tab-noti-no-leidos">
+                <div class="alert-item">
+                  <div style="width: 100%">
+                    <div style="display: flex; gap: 1.5rem">
+                      <div class="alert-dot-wrap">
+                        <div class="alert-dot red"></div>
+                      </div>
+                      <div class="alert-title">
+                        Resolución Provisional y Oficio de Preliquidación
+                      </div>
+                    </div>
+
+                    <div class="alert-desc">
+                      Del análisis sistémico a sus Comprobantes Fiscales
+                      Digitales por Internet (CFDI) y las declaraciones
+                      presentadas, se observaron discrepancias en el Impuesto
+                      Sobre la Renta (ISR) propio del ejercicio 2025.
+                    </div>
+                    <div class="alert-date">2025-06-10</div>
+                  </div>
+                  <button class="alert-action-btn">Marcar como leído</button>
+                </div>
+              </div>
+              <div class="tab-panel" id="tab-noti-leidos"></div>
             </div>
           </div>
         </div>
 
         <!--VIEW: Facturación · Cancelaciones-->
-
         <div class="view" id="view-facturacion-cancelaciones">
           <div class="welcome-strip">
             <div class="welcome-strip-text">
