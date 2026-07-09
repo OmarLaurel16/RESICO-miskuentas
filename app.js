@@ -1608,7 +1608,6 @@ const ctx = canvas.getContext("2d");
 
 const TOTAL_FRAMES = 44;
 const FPS = 24;
-const SCALE = 1;
 const frames = [];
 
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
@@ -1629,20 +1628,24 @@ Promise.all(
 });
 
 function drawFrame() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  const img = frames[currentFrame];
+    const img = frames[currentFrame];
 
-  const width = img.width * SCALE;
-  const height = img.height * SCALE;
+    const scale = Math.min(
+        canvas.width / img.width,
+        canvas.height / img.height
+    );
 
-  const x = (canvas.width - width) / 2;
-  const y = (canvas.height - height) / 2;
-  ctx.filter = "drop-shadow(0 0 15px rgba(86, 140, 255, 0.25))";
+    const width = img.width * scale;
+    const height = img.height * scale;
 
-  ctx.drawImage(img, x, y, width, height);
+    const x = (canvas.width - width) / 2;
+    const y = (canvas.height - height) / 2;
 
-  ctx.filter = "none";
+    ctx.filter = "drop-shadow(0 0 15px rgba(86,140,255,.25))";
+    ctx.drawImage(img, x, y, width, height);
+    ctx.filter = "none";
 }
 
 function animate(timestamp) {
