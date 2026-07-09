@@ -1087,7 +1087,7 @@ summary:hover {
     grid-template-columns: 1fr 1fr;
   }
   .fact-quick-card {
-    justify-content: center;
+    text-align: center;
   }
 }
 
