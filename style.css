@@ -1086,6 +1086,9 @@ summary:hover {
   .fact-quick-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .fact-quick-card {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 370px) {
