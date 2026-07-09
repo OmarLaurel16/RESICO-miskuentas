@@ -1609,7 +1609,6 @@ const ctx = canvas.getContext("2d");
 const TOTAL_FRAMES = 44;
 const FPS = 22;
 const SCALE = 1;
-
 const frames = [];
 
 for (let i = 1; i <= TOTAL_FRAMES; i++) {
