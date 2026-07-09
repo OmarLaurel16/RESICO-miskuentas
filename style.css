@@ -1088,6 +1088,7 @@ summary:hover {
   }
   .fact-quick-card {
     text-align: center;
+    align-items: center;
   }
 }
 
