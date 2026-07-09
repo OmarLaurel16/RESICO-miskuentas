@@ -2171,6 +2171,13 @@ summary:hover {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .fact-quick-title {
+    font-size: 1.2rem;
+  }
+  .fact-quick-desc {
+    font-size: 1.1rem;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
