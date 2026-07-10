@@ -1619,7 +1619,6 @@ for (let i = 1; i <= TOTAL_FRAMES; i++) {
 let currentFrame = 0;
 let lastFrameTime = 0;
 let isPlaying = false;
-let cycles = 0; 
 
 // Esperar a que todas las imágenes carguen
 Promise.all(
@@ -1653,18 +1652,7 @@ function animate(timestamp) {
   if (!isPlaying) return;
 
   if (timestamp - lastFrameTime >= 1000 / FPS) {
-    currentFrame++;
-
-    if (currentFrame >= TOTAL_FRAMES) {
-      currentFrame = 0;
-      cycles++;
-
-      if (cycles >= 2) {
-        isPlaying = false;
-        return; // Detiene la animación después de 3 ciclos
-      }
-    }
-
+    currentFrame = (currentFrame + 1) % TOTAL_FRAMES;
     drawFrame();
     lastFrameTime = timestamp;
   }
@@ -1673,10 +1661,7 @@ function animate(timestamp) {
 }
 
 document.getElementById("chatbot-btn").addEventListener("click", () => {
-  if (isPlaying) return;
-
-  currentFrame = 0;
-  cycles = 0;
+  if (isPlaying) return; // Evita iniciar varias veces
 
   isPlaying = true;
   lastFrameTime = performance.now();
