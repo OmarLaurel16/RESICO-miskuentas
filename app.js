@@ -325,6 +325,10 @@ document.addEventListener("DOMContentLoaded", () => {
   navigate("first-msg");
   taxSetEstado("pendiente", 1);
 
+  // navigate('first-msg') limpia el estado "active" de los botones del
+  // sidebar; como el módulo por default es Inicio, lo reactivamos.
+  document.querySelector(".sidebar-nav .nav-module-btn")?.classList.add("active");
+
   // cerrar submenu al hacer click fuera del sidebar
   document.addEventListener("click", (e) => {
     const sidebar = document.querySelector(".sidebar");
@@ -1703,6 +1707,26 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
+  function animarTransicionSwipe(direccion) {
+    // direccion: "next" (swipe izquierda) | "prev" (swipe derecha)
+    const vistaActiva = document.querySelector(".view.active");
+    if (!vistaActiva) return;
+
+    const clase = direccion === "next" ? "swipe-in-next" : "swipe-in-prev";
+
+    vistaActiva.classList.remove("swipe-in-next", "swipe-in-prev");
+    // fuerza reflow para poder re-disparar la animación aunque la vista
+    // ya la haya tenido antes
+    void vistaActiva.offsetWidth;
+    vistaActiva.classList.add(clase);
+
+    vistaActiva.addEventListener(
+      "animationend",
+      () => vistaActiva.classList.remove(clase),
+      { once: true },
+    );
+  }
+
   function irAlSiguienteModulo() {
     const botones = getBotonesModulo();
     const indiceActual = botones.findIndex((b) =>
@@ -1712,6 +1736,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reutiliza exactamente la navegación existente: simula el click
     // del botón inferior correspondiente (mismo onclick, mismo navigate()).
     botones[indiceActual + 1].click();
+    animarTransicionSwipe("next");
   }
 
   function irAlModuloAnterior() {
@@ -1721,6 +1746,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     if (indiceActual <= 0) return;
     botones[indiceActual - 1].click();
+    animarTransicionSwipe("prev");
   }
 
   document.addEventListener(

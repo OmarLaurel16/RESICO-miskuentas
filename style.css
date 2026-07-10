@@ -681,6 +681,34 @@ summary:hover {
   }
 }
 
+/* Transición direccional al navegar por gesto de deslizamiento (swipe) */
+.view.swipe-in-next {
+  animation: swipeInFromRight 0.32s ease;
+}
+.view.swipe-in-prev {
+  animation: swipeInFromLeft 0.32s ease;
+}
+@keyframes swipeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes swipeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Welcome strip */
 .welcome-strip {
   background: linear-gradient(
