@@ -1678,3 +1678,90 @@ document.getElementById("chatbot-btn").addEventListener("click", () => {
 document.getElementById("chatbot-close").addEventListener("click", () => {
   isPlaying = false;
 });
+
+// ══════════════════════════════════════════════════════════════
+// Navegación por gesto de deslizamiento (swipe) — solo en móvil
+// Actúa únicamente como un disparador alternativo de los botones
+// inferiores (.nav-module-btn) ya existentes; no crea navegación
+// nueva ni modifica la lógica de navigate()/toggleModule().
+// Se activa solo cuando el ancho de pantalla es ≤ 768px.
+// ══════════════════════════════════════════════════════════════
+document.addEventListener("DOMContentLoaded", () => {
+  const SWIPE_MAX_WIDTH = 768;
+  const SWIPE_MIN_DISTANCE = 60;
+
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  let swipeActivo = false;
+
+  function getBotonesModulo() {
+    // Los 5 módulos principales, en el mismo orden en que aparecen
+    // en la navegación existente (Inicio, Facturación, Movimientos,
+    // Impuestos, Buzón SAT).
+    return Array.from(
+      document.querySelectorAll(".sidebar-nav .nav-module-btn"),
+    );
+  }
+
+  function irAlSiguienteModulo() {
+    const botones = getBotonesModulo();
+    const indiceActual = botones.findIndex((b) =>
+      b.classList.contains("active"),
+    );
+    if (indiceActual === -1 || indiceActual >= botones.length - 1) return;
+    // Reutiliza exactamente la navegación existente: simula el click
+    // del botón inferior correspondiente (mismo onclick, mismo navigate()).
+    botones[indiceActual + 1].click();
+  }
+
+  function irAlModuloAnterior() {
+    const botones = getBotonesModulo();
+    const indiceActual = botones.findIndex((b) =>
+      b.classList.contains("active"),
+    );
+    if (indiceActual <= 0) return;
+    botones[indiceActual - 1].click();
+  }
+
+  document.addEventListener(
+    "touchstart",
+    (e) => {
+      if (window.innerWidth > SWIPE_MAX_WIDTH) return;
+      if (e.touches.length !== 1) return;
+      swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
+      swipeActivo = true;
+    },
+    { passive: true },
+  );
+
+  document.addEventListener(
+    "touchend",
+    (e) => {
+      if (!swipeActivo) return;
+      swipeActivo = false;
+
+      if (window.innerWidth > SWIPE_MAX_WIDTH) return;
+
+      const touch = e.changedTouches[0];
+      if (!touch) return;
+
+      const deltaX = touch.clientX - swipeStartX;
+      const deltaY = touch.clientY - swipeStartY;
+
+      // Movimiento principalmente vertical: se ignora para no
+      // interferir con el scroll normal de la página.
+      if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+      // Distancia mínima para considerar el gesto como swipe.
+      if (Math.abs(deltaX) < SWIPE_MIN_DISTANCE) return;
+
+      if (deltaX < 0) {
+        irAlSiguienteModulo(); // deslizar a la izquierda → siguiente módulo
+      } else {
+        irAlModuloAnterior(); // deslizar a la derecha → módulo anterior
+      }
+    },
+    { passive: true },
+  );
+});
