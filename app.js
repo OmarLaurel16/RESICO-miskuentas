@@ -130,10 +130,13 @@ function navigate(viewId, module, sub) {
     }
   });
 
-  // fallback: modulos sin submenu (Inicio, Buzon SAT, Facturación)
+  // fallback: modulos sin submenu (Inicio, Buzon SAT, Facturación, Movimientos)
   document.querySelectorAll(".nav-module-btn").forEach((b) => {
     const fn = b.getAttribute("onclick") || "";
     const mod = b.getAttribute("data-module");
+    const subs = (b.getAttribute("data-submodules") || "")
+      .split(",")
+      .filter(Boolean);
     const tieneSubmenu = b.nextElementSibling?.classList.contains("nav-sub");
 
     if (fn.includes("'" + viewId + "'")) {
@@ -141,6 +144,10 @@ function navigate(viewId, module, sub) {
     } else if (!tieneSubmenu && mod && viewId.startsWith(mod)) {
       // módulo sin submenú cuyo botón navega a una vista "raíz"
       // (ej. Facturación): también activo en sus sub-vistas
+      b.classList.add("active");
+    } else if (!tieneSubmenu && subs.includes(viewId)) {
+      // módulo sin submenú cuyas sub-vistas no comparten prefijo
+      // (ej. Movimientos → ingresos / gastos)
       b.classList.add("active");
     }
   });

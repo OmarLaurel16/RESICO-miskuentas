@@ -214,8 +214,9 @@
           <div class="nav-section">
             <button
               class="nav-module-btn"
-              data-module="gastos"
-              onclick="toggleModule(this)"
+              data-module="movimientos"
+              data-submodules="ingresos,gastos"
+              onclick="navigate('movimientos', 'Movimientos')"
             >
               <div style="display: flex; flex-direction: row">
                 <svg
@@ -247,32 +248,9 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-
-                <svg
-                  class="chevron"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                >
-                  <path d="M2 4l4 4 4-4" />
-                </svg>
               </div>
               <span class="label">Movimientos</span>
             </button>
-
-            <div class="nav-sub">
-              <a onclick="navigate('ingresos', 'Gastos e Ingresos', 'Ingresos')"
-                >Ingresos</a
-              >
-              <a onclick="navigate('gastos', 'Gastos e Ingresos', 'Gastos')"
-                >Gastos</a
-              >
-              <!-- <a onclick="navigate('reportes', 'Gastos e Ingresos', 'Reportes')"
-                >Informes</a
-              >-->
-            </div>
           </div>
 
           <!-- Declaraciones -->
@@ -2826,6 +2804,63 @@
         </div>
 
         <!-- ══ VIEW: INGRESOS ══ -->
+        <!--VIEW: Movimientos (dashboard)-->
+        <div class="view" id="view-movimientos">
+          <div class="fact-dashboard">
+            <div class="fact-quick-grid cols-2">
+              <button
+                class="fact-quick-card"
+                onclick="navigate('ingresos', 'Gastos e Ingresos', 'Ingresos')"
+              >
+                <div class="fact-quick-icon icon-ingreso">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0-5.94-2.28m5.94 2.28-2.28 5.941"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Ingresos</div>
+                <div class="fact-quick-desc">
+                  Consulta tus ingresos.
+                </div>
+              </button>
+
+              <button
+                class="fact-quick-card"
+                onclick="navigate('gastos', 'Gastos e Ingresos', 'Egresos')"
+              >
+                <div class="fact-quick-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 6 9 12.75l4.306-4.307a11.95 11.95 0 0 1 5.814 5.519l2.74 1.22m0 0-5.94 2.28m5.94-2.28-2.28-5.941"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Egresos</div>
+                <div class="fact-quick-desc">
+                  Consulta tus gastos.
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div class="view" id="view-ingresos">
           <!-- ── PANEL: DETALLE FACTURA (oculto por defecto) ── -->
           <div id="ingresos-detalle" class="ob-hidden">
