@@ -1619,6 +1619,7 @@ for (let i = 1; i <= TOTAL_FRAMES; i++) {
 let currentFrame = 0;
 let lastFrameTime = 0;
 let isPlaying = false;
+let cycles = 0; 
 
 // Esperar a que todas las imágenes carguen
 Promise.all(
@@ -1652,7 +1653,18 @@ function animate(timestamp) {
   if (!isPlaying) return;
 
   if (timestamp - lastFrameTime >= 1000 / FPS) {
-    currentFrame = (currentFrame + 1) % TOTAL_FRAMES;
+    currentFrame++;
+
+    if (currentFrame >= TOTAL_FRAMES) {
+      currentFrame = 0;
+      cycles++;
+
+      if (cycles >= 3) {
+        isPlaying = false;
+        return; // Detiene la animación después de 3 ciclos
+      }
+    }
+
     drawFrame();
     lastFrameTime = timestamp;
   }
