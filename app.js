@@ -1659,7 +1659,7 @@ function animate(timestamp) {
       currentFrame = 0;
       cycles++;
 
-      if (cycles >= 3) {
+      if (cycles >= 1) {
         isPlaying = false;
         return; // Detiene la animación después de 3 ciclos
       }
@@ -1673,7 +1673,10 @@ function animate(timestamp) {
 }
 
 document.getElementById("chatbot-btn").addEventListener("click", () => {
-  if (isPlaying) return; // Evita iniciar varias veces
+  if (isPlaying) return;
+
+  currentFrame = 0;
+  cycles = 0;
 
   isPlaying = true;
   lastFrameTime = performance.now();
