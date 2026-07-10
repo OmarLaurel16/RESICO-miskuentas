@@ -1727,11 +1727,7 @@
               <button
                 class="fact-quick-card"
                 onclick="
-                  navigate(
-                    'facturacion-clientes-prod',
-                    'Facturación',
-                    'Clientes y productos',
-                  )
+                  navigate('facturacion-clientes', 'Facturación', 'Clientes')
                 "
               >
                 <div class="fact-quick-icon">
@@ -1749,9 +1745,9 @@
                     />
                   </svg>
                 </div>
-                <div class="fact-quick-title">Clientes y productos</div>
+                <div class="fact-quick-title">Clientes</div>
                 <div class="fact-quick-desc">
-                  Administra información para agilizar tu facturación.
+                  Administra los datos de tus clientes.
                 </div>
               </button>
 
@@ -1759,9 +1755,9 @@
                 class="fact-quick-card"
                 onclick="
                   navigate(
-                    'facturacion-cancelaciones',
+                    'facturacion-productos',
                     'Facturación',
-                    'Cancelaciones de facturas',
+                    'Productos y servicios',
                   )
                 "
               >
@@ -1776,13 +1772,13 @@
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      d="M9.75 9.75l4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
                     />
                   </svg>
                 </div>
-                <div class="fact-quick-title">Cancelaciones de facturas</div>
+                <div class="fact-quick-title">Productos y servicios</div>
                 <div class="fact-quick-desc">
-                  Solicita y da seguimiento a cancelaciones.
+                  Administra tu catálogo de productos y servicios.
                 </div>
               </button>
             </div>
@@ -9205,7 +9201,7 @@
           -->
 
           <div id="buzon-dashboard">
-            <div class="fact-quick-grid cols-2" style="margin-top: 0px">
+            <div class="fact-quick-grid cols-3" style="margin-top: 0px">
               <button class="fact-quick-card" onclick="mostrarBuzonMensajes()">
                 <div class="fact-quick-icon">
                   <svg
@@ -9250,6 +9246,31 @@
                 <div class="fact-quick-title">Notificaciones del SAT</div>
                 <div class="fact-quick-desc">
                   Revisa notificaciones, requerimientos y avisos importantes.
+                </div>
+              </button>
+
+              <button
+                class="fact-quick-card"
+                onclick="mostrarBuzonCancelaciones()"
+              >
+                <div class="fact-quick-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9.75 9.75l4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Cancelaciones de facturas</div>
+                <div class="fact-quick-desc">
+                  Solicita y da seguimiento a cancelaciones.
                 </div>
               </button>
             </div>
@@ -9374,17 +9395,15 @@
               <div class="tab-panel" id="tab-noti-leidos"></div>
             </div>
           </div>
-        </div>
 
-        <!--VIEW: Facturación · Cancelaciones-->
-        <div class="view" id="view-facturacion-cancelaciones">
-          <button
-            class="add-filter-btn"
-            style="margin-bottom: 14px"
-            onclick="navigate('facturacion', 'Facturación')"
-          >
-            Regresar a Facturación
-          </button>
+          <div id="buzon-cancelaciones" style="display: none">
+            <button
+              class="add-filter-btn"
+              style="margin-bottom: 14px"
+              onclick="regresarABuzon()"
+            >
+              Regresar al Buzón
+            </button>
           <div class="welcome-strip">
             <div class="welcome-strip-text">
               <strong>Buzón de cancelaciones</strong>Solicita y da seguimiento a
@@ -9699,6 +9718,7 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         <!-- ══ VIEW: CONFIG CFDI ══ -->
@@ -9790,7 +9810,7 @@
         </div>
 
         <!-- ══ VIEW: CLIENTES Y PRODUCTOS ══ -->
-        <div class="view" id="view-facturacion-clientes-prod">
+        <div class="view" id="view-facturacion-clientes">
           <button
             class="add-filter-btn"
             style="margin-bottom: 14px"
@@ -9798,7 +9818,6 @@
           >
             Regresar a Facturación
           </button>
-          <div class="two-col-cards">
             <div class="card" style="width: 100%">
               <div class="card-title">Clientes</div>
               <div style="overflow-x: auto">
@@ -9878,7 +9897,18 @@
                 <button class="btn-primary">Guardar cambios</button>
               </div>
             </div>
-            <div class="card" style="width: 100%">
+        </div>
+
+        <!--VIEW: Facturación · Productos y servicios-->
+        <div class="view" id="view-facturacion-productos">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
+<div class="card" style="width: 100%">
               <div class="card-title">Productos y servicios</div>
               <div style="overflow-x: auto">
                 <table class="data-table">
@@ -9970,7 +10000,6 @@
                 <button class="btn-primary">Guardar cambios</button>
               </div>
             </div>
-          </div>
         </div>
       </main>
     </div>

@@ -1060,6 +1060,9 @@ summary:hover {
   .fact-quick-grid.cols-2 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .fact-quick-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .fact-quick-card {
