@@ -1659,7 +1659,7 @@ function animate(timestamp) {
       currentFrame = 0;
       cycles++;
 
-      if (cycles >= 1) {
+      if (cycles >= 2) {
         isPlaying = false;
         return; // Detiene la animación después de 3 ciclos
       }
