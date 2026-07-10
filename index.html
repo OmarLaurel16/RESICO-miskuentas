@@ -1800,7 +1800,14 @@
               <button class="btn-primary">Timbrar</button>
             </div>
           </div>
-          <div class="card" style="margin-top: 46px">
+          <button
+            class="add-filter-btn"
+            style="margin-top: 46px; margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
+          <div class="card">
             <div class="cfdi-card-inner" style="flex-direction: column">
               <div
                 class="cfdi-tipos"
@@ -2684,6 +2691,13 @@
 
         <!-- ══ VIEW: BANDEJA DE SALIDA ══ -->
         <div class="view" id="view-facturacion-bandeja">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
           <div class="welcome-strip">
             <div class="welcome-strip-icon">
               <svg
@@ -2829,7 +2843,7 @@
                 </div>
                 <div class="fact-quick-title">Ingresos</div>
                 <div class="fact-quick-desc">
-                  Consulta tus ingresos.
+                  Registra y consulta tus ingresos.
                 </div>
               </button>
 
@@ -2854,7 +2868,7 @@
                 </div>
                 <div class="fact-quick-title">Egresos</div>
                 <div class="fact-quick-desc">
-                  Consulta tus gastos.
+                  Registra y consulta tus gastos.
                 </div>
               </button>
             </div>
@@ -2862,6 +2876,13 @@
         </div>
 
         <div class="view" id="view-ingresos">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('movimientos', 'Movimientos')"
+          >
+            Regresar a Movimientos
+          </button>
           <!-- ── PANEL: DETALLE FACTURA (oculto por defecto) ── -->
           <div id="ingresos-detalle" class="ob-hidden">
             <div
@@ -7865,6 +7886,13 @@
 
         <!-- ══ VIEW: GASTOS ══ -->
         <div class="view" id="view-gastos">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('movimientos', 'Movimientos')"
+          >
+            Regresar a Movimientos
+          </button>
           <!-- ── PANEL: DETALLE EGRESO (oculto por defecto) ── -->
           <div id="gastos-detalle" class="ob-hidden">
             <div
@@ -9350,6 +9378,13 @@
 
         <!--VIEW: Facturación · Cancelaciones-->
         <div class="view" id="view-facturacion-cancelaciones">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
           <div class="welcome-strip">
             <div class="welcome-strip-text">
               <strong>Buzón de cancelaciones</strong>Solicita y da seguimiento a
@@ -9668,6 +9703,13 @@
 
         <!-- ══ VIEW: CONFIG CFDI ══ -->
         <div class="view" id="view-facturacion-config">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
           <div class="welcome-strip">
             <div class="welcome-strip-icon">
               <svg
@@ -9749,6 +9791,13 @@
 
         <!-- ══ VIEW: CLIENTES Y PRODUCTOS ══ -->
         <div class="view" id="view-facturacion-clientes-prod">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('facturacion', 'Facturación')"
+          >
+            Regresar a Facturación
+          </button>
           <div class="two-col-cards">
             <div class="card" style="width: 100%">
               <div class="card-title">Clientes</div>
