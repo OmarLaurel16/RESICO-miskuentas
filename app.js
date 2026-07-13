@@ -575,7 +575,7 @@ function cerrarOnboarding(completado) {
     if (ciecRfc) ciecRfc.value = "";
     if (ciecPass) ciecPass.value = "";
     if (document.getElementById("ob-metodo-btn-efirma")) {
-      seleccionarMetodoAcceso("efirma");
+      seleccionarMetodoAcceso("ciec");
     }
 
     // Resetear validación
