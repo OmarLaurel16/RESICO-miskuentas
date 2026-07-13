@@ -3939,83 +3939,94 @@ summary:hover {
 }
 
 /* ══════════════════════════════════════════════
-   OVERLAY Y MODAL: Alertas Tributarias
+   VISTA: Alertas por categoría (Situación Tributaria)
    ══════════════════════════════════════════════ */
-
-/* Overlay (reutiliza .black-bg de la app) */
-#alertas-modal-overlay {
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  z-index: 9998;
-}
-#alertas-modal-overlay.alertas-overlay--open {
-  opacity: 1;
-}
-
-/* Modal contenedor */
-.alertas-modal {
-  padding: 20px;
-  position: fixed;
-  inset: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -48%) scale(0.7);
-  opacity: 0;
-  width: min(760px, calc(100vw - 32px));
-  height: min(82vh, 680px);
-  background: var(--bg-card, #fff);
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
-  z-index: 9999;
+.alertas-categoria-grid {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  transition:
-    opacity 0.26s ease,
-    transform 0.26s ease;
-}
-.alertas-modal--open {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  gap: 12px;
+  margin-top: 18px;
 }
 
-/* Cabecera del modal */
-.alertas-modal-header {
+.alertas-categoria-btn {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 20px 20px 14px;
-  border-bottom: 1px solid var(--border, #e8eaf0);
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+.alertas-categoria-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.alertas-categoria-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   flex-shrink: 0;
 }
-.alertas-modal-header-text {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
+.alertas-categoria-dot.red {
+  background: #e74c3c;
 }
-.alertas-modal-titulo {
-  font-size: 16px;
-  font-weight: 700;
+.alertas-categoria-dot.yellow {
+  background: #f1c40f;
+}
+.alertas-categoria-dot.orange {
+  background: #e67e22;
+}
+.alertas-categoria-dot.blue {
+  background: #3498db;
+}
+.alertas-categoria-dot.green {
+  background: var(--green);
+}
+
+.alertas-categoria-texto {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 600;
   color: var(--text-main);
-  line-height: 1.3;
-}
-.alertas-modal-subtitulo {
-  font-size: 1.3rem;
-  color: var(--text-light, #6b7280);
-  margin-top: 3px;
   line-height: 1.4;
 }
 
-/* Cuerpo con scroll */
-.alertas-modal-body {
-  overflow-y: auto;
-  padding: 8px 16px 16px;
-  flex: 1;
+.alertas-categoria-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--primary) 12%, white);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
 }
-.alertas-modal-body .alert-item {
-  border-bottom: 1px solid var(--border, #e8eaf0);
+
+.alertas-categoria-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--text-light);
+  flex-shrink: 0;
 }
-.alertas-modal-body .alert-item:last-child {
-  border-bottom: none;
+
+@media (max-width: 480px) {
+  .alertas-categoria-btn {
+    padding: 14px 16px;
+  }
+  .alertas-categoria-texto {
+    font-size: 13.5px;
+  }
 }
