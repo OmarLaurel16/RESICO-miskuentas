@@ -215,7 +215,7 @@
             <button
               class="nav-module-btn"
               data-module="movimientos"
-              data-submodules="ingresos,gastos"
+              data-submodules="ingresos,gastos,movimientos-reportes"
               onclick="navigate('movimientos', 'Movimientos')"
             >
               <div style="display: flex; flex-direction: row">
@@ -2952,7 +2952,7 @@
         <!--VIEW: Movimientos (dashboard)-->
         <div class="view" id="view-movimientos">
           <div class="fact-dashboard">
-            <div class="fact-quick-grid cols-2">
+            <div class="fact-quick-grid cols-3">
               <button
                 class="fact-quick-card"
                 onclick="navigate('ingresos', 'Gastos e Ingresos', 'Ingresos')"
@@ -3002,6 +3002,99 @@
                   Consulta tus gastos.
                 </div>
               </button>
+
+              <button
+                class="fact-quick-card"
+                onclick="navigate('movimientos-reportes', 'Movimientos', 'Reportes')"
+              >
+                <div class="fact-quick-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 17.25v-6.75m4.5 6.75v-11.25m4.5 11.25V13.5M4.5 20.25h15A2.25 2.25 0 0 0 21.75 18V6A2.25 2.25 0 0 0 19.5 3.75h-15A2.25 2.25 0 0 0 2.25 6v12A2.25 2.25 0 0 0 4.5 20.25Z"
+                    />
+                  </svg>
+                </div>
+                <div class="fact-quick-title">Reportes</div>
+                <div class="fact-quick-desc">
+                  Genera reportes de tus movimientos.
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="view" id="view-movimientos-reportes">
+          <button
+            class="add-filter-btn"
+            style="margin-bottom: 14px"
+            onclick="navigate('movimientos', 'Movimientos')"
+          >
+            Regresar a Movimientos
+          </button>
+          <div class="welcome-strip">
+            <div class="welcome-strip-text">
+              <strong>Reportes</strong>Selecciona el periodo y el tipo de
+              reporte que deseas generar.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Reportes</div>
+            <div class="form-grid cols-3">
+              <div class="form-group">
+                <label class="form-label">Año</label>
+                <select class="form-input" id="movReportesAnio">
+                  <option value="">— Selecciona —</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option selected>2025</option>
+                  <option>2026</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Mes</label>
+                <select class="form-input" id="movReportesMes">
+                  <option value="">— Todos —</option>
+                  <option>Enero</option>
+                  <option>Febrero</option>
+                  <option>Marzo</option>
+                  <option>Abril</option>
+                  <option>Mayo</option>
+                  <option>Junio</option>
+                  <option>Julio</option>
+                  <option>Agosto</option>
+                  <option>Septiembre</option>
+                  <option>Octubre</option>
+                  <option>Noviembre</option>
+                  <option>Diciembre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Tipo de reporte</label>
+                <select class="form-input" id="movReportesTipo">
+                  <option value="">— Selecciona —</option>
+                  <option>Reporte de ventas</option>
+                  <option>Reporte de gastos</option>
+                  <option>Reporte de gasolina</option>
+                  <option>Reporte de impuestos pagados</option>
+                  <option>Reporte de ingresos</option>
+                  <option>Reporte de egresos</option>
+                  <option>Reporte de IVA trasladado</option>
+                  <option>Reporte de IVA acreditable</option>
+                  <option>Reporte de retenciones</option>
+                  <option>Flujo de efectivo</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary">Generar reporte</button>
             </div>
           </div>
         </div>
