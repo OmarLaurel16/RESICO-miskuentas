@@ -9278,6 +9278,7 @@
 
               <button
                 class="fact-quick-card"
+                onclick="mostrarBuzonAcuses()"
               >
                 <div class="fact-quick-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sticky-note-x-icon lucide-sticky-note-x"><path d="M15 3v5a1 1 0 0 0 1 1h5"/><path d="m16 16 5 5"/><path d="M21 12V9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"/><path d="m21 16-5 5"/></svg>
@@ -9649,6 +9650,66 @@
                   </tbody>
                 </table>
               </div>
+            </div>
+          </div>
+          </div>
+          <div id="buzon-acuses" style="display: none">
+            <button
+              class="add-filter-btn"
+              style="margin-bottom: 14px"
+              onclick="regresarABuzon()"
+            >
+              Regresar al Buzón
+            </button>
+          <div class="welcome-strip">
+            <div class="welcome-strip-text">
+              <strong>Recuperar acuse de cancelación</strong>Solicita el acuse
+              de cancelación de un CFDI proporcionando su UUID.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Recuperar acuse de cancelación</div>
+            <div
+              class="welcome-strip-text"
+              style="color: var(--text-light); margin-bottom: 18px"
+            >
+              Puedes solicitar el acuse de cancelación de cualquier factura
+              proporcionando el UUID del CFDI, sin importar que no esté
+              registrada en el sistema.
+            </div>
+            <div class="form-group full">
+              <label class="form-label">UUID del CFDI</label>
+              <input
+                class="form-input"
+                type="text"
+                id="acuseUuidInput"
+                placeholder="Ej. a1b2c3d4-e5f6-7890-abcd-1234567890ef"
+              />
+            </div>
+            <div class="form-group full" style="margin-top: 16px">
+              <label class="form-label">Tipo de comprobante</label>
+              <div class="radio-option-group">
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="acuseTipoComprobante"
+                    value="emitido"
+                    checked
+                  />
+                  <span>Emitido</span>
+                </label>
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="acuseTipoComprobante"
+                    value="recibido"
+                  />
+                  <span>Recibido</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-primary">Solicitar</button>
             </div>
           </div>
           </div>

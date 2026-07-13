@@ -1430,6 +1430,27 @@ summary:hover {
   margin-top: 8px;
 }
 
+/* Radio options (ej. selector Emitido/Recibido) */
+.radio-option-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+.radio-option input[type="radio"] {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
 /* Tabs */
 .tabs {
   display: flex;

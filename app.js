@@ -40,11 +40,12 @@ function switchEstado(estado) {
   if (btn) btn.classList.add("active-estado");
 }
 
-// ── Buzones: alternar entre el dashboard y las vistas de mensajes/notificaciones/cancelaciones ──
+// ── Buzones: alternar entre el dashboard y las vistas de mensajes/notificaciones/cancelaciones/acuses ──
 function mostrarBuzonMensajes() {
   document.getElementById("buzon-dashboard").style.display = "none";
   document.getElementById("buzon-notificaciones").style.display = "none";
   document.getElementById("buzon-cancelaciones").style.display = "none";
+  document.getElementById("buzon-acuses").style.display = "none";
   document.getElementById("buzon-mensajes").style.display = "block";
 }
 
@@ -52,6 +53,7 @@ function mostrarBuzonNotificaciones() {
   document.getElementById("buzon-dashboard").style.display = "none";
   document.getElementById("buzon-mensajes").style.display = "none";
   document.getElementById("buzon-cancelaciones").style.display = "none";
+  document.getElementById("buzon-acuses").style.display = "none";
   document.getElementById("buzon-notificaciones").style.display = "block";
 }
 
@@ -59,13 +61,23 @@ function mostrarBuzonCancelaciones() {
   document.getElementById("buzon-dashboard").style.display = "none";
   document.getElementById("buzon-mensajes").style.display = "none";
   document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-acuses").style.display = "none";
   document.getElementById("buzon-cancelaciones").style.display = "block";
+}
+
+function mostrarBuzonAcuses() {
+  document.getElementById("buzon-dashboard").style.display = "none";
+  document.getElementById("buzon-mensajes").style.display = "none";
+  document.getElementById("buzon-notificaciones").style.display = "none";
+  document.getElementById("buzon-cancelaciones").style.display = "none";
+  document.getElementById("buzon-acuses").style.display = "block";
 }
 
 function regresarABuzon() {
   document.getElementById("buzon-mensajes").style.display = "none";
   document.getElementById("buzon-notificaciones").style.display = "none";
   document.getElementById("buzon-cancelaciones").style.display = "none";
+  document.getElementById("buzon-acuses").style.display = "none";
   document.getElementById("buzon-dashboard").style.display = "block";
 }
 
