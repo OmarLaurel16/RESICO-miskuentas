@@ -1337,6 +1337,17 @@ document.addEventListener("DOMContentLoaded", function () {
   stSimular("buena");
 });
 
+/** Modal informativo: ¿Cómo se calcula mi Nivel de Cumplimiento? */
+function abrirModalScoreInfo() {
+  document.getElementById("st-info-overlay").classList.remove("ob-hidden");
+  document.getElementById("st-info-modal").classList.remove("ob-hidden");
+}
+
+function cerrarModalScoreInfo() {
+  document.getElementById("st-info-overlay").classList.add("ob-hidden");
+  document.getElementById("st-info-modal").classList.add("ob-hidden");
+}
+
 // Compartir nativo para IOS
 function compartirNativo() {
   if (navigator.share) {

@@ -651,7 +651,26 @@
             -->
 
               <div class="two-col-cards">
-                <div class="card" style="width: 100%">
+                <div class="card" style="width: 100%; position: relative">
+                  <button
+                    class="st-info-btn"
+                    onclick="abrirModalScoreInfo()"
+                    title="¿Cómo se calcula mi Nivel de Cumplimiento?"
+                    aria-label="Información sobre el Nivel de Cumplimiento"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="16" x2="12" y2="12" />
+                      <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                  </button>
                   <div class="metrics">
                     <div class="st-titulo card-title">
                       Nivel de cumplimiento
@@ -11185,6 +11204,75 @@
         </svg>
         Sincronizar ahora
       </button>
+    </div>
+
+    <!-- ══ MODAL: Información Nivel de Cumplimiento ══ -->
+    <div
+      class="black-bg ob-hidden"
+      id="st-info-overlay"
+      onclick="cerrarModalScoreInfo()"
+    ></div>
+    <div
+      class="first-msg-card st-info-modal ob-hidden"
+      id="st-info-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="st-info-modal-titulo"
+    >
+      <button
+        class="ob-close-btn"
+        onclick="cerrarModalScoreInfo()"
+        title="Cerrar"
+      >
+        <svg
+          viewBox="0 0 14 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M1 1l12 12M13 1L1 13" />
+        </svg>
+      </button>
+
+      <div>
+        <div class="st-info-titulo" id="st-info-modal-titulo">
+          ¿Cómo se calcula mi Nivel de Cumplimiento?
+        </div>
+        <div class="st-info-desc">
+          El porcentaje representa el nivel de cumplimiento fiscal del
+          contribuyente y se calcula considerando distintas alertas fiscales
+          que afectan positiva o negativamente el resultado.
+        </div>
+      </div>
+
+      <ul class="st-info-list">
+        <li>
+          <span>No tener presentaciones de impuestos pendientes</span>
+          <span class="st-info-porcentaje">30%</span>
+        </li>
+        <li>
+          <span>No tener ingresos PPD sin documento de pago</span>
+          <span class="st-info-porcentaje">25%</span>
+        </li>
+        <li>
+          <span>No tener CFDI con inconsistencias</span>
+          <span class="st-info-porcentaje">20%</span>
+        </li>
+        <li>
+          <span>No tener cancelaciones pendientes</span>
+          <span class="st-info-porcentaje">15%</span>
+        </li>
+        <li>
+          <span>Cumplir oportunamente con las obligaciones fiscales</span>
+          <span class="st-info-porcentaje">10%</span>
+        </li>
+      </ul>
+
+      <div class="st-info-nota">
+        Estos porcentajes son únicamente una representación visual de los
+        factores considerados para el Nivel de Cumplimiento.
+      </div>
     </div>
 
     <script src="app.js"></script>
