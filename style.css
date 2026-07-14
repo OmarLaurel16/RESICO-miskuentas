@@ -2236,6 +2236,9 @@ summary:hover {
   .taxes-wrap {
     gap: 30px;
   }
+  .tax-label{
+    font-size: 1.2rem;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
