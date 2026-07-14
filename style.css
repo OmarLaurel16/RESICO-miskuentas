@@ -2233,6 +2233,9 @@ summary:hover {
   .fact-quick-desc {
     font-size: 1.1rem;
   }
+  .taxes-wrap {
+    gap: 30px;
+  }
 }
 
 /* Pantallas muy pequeñas (≤ 360px) */
