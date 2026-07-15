@@ -24,11 +24,10 @@
         <div class="login-logo-wrap">
           <img
             class="login-logo-img"
-            src="RESICOmiskuentas.png"
+            src="RESICOmiskuentas1.png"
             alt="RESICO miskuentas"
           />
         </div>
-
         <p class="login-subtitle">
           Bienvenido. Ingresa tus credenciales para continuar.
         </p>
@@ -97,7 +96,22 @@
           <div class="sidebar-user">
             <div class="sidebar-user-info">
               <button onclick="navigate('datos')">
-                <span class="sidebar-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <span class="sidebar-avatar"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-user-icon lucide-user"
+                  >
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" /></svg
+                ></span>
                 <span class="sidebar-user-name"> Omar Hernández Laurel </span>
               </button>
             </div>
@@ -1167,7 +1181,6 @@
             </div>
           </div>
 
-
           <div class="card">
             <div class="card-title">Documentos disponibles</div>
             <div class="doc-grid">
@@ -1350,7 +1363,6 @@
             </div>
           </div>
 
-          
           <!-- ══ VIEW: ALERTAS ══ -->
           <!--<div class="welcome-strip" id="accordion-toggle">
             <div style="width: 100%; display: flex; gap: 0.7rem">
@@ -1434,8 +1446,8 @@
                   </div>
                 </div>
                 <div class="alert-desc">
-                  El folio F-18372 fue recibido con "USO" G03. El concepto en la factura
-                  menciona posible activo fijo.
+                  El folio F-18372 fue recibido con "USO" G03. El concepto en la
+                  factura menciona posible activo fijo.
                 </div>
                 <div class="alert-date">2025-06-11</div>
               </div>
@@ -1523,7 +1535,9 @@
                   <div class="alert-dot-wrap">
                     <div class="alert-dot blue"></div>
                   </div>
-                  <div class="alert-title">Posible factura duplicada detectada</div>
+                  <div class="alert-title">
+                    Posible factura duplicada detectada
+                  </div>
                 </div>
                 <div class="alert-desc">
                   Los folios F-18522 y F-18523 contienen información
@@ -1581,8 +1595,8 @@
                   </div>
                 </div>
                 <div class="alert-desc">
-                  El proveedor ha solicitado cancelar el folio REC-7821. El plazo
-                  vence en 3 días hábiles.
+                  El proveedor ha solicitado cancelar el folio REC-7821. El
+                  plazo vence en 3 días hábiles.
                 </div>
                 <div class="alert-date">2025-05-25</div>
               </div>
@@ -1652,8 +1666,8 @@
               </svg>
             </div>
             <div class="welcome-strip-text">
-              <strong>Alertas de tu situación tributaria</strong>Selecciona
-              una categoría para ver el detalle de sus alertas.
+              <strong>Alertas de tu situación tributaria</strong>Selecciona una
+              categoría para ver el detalle de sus alertas.
             </div>
           </div>
 
@@ -1733,7 +1747,6 @@
                 <path d="m9 18 6-6-6-6" />
               </svg>
             </button>
-
           </div>
         </div>
 
@@ -1772,7 +1785,6 @@
                 <!-- <div class="fact-hero-desc">
                   Genera una nueva factura en segundos.
                 </div> -->
-                
               </div>
               <div class="fact-hero-arrow">
                 <svg
@@ -2975,9 +2987,7 @@
                   </svg>
                 </div>
                 <div class="fact-quick-title">Ingresos</div>
-                <div class="fact-quick-desc">
-                  Consulta tus ingresos.
-                </div>
+                <div class="fact-quick-desc">Consulta tus ingresos.</div>
               </button>
 
               <button
@@ -3000,14 +3010,14 @@
                   </svg>
                 </div>
                 <div class="fact-quick-title">Egresos</div>
-                <div class="fact-quick-desc">
-                  Consulta tus gastos.
-                </div>
+                <div class="fact-quick-desc">Consulta tus gastos.</div>
               </button>
 
               <button
                 class="fact-quick-card"
-                onclick="navigate('movimientos-reportes', 'Movimientos', 'Reportes')"
+                onclick="
+                  navigate('movimientos-reportes', 'Movimientos', 'Reportes')
+                "
               >
                 <div class="fact-quick-icon">
                   <svg
@@ -3272,7 +3282,10 @@
             <div class="card">
               <div class="card-title">Ingresos</div>
 
-              <div class="report-row" style="justify-content: space-between; padding: 12px 0">
+              <div
+                class="report-row"
+                style="justify-content: space-between; padding: 12px 0"
+              >
                 <div style="display: flex; align-items: center; gap: 8px">
                   <span class="form-label">Buscar:</span>
                   <input
@@ -8277,7 +8290,10 @@
           </div>-->
             <div class="card">
               <div class="card-title">Gastos</div>
-              <div class="report-row" style="justify-content: space-between; padding: 12px 0">
+              <div
+                class="report-row"
+                style="justify-content: space-between; padding: 12px 0"
+              >
                 <div style="display: flex; align-items: center; gap: 8px">
                   <span class="form-label">Buscar:</span>
                   <input
@@ -9172,7 +9188,6 @@
 
         <!--VIEW: Datos básicos-->
         <div class="view" id="view-datos">
-
           <div class="card">
             <div class="card-title">Mis datos</div>
             <div class="form-grid">
@@ -9480,16 +9495,34 @@
                 </div>
               </button>
 
-              <button
-                class="fact-quick-card"
-                onclick="mostrarBuzonAcuses()"
-              >
+              <button class="fact-quick-card" onclick="mostrarBuzonAcuses()">
                 <div class="fact-quick-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sticky-note-x-icon lucide-sticky-note-x"><path d="M15 3v5a1 1 0 0 0 1 1h5"/><path d="m16 16 5 5"/><path d="M21 12V9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"/><path d="m21 16-5 5"/></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-sticky-note-x-icon lucide-sticky-note-x"
+                  >
+                    <path d="M15 3v5a1 1 0 0 0 1 1h5" />
+                    <path d="m16 16 5 5" />
+                    <path
+                      d="M21 12V9a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 15 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"
+                    />
+                    <path d="m21 16-5 5" />
+                  </svg>
                 </div>
-                <div class="fact-quick-title">Recuperar acuses de cancelación</div>
+                <div class="fact-quick-title">
+                  Recuperar acuses de cancelación
+                </div>
                 <div class="fact-quick-desc">
-                  Solicita el acuse de cancelación de cualquier factura (sin importar que no esté en el sistema).
+                  Solicita el acuse de cancelación de cualquier factura (sin
+                  importar que no esté en el sistema).
                 </div>
               </button>
             </div>
@@ -9601,8 +9634,8 @@
                     </div>
 
                     <div class="alert-desc">
-                      Se observaron discrepancias en el Impuesto
-                      Sobre la Renta (ISR) propio del ejercicio 2025.
+                      Se observaron discrepancias en el Impuesto Sobre la Renta
+                      (ISR) propio del ejercicio 2025.
                     </div>
                     <div class="alert-date">2025-06-10</div>
                   </div>
@@ -9621,43 +9654,43 @@
             >
               Regresar al Buzón
             </button>
-          <div class="welcome-strip">
-            <div class="welcome-strip-text">
-              <strong>Buzón de cancelaciones</strong>Solicita y da seguimiento a
-              cancelaciones de facturas.
-            </div>
-          </div>
-          <div class="card">
-            <div
-              class="cfdi-tipos"
-              style="display: flex; flex-direction: column; width: 100%"
-            >
-              <div class="card-title">Estado de la factura</div>
-              <div
-                class="form-actions cfdi-tipos-btns"
-                style="flex-direction: row; gap: 2px"
-              >
-                <button
-                  class="btn-primary active-estado"
-                  id="estado-btn-espera"
-                  onclick="switchEstado('espera')"
-                  style="background: var(--secondary)"
-                >
-                  Enviadas en espera
-                </button>
-                <button
-                  class="btn-primary"
-                  id="estado-btn-autorizar"
-                  onclick="switchEstado('autorizar')"
-                  style="background: var(--secondary)"
-                >
-                  Recibidas por autorizar
-                </button>
+            <div class="welcome-strip">
+              <div class="welcome-strip-text">
+                <strong>Buzón de cancelaciones</strong>Solicita y da seguimiento
+                a cancelaciones de facturas.
               </div>
             </div>
-            <!-- ── PANEL: En espera (default) ── -->
-            <div id="panel-estado-espera" class="cancel-panel cfdi-panel">
-              <!--
+            <div class="card">
+              <div
+                class="cfdi-tipos"
+                style="display: flex; flex-direction: column; width: 100%"
+              >
+                <div class="card-title">Estado de la factura</div>
+                <div
+                  class="form-actions cfdi-tipos-btns"
+                  style="flex-direction: row; gap: 2px"
+                >
+                  <button
+                    class="btn-primary active-estado"
+                    id="estado-btn-espera"
+                    onclick="switchEstado('espera')"
+                    style="background: var(--secondary)"
+                  >
+                    Enviadas en espera
+                  </button>
+                  <button
+                    class="btn-primary"
+                    id="estado-btn-autorizar"
+                    onclick="switchEstado('autorizar')"
+                    style="background: var(--secondary)"
+                  >
+                    Recibidas por autorizar
+                  </button>
+                </div>
+              </div>
+              <!-- ── PANEL: En espera (default) ── -->
+              <div id="panel-estado-espera" class="cancel-panel cfdi-panel">
+                <!--
               <div
                 class="alert-item"
                 style="
@@ -9676,184 +9709,191 @@
                   </div>
                 </div>
               </div>-->
-              
-              <div class="card-title" style="margin-top: 18px">
-                Solicitudes enviadas
-              </div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>UUID</th>
-                      <th>Motivo</th>
-                      <th>Estado</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">10-MAY-2026</td>
-                      <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
-                      <td>02 – Errores sin relación</td>
-                      <td><span class="badge badge-green">Cancelado</span></td>
-                      <td>
-                        <div class="actions-column">
-                          <button class="alert-action-btn btn-success">
-                            Aceptar
-                          </button>
-                          <button class="alert-action-btn btn-danger">
-                            Rechazar
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mono">02-MAY-2025</td>
-                      <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
-                      <td>03 – No se llevó a cabo</td>
-                      <td>
-                        <span class="badge badge-yellow">En proceso</span>
-                      </td>
-                      <td>
-                        <div class="actions-column">
-                          <button class="alert-action-btn btn-success">
-                            Aceptar
-                          </button>
-                          <button class="alert-action-btn btn-danger">
-                            Rechazar
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="card-title" style="margin-top: 18px">
-                Solicitudes aceptadas
-              </div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>UUID</th>
-                      <th>Motivo</th>
-                      <th>Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">10-MAY-2026</td>
-                      <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
-                      <td>02 – Errores sin relación</td>
-                      <td><span class="badge badge-green">Cancelado</span></td>
-                    </tr>
-                    <tr>
-                      <td class="mono">02-MAY-2025</td>
-                      <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
-                      <td>03 – No se llevó a cabo</td>
-                      <td>
-                        <span class="badge badge-green">Cancelado</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              
-            </div>
-            <!-- /panel-estado-espera -->
 
-            <!-- ── PANEL: Por autorizar ── -->
-            <div
-              id="panel-estado-autorizar"
-              class="cancel-panel hidden cfdi-panel"
-            >
-              <div class="card-title" style="margin-top: 18px">
-                Solicitudes recibidas
+                <div class="card-title" style="margin-top: 18px">
+                  Solicitudes enviadas
+                </div>
+                <div style="overflow-x: auto">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>UUID</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mono">10-MAY-2026</td>
+                        <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
+                        <td>02 – Errores sin relación</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                        <td>
+                          <div class="actions-column">
+                            <button class="alert-action-btn btn-success">
+                              Aceptar
+                            </button>
+                            <button class="alert-action-btn btn-danger">
+                              Rechazar
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mono">02-MAY-2025</td>
+                        <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
+                        <td>03 – No se llevó a cabo</td>
+                        <td>
+                          <span class="badge badge-yellow">En proceso</span>
+                        </td>
+                        <td>
+                          <div class="actions-column">
+                            <button class="alert-action-btn btn-success">
+                              Aceptar
+                            </button>
+                            <button class="alert-action-btn btn-danger">
+                              Rechazar
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-title" style="margin-top: 18px">
+                  Solicitudes aceptadas
+                </div>
+                <div style="overflow-x: auto">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>UUID</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mono">10-MAY-2026</td>
+                        <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
+                        <td>02 – Errores sin relación</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mono">02-MAY-2025</td>
+                        <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
+                        <td>03 – No se llevó a cabo</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>UUID</th>
-                      <th>Motivo</th>
-                      <th>Estado</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">10-MAY-2026</td>
-                      <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
-                      <td>02 – Errores sin relación</td>
-                      <td><span class="badge badge-green">Cancelado</span></td>
-                      <td>
-                        <div class="actions-column">
-                          <button class="alert-action-btn btn-success">
-                            Aceptar
-                          </button>
-                          <button class="alert-action-btn btn-danger">
-                            Rechazar
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mono">02-MAY-2025</td>
-                      <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
-                      <td>03 – No se llevó a cabo</td>
-                      <td>
-                        <span class="badge badge-yellow">En proceso</span>
-                      </td>
-                      <td>
-                        <div class="actions-column">
-                          <button class="alert-action-btn btn-success">
-                            Aceptar
-                          </button>
-                          <button class="alert-action-btn btn-danger">
-                            Rechazar
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="card-title" style="margin-top: 18px">
-                Solicitudes aceptadas
-              </div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>UUID</th>
-                      <th>Motivo</th>
-                      <th>Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">10-MAY-2026</td>
-                      <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
-                      <td>02 – Errores sin relación</td>
-                      <td><span class="badge badge-green">Cancelado</span></td>
-                    </tr>
-                    <tr>
-                      <td class="mono">02-MAY-2025</td>
-                      <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
-                      <td>03 – No se llevó a cabo</td>
-                      <td>
-                        <span class="badge badge-green">Cancelado</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <!-- /panel-estado-espera -->
+
+              <!-- ── PANEL: Por autorizar ── -->
+              <div
+                id="panel-estado-autorizar"
+                class="cancel-panel hidden cfdi-panel"
+              >
+                <div class="card-title" style="margin-top: 18px">
+                  Solicitudes recibidas
+                </div>
+                <div style="overflow-x: auto">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>UUID</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mono">10-MAY-2026</td>
+                        <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
+                        <td>02 – Errores sin relación</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                        <td>
+                          <div class="actions-column">
+                            <button class="alert-action-btn btn-success">
+                              Aceptar
+                            </button>
+                            <button class="alert-action-btn btn-danger">
+                              Rechazar
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mono">02-MAY-2025</td>
+                        <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
+                        <td>03 – No se llevó a cabo</td>
+                        <td>
+                          <span class="badge badge-yellow">En proceso</span>
+                        </td>
+                        <td>
+                          <div class="actions-column">
+                            <button class="alert-action-btn btn-success">
+                              Aceptar
+                            </button>
+                            <button class="alert-action-btn btn-danger">
+                              Rechazar
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card-title" style="margin-top: 18px">
+                  Solicitudes aceptadas
+                </div>
+                <div style="overflow-x: auto">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Fecha</th>
+                        <th>UUID</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="mono">10-MAY-2026</td>
+                        <td class="mono" style="font-size: 11px">a1b2c3d4-…</td>
+                        <td>02 – Errores sin relación</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="mono">02-MAY-2025</td>
+                        <td class="mono" style="font-size: 11px">e5f6a7b8-…</td>
+                        <td>03 – No se llevó a cabo</td>
+                        <td>
+                          <span class="badge badge-green">Cancelado</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
-          </div>
           </div>
           <div id="buzon-acuses" style="display: none">
             <button
@@ -9863,55 +9903,57 @@
             >
               Regresar al Buzón
             </button>
-          <div class="welcome-strip">
-            <div class="welcome-strip-text">
-              <strong>Recuperar acuse de cancelación</strong>Solicita el acuse
-              de cancelación de una factura proporcionando su UUID.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-title">Recuperar acuse de cancelación</div>
-            <div
-              class="welcome-strip-text"
-              style="color: var(--text-light); margin-bottom: 18px"
-            >
-              Puedes solicitar el acuse de cancelación de cualquier factura proporcionando el UUID de la factura, sin importar que no esté registrada en el sistema.
-            </div>
-            <div class="form-group full">
-              <label class="form-label">UUID de la factura</label>
-              <input
-                class="form-input"
-                type="text"
-                id="acuseUuidInput"
-                placeholder="Ej. a1b2c3d4-e5f6-7890-abcd-1234567890ef"
-              />
-            </div>
-            <div class="form-group full" style="margin-top: 16px">
-              <label class="form-label">Tipo de comprobante</label>
-              <div class="radio-option-group">
-                <label class="radio-option">
-                  <input
-                    type="radio"
-                    name="acuseTipoComprobante"
-                    value="emitido"
-                    checked
-                  />
-                  <span>Emitido</span>
-                </label>
-                <label class="radio-option">
-                  <input
-                    type="radio"
-                    name="acuseTipoComprobante"
-                    value="recibido"
-                  />
-                  <span>Recibido</span>
-                </label>
+            <div class="welcome-strip">
+              <div class="welcome-strip-text">
+                <strong>Recuperar acuse de cancelación</strong>Solicita el acuse
+                de cancelación de una factura proporcionando su UUID.
               </div>
             </div>
-            <div class="form-actions">
-              <button class="btn-primary">Solicitar</button>
+            <div class="card">
+              <div class="card-title">Recuperar acuse de cancelación</div>
+              <div
+                class="welcome-strip-text"
+                style="color: var(--text-light); margin-bottom: 18px"
+              >
+                Puedes solicitar el acuse de cancelación de cualquier factura
+                proporcionando el UUID de la factura, sin importar que no esté
+                registrada en el sistema.
+              </div>
+              <div class="form-group full">
+                <label class="form-label">UUID de la factura</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="acuseUuidInput"
+                  placeholder="Ej. a1b2c3d4-e5f6-7890-abcd-1234567890ef"
+                />
+              </div>
+              <div class="form-group full" style="margin-top: 16px">
+                <label class="form-label">Tipo de comprobante</label>
+                <div class="radio-option-group">
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="acuseTipoComprobante"
+                      value="emitido"
+                      checked
+                    />
+                    <span>Emitido</span>
+                  </label>
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="acuseTipoComprobante"
+                      value="recibido"
+                    />
+                    <span>Recibido</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn-primary">Solicitar</button>
+              </div>
             </div>
-          </div>
           </div>
         </div>
 
@@ -10012,85 +10054,85 @@
           >
             Regresar a Facturación
           </button>
-            <div class="card" style="width: 100%">
-              <div class="card-title">Clientes</div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>RFC</th>
-                      <th>Razón social</th>
-                      <th>Régimen</th>
-                      <th>C.P.</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">NWM9709244W4</td>
-                      <td class="mono">NUEVA WAL MART DE MEXICO</td>
-                      <td>626</td>
-                      <td>02770</td>
-                      <td>
-                        <button
-                          class="btn-secondary"
-                          style="padding: 3px 10px; font-size: 11px"
-                        >
-                          Editar
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mono">BBA830831LJ2</td>
-                      <td class="mono">GRUPO FINANCIERO BBVA MEXICO</td>
-                      <td>626</td>
-                      <td>06600</td>
-                      <td>
-                        <button
-                          class="btn-secondary"
-                          style="padding: 3px 10px; font-size: 11px"
-                        >
-                          Editar
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div style="margin-bottom: auto">
-                <details>
-                  <summary
+          <div class="card" style="width: 100%">
+            <div class="card-title">Clientes</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>RFC</th>
+                    <th>Razón social</th>
+                    <th>Régimen</th>
+                    <th>C.P.</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">NWM9709244W4</td>
+                    <td class="mono">NUEVA WAL MART DE MEXICO</td>
+                    <td>626</td>
+                    <td>02770</td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        Editar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">BBA830831LJ2</td>
+                    <td class="mono">GRUPO FINANCIERO BBVA MEXICO</td>
+                    <td>626</td>
+                    <td>06600</td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        Editar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="margin-bottom: auto">
+              <details>
+                <summary
+                  style="
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    color: var(--text-main);
+                    font-family: inherit;
+                    margin-top: 8px;
+                  "
+                >
+                  Carga masiva de clientes
+                </summary>
+                <div class="form-actions" style="margin-top: 8px">
+                  <button
+                    class="btn-secondary"
                     style="
-                      font-size: 1.3rem;
-                      font-weight: 400;
-                      color: var(--text-main);
-                      font-family: inherit;
-                      margin-top: 8px;
+                      background: var(--primary);
+                      font-size: 12px;
+                      padding: 6px 12px;
+                      margin-left: 15px;
                     "
                   >
-                    Carga masiva de clientes
-                  </summary>
-                  <div class="form-actions" style="margin-top: 8px">
-                    <button
-                      class="btn-secondary"
-                      style="
-                        background: var(--primary);
-                        font-size: 12px;
-                        padding: 6px 12px;
-                        margin-left: 15px;
-                      "
-                    >
-                      Descargar plantilla
-                    </button>
-                  </div>
-                </details>
-              </div>
-              <div class="form-actions" style="margin-top: 80px">
-                <button class="btn-secondary">Agregar cliente</button>
-                <button class="btn-secondary">Subir plantilla</button>
-                <button class="btn-primary">Guardar cambios</button>
-              </div>
+                    Descargar plantilla
+                  </button>
+                </div>
+              </details>
             </div>
+            <div class="form-actions" style="margin-top: 80px">
+              <button class="btn-secondary">Agregar cliente</button>
+              <button class="btn-secondary">Subir plantilla</button>
+              <button class="btn-primary">Guardar cambios</button>
+            </div>
+          </div>
         </div>
 
         <!--VIEW: Facturación · Productos y servicios-->
@@ -10102,98 +10144,98 @@
           >
             Regresar a Facturación
           </button>
-<div class="card" style="width: 100%">
-              <div class="card-title">Productos y servicios</div>
-              <div style="overflow-x: auto">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>No. Ident</th>
-                      <th>Clave</th>
-                      <th>Unidad</th>
-                      <th>Descripción</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="mono">0001</td>
-                      <td class="mono">194387629</td>
-                      <td>
-                        <select class="form-input report-select">
-                          <option>Kg</option>
-                          <option>N/A</option>
-                          <option>Lt</option>
-                        </select>
-                      </td>
+          <div class="card" style="width: 100%">
+            <div class="card-title">Productos y servicios</div>
+            <div style="overflow-x: auto">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>No. Ident</th>
+                    <th>Clave</th>
+                    <th>Unidad</th>
+                    <th>Descripción</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">0001</td>
+                    <td class="mono">194387629</td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>Kg</option>
+                        <option>N/A</option>
+                        <option>Lt</option>
+                      </select>
+                    </td>
 
-                      <td>Papa blanca</td>
-                      <td>
-                        <button
-                          class="btn-secondary"
-                          style="padding: 3px 10px; font-size: 11px"
-                        >
-                          Editar
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="mono">0002</td>
-                      <td class="mono">59731684</td>
-                      <td>
-                        <select class="form-input report-select">
-                          <option>Kg</option>
-                          <option>N/A</option>
-                          <option>Lt</option>
-                        </select>
-                      </td>
-                      <td>Papa blanca</td>
-                      <td>
-                        <button
-                          class="btn-secondary"
-                          style="padding: 3px 10px; font-size: 11px"
-                        >
-                          Editar
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div style="margin-bottom: auto">
-                <details>
-                  <summary
+                    <td>Papa blanca</td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        Editar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">0002</td>
+                    <td class="mono">59731684</td>
+                    <td>
+                      <select class="form-input report-select">
+                        <option>Kg</option>
+                        <option>N/A</option>
+                        <option>Lt</option>
+                      </select>
+                    </td>
+                    <td>Papa blanca</td>
+                    <td>
+                      <button
+                        class="btn-secondary"
+                        style="padding: 3px 10px; font-size: 11px"
+                      >
+                        Editar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="margin-bottom: auto">
+              <details>
+                <summary
+                  style="
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    color: var(--text-main);
+                    font-family: inherit;
+                    margin-top: 8px;
+                  "
+                >
+                  Carga masiva de productos
+                </summary>
+                <div class="form-actions" style="margin-top: 8px">
+                  <button
+                    class="btn-secondary"
                     style="
-                      font-size: 1.3rem;
-                      font-weight: 400;
-                      color: var(--text-main);
-                      font-family: inherit;
-                      margin-top: 8px;
+                      background: var(--primary);
+                      font-size: 12px;
+                      padding: 6px 12px;
+                      margin-left: 15px;
                     "
                   >
-                    Carga masiva de productos
-                  </summary>
-                  <div class="form-actions" style="margin-top: 8px">
-                    <button
-                      class="btn-secondary"
-                      style="
-                        background: var(--primary);
-                        font-size: 12px;
-                        padding: 6px 12px;
-                        margin-left: 15px;
-                      "
-                    >
-                      Descargar plantilla
-                    </button>
-                  </div>
-                </details>
-              </div>
-              <div class="form-actions">
-                <button class="btn-secondary">Agregar productos</button>
-                <button class="btn-secondary">Subir plantilla</button>
-                <button class="btn-primary">Guardar cambios</button>
-              </div>
+                    Descargar plantilla
+                  </button>
+                </div>
+              </details>
             </div>
+            <div class="form-actions">
+              <button class="btn-secondary">Agregar productos</button>
+              <button class="btn-secondary">Subir plantilla</button>
+              <button class="btn-primary">Guardar cambios</button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -10745,7 +10787,8 @@
             <div class="fct-alerta-verificar-texto">
               <span
                 >Advertencia: Facturación solo estará disponible durante el
-                mismo mes en que se realice el pago. (14/jul/2026 - 31/jul/2026)</span
+                mismo mes en que se realice el pago. (14/jul/2026 -
+                31/jul/2026)</span
               >
             </div>
           </div>
@@ -11192,7 +11235,22 @@
 
       <div class="st-info-header">
         <div class="st-info-header-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark-icon lucide-circle-question-mark"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-circle-question-mark-icon lucide-circle-question-mark"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <path d="M12 17h.01" />
+          </svg>
         </div>
         <div class="st-info-titulo" id="st-info-modal-titulo">
           ¿Cómo se calcula mi Nivel de Cumplimiento?
@@ -11200,8 +11258,9 @@
       </div>
 
       <div class="st-info-desc">
-        El porcentaje representa el nivel de cumplimiento fiscal y se calcula considerando distintos rubros
-        que afectan positiva o negativamente el resultado.
+        El porcentaje representa el nivel de cumplimiento fiscal y se calcula
+        considerando distintos rubros que afectan positiva o negativamente el
+        resultado.
       </div>
 
       <ul class="st-info-list">
@@ -11352,7 +11411,8 @@
       </ul>
 
       <div class="st-info-nota">
-        Estos porcentajes son únicamente una representación creada por miskuentas RESICO.
+        Estos porcentajes son únicamente una representación creada por
+        miskuentas RESICO.
       </div>
     </div>
 
