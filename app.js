@@ -347,7 +347,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // navigate('first-msg') limpia el estado "active" de los botones del
   // sidebar; como el módulo por default es Inicio, lo reactivamos.
-  document.querySelector(".sidebar-nav .nav-module-btn")?.classList.add("active");
+  document
+    .querySelector(".sidebar-nav .nav-module-btn")
+    ?.classList.add("active");
 
   // cerrar submenu al hacer click fuera del sidebar
   document.addEventListener("click", (e) => {
@@ -1447,7 +1449,7 @@ function _carouselRender() {
 
   document.getElementById("carousel-titulo").textContent = c.titulo;
   document.getElementById("carousel-texto").textContent = c.texto;
-  document.getElementById("carousel-icon").innerHTML = c.icon;
+  /*document.getElementById("carousel-icon").innerHTML = c.icon;*/
 
   // Dots
   var dotsEl = document.getElementById("carousel-dots");
@@ -1632,24 +1634,21 @@ Promise.all(
 });
 
 function drawFrame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const img = frames[currentFrame];
+  const img = frames[currentFrame];
 
-    const scale = Math.min(
-        canvas.width / img.width,
-        canvas.height / img.height
-    );
+  const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
 
-    const width = img.width * scale;
-    const height = img.height * scale;
+  const width = img.width * scale;
+  const height = img.height * scale;
 
-    const x = (canvas.width - width) / 2;
-    const y = (canvas.height - height) / 2;
+  const x = (canvas.width - width) / 2;
+  const y = (canvas.height - height) / 2;
 
-    ctx.filter = "drop-shadow(0 0 15px rgba(86,140,255,.25))";
-    ctx.drawImage(img, x, y, width, height);
-    ctx.filter = "none";
+  ctx.filter = "drop-shadow(0 0 15px rgba(86,140,255,.25))";
+  ctx.drawImage(img, x, y, width, height);
+  ctx.filter = "none";
 }
 
 function animate(timestamp) {
