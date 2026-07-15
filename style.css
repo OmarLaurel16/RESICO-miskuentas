@@ -2216,10 +2216,7 @@ summary:hover {
     right: 1.5rem;
     left: 1.5rem;
   }
-  .logo-container {
-    overflow: hidden;
-    width: 110px;
-  }
+
   .clipped-cell {
     max-width: 110px;
     white-space: nowrap;
@@ -2236,7 +2233,7 @@ summary:hover {
   .taxes-wrap {
     gap: 30px;
   }
-  .tax-label{
+  .tax-label {
     font-size: 1.2rem;
   }
 }
