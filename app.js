@@ -1410,36 +1410,42 @@ var _carousel = {
       texto:
         "Procura que la forma de pago sea distinta a efectivo para que sea deducible.",
       icon: '<path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5"/><path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16"/><path d="M2 21h13"/><path d="M3 9h11"/>',
+      imagen: "Gasolina.jpg",
     },
     {
       titulo: "Gastos en efectivo mayores a $2,000",
       texto:
         "Todo gasto mayor a $2,000 pagado en efectivo es considerado no deducible por la autoridad fiscal.",
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-dollar-sign-icon lucide-circle-dollar-sign"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>',
+      imagen: "Monedas.jpg",
     },
     {
       titulo: "Emite tus complementos de pago a tiempo",
       texto:
         "Cuando cobres en parcialidades, emite el complemento de pago dentro de los primeros 5 días del mes siguiente. Evitarás diferencias con el SAT.",
       icon: '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>',
+      imagen: "Computador.jpg",
     },
     {
       titulo: "Revisa tu buzón tributario",
       texto:
         "El SAT notifica auditorías y requerimientos solo por buzón. Revisarlo frecuentemente puede evitarte multas por omisión.",
       icon: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+      imagen: "Finance.jpg",
     },
     {
       titulo: "Facturas canceladas",
       texto:
         "Si un cliente cancela una factura que ya declaraste, deberás reflejar ese ajuste en tu siguiente declaración para no pagar de más.",
       icon: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M9 15l2 2 4-4"/>',
+      imagen: "Dinero.jpg",
     },
     {
       titulo: "Límite RESICO",
       texto:
         "Si tus ingresos acumulados superan $3.5 millones en el año, saldrás automáticamente del régimen RESICO. Mantén control de tus ingresos.",
       icon: '<line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>',
+      imagen: "Finance.jpg",
     },
   ],
 };
@@ -1450,6 +1456,9 @@ function _carouselRender() {
   document.getElementById("carousel-titulo").textContent = c.titulo;
   document.getElementById("carousel-texto").textContent = c.texto;
   /*document.getElementById("carousel-icon").innerHTML = c.icon;*/
+
+  var imgEl = document.getElementById("carousel-img");
+  if (imgEl && c.imagen) imgEl.src = c.imagen;
 
   // Dots
   var dotsEl = document.getElementById("carousel-dots");
