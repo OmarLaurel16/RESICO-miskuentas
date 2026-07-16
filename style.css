@@ -1156,6 +1156,7 @@ summary:hover {
 }
 
 .carousel-img-container {
+  border-radius: 8px;
   position: relative;
   width: 250px;
   overflow: hidden;
