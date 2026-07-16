@@ -1157,7 +1157,7 @@ summary:hover {
   align-items: center;
   flex-direction: row;
 }
-.carousel-container::after {
+.carousel-img-container::after {
   content: "";
   position: absolute;
   inset: 0;
