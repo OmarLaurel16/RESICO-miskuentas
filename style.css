@@ -1156,6 +1156,7 @@ summary:hover {
   flex-direction: row;
 }
 .carousel-tips-img {
+  justify-content: center;
   border-radius: 8px;
   margin: 10px 0px;
   width: 250px;
