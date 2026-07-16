@@ -1126,8 +1126,7 @@ summary:hover {
     align-items: center;
   }
   .carousel-container {
-    display: flex;
-    flex-direction: row;
+    flex-direction: column !important;
   }
 }
 
@@ -1151,6 +1150,10 @@ summary:hover {
   padding: 2.8rem 1.5rem;
   align-items: center;
   max-width: 80%;
+}
+.carousel-container {
+  display: flex;
+  flex-direction: row;
 }
 .carousel-tips-img {
   border-radius: 8px;
