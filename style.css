@@ -1154,9 +1154,7 @@ summary:hover {
   align-items: center;
   flex-direction: row;
 }
-.carousel-container {
-  flex-direction: column !important;
-}
+
 .carousel-img-container {
   position: relative;
   width: 250px;
@@ -2267,6 +2265,9 @@ summary:hover {
   }
   .carousel-img-container {
     width: 100% !important;
+  }
+  .carousel-container {
+    flex-direction: column !important;
   }
 }
 
