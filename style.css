@@ -1125,7 +1125,10 @@ summary:hover {
     text-align: center;
     align-items: center;
   }
-  .
+  .carousel-container {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 370px) {
