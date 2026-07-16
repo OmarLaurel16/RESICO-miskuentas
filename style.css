@@ -1157,6 +1157,14 @@ summary:hover {
   align-items: center;
   flex-direction: row;
 }
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(139, 95, 169, 0.45); /* Morado */
+  pointer-events: none;
+}
+
 .carousel-tips-img {
   justify-content: center;
   border-radius: 8px;
