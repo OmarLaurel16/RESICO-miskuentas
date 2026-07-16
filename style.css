@@ -1125,9 +1125,6 @@ summary:hover {
     text-align: center;
     align-items: center;
   }
-  .carousel-container {
-    flex-direction: column !important;
-  }
 }
 
 @media (max-width: 370px) {
@@ -1156,6 +1153,9 @@ summary:hover {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.carousel-container {
+  flex-direction: column !important;
 }
 .carousel-img-container {
   position: relative;
