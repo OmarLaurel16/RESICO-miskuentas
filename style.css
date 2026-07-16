@@ -1151,6 +1151,7 @@ summary:hover {
 .carousel-tips-img {
   border-radius: 8px;
   margin: 10px 0px;
+  width: 100%;
 }
 .carousel-chevron-btn {
   width: 3.2rem;
