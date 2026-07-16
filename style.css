@@ -1152,6 +1152,7 @@ summary:hover {
   max-width: 80%;
 }
 .carousel-container {
+  margin: 15px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
