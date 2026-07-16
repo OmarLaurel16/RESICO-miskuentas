@@ -1149,6 +1149,7 @@ summary:hover {
   max-width: 80%;
 }
 .carousel-tips-img {
+  height: 100%;
   width: 100%;
   border-radius: 8px;
   margin: 10px 0px;
