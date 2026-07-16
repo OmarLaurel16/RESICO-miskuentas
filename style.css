@@ -1148,6 +1148,12 @@ summary:hover {
   align-items: center;
   max-width: 80%;
 }
+.carousel-tips-img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 10px 0px;
+  background-image: linear-gradient(to right bottom, #e76544);
+}
 .carousel-chevron-btn {
   width: 3.2rem;
   height: 3.2rem;
