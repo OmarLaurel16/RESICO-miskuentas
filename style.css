@@ -1128,9 +1128,6 @@ summary:hover {
   .carousel-container {
     flex-direction: column !important;
   }
-  .carousel-img-container {
-    width: 100%;
-  }
 }
 
 @media (max-width: 370px) {
@@ -2267,6 +2264,9 @@ summary:hover {
   }
   .tax-label {
     font-size: 1.2rem;
+  }
+  .carousel-img-container {
+    width: 100% !important;
   }
 }
 
