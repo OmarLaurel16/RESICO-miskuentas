@@ -1144,7 +1144,7 @@ summary:hover {
   display: flex;
   margin: 0 auto;
   gap: 1.5rem;
-  padding: 2.8rem 1.5rem;
+  padding: 1.8rem 1.5rem;
   align-items: center;
   max-width: 80%;
 }
@@ -1156,6 +1156,7 @@ summary:hover {
 }
 
 .carousel-img-container {
+  margin-top: 11px;
   border-radius: 8px;
   position: relative;
   width: 250px;
