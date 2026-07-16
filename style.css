@@ -1149,17 +1149,8 @@ summary:hover {
   max-width: 80%;
 }
 .carousel-tips-img {
-  height: 100%;
-  margin: 10px 0;
-  border-radius: 8px;
-
-  background-image: url("Finance.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 8px;
   margin: 10px 0px;
-  background-image: url("Finance.jpg");
 }
 .carousel-chevron-btn {
   width: 3.2rem;
