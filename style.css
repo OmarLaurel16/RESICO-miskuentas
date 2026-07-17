@@ -444,7 +444,7 @@ summary:hover {
 
 .btn-salir {
   text-transform: uppercase;
-  background: var(--secondary);
+  background: var(--green);
   color: #fff;
   font-size: 12px;
   font-weight: 500;
