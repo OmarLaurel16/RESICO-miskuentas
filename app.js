@@ -1463,7 +1463,7 @@ function _carouselRender() {
   // Dots
   var dotsEl = document.getElementById("carousel-dots");
   dotsEl.querySelectorAll(".carousel-dot").forEach(function (d, i) {
-    d.style.background = i === _carousel.idx ? "var(--primary)" : "";
+    d.style.background = i === _carousel.idx ? "var(--secondary)" : "";
   });
 }
 
