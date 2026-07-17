@@ -3229,7 +3229,9 @@ summary:hover {
   padding: 1.3rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--green);
+
+  /*background: linear-gradient(135deg, var(--primary), var(--secondary));*/
   color: #fff;
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
