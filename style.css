@@ -2679,12 +2679,12 @@ summary:hover {
   background: var(--item-hover);
 }
 .ob-metodo-btn-titulo {
-  font-size: 13px;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--text-main);
 }
 .ob-metodo-btn-desc {
-  font-size: 10.5px;
+  font-size: 1.5rem;
   color: var(--text-light);
 }
 .ob-metodo-btn.active {
