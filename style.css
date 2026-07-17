@@ -1065,11 +1065,6 @@ summary:hover {
   }
 }
 
-.mov-btns {
-  width: 160px;
-  height: 160px;
-}
-
 .fact-quick-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -1127,17 +1122,11 @@ summary:hover {
     text-align: center;
     align-items: center;
   }
-  .fact-quick-card.mov-btns {
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 @media (max-width: 480px) {
   .fact-quick-grid {
     grid-template-columns: 1fr;
-    justify-items: center;
-    height: 700px;
   }
   .fact-hero-card {
     flex-wrap: wrap;
