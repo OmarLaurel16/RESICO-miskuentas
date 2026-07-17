@@ -1132,6 +1132,7 @@ summary:hover {
 @media (max-width: 480px) {
   .fact-quick-grid {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
   .fact-hero-card {
     flex-wrap: wrap;
