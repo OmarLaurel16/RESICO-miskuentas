@@ -1159,7 +1159,7 @@ summary:hover {
   margin-top: 11px;
   border-radius: 8px;
   position: relative;
-  width: 250px;
+  width: 150px;
   overflow: hidden;
   flex-shrink: 0;
 }
