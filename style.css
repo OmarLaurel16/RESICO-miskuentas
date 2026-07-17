@@ -1124,7 +1124,7 @@ summary:hover {
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 480px) {
   .fact-quick-grid {
     grid-template-columns: 1fr;
   }
