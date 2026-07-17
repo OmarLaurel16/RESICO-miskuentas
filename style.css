@@ -4127,6 +4127,7 @@ summary:hover {
    ══════════════════════════════════════════════ */
 .st-alertas-btn {
   width: 155px;
+  height: 40px;
   text-align: center;
   display: inline-flex;
   align-items: center;
