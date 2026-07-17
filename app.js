@@ -1438,7 +1438,7 @@ var _carousel = {
       texto:
         "Si un cliente cancela una factura que ya declaraste, deberás reflejar ese ajuste en tu siguiente declaración para no pagar de más.",
       icon: '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M9 15l2 2 4-4"/>',
-      imagen: "Cancelado.png",
+      imagen: "Cancelado2.png",
     },
     {
       titulo: "Límite RESICO",
