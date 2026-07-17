@@ -3166,7 +3166,7 @@ summary:hover {
   color: var(--text-light);
   margin-top: 1.6rem;
   line-height: 1.5;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   cursor: pointer;
 }
 
