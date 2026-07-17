@@ -1169,14 +1169,14 @@ summary:hover {
   width: 100%;
   height: auto;
 }
-
+/*
 .carousel-img-container::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(139, 95, 169, 0.45);
   pointer-events: none;
-}
+}*/
 .carousel-chevron-btn {
   width: 3.2rem;
   height: 3.2rem;
