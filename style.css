@@ -1065,6 +1065,11 @@ summary:hover {
   }
 }
 
+.mov-btns {
+  width: 160px;
+  height: 160px;
+}
+
 .fact-quick-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
