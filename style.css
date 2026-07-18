@@ -2388,6 +2388,7 @@ summary:hover {
 }
 .doc-card-meta {
   display: flex;
+  flex-direction: column;
   align-items: left;
   gap: 10px;
   flex-wrap: wrap;
