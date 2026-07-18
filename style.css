@@ -2279,7 +2279,7 @@ summary:hover {
   }
 
   .nav-module-btn:hover {
-    background: var(--item-hover);
+    /*background: var(--item-hover);*/
     color: var(--primary);
     transform: translateY(-2px);
   }
