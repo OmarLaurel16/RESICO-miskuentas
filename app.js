@@ -1686,9 +1686,6 @@ document.getElementById("chatbot-close").addEventListener("click", () => {
 
 // ══════════════════════════════════════════════════════════════
 // Navegación por gesto de deslizamiento (swipe) — solo en móvil
-// Actúa únicamente como un disparador alternativo de los botones
-// inferiores (.nav-module-btn) ya existentes; no crea navegación
-// nueva ni modifica la lógica de navigate()/toggleModule().
 // Se activa solo cuando el ancho de pantalla es ≤ 768px.
 // ══════════════════════════════════════════════════════════════
 document.addEventListener("DOMContentLoaded", () => {
