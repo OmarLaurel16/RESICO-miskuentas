@@ -1961,6 +1961,9 @@ summary:hover {
 
 /* --- Topbar --- */
 @media (max-width: 768px) {
+  .doc-grid {
+    grid-template-columns: 1fr !important;
+  }
   .topbar {
     height: 5.6rem;
   }
@@ -2229,9 +2232,7 @@ summary:hover {
     padding: 8px 4px;
     font-size: 11px;
   }
-  .doc-grid {
-    grid-template-columns: 1fr;
-  }
+
   .alert-item {
     flex-direction: column;
   }
