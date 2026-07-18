@@ -2388,10 +2388,10 @@ summary:hover {
 }
 .doc-card-meta {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 .doc-card-date {
   font-size: 1.3rem;
