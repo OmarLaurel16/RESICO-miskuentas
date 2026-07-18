@@ -4136,7 +4136,7 @@ summary:hover {
   gap: 6px;
   margin: 8px auto;
   padding: 6px 14px;
-  font-size: 12.5px;
+  font-size: 1.4rem;
   font-family: inherit;
   font-weight: 500;
   border: 1.5px solid var(--primary);
