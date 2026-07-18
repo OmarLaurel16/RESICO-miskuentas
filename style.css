@@ -502,7 +502,7 @@ summary:hover {
 .nav-module-btn:hover,
 .nav-module-btn.open,
 .nav-module-btn.active {
-  background: var(--item-hover);
+  /*background: var(--item-hover);*/
   color: var(--primary);
 }
 /* Iconos nav: outline visible por defecto, solid oculto */
@@ -541,7 +541,7 @@ summary:hover {
 }
 .nav-module-btn.open {
   color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 15%, white);
+  /*background: color-mix(in srgb, var(--primary) 15%, white);*/
   font-weight: 600;
 }
 
