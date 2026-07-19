@@ -327,7 +327,7 @@ summary:hover {
   font-size: 22px;
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: 110px;
   align-items: center;
   gap: 15px;
 }
