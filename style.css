@@ -1196,9 +1196,6 @@ summary:hover {
 }
 
 @media (max-width: 480px) {
-  .fact-quick-grid {
-    grid-template-columns: 1fr;
-  }
   .fact-hero-card {
     flex-wrap: wrap;
   }
@@ -2342,6 +2339,9 @@ summary:hover {
 
 /* Pantallas muy pequeñas (≤ 360px) */
 @media (max-width: 360px) {
+  .fact-quick-grid {
+    grid-template-columns: 1fr;
+  }
   .nav-module-btn {
     font-size: 0.9rem;
   }
