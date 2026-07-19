@@ -3223,8 +3223,9 @@ summary:hover {
 
 /* Botón */
 .login-btn {
-  margin: 50px 10px;
-  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
   margin-top: 0.6rem;
   padding: 1.5rem;
   border: none;
