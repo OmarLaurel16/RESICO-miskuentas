@@ -340,7 +340,7 @@ summary:hover {
   gap: 15px;
 }
 .btn-upload-files {
-  padding: 8px 18px;
+  padding: 15px 18px;
   font-size: 15px;
   font-weight: 400;
   font-family: inherit;
@@ -353,7 +353,7 @@ summary:hover {
 }
 .btn-upload-files:hover,
 .btn-upload-files:active {
-  background: color-mix(in srgb, var(--secondary) 75%, black);
+  background: var(--secondary);
 }
 .data-protected {
   font-size: 14px;
