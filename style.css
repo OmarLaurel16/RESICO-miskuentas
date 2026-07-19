@@ -2554,7 +2554,8 @@ summary:hover {
   gap: 6px;
 }
 .ob-pass-label {
-  font-size: 12px;
+  margin-left: 10px;
+  font-size: 1.4rem;
   color: var(--text-light);
   font-weight: 500;
 }
