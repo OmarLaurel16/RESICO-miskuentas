@@ -2742,7 +2742,7 @@ summary:hover {
   color: var(--text-main);
 }
 .ob-final-sub {
-  font-size: 14px;
+  font-size: 1.6rem;
   color: var(--text-light);
   line-height: 1.6;
 }
