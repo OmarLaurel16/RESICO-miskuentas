@@ -4256,3 +4256,377 @@ summary:hover {
     font-size: 13.5px;
   }
 }
+
+/* ══════════════════════════════════════
+   PRESENTACIÓN INTRODUCTORIA (LOGIN)
+══════════════════════════════════════ */
+
+.intro-link-wrap {
+  text-align: center;
+  margin-top: 18px;
+}
+.intro-link-btn {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  color: var(--text-light);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.intro-link-btn:hover {
+  color: var(--primary);
+}
+
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.intro-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  color: var(--text-light);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+.intro-close-btn:hover {
+  background: var(--item-hover);
+  color: var(--primary);
+}
+.intro-close-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.intro-track-wrap {
+  width: 100%;
+  max-width: 560px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.intro-track {
+  display: flex;
+  width: 400%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-slide {
+  width: 25%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.intro-slide-inner {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow:
+    0 8px 40px rgba(53, 131, 166, 0.12),
+    0 2px 8px rgba(157, 108, 171, 0.08);
+  padding: 2.6rem 2.2rem;
+  text-align: center;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-robot-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+.intro-robot-placeholder {
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 18%, white),
+    color-mix(in srgb, var(--secondary) 18%, white)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+.intro-robot-placeholder svg {
+  width: 52px;
+  height: 52px;
+}
+
+.intro-titulo {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.intro-texto {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.45rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Pantalla 2 — beneficios */
+.intro-beneficios-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 0.4rem;
+}
+.intro-beneficio-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+.intro-beneficio-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+.intro-beneficio-icon {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-beneficio-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.intro-beneficio-icon-blue {
+  background: color-mix(in srgb, var(--primary) 16%, white);
+  color: var(--primary);
+}
+.intro-beneficio-icon-purple {
+  background: color-mix(in srgb, var(--secondary) 16%, white);
+  color: var(--secondary);
+}
+.intro-beneficio-icon-green {
+  background: color-mix(in srgb, var(--green) 18%, white);
+  color: var(--green);
+}
+.intro-beneficio-titulo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+.intro-beneficio-texto {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Pantalla 3 — pasos */
+.intro-pasos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  margin-top: 1rem;
+}
+.intro-paso {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+.intro-paso-num {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro-paso-texto {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+.intro-paso-conector {
+  width: 2px;
+  height: 22px;
+  background: var(--border);
+  margin-left: 16px;
+}
+
+/* Pantalla 4 — cierre */
+.intro-cierre-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 1.6rem;
+}
+.intro-btn {
+  padding: 1.3rem;
+  border-radius: 10px;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+.intro-btn-solid {
+  border: none;
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 4px 18px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+.intro-btn-solid:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--primary) 45%, transparent);
+}
+.intro-btn-outline {
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-main);
+}
+.intro-btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Indicadores */
+.intro-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 1.8rem;
+}
+.intro-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+.intro-dot.active {
+  background: var(--secondary);
+  transform: scale(1.25);
+}
+
+/* Flechas de escritorio */
+.intro-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+.intro-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+.intro-arrow:hover {
+  background: var(--item-hover);
+  color: var(--primary);
+}
+.intro-arrow-left {
+  left: 24px;
+}
+.intro-arrow-right {
+  right: 24px;
+}
+.intro-arrow-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .intro-arrow {
+    display: none;
+  }
+  .intro-track-wrap {
+    padding: 0 12px;
+  }
+  .intro-slide-inner {
+    padding: 2.2rem 1.6rem;
+    min-height: 380px;
+  }
+  .intro-titulo {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-close-btn {
+    top: 12px;
+    right: 12px;
+  }
+  .intro-slide-inner {
+    border-radius: 18px;
+  }
+}

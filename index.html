@@ -118,9 +118,250 @@
           <span class="login-btn-text">Regístrate ahora</span>
           <span class="login-btn-spinner"></span>
         </button>
+
+        <!-- Acceso discreto a la presentación introductoria -->
+        <div class="intro-link-wrap">
+          <button
+            type="button"
+            class="intro-link-btn"
+            id="loginIntroBtn"
+            onclick="abrirIntro()"
+          >
+            Conoce cómo funciona
+          </button>
+        </div>
       </div>
     </div>
     <!-- /LOGIN OVERLAY -->
+
+    <!-- ══ PRESENTACIÓN INTRODUCTORIA (CARRUSEL) ══ -->
+    <div
+      class="intro-overlay ob-hidden"
+      id="introOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="intro-slide-titulo-1"
+    >
+      <button
+        class="intro-close-btn"
+        onclick="cerrarIntro()"
+        title="Cerrar presentación"
+      >
+        <svg
+          viewBox="0 0 14 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M1 1l12 12M13 1L1 13" />
+        </svg>
+      </button>
+
+      <div class="intro-track-wrap">
+        <div class="intro-track" id="introTrack">
+          <!-- Pantalla 1 — Bienvenida -->
+          <div class="intro-slide">
+            <div class="intro-slide-inner">
+              <div class="intro-robot-wrap">
+                <div class="intro-robot-placeholder" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="5" y="8" width="14" height="11" rx="3" />
+                    <circle cx="9.5" cy="13.5" r="1.2" fill="currentColor" />
+                    <circle cx="14.5" cy="13.5" r="1.2" fill="currentColor" />
+                    <path d="M9 17h6" />
+                    <path d="M12 8V5" />
+                    <circle cx="12" cy="3.5" r="1.5" />
+                    <path d="M2 12h3M19 12h3" />
+                  </svg>
+                </div>
+              </div>
+              <h2 class="intro-titulo" id="intro-slide-titulo-1">
+                Tu asistente fiscal para RESICO
+              </h2>
+              <p class="intro-texto">
+                Administra tus facturas, controla tus impuestos y mantén tus
+                obligaciones fiscales al día desde un solo lugar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pantalla 2 — Beneficios principales -->
+          <div class="intro-slide">
+            <div class="intro-slide-inner">
+              <h2 class="intro-titulo">Beneficios principales</h2>
+              <div class="intro-beneficios-grid">
+                <div class="intro-beneficio-card">
+                  <div class="intro-beneficio-icon intro-beneficio-icon-blue">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="5" y="2" width="14" height="20" rx="3" />
+                      <path d="M9 7h6M9 11h6M9 15h3" />
+                    </svg>
+                  </div>
+                  <div class="intro-beneficio-titulo">
+                    Factura fácil en segundos
+                  </div>
+                  <div class="intro-beneficio-texto">
+                    Emite y administra tus facturas desde tu celular.
+                  </div>
+                </div>
+
+                <div class="intro-beneficio-card">
+                  <div class="intro-beneficio-icon intro-beneficio-icon-purple">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M3 3v18h18" />
+                      <path d="M7 15l4-4 3 3 5-6" />
+                    </svg>
+                  </div>
+                  <div class="intro-beneficio-titulo">
+                    Controla tus impuestos
+                  </div>
+                  <div class="intro-beneficio-texto">
+                    Consulta y calcula tus impuestos con la información de tus
+                    CFDI.
+                  </div>
+                </div>
+
+                <div class="intro-beneficio-card">
+                  <div class="intro-beneficio-icon intro-beneficio-icon-green">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v5l3 2" />
+                    </svg>
+                  </div>
+                  <div class="intro-beneficio-titulo">Cumple a tiempo</div>
+                  <div class="intro-beneficio-texto">
+                    Recibe alertas y mantén tus declaraciones bajo control.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pantalla 3 — Cómo funciona -->
+          <div class="intro-slide">
+            <div class="intro-slide-inner">
+              <h2 class="intro-titulo">
+                Envía tu contabilidad desde tu celular en 3 pasos
+              </h2>
+              <div class="intro-pasos">
+                <div class="intro-paso">
+                  <span class="intro-paso-num">1</span>
+                  <span class="intro-paso-texto">Crea tu cuenta</span>
+                </div>
+                <div class="intro-paso-conector"></div>
+                <div class="intro-paso">
+                  <span class="intro-paso-num">2</span>
+                  <span class="intro-paso-texto">Selecciona el periodo</span>
+                </div>
+                <div class="intro-paso-conector"></div>
+                <div class="intro-paso">
+                  <span class="intro-paso-num">3</span>
+                  <span class="intro-paso-texto"
+                    >Solicita impuestos y declaraciones con un clic</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pantalla 4 — Cierre -->
+          <div class="intro-slide">
+            <div class="intro-slide-inner">
+              <h2 class="intro-titulo">Todo tu RESICO en un solo lugar</h2>
+              <p class="intro-texto">
+                Facturación, impuestos, documentos y seguimiento fiscal desde
+                una experiencia simple y segura.
+              </p>
+              <div class="intro-cierre-btns">
+                <button type="button" class="intro-btn intro-btn-outline">
+                  Crear cuenta
+                </button>
+                <button
+                  type="button"
+                  class="intro-btn intro-btn-solid"
+                  onclick="cerrarIntro()"
+                >
+                  Iniciar sesión
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicadores de posición -->
+      <div class="intro-dots" id="introDots"></div>
+
+      <!-- Flechas (escritorio) -->
+      <button
+        class="intro-arrow intro-arrow-left"
+        id="introArrowLeft"
+        onclick="introNav(-1)"
+        title="Anterior"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        class="intro-arrow intro-arrow-right"
+        id="introArrowRight"
+        onclick="introNav(1)"
+        title="Siguiente"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+    <!-- /PRESENTACIÓN INTRODUCTORIA -->
 
     <!-- TOP BAR -->
     <header class="topbar">

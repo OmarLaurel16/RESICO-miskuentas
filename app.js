@@ -1789,3 +1789,138 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 });
+
+// ══════════════════════════════════════════════════════════════
+// PRESENTACIÓN INTRODUCTORIA (carrusel de 4 pantallas, accesible
+// desde el login mediante el botón "Conoce cómo funciona")
+// ══════════════════════════════════════════════════════════════
+var _introState = { idx: 0, total: 4 };
+
+function abrirIntro() {
+  var overlay = document.getElementById("introOverlay");
+  if (!overlay) return;
+  _introState.idx = 0;
+  _introRender();
+  overlay.classList.remove("ob-hidden");
+}
+
+function cerrarIntro() {
+  var overlay = document.getElementById("introOverlay");
+  if (!overlay) return;
+  overlay.classList.add("ob-hidden");
+}
+
+function introNav(dir) {
+  var nuevo = _introState.idx + dir;
+  if (nuevo < 0 || nuevo >= _introState.total) return;
+  _introState.idx = nuevo;
+  _introRender();
+}
+
+function introGoTo(i) {
+  if (i < 0 || i >= _introState.total) return;
+  _introState.idx = i;
+  _introRender();
+}
+
+function _introRender() {
+  var track = document.getElementById("introTrack");
+  if (track) {
+    track.style.transform = "translateX(-" + _introState.idx * 25 + "%)";
+  }
+
+  var dotsEl = document.getElementById("introDots");
+  if (dotsEl) {
+    dotsEl.querySelectorAll(".intro-dot").forEach(function (d, i) {
+      d.classList.toggle("active", i === _introState.idx);
+    });
+  }
+
+  var arrowLeft = document.getElementById("introArrowLeft");
+  var arrowRight = document.getElementById("introArrowRight");
+  if (arrowLeft) {
+    arrowLeft.classList.toggle("intro-arrow-disabled", _introState.idx === 0);
+  }
+  if (arrowRight) {
+    arrowRight.classList.toggle(
+      "intro-arrow-disabled",
+      _introState.idx === _introState.total - 1,
+    );
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Construye los indicadores de posición dinámicamente
+  var dotsEl = document.getElementById("introDots");
+  if (dotsEl) {
+    for (var i = 0; i < _introState.total; i++) {
+      (function (idx) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "intro-dot";
+        dot.setAttribute("aria-label", "Ir a la pantalla " + (idx + 1));
+        dot.addEventListener("click", function () {
+          introGoTo(idx);
+        });
+        dotsEl.appendChild(dot);
+      })(i);
+    }
+    _introRender();
+  }
+
+  // Cerrar con la tecla ESC
+  document.addEventListener("keydown", function (e) {
+    var overlay = document.getElementById("introOverlay");
+    if (
+      e.key === "Escape" &&
+      overlay &&
+      !overlay.classList.contains("ob-hidden")
+    ) {
+      cerrarIntro();
+    }
+  });
+
+  // Deslizar con el dedo (independiente del swipe de navegación principal)
+  var introOverlayEl = document.getElementById("introOverlay");
+  if (introOverlayEl) {
+    var introSwipeStartX = 0;
+    var introSwipeStartY = 0;
+    var introSwipeActivo = false;
+    var INTRO_SWIPE_MIN_DISTANCE = 50;
+
+    introOverlayEl.addEventListener(
+      "touchstart",
+      function (e) {
+        if (e.touches.length !== 1) return;
+        introSwipeStartX = e.touches[0].clientX;
+        introSwipeStartY = e.touches[0].clientY;
+        introSwipeActivo = true;
+      },
+      { passive: true },
+    );
+
+    introOverlayEl.addEventListener(
+      "touchend",
+      function (e) {
+        if (!introSwipeActivo) return;
+        introSwipeActivo = false;
+
+        var touch = e.changedTouches[0];
+        if (!touch) return;
+
+        var deltaX = touch.clientX - introSwipeStartX;
+        var deltaY = touch.clientY - introSwipeStartY;
+
+        if (Math.abs(deltaY) > Math.abs(deltaX)) return;
+        if (Math.abs(deltaX) < INTRO_SWIPE_MIN_DISTANCE) return;
+
+        if (deltaX < 0) {
+          introNav(1);
+        } else {
+          introNav(-1);
+        }
+      },
+      { passive: true },
+    );
+  }
+});
