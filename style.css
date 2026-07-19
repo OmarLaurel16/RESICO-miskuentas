@@ -2532,7 +2532,7 @@ summary:hover {
   background: var(--bg);
   color: var(--text-main);
   font-family: inherit;
-  font-size: 13px;
+  font-size: 1.4rem;
   cursor: pointer;
   transition:
     border-color var(--transition),
