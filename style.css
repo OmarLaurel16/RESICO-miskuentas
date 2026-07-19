@@ -2609,8 +2609,8 @@ summary:hover {
 /* Botón "Continuar" inline */
 .ob-continuar-btn {
   margin-left: auto;
-  padding: 6px 18px;
-  font-size: 13px;
+  padding: 8px 18px;
+  font-size: 1.6rem;
 }
 
 /* ── Paso 2: lista de meses ── */
