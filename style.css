@@ -2565,6 +2565,7 @@ summary:hover {
 
 /* Botón validar */
 .ob-validar-btn {
+  font-size: 1.6rem;
   margin-top: 4px;
   transition:
     background var(--transition),
