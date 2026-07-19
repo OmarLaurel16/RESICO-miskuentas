@@ -3142,10 +3142,10 @@ summary:hover {
 .login-logo-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 3.4rem;
 }
 .login-logo-img {
-  height: 48px;
+  height: 58px;
   object-fit: contain;
 }
 
