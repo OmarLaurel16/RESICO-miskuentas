@@ -4436,14 +4436,14 @@ summary:hover {
   margin-bottom: 1.8rem;
 }
 .intro-robot-placeholder {
-  width: 92px;
-  height: 122px;
+  width: 150px;
+  height: 190px;
   border-radius: 24px;
-  background: linear-gradient(
+  /*background: linear-gradient(
     135deg,
     color-mix(in srgb, var(--primary) 18%, white),
     color-mix(in srgb, var(--secondary) 18%, white)
-  );
+  );*/
   display: flex;
   align-items: center;
   justify-content: center;
