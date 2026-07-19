@@ -198,9 +198,10 @@ summary:hover {
   width: 100%;
 }
 .chatbot-inst {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding: 10px 20px;
   text-align: center;
+  letter-spacing: 15;
 }
 
 /* ----------------------CHATBOT------------------------- */
