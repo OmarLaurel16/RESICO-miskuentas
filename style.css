@@ -542,7 +542,7 @@ summary:hover {
   font-weight: 600;
 }
 .nav-module-btn.open {
-  color: var(--primary);
+  color: var(--secondary);
   /*background: color-mix(in srgb, var(--primary) 15%, white);*/
   font-weight: 600;
 }
