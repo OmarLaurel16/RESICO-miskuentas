@@ -537,7 +537,7 @@ summary:hover {
 }
 
 .nav-module-btn.active {
-  color: var(--primary);
+  color: var(--secondary);
   /*background: color-mix(in srgb, var(--primary) 15%, white);*/
   font-weight: 600;
 }
