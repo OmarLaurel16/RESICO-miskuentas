@@ -500,13 +500,13 @@ summary:hover {
     color var(--transition),
     transform var(--transition);
 }
-
+/*
 .nav-module-btn:hover,
 .nav-module-btn.open,
 .nav-module-btn.active {
-  /*background: var(--item-hover);*/
+  background: var(--item-hover);
   color: var(--primary);
-}
+}*/
 /* Iconos nav: outline visible por defecto, solid oculto */
 .nav-module-btn .icon-solid {
   display: none;
