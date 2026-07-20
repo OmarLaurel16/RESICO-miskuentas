@@ -571,7 +571,7 @@ summary:hover {
 }
 .nav-module-btn:hover .nav-ico,
 .nav-module-btn.active .nav-ico {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .nav-sub {
