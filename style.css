@@ -4442,8 +4442,8 @@ summary:hover {
   text-align: center;
 }
 .intro-robot-placeholder {
-  width: 150px;
-  height: 190px;
+  width: 0px;
+  height: 0px;
   border-radius: 24px;
   /*background: linear-gradient(
     135deg,
@@ -4454,10 +4454,6 @@ summary:hover {
   align-items: center;
   justify-content: center;
   color: var(--primary);
-}
-.intro-robot-placeholder svg {
-  width: 52px;
-  height: 52px;
 }
 
 .intro-titulo {
