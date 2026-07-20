@@ -114,7 +114,11 @@
           <span>¿Aún no tienes cuenta?</span>
         </div>
         <!-- Botón -->
-        <button class="login-btn" style="background-color: var(--secondary)">
+        <button
+          class="login-btn"
+          style="background-color: var(--secondary)"
+          onclick="abrirRegistro()"
+        >
           <span class="login-btn-text">Regístrate ahora</span>
           <span class="login-btn-spinner"></span>
         </button>
@@ -357,8 +361,9 @@
                   type="button"
                   class="intro-btn intro-btn-outline"
                   style="background-color: var(--secondary); color: white"
+                  onclick="abrirRegistro()"
                 >
-                  Crear cuenta
+                  Crear una cuenta
                 </button>
                 <button
                   type="button"
@@ -11950,6 +11955,419 @@
         Estos porcentajes son únicamente una representación creada por
         miskuentas RESICO.
       </div>
+    </div>
+
+    <!-- ══ REGISTRO Y PAGO (DEMO VISUAL) ══ -->
+    <div class="registro-overlay ob-hidden" id="registroOverlay">
+      <div class="registro-card" id="registroCard">
+        <button
+          class="ob-close-btn registro-close-btn"
+          onclick="cerrarRegistro()"
+          title="Cerrar"
+        >
+          <svg
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M1 1l12 12M13 1L1 13" />
+          </svg>
+        </button>
+
+        <div class="registro-scroll">
+          <!-- Encabezado -->
+          <div class="registro-header">
+            <div class="registro-logo-wrap">
+              <img
+                class="registro-logo-img"
+                src="RESICOmiskuentas1.png"
+                alt="RESICO miskuentas"
+              />
+            </div>
+            <h2 class="registro-titulo">Cree su cuenta</h2>
+            <p class="registro-subtitulo">
+              Complete sus datos para activar RESICO | miskuentas.
+            </p>
+            <div class="registro-precio-badge">
+              <span class="registro-precio-monto">$175 MXN</span>
+              <span class="registro-precio-periodo">al mes + IVA</span>
+            </div>
+          </div>
+
+          <form id="registroForm" onsubmit="return false;">
+            <!-- Datos fiscales y personales -->
+            <div class="registro-seccion">
+              <div class="registro-seccion-titulo">
+                Datos fiscales y personales
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regRfc">RFC</label>
+                <input
+                  class="registro-input"
+                  type="text"
+                  id="regRfc"
+                  maxlength="13"
+                  style="text-transform: uppercase"
+                  placeholder="XAXX010101000"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regNombre"
+                  >Nombre completo</label
+                >
+                <input
+                  class="registro-input"
+                  type="text"
+                  id="regNombre"
+                  placeholder="Nombre y apellidos"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regEmail"
+                  >Correo electrónico</label
+                >
+                <input
+                  class="registro-input"
+                  type="email"
+                  id="regEmail"
+                  placeholder="correo@ejemplo.com"
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regCelular">Celular</label>
+                <input
+                  class="registro-input"
+                  type="tel"
+                  id="regCelular"
+                  placeholder="10 dígitos"
+                  maxlength="10"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <!-- Creación de acceso -->
+            <div class="registro-seccion">
+              <div class="registro-seccion-titulo">Creación de acceso</div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regPass">Contraseña</label>
+                <div class="registro-input-wrap">
+                  <input
+                    class="registro-input registro-input-pass"
+                    type="password"
+                    id="regPass"
+                    placeholder="••••••••"
+                    autocomplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    class="registro-eye-btn"
+                    onclick="toggleRegPassword('regPass')"
+                    title="Mostrar u ocultar contraseña"
+                  >
+                    <svg
+                      class="registro-eye-icon registro-eye-open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <svg
+                      class="registro-eye-icon registro-eye-closed ob-hidden"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"
+                      />
+                      <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                      <path
+                        d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"
+                      />
+                      <path d="m2 2 20 20" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regPassConfirm"
+                  >Confirmar contraseña</label
+                >
+                <div class="registro-input-wrap">
+                  <input
+                    class="registro-input registro-input-pass"
+                    type="password"
+                    id="regPassConfirm"
+                    placeholder="••••••••"
+                    autocomplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    class="registro-eye-btn"
+                    onclick="toggleRegPassword('regPassConfirm')"
+                    title="Mostrar u ocultar contraseña"
+                  >
+                    <svg
+                      class="registro-eye-icon registro-eye-open"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                      />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <svg
+                      class="registro-eye-icon registro-eye-closed ob-hidden"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"
+                      />
+                      <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                      <path
+                        d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"
+                      />
+                      <path d="m2 2 20 20" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Datos de pago -->
+            <div class="registro-seccion">
+              <div class="registro-seccion-titulo">Datos de pago</div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regTitular"
+                  >Nombre del titular</label
+                >
+                <input
+                  class="registro-input"
+                  type="text"
+                  id="regTitular"
+                  placeholder="Como aparece en la tarjeta"
+                  autocomplete="cc-name"
+                />
+              </div>
+
+              <div class="registro-field">
+                <label class="registro-label" for="regTarjeta"
+                  >Número de tarjeta</label
+                >
+                <input
+                  class="registro-input"
+                  type="text"
+                  id="regTarjeta"
+                  placeholder="0000 0000 0000 0000"
+                  maxlength="19"
+                  inputmode="numeric"
+                  autocomplete="cc-number"
+                />
+              </div>
+
+              <div class="registro-row-3">
+                <div class="registro-field">
+                  <label class="registro-label" for="regMes">Mes</label>
+                  <select class="registro-input registro-select" id="regMes">
+                    <option value="">MM</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </div>
+                <div class="registro-field">
+                  <label class="registro-label" for="regAnio">Año</label>
+                  <select class="registro-input registro-select" id="regAnio">
+                    <option value="">AA</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                  </select>
+                </div>
+                <div class="registro-field">
+                  <label class="registro-label" for="regCvv">CVV</label>
+                  <input
+                    class="registro-input"
+                    type="text"
+                    id="regCvv"
+                    placeholder="123"
+                    maxlength="4"
+                    inputmode="numeric"
+                    autocomplete="cc-csc"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumen del pago -->
+            <div class="registro-resumen">
+              <div class="registro-resumen-fila">
+                <span>Plan mensual</span>
+                <span>$175.00 MXN</span>
+              </div>
+              <div class="registro-resumen-fila">
+                <span>IVA (16%)</span>
+                <span>$28.00 MXN</span>
+              </div>
+              <div class="registro-resumen-fila registro-resumen-total">
+                <span>Total mensual</span>
+                <span>$203.00 MXN</span>
+              </div>
+              <p class="registro-resumen-nota">
+                El cargo se realizará mensualmente hasta que se cancele el
+                servicio.
+              </p>
+            </div>
+
+            <!-- Términos -->
+            <label class="registro-check-wrap">
+              <input
+                type="checkbox"
+                class="registro-checkbox"
+                id="regTerminos"
+              />
+              <span class="registro-check-custom">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </span>
+              <span class="registro-check-texto"
+                >Acepto los términos y condiciones y el aviso de
+                privacidad.</span
+              >
+            </label>
+
+            <!-- Botón principal -->
+            <button
+              type="button"
+              class="registro-btn-pagar"
+              id="regPagarBtn"
+              onclick="simularPagoRegistro()"
+            >
+              <span class="registro-btn-text">Pagar y activar cuenta</span>
+              <span class="registro-btn-spinner"></span>
+            </button>
+
+            <!-- Ya tengo una cuenta -->
+            <div
+              class="registro-ya-cuenta"
+              onclick="volverALoginDesdeRegistro()"
+            >
+              Ya tengo una cuenta
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ MODAL: Cuenta creada (éxito registro) ══ -->
+    <div
+      class="black-bg registro-exito-overlay ob-hidden"
+      id="registroExitoOverlay"
+    ></div>
+    <div
+      class="first-msg-card registro-exito-modal ob-hidden"
+      id="registroExitoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="registroExitoTitulo"
+    >
+      <div class="registro-exito-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          width="30"
+          height="30"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+      </div>
+      <div class="registro-exito-titulo" id="registroExitoTitulo">
+        ¡Cuenta creada!
+      </div>
+      <p class="registro-exito-texto">
+        Su cuenta ha sido activada correctamente. Ya puede iniciar sesión.
+      </p>
+      <button class="login-btn" onclick="irAIniciarSesionDesdeRegistro()">
+        <span class="login-btn-text">Ir a iniciar sesión</span>
+      </button>
     </div>
 
     <script src="app.js"></script>

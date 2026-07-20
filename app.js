@@ -1817,3 +1817,105 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 });
+
+// ══════════════════════════════════════════════════════════════
+// REGISTRO Y PAGO (DEMO VISUAL) — sin lógica real de pago/guardado
+// ══════════════════════════════════════════════════════════════
+function abrirRegistro() {
+  var overlay = document.getElementById("registroOverlay");
+  if (!overlay) return;
+  overlay.classList.remove("ob-hidden");
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarRegistro() {
+  var overlay = document.getElementById("registroOverlay");
+  if (!overlay) return;
+  overlay.classList.add("ob-hidden");
+  document.body.style.overflow = "";
+}
+
+// Cierra la vista de registro y regresa a la pantalla de inicio de sesión
+function volverALoginDesdeRegistro() {
+  cerrarRegistro();
+
+  var introOverlay = document.getElementById("introOverlay");
+  if (introOverlay) {
+    introOverlay.classList.add("ob-hidden");
+  }
+
+  var loginOverlay = document.getElementById("loginOverlay");
+  if (loginOverlay) {
+    loginOverlay.classList.remove("hide");
+    loginOverlay.style.display = "";
+  }
+}
+
+// Mostrar u ocultar el contenido de un campo de contraseña
+function toggleRegPassword(inputId) {
+  var input = document.getElementById(inputId);
+  if (!input) return;
+  var wrap = input.closest(".registro-input-wrap");
+  if (!wrap) return;
+
+  var mostrando = input.type === "text";
+  input.type = mostrando ? "password" : "text";
+
+  wrap
+    .querySelector(".registro-eye-open")
+    .classList.toggle("ob-hidden", !mostrando);
+  wrap
+    .querySelector(".registro-eye-closed")
+    .classList.toggle("ob-hidden", mostrando);
+}
+
+// Simula el procesamiento del pago y la activación de la cuenta
+function simularPagoRegistro() {
+  var btn = document.getElementById("regPagarBtn");
+  if (!btn || btn.classList.contains("loading")) return;
+  btn.classList.add("loading");
+
+  setTimeout(function () {
+    btn.classList.remove("loading");
+    cerrarRegistro();
+
+    var exitoOverlay = document.getElementById("registroExitoOverlay");
+    var exitoModal = document.getElementById("registroExitoModal");
+    if (exitoOverlay) exitoOverlay.classList.remove("ob-hidden");
+    if (exitoModal) exitoModal.classList.remove("ob-hidden");
+  }, 1200);
+}
+
+// Cierra el modal de éxito y regresa al login
+function irAIniciarSesionDesdeRegistro() {
+  var exitoOverlay = document.getElementById("registroExitoOverlay");
+  var exitoModal = document.getElementById("registroExitoModal");
+  if (exitoOverlay) exitoOverlay.classList.add("ob-hidden");
+  if (exitoModal) exitoModal.classList.add("ob-hidden");
+
+  volverALoginDesdeRegistro();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Cerrar el registro con la tecla ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+
+    var exitoModal = document.getElementById("registroExitoModal");
+    if (exitoModal && !exitoModal.classList.contains("ob-hidden")) {
+      irAIniciarSesionDesdeRegistro();
+      return;
+    }
+
+    var registroOverlay = document.getElementById("registroOverlay");
+    if (registroOverlay && !registroOverlay.classList.contains("ob-hidden")) {
+      cerrarRegistro();
+    }
+  });
+
+  // Cerrar el modal de éxito al hacer clic fuera de él
+  var exitoOverlayEl = document.getElementById("registroExitoOverlay");
+  if (exitoOverlayEl) {
+    exitoOverlayEl.addEventListener("click", irAIniciarSesionDesdeRegistro);
+  }
+});
