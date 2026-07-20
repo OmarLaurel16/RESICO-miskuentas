@@ -528,7 +528,7 @@ summary:hover {
 .nav-module-btn:hover .label,
 .nav-module-btn.open .nav-ico,
 .nav-module-btn.active .nav-ico {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .nav-module-btn:hover {
@@ -549,7 +549,7 @@ summary:hover {
 
 .nav-module-btn.open .nav-ico,
 .nav-module-btn.open .chevron {
-  color: var(--primary);
+  color: var(--secondary);
 }
 .nav-module-btn .label {
   flex: 1;
