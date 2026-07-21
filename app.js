@@ -1740,20 +1740,6 @@ function _introRender() {
       _introState.idx === _introState.total - 1,
     );
   }
-
-  // Botón de acción rápida: alterna entre "Siguiente" y "Comenzar"
-  var nextBtn = document.getElementById("introNextBtn");
-  if (nextBtn) {
-    var esUltima = _introState.idx === _introState.total - 1;
-    nextBtn.textContent = esUltima ? "Comenzar" : "Siguiente";
-    nextBtn.onclick = esUltima
-      ? function () {
-          abrirRegistro();
-        }
-      : function () {
-          introNav(1);
-        };
-  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
