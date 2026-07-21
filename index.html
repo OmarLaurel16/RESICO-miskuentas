@@ -168,7 +168,7 @@
           <!-- Pantalla 1 — Bienvenida -->
           <div class="intro-slide">
             <div class="intro-slide-inner">
-              <div style="width: 170px; margin-bottom: 25px">
+              <div class="intro-logo-wrap intro-logo-wrap-sm">
                 <img
                   alt="RESICO miskuentas logo"
                   src="RESICOmiskuentas1.png"
@@ -177,9 +177,14 @@
                 />
               </div>
               <div class="intro-robot-wrap">
-                <div style="width: 200px; height: 280px">
-                  <img src="BotCruzado.png" width="100%" />
+                <div class="intro-robot-img">
+                  <img
+                    src="BotCruzado.png"
+                    width="100%"
+                    alt="Robot RESICO MisKuentas"
+                  />
                 </div>
+                <div class="intro-robot-shadow" aria-hidden="true"></div>
                 <div class="intro-robot-placeholder" aria-hidden="true">
                   <!--
                   <svg
@@ -201,28 +206,19 @@
                   </svg>-->
                 </div>
               </div>
-              <h2 class="intro-titulo" id="intro-slide-titulo-1">
+              <h2
+                class="intro-titulo intro-titulo-brand"
+                id="intro-slide-titulo-1"
+              >
                 Tu nuevo contador virtual RESICO
               </h2>
-              <ul
-                style="
-                  text-align: right;
-                  font-family: inherit;
-                  font-size: 1.6rem;
-                  color: var(--text-light);
-                  line-height: 1.6;
-                  text-decoration: dotted 4px blue;
-                "
-              >
-                <p>Emite y administra facturas</p>
-                <p>Calcula impuestos en tiempo real</p>
-                <p>Envía declaraciones SAT</p>
+              <ul class="intro-lista-beneficios">
+                <li>Emite y administra facturas</li>
+                <li>Calcula impuestos en tiempo real</li>
+                <li>Envía declaraciones SAT</li>
               </ul>
-              <p>&nbsp</p>
-              <p>&nbsp</p>
-              <p>&nbsp</p>
 
-              <p class="intro-texto">
+              <p class="intro-texto intro-texto-precio">
                 Trabaja desde tu celular por $175.00 + IVA mensual
               </p>
             </div>
@@ -391,8 +387,18 @@
         </div>
       </div>
 
-      <!-- Indicadores de posición -->
-      <div class="intro-dots" id="introDots"></div>
+      <!-- Indicadores de posición + acción rápida -->
+      <div class="intro-bottom-controls">
+        <div class="intro-dots" id="introDots"></div>
+        <button
+          type="button"
+          class="intro-next-btn"
+          id="introNextBtn"
+          onclick="introNav(1)"
+        >
+          Siguiente
+        </button>
+      </div>
 
       <!-- Flechas (escritorio) -->
       <button
