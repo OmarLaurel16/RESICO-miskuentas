@@ -4464,6 +4464,10 @@ summary:hover {
   margin-bottom: 1.2rem;
   line-height: 1.3;
 }
+.intro-slide1-robot-img {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 0 15px rgba(86, 140, 255, 0.25));
+}
 
 .intro-texto {
   font-family: "Rubik", sans-serif;
