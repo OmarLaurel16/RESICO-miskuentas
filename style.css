@@ -4460,7 +4460,7 @@ summary:hover {
   font-family: "Rubik", sans-serif;
   font-size: 2rem;
   font-weight: 600;
-  color: var(--text-main);
+  color: var(--secondary);
   margin-bottom: 1.2rem;
   line-height: 1.3;
 }
