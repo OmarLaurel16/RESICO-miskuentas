@@ -6,7 +6,7 @@
   padding: 0;
 }
 :root {
-  --primary: #3583a6;
+  --primary: #26759c; /*#3583a6*/
   --secondary: #9b1ec2; /*#8f6fb8*/
   --green: #a8e235; /*#54c64d*/
   --red: #ef4444;
