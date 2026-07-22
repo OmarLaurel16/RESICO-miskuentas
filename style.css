@@ -7,10 +7,9 @@
 }
 :root {
   --primary: #26759c; /*#3583a6*/
-  --secondary: #9b1ec2; /*#8f6fb8*/
+  --secondary: #8f6fb8; /*#9b1ec2*/
   --green: #a8e235; /*#54c64d*/
   --red: #ef4444;
-  --purple: color-mix(in srgb, #9820bf 65%, white);
   --pink: color-mix(in srgb, #f096cd 65%, white);
   --bg: #f8f6fc;
   --sidebar-bg: #ffffff;
@@ -878,7 +877,7 @@ summary:hover {
   gap: 6px;
 }
 .btn-tertiary-purple:hover {
-  background: color-mix(in srgb, var(--purple) 85%, black);
+  background: color-mix(in srgb, var(--secondary) 85%, black);
 }
 
 .btn-tertiary-pink {
@@ -1331,7 +1330,7 @@ summary:hover {
   color: var(--green);
 }
 .stat-value.highlighted {
-  color: var(--purple);
+  color: var(--secondary);
 }
 .stat-value.negative {
   color: rgb(201, 77, 63);
