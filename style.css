@@ -193,6 +193,7 @@ summary:hover {
 }
 .chatbot-btn {
   border: none;
+  background: none;
 }
 .chatbot-img {
   width: 100%;
