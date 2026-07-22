@@ -4214,7 +4214,7 @@ summary:hover {
   font-size: 1.4rem;
   font-family: inherit;
   font-weight: 500;
-  border: 1.5px solid var(--primary);
+  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition:
