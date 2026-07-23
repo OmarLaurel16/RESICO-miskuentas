@@ -419,10 +419,12 @@ function mostrarUploader() {
   const uploader = document.getElementById("ob-uploader");
   const btn = document.getElementById("btn-upload-files");
   const greeting = document.getElementById("ob-final-saludo");
+  const instruction = document.getElementById("chatbot-inst");
   if (!uploader) return;
   uploader.classList.remove("ob-hidden");
   btn.classList.add("ob-hidden");
   greeting.classList.add("ob-hidden");
+  instruction.classList.add("ob-hidden");
 }
 
 /** Animación de validación → muestra resultado exitoso (e.firma o CIEC) */
