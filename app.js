@@ -418,7 +418,7 @@ function seleccionarMetodoAcceso(metodo) {
 function mostrarUploader() {
   const uploader = document.getElementById("ob-uploader");
   const btn = document.getElementById("btn-upload-files");
-  const greeting = document.getElementById("ob-final-titulo");
+  const greeting = document.getElementById("ob-final-saludo");
   if (!uploader) return;
   uploader.classList.remove("ob-hidden");
   btn.classList.add("ob-hidden");
