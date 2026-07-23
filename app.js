@@ -418,11 +418,11 @@ function seleccionarMetodoAcceso(metodo) {
 function mostrarUploader() {
   const uploader = document.getElementById("ob-uploader");
   const btn = document.getElementById("btn-upload-files");
-  const  = document.getElementById("btn-upload-files");
-  ob-final-titulo
+  const greeting = document.getElementById("ob-final-titulo");
   if (!uploader) return;
   uploader.classList.remove("ob-hidden");
   btn.classList.add("ob-hidden");
+  greeting.classList.add("ob-hidden");
 }
 
 /** Animación de validación → muestra resultado exitoso (e.firma o CIEC) */
