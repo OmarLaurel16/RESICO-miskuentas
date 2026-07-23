@@ -15,8 +15,8 @@
   --sidebar-bg: #ffffff;
   --card-bg: #ffffff;
   --text-main: #666666;
-  --text-light: #8a7aa3;
-  --text-white: #ffffff;
+  --text-light: #777777;
+  --text-lightest: #888888 --text-white: #ffffff;
   --border: #e2e8f0;
   --item-hover: color-mix(in srgb, var(--primary) 15%, white);
   --shadow: 0 3px 10px color-mix(in srgb, var(--primary) 20%, white);
