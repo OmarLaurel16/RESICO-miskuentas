@@ -4511,7 +4511,7 @@ summary:hover {
   height: 22px;
 }
 .intro-beneficio-icon-blue {
-  background: color-mix(in srgb, var(--primary) 16%, white);
+  background: color-mix(in srgb, var(--primary) 40%, white);
   color: var(--primary);
 }
 .intro-beneficio-icon-purple {
