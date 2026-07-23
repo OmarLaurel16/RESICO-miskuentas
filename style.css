@@ -4614,6 +4614,16 @@ summary:hover {
   color: var(--primary);
 }
 
+/* Botón "Continuar" (pantallas 1, 2 y 3) */
+.intro-continuar-wrap {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1.6rem;
+}
+.intro-continuar-wrap .intro-btn {
+  width: 100%;
+}
+
 /* Indicadores */
 .intro-dots {
   display: flex;
@@ -4633,7 +4643,7 @@ summary:hover {
     transform var(--transition);
 }
 .intro-dot.active {
-  background: var(--green);
+  background: var(--secondary);
   transform: scale(1.25);
 }
 
