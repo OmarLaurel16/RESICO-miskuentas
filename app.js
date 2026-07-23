@@ -418,15 +418,16 @@ function seleccionarMetodoAcceso(metodo) {
 function mostrarUploader() {
   const uploader = document.getElementById("ob-uploader");
   const btn = document.getElementById("btn-upload-files");
-  const greeting = document.getElementById("ob-final-saludo");
+  /*const greeting = document.getElementById("ob-final-saludo");*/
   const instruction = document.getElementById("chatbot-inst");
   const uplater = document.getElementById("upload-later");
   if (!uploader) return;
   uploader.classList.remove("ob-hidden");
   btn.classList.add("ob-hidden");
-  greeting.classList.add("ob-hidden");
+  /*greeting.classList.add("ob-hidden");*/
   instruction.classList.add("ob-hidden");
   uplater.classList.add("ob-hidden");
+  document.getElementById("ob-final-saludo").textContent = "Sube tus archivos";
 }
 
 /** Animación de validación → muestra resultado exitoso (e.firma o CIEC) */
