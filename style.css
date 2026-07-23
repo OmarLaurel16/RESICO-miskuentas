@@ -4493,10 +4493,7 @@ summary:hover {
     box-shadow var(--transition),
     transform var(--transition);
 }
-.intro-beneficio-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-1px);
-}
+
 .intro-beneficio-icon {
   flex-shrink: 0;
   width: 42px;
@@ -4643,7 +4640,7 @@ summary:hover {
     transform var(--transition);
 }
 .intro-dot.active {
-  background: var(--secondary);
+  background: var(--green);
   transform: scale(1.25);
 }
 
