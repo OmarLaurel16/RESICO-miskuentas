@@ -420,6 +420,7 @@ function mostrarUploader() {
   const btn = document.getElementById("btn-upload-files");
   const greeting = document.getElementById("ob-final-saludo");
   const instruction = document.getElementById("chatbot-inst");
+  const uplater = document.getElementById("");
   if (!uploader) return;
   uploader.classList.remove("ob-hidden");
   btn.classList.add("ob-hidden");
