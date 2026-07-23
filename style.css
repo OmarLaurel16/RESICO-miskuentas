@@ -4731,7 +4731,7 @@ summary:hover {
   border: 1px solid var(--border);
   border-radius: 18px;
   width: min(460px, 100%);
-  max-height: min(92vh, 880px);
+  max-height: min(85vh, 800px);
   box-shadow:
     0 8px 40px rgba(53, 131, 166, 0.18),
     0 2px 8px rgba(157, 108, 171, 0.12);
