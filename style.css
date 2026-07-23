@@ -2665,6 +2665,7 @@ summary:hover {
 /* Resultado validación OK */
 .ob-validacion-ok {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   color: var(--green);
