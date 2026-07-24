@@ -3237,7 +3237,7 @@ summary:hover {
 .login-no-account {
   text-align: center;
   font-size: 1.4rem;
-  color: var(--text-light);
+  color: var(--secondary);
   margin-top: 1.6rem;
   line-height: 1.5;
   text-decoration: underline;
