@@ -4194,8 +4194,8 @@ summary:hover {
 
 /* Icono de encabezado en tono rojo (reutiliza .st-info-header-icon como base) */
 .adv-limitada-icon {
-  background: color-mix(in srgb, #e74c3c 15%, white);
-  color: #e74c3c;
+  background: color-mix(in srgb, var(--secondary) 15%, white);
+  color: var(--secondary);
 }
 
 .adv-limitada-btns {
