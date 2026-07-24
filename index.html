@@ -11112,6 +11112,7 @@
           <span
             id="upload-later"
             class="login-no-account"
+            onclick="mostrarAdvertenciaLimitada()"
             style="
               text-align: right;
               padding: 0px 20px;
@@ -11119,6 +11120,7 @@
               margin-top: 0;
               height: 17px;
               text-align: center;
+              cursor: pointer;
             "
             >Subir más tarde</span
           >
@@ -12110,6 +12112,164 @@
       <div class="st-info-nota">
         Estos porcentajes son únicamente una representación creada por
         miskuentas RESICO.
+      </div>
+    </div>
+
+    <!-- ══ PANTALLA INDEPENDIENTE: Advertencia por posponer e.firma ══
+         No forma parte de los pasos numerados del onboarding (ob-step-1/2/3).
+         Se muestra al presionar "Subir más tarde" en el paso 1. -->
+    <div
+      class="black-bg ob-hidden"
+      id="adv-limitada-overlay"
+      onclick="cerrarAdvertenciaLimitada()"
+    ></div>
+    <div
+      class="first-msg-card st-info-modal ob-hidden"
+      id="adv-limitada-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="adv-limitada-titulo"
+    >
+      <button
+        class="ob-close-btn"
+        onclick="cerrarAdvertenciaLimitada()"
+        title="Cerrar"
+      >
+        <svg
+          viewBox="0 0 14 14"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        >
+          <path d="M1 1l12 12M13 1L1 13" />
+        </svg>
+      </button>
+
+      <div class="st-info-header">
+        <div class="st-info-header-icon adv-limitada-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+            />
+          </svg>
+        </div>
+        <div class="st-info-titulo" id="adv-limitada-titulo">
+          Tu cuenta tendrá funciones limitadas
+        </div>
+      </div>
+
+      <div class="st-info-desc">
+        Tu e.firma es lo que nos permite conectarnos con el SAT y trabajar por
+        ti. Si no la registras ahora, no podremos hacerlo todavía, así que por
+        el momento:
+      </div>
+
+      <ul class="st-info-list">
+        <li class="st-info-item">
+          <div class="st-info-item-icon st-info-red">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="st-info-item-body">
+            <span class="st-info-item-texto"
+              >No podrás ver la información de tus facturas.</span
+            >
+          </div>
+        </li>
+
+        <li class="st-info-item">
+          <div class="st-info-item-icon st-info-red">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="st-info-item-body">
+            <span class="st-info-item-texto"
+              >No podrás sincronizar ni revisar tus facturas nuevas.</span
+            >
+          </div>
+        </li>
+
+        <li class="st-info-item">
+          <div class="st-info-item-icon st-info-red">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="st-info-item-body">
+            <span class="st-info-item-texto"
+              >No podrás pedir ni descargar tu Constancia de Situación
+              Fiscal.</span
+            >
+          </div>
+        </li>
+
+        <li class="st-info-item">
+          <div class="st-info-item-icon st-info-red">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="st-info-item-body">
+            <span class="st-info-item-texto"
+              >No podrás pedir ni descargar tu Opinión de Cumplimiento.</span
+            >
+          </div>
+        </li>
+      </ul>
+
+      <div class="st-info-nota">
+        Podrás registrar tu e.firma cuando quieras desde tu perfil para
+        desbloquear estas funciones. Mientras tanto, tu nivel de cumplimiento se
+        mostrará bajo, ya que no tenemos forma de revisar tu información con el
+        SAT.
+      </div>
+
+      <div class="adv-limitada-btns">
+        <button class="btn-primary" onclick="regresarASubirEfirma()">
+          Registrar mi e.firma ahora
+        </button>
+        <button class="btn-secondary" onclick="continuarSinEfirma()">
+          Continuar sin e.firma por ahora
+        </button>
       </div>
     </div>
 

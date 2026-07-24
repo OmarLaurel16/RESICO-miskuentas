@@ -430,6 +430,45 @@ function mostrarUploader() {
   document.getElementById("ob-final-saludo").textContent = "Sube tus archivos";
 }
 
+// ══════════════════════════════════════════════
+//  ADVERTENCIA: posponer registro de e.firma
+//  Pantalla independiente, NO forma parte de los
+//  pasos numerados del onboarding (ob-step-1/2/3)
+// ══════════════════════════════════════════════
+
+/** Abre la advertencia de funciones limitadas (botón "Subir más tarde") */
+function mostrarAdvertenciaLimitada() {
+  const overlay = document.getElementById("adv-limitada-overlay");
+  const modal = document.getElementById("adv-limitada-modal");
+  if (overlay) overlay.classList.remove("ob-hidden");
+  if (modal) modal.classList.remove("ob-hidden");
+}
+
+/** Cierra la advertencia sin tomar ninguna decisión (X o clic fuera) */
+function cerrarAdvertenciaLimitada() {
+  const overlay = document.getElementById("adv-limitada-overlay");
+  const modal = document.getElementById("adv-limitada-modal");
+  if (overlay) overlay.classList.add("ob-hidden");
+  if (modal) modal.classList.add("ob-hidden");
+}
+
+/** El usuario decide registrar su e.firma: cierra la advertencia y abre el uploader */
+function regresarASubirEfirma() {
+  cerrarAdvertenciaLimitada();
+  mostrarUploader();
+}
+
+/** El usuario decide continuar sin e.firma: cierra todo el onboarding
+ *  y refleja una salud fiscal baja, ya que no hay forma de validar su
+ *  información con el SAT (solo simulación). */
+function continuarSinEfirma() {
+  cerrarAdvertenciaLimitada();
+  cerrarOnboarding();
+  if (typeof stSimular === "function") {
+    stSimular("mala");
+  }
+}
+
 /** Animación de validación → muestra resultado exitoso (e.firma o CIEC) */
 function validarAccesoSAT() {
   const btn = document.getElementById("ob-validar-btn");
@@ -577,6 +616,12 @@ function cerrarOnboarding(completado) {
     if (uploader) uploader.classList.add("ob-hidden");
     const btnUpload = document.getElementById("btn-upload-files");
     if (btnUpload) btnUpload.classList.remove("ob-hidden");
+    const uplater = document.getElementById("upload-later");
+    if (uplater) uplater.classList.remove("ob-hidden");
+    const instruction = document.getElementById("chatbot-inst");
+    if (instruction) instruction.classList.remove("ob-hidden");
+    const saludo = document.getElementById("ob-final-saludo");
+    if (saludo) saludo.textContent = "¡Hola Omar!";
 
     // Resetear archivos
     ["cer", "key"].forEach((tipo) => {
