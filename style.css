@@ -4177,8 +4177,8 @@ summary:hover {
 }
 
 .st-info-blue {
-  background: color-mix(in srgb, #3498db 15%, white);
-  color: #3498db;
+  background: color-mix(in srgb, var(--primary) 15%, white);
+  color: var(var(--primary));
 }
 .st-info-bar-fill.st-info-blue {
   background: #3498db;
