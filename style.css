@@ -343,10 +343,10 @@ summary:hover {
   gap: 15px;
 }
 .btn-upload-files {
-  width: fit-content;
+  width: 100%;
   padding: 15px 18px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: inherit;
   border: none;
   border-radius: 8px;
@@ -2682,7 +2682,7 @@ summary:hover {
 
 /* Botón "Continuar" inline */
 .ob-continuar-btn {
-  margin-left: auto;
+  align-items: center;
   padding: 8px 18px;
   font-size: 1.6rem;
 }
