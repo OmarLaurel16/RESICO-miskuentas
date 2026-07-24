@@ -455,7 +455,7 @@ function cerrarAdvertenciaLimitada() {
 /** El usuario decide registrar su e.firma: cierra la advertencia y abre el uploader */
 function regresarASubirEfirma() {
   cerrarAdvertenciaLimitada();
-  mostrarUploader();
+  doLogin();
 }
 
 /** El usuario decide continuar sin e.firma: cierra todo el onboarding
