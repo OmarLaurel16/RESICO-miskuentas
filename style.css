@@ -340,7 +340,7 @@ summary:hover {
   flex-direction: row;
   height: auto;
   align-items: center;
-  gap: 15px;
+  gap: 7px;
 }
 .btn-upload-files {
   width: 100%;
