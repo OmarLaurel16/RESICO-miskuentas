@@ -4200,7 +4200,7 @@ summary:hover {
 
 .adv-limitada-btns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   margin-top: 4px;
 }
