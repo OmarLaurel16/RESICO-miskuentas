@@ -4195,6 +4195,15 @@ summary:hover {
   background: var(--green);
 }
 
+/* adv-limitada-overlay reutiliza .black-bg solo para posicionamiento
+   (fixed, cubre toda la pantalla, click-fuera-para-cerrar) pero sin su
+   propio oscurecimiento/blur, ya que onboarding-bg ya cumple esa función
+   detrás y evitamos que se sumen ambas capas semitransparentes. */
+#adv-limitada-overlay {
+  background: transparent;
+  backdrop-filter: none;
+}
+
 /* Icono de encabezado en tono rojo (reutiliza .st-info-header-icon como base) */
 .adv-limitada-icon {
   background: color-mix(in srgb, var(--secondary) 15%, white);
