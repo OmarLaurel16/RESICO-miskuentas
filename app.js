@@ -464,12 +464,14 @@ function regresarASubirEfirma() {
   doLogin();
 }
 
-/** El usuario decide continuar sin e.firma: cierra todo el onboarding
- *  y refleja una salud fiscal baja, ya que no hay forma de validar su
- *  información con el SAT (solo simulación). */
+/** El usuario decide continuar sin e.firma: muestra la pantalla de
+ *  bienvenida (funciones limitadas) y refleja una salud fiscal baja,
+ *  ya que no hay forma de validar su información con el SAT (solo
+ *  simulación). El onboarding se cierra hasta que el usuario presione
+ *  "Ir al sistema" en esa pantalla. */
 function continuarSinEfirma() {
   cerrarAdvertenciaLimitada();
-  cerrarOnboarding();
+  irAPaso("bienvenida");
   if (typeof stSimular === "function") {
     stSimular("mala");
   }

@@ -2826,6 +2826,44 @@ summary:hover {
   font-size: 14px;
 }
 
+/* ── Nota "Podrás registrar tu e.firma…" (pantalla de bienvenida sin e.firma) ── */
+.ob-bienvenida-nota {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: color-mix(in srgb, var(--border) 40%, white);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+.ob-bienvenida-nota-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--secondary) 15%, white);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ob-bienvenida-nota-texto {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+.ob-bienvenida-btn {
+  width: 100%;
+  justify-content: space-between;
+  background: var(--secondary);
+  padding: 12px 20px;
+  margin: 4px 0 0;
+}
+.ob-bienvenida-btn:hover {
+  background: color-mix(in srgb, var(--secondary) 80%, black);
+}
+
 /* ── Responsive: pantallas pequeñas ── */
 @media (max-width: 480px) {
   .first-msg-card {
@@ -4060,10 +4098,10 @@ summary:hover {
 }
 
 .st-info-header {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
+  padding-right: 20px;
 }
 .st-info-header-icon {
   width: 60px;
@@ -4094,7 +4132,6 @@ summary:hover {
 }
 
 .st-info-list {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -4129,7 +4166,6 @@ summary:hover {
   gap: 8px;
 }
 .st-info-item-texto {
-  width: 100%;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-main);
