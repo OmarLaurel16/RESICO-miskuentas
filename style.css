@@ -4060,10 +4060,10 @@ summary:hover {
 }
 
 .st-info-header {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-right: 20px;
 }
 .st-info-header-icon {
   width: 60px;
@@ -4094,6 +4094,7 @@ summary:hover {
 }
 
 .st-info-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -4128,6 +4129,7 @@ summary:hover {
   gap: 8px;
 }
 .st-info-item-texto {
+  width: 100%;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-main);
