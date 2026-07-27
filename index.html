@@ -11221,7 +11221,7 @@
               <button
                 class="btn-primary ob-continuar-btn"
                 style="background-color: var(--secondary)"
-                onclick="irAPaso(2)"
+                onclick="irAPaso('efirma-ok')"
               >
                 Continuar
               </button>
@@ -11245,6 +11245,156 @@
             </svg>
             <span>Tus datos están protegidos</span>
           </div>
+        </div>
+
+        <!-- ── Confirmación: acceso validado ── -->
+        <div
+          class="first-msg-card onboarding-step ob-hidden"
+          id="ob-step-efirma-ok"
+        >
+          <button
+            class="ob-close-btn"
+            onclick="cerrarOnboarding()"
+            title="Cerrar"
+          >
+            <svg
+              viewBox="0 0 14 14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <path d="M1 1l12 12M13 1L1 13" />
+            </svg>
+          </button>
+
+          <div
+            class="icon-n-welcome"
+            style="display: flex; flex-direction: column"
+          >
+            <img
+              class="chatbot-img"
+              alt="chatbot-img"
+              src="chatbot4.png"
+              style="height: 120px; width: 120px"
+            />
+            <span class="ob-final-titulo">¡Todo listo!</span>
+          </div>
+
+          <div class="chatbot-inst">Ahora podrás:</div>
+
+          <div class="subcont-first-msg">
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Recibir facturas a factura@miskuentas.com.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Descargar tu Constancia de Situación Fiscal.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Descargar tu Opinión de Cumplimiento.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Calcular impuestos.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Enviar declaraciones automáticas al SAT.</span>
+            </div>
+            <div class="check-n-desc">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2.5"
+                stroke="#54C64D"
+                class="ico"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              <span>Recibir mensajes o notificaciones del SAT.</span>
+            </div>
+          </div>
+
+          <button
+            class="btn-primary ob-continuar-btn"
+            style="background-color: var(--secondary)"
+            onclick="irAPaso(2)"
+          >
+            Continuar
+          </button>
         </div>
 
         <!-- ── PASO 2: Meses pendientes ── -->
@@ -12133,7 +12283,7 @@
       onclick="cerrarAdvertenciaLimitada()"
     ></div>
     <div
-      class="first-msg-card st-info-modal ob-hidden onboarding-step"
+      class="first-msg-card st-info-modal ob-hidden"
       id="adv-limitada-modal"
       role="dialog"
       aria-modal="true"
