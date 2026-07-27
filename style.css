@@ -4601,7 +4601,7 @@ summary:hover {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  margin-top: 1.6rem;
+  margin-top: auto;
 }
 .intro-btn {
   padding: 1.3rem;
