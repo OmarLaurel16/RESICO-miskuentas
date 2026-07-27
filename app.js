@@ -439,6 +439,10 @@ function mostrarUploader() {
 function mostrarAdvertenciaLimitada() {
   const overlay = document.getElementById("adv-limitada-overlay");
   const modal = document.getElementById("adv-limitada-modal");
+  const step1 = document.getElementById("ob-step-1");
+  // Se oculta el card del paso 1 para que adv-limitada-modal no quede
+  // sobrepuesto encima de él (ambos comparten el formato .first-msg-card).
+  if (step1) step1.classList.add("ob-hidden");
   if (overlay) overlay.classList.remove("ob-hidden");
   if (modal) modal.classList.remove("ob-hidden");
 }
@@ -447,8 +451,11 @@ function mostrarAdvertenciaLimitada() {
 function cerrarAdvertenciaLimitada() {
   const overlay = document.getElementById("adv-limitada-overlay");
   const modal = document.getElementById("adv-limitada-modal");
+  const step1 = document.getElementById("ob-step-1");
   if (overlay) overlay.classList.add("ob-hidden");
   if (modal) modal.classList.add("ob-hidden");
+  // Se restaura el card del paso 1 al cerrar la advertencia.
+  if (step1) step1.classList.remove("ob-hidden");
 }
 
 /** El usuario decide registrar su e.firma: cierra la advertencia y abre el uploader */
