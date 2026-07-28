@@ -4256,7 +4256,7 @@ summary:hover {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-top: 4px;
+  margin: 4px 20px;
 }
 .adv-limitada-btns .btn-primary,
 .adv-limitada-btns .btn-secondary {
