@@ -4251,6 +4251,8 @@ summary:hover {
 }
 
 .adv-limitada-btns {
+  width: 100%;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
   gap: 10px;
