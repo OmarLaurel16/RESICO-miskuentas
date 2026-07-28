@@ -2854,10 +2854,8 @@ summary:hover {
   color: var(--text-main);
 }
 .ob-bienvenida-btn {
-  width: 100%;
-  justify-content: space-between;
   background: var(--secondary);
-  padding: 12px 20px;
+  padding: 15px 20px;
   margin: 4px 0 0;
 }
 .ob-bienvenida-btn:hover {
