@@ -325,6 +325,7 @@ summary:hover {
   display: flex;
   flex-direction: column;
   column-gap: 2px;
+  row-gap: 8px;
 }
 .icon-n-welcome {
   font-size: 22px;
