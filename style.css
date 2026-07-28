@@ -1226,7 +1226,7 @@ summary:hover {
 .carousel-img-container {
   border-radius: 8px;
   position: relative;
-  width: 110px;
+  width: 100px;
   overflow: hidden;
   flex-shrink: 0;
 }
