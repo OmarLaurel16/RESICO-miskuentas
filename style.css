@@ -1168,7 +1168,7 @@ summary:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--secondary) 15%, white);
+  /*background: color-mix(in srgb, var(--secondary) 15%, white);*/
   color: var(--secondary);
 }
 
