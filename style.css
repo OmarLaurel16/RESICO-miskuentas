@@ -1015,11 +1015,6 @@ summary:hover {
   text-align: left;
   cursor: pointer;
   font-family: inherit;
-
-  box-shadow:
-    0 12px 30px rgba(115, 85, 170, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
