@@ -971,30 +971,6 @@ summary:hover {
   gap: 16px;
 }
 
-/*
-.fact-hero-card {
-  background: linear-gradient(
-    135deg,
-    var(--secondary),
-    color-mix(in srgb, var(--primary) 55%, var(--secondary))
-  );
-  border: none;
-  border-radius: 14px;
-  padding: 26px 26px;
-  color: var(--text-white);
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  box-shadow: var(--shadow);
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
-}*/
-
 .fact-hero-card {
   position: relative;
   overflow: hidden;
