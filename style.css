@@ -1185,6 +1185,9 @@ summary:hover {
     flex-wrap: wrap;
     gap: 10px;
   }
+  .facrt-hero-title {
+    font-size: 1.7rem;
+  }
 }
 
 /* Carousel */
