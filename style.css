@@ -5105,3 +5105,55 @@ summary:hover {
     gap: 0.7rem;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   SOFT 3D ELEVATED — Acabado premium para botones específicos
+   Aplica solo a: "Salir" (topbar), "¿Qué me falta?" (Salud Fiscal)
+   y "Descargar" (Constancia / Opinión en Perfil).
+   No modifica tamaño, padding, radio de esquinas, tipografía
+   ni color base (se mantiene var(--secondary), morado actual).
+   ══════════════════════════════════════════════════════════ */
+
+.btn-salir,
+.st-alertas-btn,
+#view-perfil .doc-grid .btn-primary {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--secondary) 94%, white) 0%,
+    var(--secondary) 48%,
+    color-mix(in srgb, var(--secondary) 93%, black) 100%
+  ) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 1.5px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(20, 10, 35, 0.08),
+    0 4px 10px color-mix(in srgb, var(--secondary) 35%, transparent);
+  transition:
+    transform 200ms cubic-bezier(0, 0, 0.2, 1),
+    box-shadow 200ms cubic-bezier(0, 0, 0.2, 1),
+    background 200ms cubic-bezier(0, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Hover: elevación sutil (~2px) + sombra ligeramente más presente */
+.btn-salir:hover,
+.st-alertas-btn:hover,
+#view-perfil .doc-grid .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 1.5px rgba(0, 0, 0, 0.1),
+    0 2px 3px rgba(20, 10, 35, 0.1),
+    0 8px 18px color-mix(in srgb, var(--secondary) 42%, transparent);
+}
+
+/* Active/pressed: baja ~1px, sombra se reduce (sensación de presionado) */
+.btn-salir:active,
+.st-alertas-btn:active,
+#view-perfil .doc-grid .btn-primary:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 1px 2px rgba(20, 10, 35, 0.1);
+}
