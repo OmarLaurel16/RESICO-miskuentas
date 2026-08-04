@@ -2305,6 +2305,7 @@ summary:hover {
 
   .fact-quick-title {
     font-size: 1.2rem;
+    color: var(--text-light);
   }
   .fact-quick-desc {
     font-size: 1.1rem;
