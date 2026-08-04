@@ -1196,6 +1196,7 @@ summary:hover {
 @media (max-width: 480px) {
   .fact-hero-card {
     flex-wrap: wrap;
+    gap: 10px;
   }
 }
 
