@@ -6,9 +6,9 @@
   padding: 0;
 }
 :root {
-  --primary: #26759c; /*#3583a6*/
-  --secondary: #9b1ec2; /*#8f6fb8*/
-  --green: #a8e235; /*#4acf43*/
+  --primary: #26759c;
+  --secondary: #9b1ec2;
+  --green: #a8e235;
   --red: #ef4444;
   --pink: color-mix(in srgb, #f096cd 65%, white);
   --bg: #f8f6fc;
@@ -5230,12 +5230,6 @@ summary:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* ══════════════════════════════════════════════════════════
-   SOFT 3D ELEVATED — Grupo 3: .fact-hero-card
-   Base morado actual (#540a99b5). No se tocan ::before/::after
-   (el brillo/circulo decorativo existentes se conservan).
-   ══════════════════════════════════════════════════════════ */
-
 .fact-hero-card {
   background: linear-gradient(
     180deg,
@@ -5272,17 +5266,6 @@ summary:hover {
     0 1px 3px rgba(20, 0, 40, 0.18);
 }
 
-/* ══════════════════════════════════════════════════════════
-   SOFT 3D ELEVATED — Grupo 4: botones dentro de .first-msg-card
-   Morados: .btn-upload-files y los .btn-primary con override
-   inline a var(--secondary) (ej. "Continuar" en pasos de e.firma).
-   Verdes: el resto de .btn-primary dentro de .first-msg-card
-   (ob-validar-btn, ob-continuar-btn, fct-btn-verificar, etc).
-   Todo escopado a .first-msg-card para no afectar btn-primary
-   ni btn-upload-files fuera de este componente.
-   ══════════════════════════════════════════════════════════ */
-
-/* -- Morados -- */
 .first-msg-card .btn-upload-files,
 .first-msg-card button[style*="background-color: var(--secondary)"] {
   background: linear-gradient(
@@ -5320,7 +5303,6 @@ summary:hover {
     0 1px 2px rgba(20, 10, 35, 0.1);
 }
 
-/* -- Verdes -- */
 .first-msg-card
   .btn-primary:not([style*="background-color: var(--secondary)"]) {
   background: linear-gradient(
