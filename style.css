@@ -5012,7 +5012,7 @@ summary:hover {
     gap: 0.7rem;
   }
 }
-
+/*
 .btn-salir,
 .st-alertas-btn,
 #view-perfil .doc-grid .btn-primary {
@@ -5032,7 +5032,7 @@ summary:hover {
     box-shadow 200ms cubic-bezier(0, 0, 0.2, 1),
     background 200ms cubic-bezier(0, 0, 0.2, 1);
   will-change: transform, box-shadow;
-}
+}*/
 
 .btn-salir:hover,
 .st-alertas-btn:hover,
