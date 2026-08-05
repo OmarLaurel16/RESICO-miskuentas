@@ -7,7 +7,7 @@
 }
 :root {
   --primary: #26759c; /*#3583a6*/
-  --secondary: #8f6fb8; /*#9b1ec2*/
+  --secondary: #9b1ec2; /*#8f6fb8*/
   --green: #4acf43; /*#a8e235*/
   --red: #ef4444;
   --pink: color-mix(in srgb, #f096cd 65%, white);
