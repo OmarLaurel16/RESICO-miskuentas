@@ -3122,7 +3122,7 @@ summary:hover {
 
 /* ── Tarjeta impuestos: estado pendiente ── */
 .tax-warn-icon {
-  color: color-mix(in srgb, red 60%, white 40%);
+  color: color-mix(in srgb, var(--red) 60%, white 40%);
 }
 .tax-warn-tag {
   color: color-mix(in srgb, red 60%, white 40%) !important;
