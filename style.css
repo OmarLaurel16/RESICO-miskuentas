@@ -449,6 +449,7 @@ summary:hover {
   text-transform: uppercase;
   background: var(--secondary);
   color: var(--text-white);
+  height: 30px;
   font-size: 12px;
   font-weight: 500;
   font-family: inherit;
