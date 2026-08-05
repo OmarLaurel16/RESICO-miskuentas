@@ -3125,7 +3125,7 @@ summary:hover {
   color: color-mix(in srgb, var(--red) 60%, white 40%);
 }
 .tax-warn-tag {
-  color: color-mix(in srgb, red 60%, white 40%) !important;
+  color: color-mix(in srgb, var(--red) 60%, white 40%) !important;
 }
 
 .login-overlay {
@@ -4087,11 +4087,11 @@ summary:hover {
 }
 
 .st-info-red {
-  background: color-mix(in srgb, #e74c3c 15%, white);
-  color: #e74c3c;
+  background: color-mix(in srgb, var(--red) 15%, white);
+  color: var(--red);
 }
 .st-info-bar-fill.st-info-red {
-  background: #e74c3c;
+  background: var(--red);
 }
 
 .st-info-yellow {
@@ -4133,7 +4133,7 @@ summary:hover {
 
 .adv-limitada-icon {
   background: color-mix(in srgb, var(--secondary) 15%, white);
-  color: #e74c3c;
+  color: var(--red);
 }
 
 .adv-limitada-btns {
@@ -4227,7 +4227,7 @@ summary:hover {
   flex-shrink: 0;
 }
 .alertas-categoria-dot.red {
-  background: #e74c3c;
+  background: var(--red);
 }
 .alertas-categoria-dot.yellow {
   background: #f1c40f;
