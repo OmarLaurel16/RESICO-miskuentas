@@ -1131,8 +1131,7 @@ summary:hover {
   color: var(--secondary);
 }
 .soft3d {
-  filter: drop-shadow(0 8px 6px rgba(45, 36, 78, 0.3))
-    drop-shadow(0 12px 20px rgba(45, 36, 78, 0.05));
+  filter: drop-shadow(0 11px 6px rgba(45, 36, 78, 0.25));
 }
 
 .fact-quick-icon svg {
