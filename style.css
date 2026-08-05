@@ -2873,7 +2873,7 @@ summary:hover {
 .fct-mes-cell.fct-selected {
   background: var(--primary);
   border-color: var(--primary);
-  color: #fff;
+  color: var(--text-white);
   font-weight: 600;
 }
 .fct-mes-cell:disabled,
@@ -2893,7 +2893,7 @@ summary:hover {
 .fct-mes-cell.fct-mes-descargado.fct-selected {
   background: var(--green);
   border-color: var(--green);
-  color: #fff;
+  color: var(--text-white);
 }
 .fct-mes-cell.fct-mes-descargado:hover {
   background: color-mix(in srgb, var(--green) 28%, white);
