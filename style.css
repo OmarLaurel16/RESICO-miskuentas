@@ -3256,9 +3256,7 @@ summary:hover {
   border: none;
   border-radius: 10px;
   background: var(--green);
-
-  /*background: linear-gradient(135deg, var(--primary), var(--secondary));*/
-  color: #fff;
+  color: var(--text-white);
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
@@ -3287,7 +3285,7 @@ summary:hover {
   width: 18px;
   height: 18px;
   border: 2px solid rgba(255, 255, 255, 0.35);
-  border-top-color: #fff;
+  border-top-color: var(--card-bg);
   border-radius: 50%;
   animation: loginSpin 0.6s linear infinite;
 }
@@ -3538,7 +3536,7 @@ summary:hover {
   height: 48px;
   border-radius: 10px;
   background: var(--primary);
-  color: #fff;
+  color: var(--text-white);
   font-size: 22px;
   font-weight: 700;
   display: flex;
@@ -4180,7 +4178,7 @@ summary:hover {
     color 0.18s;
   white-space: nowrap;
   background: var(--secondary);
-  color: #fff;
+  color: var(--text-white);
 }
 
 .st-alertas-btn svg {
@@ -4188,7 +4186,7 @@ summary:hover {
   transition: stroke 0.18s;
 }
 .st-alertas-btn:hover svg {
-  stroke: #fff;
+  stroke: var(--text-white);
 }
 
 .alertas-categoria-grid {
@@ -4495,7 +4493,7 @@ summary:hover {
   height: 34px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
+  color: var(--text-white);
   font-weight: 600;
   font-size: 1.4rem;
   display: flex;
@@ -4536,7 +4534,7 @@ summary:hover {
 .intro-btn-solid {
   border: none;
   background: var(--green);
-  color: #fff;
+  color: var(--text-white);
   box-shadow: 0 4px 18px color-mix(in srgb, var(--primary) 35%, transparent);
 }
 .intro-btn-solid:hover {
