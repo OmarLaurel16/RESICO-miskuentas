@@ -155,7 +155,6 @@ body {
 .alert-action-btn {
   width: 100%;
   min-width: 90px;
-  /*margin: 0 !important;*/
 }
 .alert-action-btn.btn-success {
   background: var(--green);
@@ -422,7 +421,6 @@ summary:hover {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  /*background: var(--primary);*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3447,7 +3445,7 @@ summary:hover {
   }
 
   .nav-sub a {
-    padding: 8px 16px 8px 42px; /* indent para alinear con el label */
+    padding: 8px 16px 8px 42px;
     font-size: 12.5px;
   }
 
@@ -3738,9 +3736,6 @@ summary:hover {
   background: color-mix(in srgb, var(--secondary) 8%, white);
 }
 
-/* ══════════════════════════════════════════════
-   SITUACIÓN TRIBUTARIA — propuesta de diseño
-   ══════════════════════════════════════════════ */
 .metrics {
   display: flex;
   flex-direction: column;
@@ -3962,9 +3957,6 @@ summary:hover {
   }
 }
 
-/* ══════════════════════════════════════════════
-   BOTÓN "i" de información — card Nivel de cumplimiento
-   ══════════════════════════════════════════════ */
 .st-info-btn {
   position: absolute;
   bottom: 14px;
@@ -3994,10 +3986,6 @@ summary:hover {
   height: 18px;
 }
 
-/* ══════════════════════════════════════════════
-   MODAL: Información Nivel de Cumplimiento
-   (reutiliza .first-msg-card / .black-bg / .ob-close-btn)
-   ══════════════════════════════════════════════ */
 .st-info-modal {
   max-width: 460px !important;
   gap: 16px;
@@ -4098,9 +4086,6 @@ summary:hover {
   border-radius: 4px;
 }
 
-/* Paleta reutilizada de .alertas-categoria-dot
-   (aplica a .st-info-item-icon y .st-info-porcentaje: fondo suave + color de texto;
-   .st-info-bar-fill usa el color sólido para el relleno de la barra) */
 .st-info-red {
   background: color-mix(in srgb, #e74c3c 15%, white);
   color: #e74c3c;
@@ -4141,16 +4126,11 @@ summary:hover {
   background: var(--green);
 }
 
-/* adv-limitada-overlay reutiliza .black-bg solo para posicionamiento
-   (fixed, cubre toda la pantalla, click-fuera-para-cerrar) pero sin su
-   propio oscurecimiento/blur, ya que onboarding-bg ya cumple esa función
-   detrás y evitamos que se sumen ambas capas semitransparentes. */
 #adv-limitada-overlay {
   background: transparent;
   backdrop-filter: none;
 }
 
-/* Icono de encabezado en tono rojo (reutiliza .st-info-header-icon como base) */
 .adv-limitada-icon {
   background: color-mix(in srgb, var(--secondary) 15%, white);
   color: #e74c3c;
@@ -4180,9 +4160,6 @@ summary:hover {
   padding-top: 12px;
 }
 
-/* ══════════════════════════════════════════════
-   BOTÓN "Ver alertas" en la card Situación Tributaria
-   ══════════════════════════════════════════════ */
 .st-alertas-btn {
   width: fit-content;
   height: 40px;
@@ -4214,9 +4191,6 @@ summary:hover {
   stroke: #fff;
 }
 
-/* ══════════════════════════════════════════════
-   VISTA: Alertas por categoría (Situación Tributaria)
-   ══════════════════════════════════════════════ */
 .alertas-categoria-grid {
   display: flex;
   flex-direction: column;
@@ -4307,10 +4281,6 @@ summary:hover {
   }
 }
 
-/* ══════════════════════════════════════
-   PRESENTACIÓN INTRODUCTORIA (LOGIN)
-══════════════════════════════════════ */
-
 .intro-link-wrap {
   text-align: center;
   margin-top: 18px;
@@ -4334,7 +4304,6 @@ summary:hover {
   position: fixed;
   inset: 0;
   z-index: 100000;
-  /*background: var(--bg);*/
   background: linear-gradient(
     135deg,
     var(--secondary),
@@ -4426,11 +4395,6 @@ summary:hover {
   width: 0px;
   height: 0px;
   border-radius: 24px;
-  /*background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--primary) 18%, white),
-    color-mix(in srgb, var(--secondary) 18%, white)
-  );*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4453,7 +4417,6 @@ summary:hover {
   line-height: 1.6;
 }
 
-/* Pantalla 2 — beneficios */
 .intro-beneficios-grid {
   display: flex;
   flex-direction: column;
@@ -4512,7 +4475,6 @@ summary:hover {
   line-height: 1.4;
 }
 
-/* Pantalla 3 — pasos */
 .intro-pasos {
   display: flex;
   flex-direction: column;
@@ -4552,7 +4514,6 @@ summary:hover {
   margin-left: 16px;
 }
 
-/* Pantalla 4 — cierre */
 .intro-cierre-btns {
   display: flex;
   flex-direction: column;
@@ -5051,14 +5012,6 @@ summary:hover {
   }
 }
 
-/* ══════════════════════════════════════════════════════════
-   SOFT 3D ELEVATED — Acabado premium para botones específicos
-   Aplica solo a: "Salir" (topbar), "¿Qué me falta?" (Salud Fiscal)
-   y "Descargar" (Constancia / Opinión en Perfil).
-   No modifica tamaño, padding, radio de esquinas, tipografía
-   ni color base (se mantiene var(--secondary), morado actual).
-   ══════════════════════════════════════════════════════════ */
-
 .btn-salir,
 .st-alertas-btn,
 #view-perfil .doc-grid .btn-primary {
@@ -5080,7 +5033,6 @@ summary:hover {
   will-change: transform, box-shadow;
 }
 
-/* Hover: elevación sutil (~2px) + sombra ligeramente más presente */
 .btn-salir:hover,
 .st-alertas-btn:hover,
 #view-perfil .doc-grid .btn-primary:hover {
@@ -5092,7 +5044,6 @@ summary:hover {
     0 8px 18px color-mix(in srgb, var(--secondary) 42%, transparent);
 }
 
-/* Active/pressed: baja ~1px, sombra se reduce (sensación de presionado) */
 .btn-salir:active,
 .st-alertas-btn:active,
 #view-perfil .doc-grid .btn-primary:active {
@@ -5102,13 +5053,6 @@ summary:hover {
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
     0 1px 2px rgba(20, 10, 35, 0.1);
 }
-
-/* ══════════════════════════════════════════════════════════
-   SOFT 3D ELEVATED — Grupo 2
-   #loginBtn, #regPagarBtn, .intro-btn-solid
-   Base verde actual (var(--green)). Mismo criterio: sin tocar
-   tamaño, padding, radio, tipografía ni color base.
-   ══════════════════════════════════════════════════════════ */
 
 #loginBtn,
 #regPagarBtn,
@@ -5152,9 +5096,6 @@ summary:hover {
     0 1px 2px rgba(10, 40, 10, 0.1);
 }
 
-/* .intro-btn-outline: no lleva relleno, se mantiene transparente.
-   Solo se agrega la microinteracción de elevación (sin gradiente
-   ni sombra de "relleno", para no romper su estilo outline). */
 .intro-btn-outline {
   transition:
     transform 200ms cubic-bezier(0, 0, 0.2, 1),
