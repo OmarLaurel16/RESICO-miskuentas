@@ -1131,7 +1131,7 @@ summary:hover {
   color: var(--secondary);
 }
 .soft3d {
-  filter: drop-shadow(0 6px 8px rgba(45, 36, 78, 0.09))
+  filter: drop-shadow(0 9px 6px rgba(45, 36, 78, 0.4))
     drop-shadow(0 12px 20px rgba(45, 36, 78, 0.05));
 }
 
