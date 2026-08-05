@@ -418,8 +418,10 @@ summary:hover {
 }
 
 .sidebar-avatar {
-  width: 35px;
-  height: 35px;
+  background: var(--secondary);
+  padding: 5px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
