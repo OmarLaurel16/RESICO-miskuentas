@@ -1135,7 +1135,6 @@ summary:hover {
     grid-template-columns: 1fr 1fr;
   }
   .fact-quick-card {
-    text-align: center;
     align-items: center;
   }
 }
