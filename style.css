@@ -251,7 +251,7 @@ summary:hover {
 }
 .chatbot-window {
   width: 100%;
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
@@ -3145,7 +3145,7 @@ summary:hover {
 }
 
 .login-card {
-  background: #ffffff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 2.4rem 2.6rem 2.2rem;
@@ -3218,7 +3218,7 @@ summary:hover {
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   color: var(--text-main);
-  background: var(--input-bg, #fff);
+  background: var(--input-bg);
   outline: none;
   transition:
     border-color 0.2s,
@@ -4781,7 +4781,7 @@ summary:hover {
   font-family: "Rubik", sans-serif;
   font-size: 1.5rem;
   color: var(--text-main);
-  background: var(--input-bg, #fff);
+  background: var(--input-bg);
   outline: none;
   transition:
     border-color 0.2s,
