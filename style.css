@@ -446,7 +446,7 @@ summary:hover {
 .btn-salir {
   text-transform: uppercase;
   background: var(--secondary);
-  color: #fff;
+  color: var(--text-white);
   font-size: 12px;
   font-weight: 500;
   font-family: inherit;
@@ -1398,8 +1398,8 @@ summary:hover {
   color: var(--green);
 }
 .badge-red {
-  border: 2px solid red;
-  color: #c0392b;
+  border: 2px solid var(--red);
+  color: var(--red);
 }
 .badge-yellow {
   background: #fef9e7;
@@ -1554,7 +1554,7 @@ summary:hover {
   margin-top: 1px;
 }
 .alert-dot.red {
-  background: #e74c3c;
+  background: var(--red);
 }
 .alert-dot.yellow {
   background: #f39c12;
@@ -2341,7 +2341,7 @@ summary:hover {
 /* ── ESTADO CANCELACIÓN: botón activo ── */
 #view-buzon .cfdi-tipos-btns .btn-secondary.active-estado {
   background: var(--pink);
-  color: #fff;
+  color: var(--text-white);
   border-color: var(--pink);
 }
 
