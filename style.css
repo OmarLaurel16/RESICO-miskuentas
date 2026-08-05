@@ -1083,12 +1083,12 @@ summary:hover {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px 18px;
+  padding: 22px 18px 18px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   font-family: inherit;
   box-shadow: var(--shadow);
@@ -1120,13 +1120,62 @@ summary:hover {
 }
 
 .fact-quick-title {
+  position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 14px;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-main);
+  text-align: center;
+}
+.fact-quick-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #e7ecf4 18%,
+    #e7ecf4 82%,
+    transparent 100%
+  );
+}
+.fact-quick-title::after {
+  content: "";
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-right: 1.6px solid var(--primary);
+  border-top: 1.6px solid var(--primary);
+  transform: rotate(45deg);
 }
 .fact-quick-desc {
   font-size: 12.5px;
+  color: var(--text-light);
+  line-height: 1.45;
+}
+
+.fact-section-header {
+  text-align: left;
+  margin: 22px 0 14px;
+}
+.fact-section-header-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+.fact-section-header-desc {
+  font-size: 1.3rem;
   color: var(--text-light);
   line-height: 1.45;
 }

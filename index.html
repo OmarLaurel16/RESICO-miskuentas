@@ -1366,7 +1366,7 @@
                   )
                 "
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img src="BandejaDeSalida.png" height="100%" class="soft3d" />
                 </div>
                 <div class="fact-quick-title">Bandeja de salida</div>
@@ -1382,7 +1382,7 @@
                   )
                 "
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="ConfigurarFactura2.png"
                     height="100%"
@@ -1398,7 +1398,7 @@
                   navigate('facturacion-clientes', 'Facturación', 'Clientes')
                 "
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <!--
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1432,7 +1432,7 @@
                   )
                 "
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <!--
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2528,7 +2528,7 @@
                 class="fact-quick-card mov-btns"
                 onclick="navigate('ingresos', 'Gastos e Ingresos', 'Ingresos')"
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="Ingresos5.png"
                     alt="Ingresos"
@@ -2543,7 +2543,7 @@
                 class="fact-quick-card mov-btns"
                 onclick="navigate('gastos', 'Gastos e Ingresos', 'Egresos')"
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="Egresos4.png"
                     alt="Egresos"
@@ -8986,35 +8986,19 @@
         <!-- ══ VIEW: BUZÓN SAT y cancelaciones ══ -->
         <div class="view" id="view-buzon">
           <div id="buzon-dashboard">
+            <div class="fact-section-header">
+              <div class="fact-section-header-title">Buzones</div>
+              <div class="fact-section-header-desc">
+                Consulte mensajes, notificaciones y solicitudes recibidas del
+                SAT.
+              </div>
+            </div>
             <div class="fact-quick-grid cols-3" style="margin-top: 0px">
               <button class="fact-quick-card" onclick="mostrarBuzonMensajes()">
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img src="MensajesSAT3.png" height="100%" class="soft3d" />
                 </div>
-                <div
-                  class="fact-quick-title"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    text-align: space-between;
-                  "
-                >
-                  Mensajes del SAT
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="16"
-                    width="16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <div class="fact-quick-title">Mensajes del SAT</div>
                 <!--
                 <div class="fact-quick-desc">
                   Consulta los mensajes recibidos en tu buzón tributario.
@@ -9025,37 +9009,14 @@
                 class="fact-quick-card"
                 onclick="mostrarBuzonNotificaciones()"
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="NotificacionesSAT2.png"
                     height="100%"
                     class="soft3d"
                   />
                 </div>
-                <div
-                  class="fact-quick-title"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    text-align: space-between;
-                  "
-                >
-                  Notificaciones del SAT
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="16"
-                    width="16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <div class="fact-quick-title">Notificaciones del SAT</div>
                 <!--
                 <div class="fact-quick-desc">
                   Revisa notificaciones, requerimientos y avisos importantes.
@@ -9066,37 +9027,14 @@
                 class="fact-quick-card"
                 onclick="mostrarBuzonCancelaciones()"
               >
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="BuzonDeCancelaciones2.png"
                     height="100%"
                     class="soft3d"
                   />
                 </div>
-                <div
-                  class="fact-quick-title"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    text-align: space-between;
-                  "
-                >
-                  Buzón de cancelaciones
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="16"
-                    width="16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <div class="fact-quick-title">Buzón de cancelaciones</div>
                 <!--
                 <div class="fact-quick-desc">
                   Da seguimiento a cancelaciones de facturas.
@@ -9104,37 +9042,14 @@
               </button>
 
               <button class="fact-quick-card" onclick="mostrarBuzonAcuses()">
-                <div class="fact-quick-icon" style="width: 65px; height: 65px">
+                <div class="fact-quick-icon" style="width: 74px; height: 74px">
                   <img
                     src="AcusesDeCancelacion.png"
                     height="100%"
                     class="soft3d"
                   />
                 </div>
-                <div
-                  class="fact-quick-title"
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    text-align: space-between;
-                  "
-                >
-                  Acuses de cancelación
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    height="16"
-                    width="16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <div class="fact-quick-title">Acuses de cancelación</div>
               </button>
             </div>
           </div>
