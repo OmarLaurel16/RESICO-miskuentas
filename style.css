@@ -8,7 +8,7 @@
 :root {
   --primary: #26759c; /*#3583a6*/
   --secondary: #9b1ec2; /*#8f6fb8*/
-  --green: #4acf43; /*#a8e235*/
+  --green: #a8e235; /*#4acf43*/
   --red: #ef4444;
   --pink: color-mix(in srgb, #f096cd 65%, white);
   --bg: #f8f6fc;
