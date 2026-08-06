@@ -1079,6 +1079,103 @@ summary:hover {
   }
 }
 
+.fact-quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.fact-list-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 2px 6px rgba(20, 30, 50, 0.05);
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
+}
+.fact-list-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.fact-list-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #26759c;
+}
+.fact-list-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fact-list-divider {
+  flex-shrink: 0;
+  align-self: stretch;
+  width: 1px;
+  background: var(--border);
+}
+
+.fact-list-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.fact-list-chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #26759c;
+}
+.fact-list-chevron svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fact-list-card.featured {
+  background: #26759c;
+  border-color: #26759c;
+}
+.fact-list-card.featured .fact-list-icon {
+  color: #ffffff;
+}
+.fact-list-card.featured .fact-list-divider {
+  background: rgba(255, 255, 255, 0.3);
+}
+.fact-list-card.featured .fact-list-title {
+  color: #ffffff;
+}
+.fact-list-card.featured .fact-list-chevron {
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .fact-list-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .fact-list-title {
+    font-size: 13px;
+  }
+}
+
 .fact-quick-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
