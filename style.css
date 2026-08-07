@@ -1091,6 +1091,7 @@ summary:hover {
   align-items: center;
   gap: 14px;
   width: 100%;
+  height: 65px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
