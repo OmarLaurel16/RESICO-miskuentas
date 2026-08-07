@@ -2520,7 +2520,7 @@ summary:hover {
   height: 52px;
   border-radius: 14px;
   background: color-mix(in srgb, var(--primary) 12%, white);
-  color: var(--primary);
+  color: var(--secondary);
   display: flex;
   align-items: center;
   justify-content: center;
