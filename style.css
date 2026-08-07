@@ -4684,7 +4684,7 @@ summary:hover {
 }
 .intro-btn-solid {
   border: none;
-  background: var(--green);
+  background: var(--secondary);
   color: var(--text-white);
   box-shadow: 0 4px 18px color-mix(in srgb, var(--primary) 35%, transparent);
 }
